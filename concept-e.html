@@ -1,0 +1,329 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concept E — The Seamount Halls | Galapagos Shark Diving</title>
+<meta name="description" content="A museum-exhibition treatment of the Galapagos Shark Diving homepage: four galleries covering Darwin Island, Wolf Island, the research wing and the vessels.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+html,body{margin:0;padding:0;background:#E7E4DD;}
+
+.ce{
+  --wall:#E7E4DD;
+  --wall-2:#F1EFE9;
+  --wall-3:#DCD8D0;
+  --ink:#23211E;
+  --ink-2:#4A463F;
+  --ink-3:#736D64;
+  --hair:#C6C1B7;
+  --way:#31536A;
+  --plate:#CFCBC2;
+  background:var(--wall);
+  color:var(--ink);
+  font-family:"Spectral",Georgia,"Times New Roman",serif;
+  font-size:17px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+}
+.ce *,.ce *::before,.ce *::after{box-sizing:border-box;}
+.ce img{display:block;width:100%;height:auto;}
+.ce h1,.ce h2,.ce h3,.ce h4{font-weight:500;margin:0;letter-spacing:-0.006em;}
+.ce p{margin:0;}
+.ce em{font-style:italic;}
+
+/* --- label / signage system ------------------------------------------------ */
+.ce-tag,.ce-cat,.ce-eyeline,.ce-room-num,.ce-rail-num,.ce-plan-num,.ce-lab-rows b{
+  font-family:"IBM Plex Sans",system-ui,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:0.16em;
+  font-size:10.5px;
+  font-weight:500;
+  line-height:1.5;
+}
+.ce-tag{display:block;color:var(--way);margin-bottom:14px;}
+.ce-eyeline{color:var(--ink-3);margin-bottom:26px;}
+
+/* --- vestibule -------------------------------------------------------------- */
+.ce-vest{padding:0 0 84px;}
+.ce-vest-inst{
+  display:flex;align-items:center;gap:18px;
+  padding:20px clamp(20px,5vw,72px);
+  border-bottom:1px solid var(--hair);
+}
+.ce-inst-name{
+  font-family:"IBM Plex Sans",system-ui,sans-serif;
+  text-transform:uppercase;letter-spacing:0.28em;font-size:11px;font-weight:600;
+}
+.ce-inst-rule{flex:1;height:1px;background:var(--hair);}
+.ce-inst-sub{
+  font-family:"IBM Plex Sans",system-ui,sans-serif;
+  text-transform:uppercase;letter-spacing:0.18em;font-size:10.5px;color:var(--ink-3);
+}
+.ce-vest-body{padding:clamp(56px,9vw,120px) clamp(20px,5vw,72px) 0;max-width:1320px;}
+.ce-vest-body h1{
+  font-size:clamp(38px,6.4vw,78px);
+  line-height:1.03;
+  font-weight:400;
+  max-width:20ch;
+}
+.ce-vest-body h1 span{
+  display:block;
+  margin-top:20px;
+  font-size:clamp(17px,2vw,25px);
+  line-height:1.35;
+  font-style:italic;
+  font-weight:300;
+  color:var(--ink-2);
+  max-width:34ch;
+}
+.ce-vest-cols{
+  display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);
+  gap:clamp(32px,6vw,90px);
+  margin-top:clamp(34px,4vw,52px);
+  padding-top:34px;
+  border-top:1px solid var(--hair);
+}
+.ce-didactic{color:var(--ink-2);max-width:62ch;}
+.ce-lede{font-size:1.06em;line-height:1.66;}
+.ce-sm{font-size:0.9em;}
+.ce-vest-facts{margin:0;}
+.ce-vest-facts>div{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);
+  gap:18px;padding:11px 0;border-bottom:1px solid var(--hair);
+}
+.ce-vest-facts>div:first-child{border-top:1px solid var(--hair);}
+.ce-vest-facts dt{
+  font-family:"IBM Plex Sans",system-ui,sans-serif;
+  text-transform:uppercase;letter-spacing:0.14em;font-size:10px;font-weight:500;
+  color:var(--ink-3);padding-top:4px;
+}
+.ce-vest-facts dd{margin:0;font-size:0.95em;}
+
+/* --- floor plan ------------------------------------------------------------- */
+.ce-plan{margin:clamp(56px,8vw,104px) clamp(20px,5vw,72px) 0;max-width:1320px;}
+.ce-plan-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 28px;}
+.ce-plan-note{color:var(--ink-3);font-size:0.9em;font-style:italic;}
+.ce-plan-svg{width:100%;height:auto;margin-top:8px;}
+.ce-plan-shell{fill:none;stroke:var(--hair);stroke-width:1;}
+.ce-plan-room rect{fill:var(--wall-2);stroke:var(--hair);stroke-width:1;transition:fill .5s ease,stroke .5s ease;}
+.ce-plan-room text{fill:var(--ink-2);}
+.ce-plan-room .ce-plan-name{
+  font-family:"Spectral",Georgia,serif;font-size:15px;letter-spacing:0;text-transform:none;
+}
+.ce-plan-room:hover rect,.ce-plan-room:focus-visible rect{fill:#FAF9F5;stroke:var(--way);}
+.ce-plan-room.ce-plan-on rect{fill:#FAF9F5;stroke:var(--way);stroke-width:2;}
+.ce-plan-room.ce-plan-on text{fill:var(--way);}
+.ce-plan-entry rect{fill:none;stroke:var(--hair);stroke-dasharray:3 4;}
+.ce-plan-entry text{
+  font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:10px;letter-spacing:0.18em;
+  fill:var(--ink-3);
+}
+.ce-plan-entry .ce-plan-you{letter-spacing:0.06em;font-size:10.5px;text-transform:none;fill:var(--way);}
+.ce-plan-num{font-size:11px;}
+
+/* --- wayfinding rail -------------------------------------------------------- */
+.ce-rail{
+  position:sticky;top:0;z-index:5;
+  background:#EDEBE5;
+  border-top:1px solid var(--hair);
+  border-bottom:1px solid var(--hair);
+}
+.ce-rail ul{
+  display:flex;margin:0;padding:0 clamp(20px,5vw,72px);list-style:none;
+  overflow-x:auto;scrollbar-width:none;
+}
+.ce-rail ul::-webkit-scrollbar{display:none;}
+.ce-rail li{flex:0 0 auto;}
+.ce-rail a{
+  display:flex;align-items:baseline;gap:10px;
+  padding:13px 22px 12px 0;margin-right:22px;
+  color:var(--ink-3);text-decoration:none;white-space:nowrap;
+  border-bottom:2px solid transparent;
+  transition:color .4s ease,border-color .4s ease;
+}
+.ce-rail a:hover{color:var(--ink);}
+.ce-rail-name{font-size:0.94em;}
+.ce-rail-on a{color:var(--way);border-bottom-color:var(--way);}
+
+/* --- rooms ------------------------------------------------------------------ */
+.ce-room{padding:clamp(72px,11vw,150px) clamp(20px,5vw,72px);max-width:1320px;margin:0 auto;}
+.ce-room-alt{background:var(--wall-2);max-width:none;}
+.ce-room-alt>*{max-width:1320px;margin-left:auto;margin-right:auto;}
+.ce-room-head{border-top:1px solid var(--ink);padding-top:22px;max-width:1320px;}
+.ce-room-num{display:block;color:var(--way);margin-bottom:22px;}
+.ce-room-head h2{font-size:clamp(30px,4.4vw,52px);line-height:1.08;font-weight:400;}
+.ce-room-head .ce-didactic{margin-top:24px;}
+
+/* --- mounted objects (mat + frame + label) ---------------------------------- */
+.ce-mount{margin:clamp(48px,7vw,86px) 0 0;}
+.ce-mat{
+  background:#FBFAF7;
+  padding:clamp(18px,3.2vw,44px);
+  border:1px solid var(--plate);
+}
+.ce-mat-sm{padding:clamp(12px,2vw,20px);}
+.ce-mat-port{padding:clamp(10px,1.6vw,16px);}
+.ce-mount-hero{max-width:1040px;}
+.ce-mount-hero .ce-mat{padding:clamp(20px,4vw,60px);}
+.ce-label{
+  display:block;
+  margin-top:20px;
+  max-width:46ch;
+  border-top:1px solid var(--hair);
+  padding-top:12px;
+}
+.ce-label-wide{max-width:66ch;}
+.ce-cat{display:block;color:var(--ink-3);margin-bottom:7px;}
+.ce-lab-species{display:block;font-size:1.02em;line-height:1.35;}
+.ce-lab-species em{color:var(--ink-3);}
+.ce-lab-rows{display:block;margin-top:11px;}
+.ce-lab-rows>span{
+  display:grid;grid-template-columns:minmax(0,170px) minmax(0,1fr);
+  gap:14px;padding:5px 0;
+  font-size:0.88em;color:var(--ink-2);
+  border-bottom:1px solid var(--wall-3);
+}
+.ce-lab-rows-2>span{grid-template-columns:minmax(0,190px) minmax(0,1fr);}
+.ce-lab-rows b{color:var(--ink-3);font-weight:500;padding-top:3px;}
+/* small mounts sit in a narrow column: stack the label rows instead of
+   crushing them into two columns */
+.ce-mount-sm .ce-lab-rows>span{grid-template-columns:1fr;gap:1px;padding:6px 0;}
+.ce-mount-sm .ce-lab-rows b{padding-top:0;}
+
+.ce-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(26px,4vw,56px);}
+.ce-vitrine{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:clamp(28px,4vw,54px);
+}
+.ce-vessels{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:clamp(30px,5vw,68px);}
+
+/* --- didactic panels -------------------------------------------------------- */
+.ce-panel,.ce-method,.ce-keypanel{
+  margin-top:clamp(52px,7vw,96px);
+  padding:clamp(26px,3.6vw,44px);
+  background:#FBFAF7;
+  border-left:2px solid var(--way);
+  max-width:940px;
+}
+.ce-method{max-width:1100px;}
+.ce-panel h3,.ce-method h3{font-size:clamp(20px,2.4vw,28px);font-weight:400;margin-bottom:16px;}
+.ce-panel-wide{max-width:none;}
+.ce-cols2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(22px,3vw,44px);}
+.ce-keypanel{border-left-color:var(--hair);}
+
+.ce-seq{list-style:none;margin:0;padding:0;}
+.ce-seq li{
+  display:grid;
+  grid-template-columns:minmax(0,46px) minmax(0,160px) minmax(0,1fr);
+  gap:18px;padding:15px 0;border-top:1px solid var(--hair);
+}
+.ce-seq li:last-child{border-bottom:1px solid var(--hair);}
+.ce-seq-n{color:var(--ink-3);font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:11px;letter-spacing:0.14em;padding-top:5px;}
+.ce-seq-t{font-size:1.02em;}
+.ce-seq-d{color:var(--ink-2);font-size:0.92em;}
+.ce-footnote{margin-top:20px;color:var(--ink-3);font-size:0.88em;font-style:italic;max-width:70ch;}
+
+/* --- advisory board --------------------------------------------------------- */
+.ce-board{margin-top:clamp(56px,8vw,104px);border-top:1px solid var(--ink);padding-top:22px;}
+.ce-board-g{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:clamp(26px,4vw,52px);margin-top:14px;
+}
+.ce-board h4{margin-top:18px;font-size:1.06em;font-weight:500;}
+.ce-post{
+  margin-top:5px;color:var(--way);
+  font-family:"IBM Plex Sans",system-ui,sans-serif;
+  font-size:10.5px;text-transform:uppercase;letter-spacing:0.12em;line-height:1.55;
+}
+.ce-board .ce-didactic{margin-top:12px;}
+
+/* --- closing ---------------------------------------------------------------- */
+.ce-close{
+  background:var(--ink);color:var(--wall-2);
+  padding:clamp(72px,11vw,148px) clamp(20px,5vw,72px);
+}
+.ce-close-in,.ce-plaque{max-width:1320px;margin:0 auto;}
+.ce-close .ce-tag{color:#9FB6C6;}
+.ce-close h2{font-size:clamp(28px,4.4vw,54px);line-height:1.1;font-weight:400;max-width:26ch;}
+.ce-close .ce-didactic{color:#C8C3BA;margin-top:26px;}
+.ce-close-acts{display:flex;flex-wrap:wrap;gap:14px 28px;margin-top:40px;}
+.ce-btn,.ce-btn-quiet{
+  font-family:"IBM Plex Sans",system-ui,sans-serif;
+  text-transform:uppercase;letter-spacing:0.16em;font-size:11px;font-weight:500;
+  text-decoration:none;padding:15px 26px;border:1px solid var(--wall-2);
+  color:var(--wall-2);transition:background .4s ease,color .4s ease;
+}
+.ce-btn:hover{background:var(--wall-2);color:var(--ink);}
+.ce-btn-quiet{border-color:#5B574F;color:#C8C3BA;}
+.ce-btn-quiet:hover{border-color:var(--wall-2);color:var(--wall-2);}
+.ce-plaque{margin-top:clamp(56px,8vw,100px);padding-top:20px;border-top:1px solid #443F38;}
+.ce-plaque p{color:#8E8880;font-size:0.84em;max-width:78ch;}
+
+/* --- motion: a slow walk through ------------------------------------------- */
+.ce-walk{opacity:0;transform:translateY(14px);transition:opacity 1.05s ease,transform 1.05s ease;}
+.ce-walk.ce-in{opacity:1;transform:none;}
+
+/* --- responsive ------------------------------------------------------------- */
+@media (max-width:900px){
+  .ce-vest-cols{grid-template-columns:1fr;}
+  .ce-pair{grid-template-columns:1fr;}
+  .ce-seq li{grid-template-columns:minmax(0,40px) minmax(0,1fr);}
+  .ce-seq-d{grid-column:2;}
+}
+@media (max-width:560px){
+  .ce{font-size:16px;}
+  .ce-vest-body h1{font-size:clamp(30px,9vw,40px);}
+  .ce-lab-rows>span{grid-template-columns:1fr;gap:2px;}
+  .ce-lab-rows-2>span{grid-template-columns:1fr;}
+  .ce-mat{padding:14px;}
+  .ce-mount-hero .ce-mat{padding:14px;}
+  /* the plan keeps its viewBox, so type must be scaled up to stay legible */
+  .ce-plan-room .ce-plan-name{font-size:26px;}
+  .ce-plan-num{font-size:22px;}
+  .ce-plan-entry text{font-size:20px;}
+  .ce-plan-entry .ce-plan-you{font-size:21px;}
+  .ce-vest-facts>div{grid-template-columns:1fr;gap:2px;}
+}
+@media (prefers-reduced-motion:reduce){
+  .ce-walk{opacity:1;transform:none;transition:none;}
+  .ce *{scroll-behavior:auto;}
+}
+.ce a:focus-visible,.ce .ce-plan-room:focus-visible{outline:2px solid var(--way);outline-offset:3px;}
+</style>
+
+
+<div class="ce" data-tsd-source="/src/routes/concept-e.tsx:343:5"><header class="ce-vest" data-tsd-source="/src/routes/concept-e.tsx:347:7"><div class="ce-vest-inst" data-tsd-source="/src/routes/concept-e.tsx:348:9"><span class="ce-inst-name" data-tsd-source="/src/routes/concept-e.tsx:349:11">Galapagos Shark Diving</span><span class="ce-inst-rule" aria-hidden="true" data-tsd-source="/src/routes/concept-e.tsx:350:11"></span><span class="ce-inst-sub" data-tsd-source="/src/routes/concept-e.tsx:351:11">Galápagos, Ecuador</span></div><div class="ce-vest-body" data-tsd-source="/src/routes/concept-e.tsx:354:9"><p class="ce-eyeline" data-tsd-source="/src/routes/concept-e.tsx:355:11">Permanent exhibition · Four galleries</p><h1 data-tsd-source="/src/routes/concept-e.tsx:356:11">The Seamount Halls<span data-tsd-source="/src/routes/concept-e.tsx:358:13">Darwin and Wolf, and the animals that gather there</span></h1><div class="ce-vest-cols" data-tsd-source="/src/routes/concept-e.tsx:360:11"><p class="ce-didactic ce-lede" data-tsd-source="/src/routes/concept-e.tsx:361:13">Two small islands stand at the northern edge of the archipelago, where the archipelago's shelf drops away into the deep Pacific. Almost nobody lives within a day of them. The galleries that follow set out what is known about the animals that gather at Darwin and Wolf, how that knowledge is gathered, and the two vessels that carry sixteen guests at a time to see it.</p><dl class="ce-vest-facts" data-tsd-source="/src/routes/concept-e.tsx:368:13"><div data-tsd-source="/src/routes/concept-e.tsx:369:15"><dt data-tsd-source="/src/routes/concept-e.tsx:370:17">Season on view</dt><dd data-tsd-source="/src/routes/concept-e.tsx:371:17">Whale sharks at Darwin, June to November</dd></div><div data-tsd-source="/src/routes/concept-e.tsx:373:15"><dt data-tsd-source="/src/routes/concept-e.tsx:374:17">Research partner</dt><dd data-tsd-source="/src/routes/concept-e.tsx:375:17">Galápagos Whale Shark Project, supported since 2019</dd></div><div data-tsd-source="/src/routes/concept-e.tsx:377:15"><dt data-tsd-source="/src/routes/concept-e.tsx:378:17">Expedition lengths</dt><dd data-tsd-source="/src/routes/concept-e.tsx:379:17">Eight days and fifteen days</dd></div><div data-tsd-source="/src/routes/concept-e.tsx:381:15"><dt data-tsd-source="/src/routes/concept-e.tsx:382:17">Party size</dt><dd data-tsd-source="/src/routes/concept-e.tsx:383:17">Sixteen guests, both vessels</dd></div></dl></div></div><div class="ce-plan" data-tsd-source="/src/routes/concept-e.tsx:390:9"><div class="ce-plan-head" data-tsd-source="/src/routes/concept-e.tsx:391:11"><span class="ce-tag" data-tsd-source="/src/routes/concept-e.tsx:392:13">Gallery plan</span><p class="ce-plan-note" data-tsd-source="/src/routes/concept-e.tsx:393:13">The route runs anticlockwise from the entrance. Select a room to walk to it.</p></div><svg class="ce-plan-svg" viewBox="0 0 720 260" role="img" aria-label="Plan of four galleries: Darwin Island, Wolf Island, the Research Wing and the Vessels, entered from the lower left." data-tsd-source="/src/routes/concept-e.tsx:397:11"><rect class="ce-plan-shell" x="12" y="12" width="696" height="236" data-tsd-source="/src/routes/concept-e.tsx:403:13"></rect><a href="#room-i" class="ce-plan-room ce-plan-on" data-tsd-source="/src/routes/concept-e.tsx:405:15"><rect x="30" y="30" width="200" height="120" data-tsd-source="/src/routes/concept-e.tsx:410:17"></rect><text class="ce-plan-num" x="44" y="60" data-tsd-source="/src/routes/concept-e.tsx:411:17">I</text><text class="ce-plan-name" x="44" y="134" data-tsd-source="/src/routes/concept-e.tsx:414:17">Darwin Island</text></a><a href="#room-ii" class="ce-plan-room" data-tsd-source="/src/routes/concept-e.tsx:405:15"><rect x="246" y="30" width="200" height="120" data-tsd-source="/src/routes/concept-e.tsx:410:17"></rect><text class="ce-plan-num" x="260" y="60" data-tsd-source="/src/routes/concept-e.tsx:411:17">II</text><text class="ce-plan-name" x="260" y="134" data-tsd-source="/src/routes/concept-e.tsx:414:17">Wolf Island</text></a><a href="#room-iii" class="ce-plan-room" data-tsd-source="/src/routes/concept-e.tsx:405:15"><rect x="462" y="30" width="228" height="120" data-tsd-source="/src/routes/concept-e.tsx:410:17"></rect><text class="ce-plan-num" x="476" y="60" data-tsd-source="/src/routes/concept-e.tsx:411:17">III</text><text class="ce-plan-name" x="476" y="134" data-tsd-source="/src/routes/concept-e.tsx:414:17">Research Wing</text></a><a href="#room-iv" class="ce-plan-room" data-tsd-source="/src/routes/concept-e.tsx:405:15"><rect x="246" y="166" width="444" height="64" data-tsd-source="/src/routes/concept-e.tsx:410:17"></rect><text class="ce-plan-num" x="260" y="202" data-tsd-source="/src/routes/concept-e.tsx:411:17">IV</text><text class="ce-plan-name" x="292" y="203" data-tsd-source="/src/routes/concept-e.tsx:414:17">The Vessels</text></a><g class="ce-plan-entry" data-tsd-source="/src/routes/concept-e.tsx:423:13"><rect x="30" y="166" width="200" height="64" data-tsd-source="/src/routes/concept-e.tsx:424:15"></rect><text x="44" y="196" data-tsd-source="/src/routes/concept-e.tsx:425:15">ENTRANCE</text><text class="ce-plan-you" x="44" y="216" data-tsd-source="/src/routes/concept-e.tsx:428:15">You are here</text></g></svg></div></header><nav class="ce-rail" aria-label="Gallery wayfinding" data-tsd-source="/src/routes/concept-e.tsx:437:7"><ul data-tsd-source="/src/routes/concept-e.tsx:438:9"><li class="ce-rail-on" data-tsd-source="/src/routes/concept-e.tsx:440:13"><a href="#room-i" data-tsd-source="/src/routes/concept-e.tsx:441:15"><span class="ce-rail-num" data-tsd-source="/src/routes/concept-e.tsx:442:17">I</span><span class="ce-rail-name" data-tsd-source="/src/routes/concept-e.tsx:443:17">Darwin Island</span></a></li><li data-tsd-source="/src/routes/concept-e.tsx:440:13"><a href="#room-ii" data-tsd-source="/src/routes/concept-e.tsx:441:15"><span class="ce-rail-num" data-tsd-source="/src/routes/concept-e.tsx:442:17">II</span><span class="ce-rail-name" data-tsd-source="/src/routes/concept-e.tsx:443:17">Wolf Island</span></a></li><li data-tsd-source="/src/routes/concept-e.tsx:440:13"><a href="#room-iii" data-tsd-source="/src/routes/concept-e.tsx:441:15"><span class="ce-rail-num" data-tsd-source="/src/routes/concept-e.tsx:442:17">III</span><span class="ce-rail-name" data-tsd-source="/src/routes/concept-e.tsx:443:17">The Research Wing</span></a></li><li data-tsd-source="/src/routes/concept-e.tsx:440:13"><a href="#room-iv" data-tsd-source="/src/routes/concept-e.tsx:441:15"><span class="ce-rail-num" data-tsd-source="/src/routes/concept-e.tsx:442:17">IV</span><span class="ce-rail-name" data-tsd-source="/src/routes/concept-e.tsx:443:17">The Vessels</span></a></li></ul></nav><main data-tsd-source="/src/routes/concept-e.tsx:450:7"><section class="ce-room" id="room-i" aria-labelledby="room-i-t" data-tsd-source="/src/routes/concept-e.tsx:452:9"><div class="ce-room-head ce-walk" data-tsd-source="/src/routes/concept-e.tsx:453:11"><span class="ce-room-num" data-tsd-source="/src/routes/concept-e.tsx:454:13">Gallery I</span><h2 id="room-i-t" data-tsd-source="/src/routes/concept-e.tsx:455:13">Darwin Island</h2><p class="ce-didactic" data-tsd-source="/src/routes/concept-e.tsx:456:13">Darwin is the northernmost island of the Galápagos and the reason most divers come. Its arch collapsed in part in 2021; the pillars that remain sit above a plateau where scalloped hammerheads school and, between June and November, adult whale sharks pass through. The published eight-day itinerary spends four dives at Darwin's Arch on the first day there and two more on the second.</p></div><figure class="ce-mount ce-mount-hero ce-walk" data-tsd-source="/src/routes/concept-e.tsx:465:11"><div class="ce-mat" data-tsd-source="/src/routes/concept-e.tsx:466:13"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1600x10000:format=jpg/path/s2fc4241e2a9d6156/image/i94b5a8f9795e8d58/version/1771099762/adult-female-whale-shark-swimming-above-a-group-of-divers-in-the-galapagos-islands.jpg" alt="An adult female whale shark swimming above a group of divers in the Galápagos" loading="eager" decoding="async" data-tsd-source="/src/routes/concept-e.tsx:467:15"></div><figcaption class="ce-label ce-label-wide" data-tsd-source="/src/routes/concept-e.tsx:119:5"><span class="ce-cat" data-tsd-source="/src/routes/concept-e.tsx:120:7">GSD.EX.I.001</span><span class="ce-lab-species" data-tsd-source="/src/routes/concept-e.tsx:121:7">Whale shark, adult female, above divers<em data-tsd-source="/src/routes/concept-e.tsx:123:24"> <!-- -->Rhincodon typus</em></span><span class="ce-lab-rows" data-tsd-source="/src/routes/concept-e.tsx:125:7"><span data-tsd-source="/src/routes/concept-e.tsx:126:9"><b data-tsd-source="/src/routes/concept-e.tsx:127:11">Site on the expedition circuit</b>Darwin Island</span><span data-tsd-source="/src/routes/concept-e.tsx:130:9"><b data-tsd-source="/src/routes/concept-e.tsx:131:11">Medium</b>Digital photograph</span><span data-tsd-source="/src/routes/concept-e.tsx:134:9"><b data-tsd-source="/src/routes/concept-e.tsx:135:11">Credit</b>© Jonathan R. Green</span></span></figcaption></figure><div class="ce-pair" data-tsd-source="/src/routes/concept-e.tsx:487:11"><figure class="ce-mount ce-walk" data-tsd-source="/src/routes/concept-e.tsx:488:13"><div class="ce-mat" data-tsd-source="/src/routes/concept-e.tsx:489:15"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1600x10000:format=jpg/path/s2fc4241e2a9d6156/image/i208de835a0056f2e/version/1601949846/image.jpg" alt="An adult whale shark passes beneath a diver at Darwin" loading="lazy" data-tsd-source="/src/routes/concept-e.tsx:490:17"></div><figcaption class="ce-label" data-tsd-source="/src/routes/concept-e.tsx:119:5"><span class="ce-cat" data-tsd-source="/src/routes/concept-e.tsx:120:7">GSD.EX.I.004</span><span class="ce-lab-species" data-tsd-source="/src/routes/concept-e.tsx:121:7">Whale shark passing beneath a diver<em data-tsd-source="/src/routes/concept-e.tsx:123:24"> <!-- -->Rhincodon typus</em></span><span class="ce-lab-rows" data-tsd-source="/src/routes/concept-e.tsx:125:7"><span data-tsd-source="/src/routes/concept-e.tsx:126:9"><b data-tsd-source="/src/routes/concept-e.tsx:127:11">Site on the expedition circuit</b>Darwin Island</span><span data-tsd-source="/src/routes/concept-e.tsx:130:9"><b data-tsd-source="/src/routes/concept-e.tsx:131:11">Medium</b>Digital photograph</span><span data-tsd-source="/src/routes/concept-e.tsx:134:9"><b data-tsd-source="/src/routes/concept-e.tsx:135:11">Credit</b>© Galapagos Shark Diving</span></span></figcaption></figure><figure class="ce-mount ce-walk" data-tsd-source="/src/routes/concept-e.tsx:507:13"><div class="ce-mat" data-tsd-source="/src/routes/concept-e.tsx:508:15"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1200x10000:format=jpg/path/s2fc4241e2a9d6156/image/ie948445b925f18eb/version/1680720722/massive-galapagos-whale-shark-and-tiny-scuba-diver-follows.jpg" alt="A whale shark dwarfing a single scuba diver following behind it" loading="lazy" data-tsd-source="/src/routes/concept-e.tsx:509:17"></div><figcaption class="ce-label" data-tsd-source="/src/routes/concept-e.tsx:119:5"><span class="ce-cat" data-tsd-source="/src/routes/concept-e.tsx:120:7">GSD.EX.I.009</span><span class="ce-lab-species" data-tsd-source="/src/routes/concept-e.tsx:121:7">Whale shark with diver, for scale<em data-tsd-source="/src/routes/concept-e.tsx:123:24"> <!-- -->Rhincodon typus</em></span><span class="ce-lab-rows" data-tsd-source="/src/routes/concept-e.tsx:125:7"><span data-tsd-source="/src/routes/concept-e.tsx:126:9"><b data-tsd-source="/src/routes/concept-e.tsx:127:11">Site on the expedition circuit</b>Darwin Island</span><span data-tsd-source="/src/routes/concept-e.tsx:130:9"><b data-tsd-source="/src/routes/concept-e.tsx:131:11">Medium</b>Digital photograph</span><span data-tsd-source="/src/routes/concept-e.tsx:134:9"><b data-tsd-source="/src/routes/concept-e.tsx:135:11">Credit</b>© Jenny Waack</span></span></figcaption></figure></div><aside class="ce-panel ce-walk" data-tsd-source="/src/routes/concept-e.tsx:528:11"><span class="ce-tag" data-tsd-source="/src/routes/concept-e.tsx:529:13">Didactic panel · I.a</span><h3 data-tsd-source="/src/routes/concept-e.tsx:530:13">Why the adults come here</h3><p class="ce-didactic" data-tsd-source="/src/routes/concept-e.tsx:531:13">Most whale sharks recorded around the world are young males. At Darwin the pattern inverts: the animals seen here are overwhelmingly large adult females. Since 2019 the Galápagos Whale Shark Project has placed a shark scientist aboard every Citizen Science departure, and from 2025 the project has been using ultrasound to investigate whether those females are pregnant. That question is open. The exhibition records it as an open question.</p></aside></section><section class="ce-room ce-room-alt" id="room-ii" aria-labelledby="room-ii-t" data-tsd-source="/src/routes/concept-e.tsx:543:9"><div class="ce-room-head ce-walk" data-tsd-source="/src/routes/concept-e.tsx:544:11"><span class="ce-room-num" data-tsd-source="/src/routes/concept-e.tsx:545:13">Gallery II</span><h2 id="room-ii-t" data-tsd-source="/src/routes/concept-e.tsx:546:13">Wolf Island</h2><p class="ce-didactic" data-tsd-source="/src/routes/concept-e.tsx:547:13">Wolf lies south of Darwin and carries the higher shark biomass of the two. Current is the defining condition: divers hook in and watch, rather than swim. The eight-day itinerary gives Wolf two dives on one afternoon and three the following day; the fifteen-day itinerary returns a third time and adds a night dive. Guests on Wolf and Darwin dives have recorded schooling hammerheads in the hundreds.</p></div><div class="ce-vitrine" data-tsd-source="/src/routes/concept-e.tsx:556:11"><figure class="ce-mount ce-mount-sm ce-walk" data-tsd-source="/src/routes/concept-e.tsx:558:15"><div class="ce-mat ce-mat-sm" data-tsd-source="/src/routes/concept-e.tsx:559:17"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1200x10000:format=jpg/path/s2fc4241e2a9d6156/image/i1e62173842f11a44/version/1601949845/image.jpg" alt="A school of scalloped hammerhead sharks in blue water" loading="lazy" data-tsd-source="/src/routes/concept-e.tsx:560:19"></div><figcaption class="ce-label" data-tsd-source="/src/routes/concept-e.tsx:119:5"><span class="ce-cat" data-tsd-source="/src/routes/concept-e.tsx:120:7">GSD.EX.II.021</span><span class="ce-lab-species" data-tsd-source="/src/routes/concept-e.tsx:121:7">Scalloped hammerhead<em data-tsd-source="/src/routes/concept-e.tsx:123:24"> <!-- -->Sphyrna lewini</em></span><span class="ce-lab-rows" data-tsd-source="/src/routes/concept-e.tsx:125:7"><span data-tsd-source="/src/routes/concept-e.tsx:126:9"><b data-tsd-source="/src/routes/concept-e.tsx:127:11">Site on the expedition circuit</b>Darwin and Wolf</span><span data-tsd-source="/src/routes/concept-e.tsx:130:9"><b data-tsd-source="/src/routes/concept-e.tsx:131:11">Medium</b>Digital photograph</span><span data-tsd-source="/src/routes/concept-e.tsx:134:9"><b data-tsd-source="/src/routes/concept-e.tsx:135:11">Credit</b>© Galapagos Shark Diving</span></span></figcaption></figure><figure class="ce-mount ce-mount-sm ce-walk" data-tsd-source="/src/routes/concept-e.tsx:558:15"><div class="ce-mat ce-mat-sm" data-tsd-source="/src/routes/concept-e.tsx:559:17"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=900x10000:format=jpg/path/s2fc4241e2a9d6156/image/id26c48107a722551/version/1601907430/galapagos-shark-diving-galapagos-shark.jpg" alt="A Galápagos shark passing over rock and reef" loading="lazy" data-tsd-source="/src/routes/concept-e.tsx:560:19"></div><figcaption class="ce-label" data-tsd-source="/src/routes/concept-e.tsx:119:5"><span class="ce-cat" data-tsd-source="/src/routes/concept-e.tsx:120:7">GSD.EX.II.034</span><span class="ce-lab-species" data-tsd-source="/src/routes/concept-e.tsx:121:7">Galápagos shark<em data-tsd-source="/src/routes/concept-e.tsx:123:24"> <!-- -->Carcharhinus galapagensis</em></span><span class="ce-lab-rows" data-tsd-source="/src/routes/concept-e.tsx:125:7"><span data-tsd-source="/src/routes/concept-e.tsx:126:9"><b data-tsd-source="/src/routes/concept-e.tsx:127:11">Site on the expedition circuit</b>Darwin, Wolf and Cousin's Rock</span><span data-tsd-source="/src/routes/concept-e.tsx:130:9"><b data-tsd-source="/src/routes/concept-e.tsx:131:11">Medium</b>Digital photograph</span><span data-tsd-source="/src/routes/concept-e.tsx:134:9"><b data-tsd-source="/src/routes/concept-e.tsx:135:11">Credit</b>© Galapagos Shark Diving</span></span></figcaption></figure><figure class="ce-mount ce-mount-sm ce-walk" data-tsd-source="/src/routes/concept-e.tsx:558:15"><div class="ce-mat ce-mat-sm" data-tsd-source="/src/routes/concept-e.tsx:559:17"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=900x10000:format=jpg/path/s2fc4241e2a9d6156/image/i278e2e517fba89fa/version/1601913347/image.jpg" alt="A freediver photographs a requiem shark in open blue water" loading="lazy" data-tsd-source="/src/routes/concept-e.tsx:560:19"></div><figcaption class="ce-label" data-tsd-source="/src/routes/concept-e.tsx:119:5"><span class="ce-cat" data-tsd-source="/src/routes/concept-e.tsx:120:7">GSD.EX.II.047</span><span class="ce-lab-species" data-tsd-source="/src/routes/concept-e.tsx:121:7">Requiem shark, with freediver<em data-tsd-source="/src/routes/concept-e.tsx:123:24"> <!-- -->Carcharhinidae</em></span><span class="ce-lab-rows" data-tsd-source="/src/routes/concept-e.tsx:125:7"><span data-tsd-source="/src/routes/concept-e.tsx:126:9"><b data-tsd-source="/src/routes/concept-e.tsx:127:11">Site on the expedition circuit</b>Open water, northern islands</span><span data-tsd-source="/src/routes/concept-e.tsx:130:9"><b data-tsd-source="/src/routes/concept-e.tsx:131:11">Medium</b>Digital photograph</span><span data-tsd-source="/src/routes/concept-e.tsx:134:9"><b data-tsd-source="/src/routes/concept-e.tsx:135:11">Credit</b>© Galapagos Shark Diving</span></span></figcaption></figure><figure class="ce-mount ce-mount-sm ce-walk" data-tsd-source="/src/routes/concept-e.tsx:558:15"><div class="ce-mat ce-mat-sm" data-tsd-source="/src/routes/concept-e.tsx:559:17"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=900x10000:format=jpg/path/s2fc4241e2a9d6156/image/i5e240b80ee3917ac/version/1601913347/image.jpg" alt="A giant manta ray at a cleaning station" loading="lazy" data-tsd-source="/src/routes/concept-e.tsx:560:19"></div><figcaption class="ce-label" data-tsd-source="/src/routes/concept-e.tsx:119:5"><span class="ce-cat" data-tsd-source="/src/routes/concept-e.tsx:120:7">GSD.EX.II.052</span><span class="ce-lab-species" data-tsd-source="/src/routes/concept-e.tsx:121:7">Giant manta<em data-tsd-source="/src/routes/concept-e.tsx:123:24"> <!-- -->Mobula birostris</em></span><span class="ce-lab-rows" data-tsd-source="/src/routes/concept-e.tsx:125:7"><span data-tsd-source="/src/routes/concept-e.tsx:126:9"><b data-tsd-source="/src/routes/concept-e.tsx:127:11">Site on the expedition circuit</b>Cape Marshall, Isabela</span><span data-tsd-source="/src/routes/concept-e.tsx:130:9"><b data-tsd-source="/src/routes/concept-e.tsx:131:11">Medium</b>Digital photograph</span><span data-tsd-source="/src/routes/concept-e.tsx:134:9"><b data-tsd-source="/src/routes/concept-e.tsx:135:11">Credit</b>© Jonathan R. Green</span></span></figcaption></figure><figure class="ce-mount ce-mount-sm ce-walk" data-tsd-source="/src/routes/concept-e.tsx:558:15"><div class="ce-mat ce-mat-sm" data-tsd-source="/src/routes/concept-e.tsx:559:17"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=900x10000:format=jpg/path/s2fc4241e2a9d6156/image/i35795385c6fa057a/version/1601952477/image.jpg" alt="A mola in cold water at Punta Vicente Roca" loading="lazy" data-tsd-source="/src/routes/concept-e.tsx:560:19"></div><figcaption class="ce-label" data-tsd-source="/src/routes/concept-e.tsx:119:5"><span class="ce-cat" data-tsd-source="/src/routes/concept-e.tsx:120:7">GSD.EX.II.058</span><span class="ce-lab-species" data-tsd-source="/src/routes/concept-e.tsx:121:7">Mola<em data-tsd-source="/src/routes/concept-e.tsx:123:24"> <!-- -->Mola alexandrini</em></span><span class="ce-lab-rows" data-tsd-source="/src/routes/concept-e.tsx:125:7"><span data-tsd-source="/src/routes/concept-e.tsx:126:9"><b data-tsd-source="/src/routes/concept-e.tsx:127:11">Site on the expedition circuit</b>Punta Vicente Roca, Isabela</span><span data-tsd-source="/src/routes/concept-e.tsx:130:9"><b data-tsd-source="/src/routes/concept-e.tsx:131:11">Medium</b>Digital photograph</span><span data-tsd-source="/src/routes/concept-e.tsx:134:9"><b data-tsd-source="/src/routes/concept-e.tsx:135:11">Credit</b>© Galapagos Shark Diving</span></span></figcaption></figure><figure class="ce-mount ce-mount-sm ce-walk" data-tsd-source="/src/routes/concept-e.tsx:558:15"><div class="ce-mat ce-mat-sm" data-tsd-source="/src/routes/concept-e.tsx:559:17"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=900x10000:format=jpg/path/s2fc4241e2a9d6156/image/i21c9201699babaca/version/1601949845/image.jpg" alt="A marine iguana feeding underwater on shallow rock" loading="lazy" data-tsd-source="/src/routes/concept-e.tsx:560:19"></div><figcaption class="ce-label" data-tsd-source="/src/routes/concept-e.tsx:119:5"><span class="ce-cat" data-tsd-source="/src/routes/concept-e.tsx:120:7">GSD.EX.II.063</span><span class="ce-lab-species" data-tsd-source="/src/routes/concept-e.tsx:121:7">Marine iguana<em data-tsd-source="/src/routes/concept-e.tsx:123:24"> <!-- -->Amblyrhynchus cristatus</em></span><span class="ce-lab-rows" data-tsd-source="/src/routes/concept-e.tsx:125:7"><span data-tsd-source="/src/routes/concept-e.tsx:126:9"><b data-tsd-source="/src/routes/concept-e.tsx:127:11">Site on the expedition circuit</b>Cape Douglas, Fernandina</span><span data-tsd-source="/src/routes/concept-e.tsx:130:9"><b data-tsd-source="/src/routes/concept-e.tsx:131:11">Medium</b>Digital photograph</span><span data-tsd-source="/src/routes/concept-e.tsx:134:9"><b data-tsd-source="/src/routes/concept-e.tsx:135:11">Credit</b>© Jonathan R. Green</span></span></figcaption></figure></div><aside class="ce-panel ce-panel-wide ce-walk" data-tsd-source="/src/routes/concept-e.tsx:567:11"><span class="ce-tag" data-tsd-source="/src/routes/concept-e.tsx:568:13">Didactic panel · II.a</span><h3 data-tsd-source="/src/routes/concept-e.tsx:569:13">What the circuit covers besides the seamounts</h3><div class="ce-cols2" data-tsd-source="/src/routes/concept-e.tsx:570:13"><p class="ce-didactic" data-tsd-source="/src/routes/concept-e.tsx:571:15">Darwin and Wolf are the reason for the voyage, but not the whole of it. The published eight-day route also dives Cape Marshall and City of Mantas on Isabela, Punta Vicente Roca, Cape Douglas on Fernandina, and Cousin's Rock off Santiago, closing with a land excursion into the Santa Cruz highlands.</p><p class="ce-didactic" data-tsd-source="/src/routes/concept-e.tsx:577:15">The fifteen-day variant extends time at Wolf and Darwin and adds Roca Blanca, Pijón, Beagle Rocks, Marchena and Roca Redonda. Nothing here is promised: these are wild animals in open ocean, and the record notes what was seen rather than what was advertised.</p></div></aside></section><section class="ce-room" id="room-iii" aria-labelledby="room-iii-t" data-tsd-source="/src/routes/concept-e.tsx:588:9"><div class="ce-room-head ce-walk" data-tsd-source="/src/routes/concept-e.tsx:589:11"><span class="ce-room-num" data-tsd-source="/src/routes/concept-e.tsx:590:13">Gallery III</span><h2 id="room-iii-t" data-tsd-source="/src/routes/concept-e.tsx:591:13">The Research Wing</h2><p class="ce-didactic" data-tsd-source="/src/routes/concept-e.tsx:592:13">Galapagos Shark Diving has supported the Galápagos Whale Shark Project since 2019. The relationship is practical rather than decorative: a project scientist sails on every Citizen Science departure, and guest photographs may enter an international photo-identification record — but only after review.</p></div><figure class="ce-mount ce-mount-hero ce-walk" data-tsd-source="/src/routes/concept-e.tsx:600:11"><div class="ce-mat" data-tsd-source="/src/routes/concept-e.tsx:601:13"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1200x10000:format=jpg/path/s2fc4241e2a9d6156/image/i3c7de9084888c9b9/version/1770760303/galapagos-shark-diving-diver-taking-photo-of-whale-shark.jpg" alt="A diver photographs a whale shark for identification" loading="lazy" data-tsd-source="/src/routes/concept-e.tsx:602:15"></div><figcaption class="ce-label ce-label-wide" data-tsd-source="/src/routes/concept-e.tsx:119:5"><span class="ce-cat" data-tsd-source="/src/routes/concept-e.tsx:120:7">GSD.EX.III.002</span><span class="ce-lab-species" data-tsd-source="/src/routes/concept-e.tsx:121:7">Photo-identification in progress</span><span class="ce-lab-rows" data-tsd-source="/src/routes/concept-e.tsx:125:7"><span data-tsd-source="/src/routes/concept-e.tsx:126:9"><b data-tsd-source="/src/routes/concept-e.tsx:127:11">Site on the expedition circuit</b>Darwin Island</span><span data-tsd-source="/src/routes/concept-e.tsx:130:9"><b data-tsd-source="/src/routes/concept-e.tsx:131:11">Medium</b>Digital photograph</span><span data-tsd-source="/src/routes/concept-e.tsx:134:9"><b data-tsd-source="/src/routes/concept-e.tsx:135:11">Credit</b>© Jonathan R. Green</span></span></figcaption></figure><div class="ce-method ce-walk" data-tsd-source="/src/routes/concept-e.tsx:620:11"><span class="ce-tag" data-tsd-source="/src/routes/concept-e.tsx:621:13">Process case · III.a</span><h3 data-tsd-source="/src/routes/concept-e.tsx:622:13">How a photograph becomes a record</h3><ol class="ce-seq" data-tsd-source="/src/routes/concept-e.tsx:623:13"><li data-tsd-source="/src/routes/concept-e.tsx:642:17"><span class="ce-seq-n" data-tsd-source="/src/routes/concept-e.tsx:643:19">01</span><span class="ce-seq-t" data-tsd-source="/src/routes/concept-e.tsx:644:19">Observe</span><span class="ce-seq-d" data-tsd-source="/src/routes/concept-e.tsx:645:19">A scientist aboard explains what makes an identification photograph usable, and what disturbs the animal.</span></li><li data-tsd-source="/src/routes/concept-e.tsx:642:17"><span class="ce-seq-n" data-tsd-source="/src/routes/concept-e.tsx:643:19">02</span><span class="ce-seq-t" data-tsd-source="/src/routes/concept-e.tsx:644:19">Photograph</span><span class="ce-seq-d" data-tsd-source="/src/routes/concept-e.tsx:645:19">Each whale shark carries a unique pattern of spots behind the gills. Photographed from the correct angle, that pattern identifies the individual.</span></li><li data-tsd-source="/src/routes/concept-e.tsx:642:17"><span class="ce-seq-n" data-tsd-source="/src/routes/concept-e.tsx:643:19">03</span><span class="ce-seq-t" data-tsd-source="/src/routes/concept-e.tsx:644:19">Submit</span><span class="ce-seq-d" data-tsd-source="/src/routes/concept-e.tsx:645:19">Suitable frames are submitted. Guests also contribute standardised observation counts, including the SharkCount protocol, and debris data.</span></li><li data-tsd-source="/src/routes/concept-e.tsx:642:17"><span class="ce-seq-n" data-tsd-source="/src/routes/concept-e.tsx:643:19">04</span><span class="ce-seq-t" data-tsd-source="/src/routes/concept-e.tsx:644:19">Review</span><span class="ce-seq-d" data-tsd-source="/src/routes/concept-e.tsx:645:19">Images are reviewed before they are accepted. Accepted contributions go into Sharkbook.ai, the international photo-identification database.</span></li></ol><p class="ce-footnote" data-tsd-source="/src/routes/concept-e.tsx:649:13">Methods on the project side, which are scientist-led rather than guest-led: satellite tagging, blood sampling, in-water behavioural research, and since 2025 ultrasound.</p></div><div class="ce-board ce-walk" data-tsd-source="/src/routes/concept-e.tsx:655:11"><span class="ce-tag" data-tsd-source="/src/routes/concept-e.tsx:656:13">Scientific advisers on the water</span><div class="ce-board-g" data-tsd-source="/src/routes/concept-e.tsx:657:13"><article data-tsd-source="/src/routes/concept-e.tsx:659:17"><div class="ce-mat ce-mat-port" data-tsd-source="/src/routes/concept-e.tsx:660:19"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=640x10000:format=jpg/path/s2fc4241e2a9d6156/image/i9e1cf49655c8730e/version/1588473589/galapagos-shark-diving-jonathan-r-green.jpg" alt="Jonathan R. Green" loading="lazy" data-tsd-source="/src/routes/concept-e.tsx:661:21"></div><h4 data-tsd-source="/src/routes/concept-e.tsx:663:19">Jonathan R. Green, FRGS</h4><p class="ce-post" data-tsd-source="/src/routes/concept-e.tsx:664:19">Founder and director, Galápagos Whale Shark Project</p><p class="ce-didactic ce-sm" data-tsd-source="/src/routes/concept-e.tsx:665:19">Around thirty years working in these islands and several thousand dives in the region. Elected Fellow of the Royal Geographical Society. Tour leader with Galapagos Shark Diving.</p></article><article data-tsd-source="/src/routes/concept-e.tsx:659:17"><div class="ce-mat ce-mat-port" data-tsd-source="/src/routes/concept-e.tsx:660:19"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=640x10000:format=png/path/s2fc4241e2a9d6156/image/icb85875bebff7e85/version/1588976370/simon-j-pierce.png" alt="Dr Simon J. Pierce" loading="lazy" data-tsd-source="/src/routes/concept-e.tsx:661:21"></div><h4 data-tsd-source="/src/routes/concept-e.tsx:663:19">Dr Simon J. Pierce</h4><p class="ce-post" data-tsd-source="/src/routes/concept-e.tsx:664:19">Whale shark biologist</p><p class="ce-didactic ce-sm" data-tsd-source="/src/routes/concept-e.tsx:665:19">Led the assessment that listed the whale shark as endangered on the IUCN Red List.</p></article><article data-tsd-source="/src/routes/concept-e.tsx:659:17"><div class="ce-mat ce-mat-port" data-tsd-source="/src/routes/concept-e.tsx:660:19"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=640x10000:format=jpg/path/s2fc4241e2a9d6156/image/i806c82e6817de1c1/version/1751156290/galapagos-shark-diving-jenny-waack.jpg" alt="Jenny Green" loading="lazy" data-tsd-source="/src/routes/concept-e.tsx:661:21"></div><h4 data-tsd-source="/src/routes/concept-e.tsx:663:19">Jenny Green</h4><p class="ce-post" data-tsd-source="/src/routes/concept-e.tsx:664:19">Founder, Galapagos Shark Diving; board member, Galápagos Whale Shark Project</p><p class="ce-didactic ce-sm" data-tsd-source="/src/routes/concept-e.tsx:665:19">Founded the company in 2017. Field researcher, and the person who answers the letters.</p></article></div></div><aside class="ce-keypanel ce-walk" data-tsd-source="/src/routes/concept-e.tsx:671:11"><span class="ce-tag" data-tsd-source="/src/routes/concept-e.tsx:672:13">Label key</span><p class="ce-didactic ce-sm" data-tsd-source="/src/routes/concept-e.tsx:673:13">Every photograph in these galleries is the company's own. Catalogue numbers of the form <b data-tsd-source="/src/routes/concept-e.tsx:675:20">GSD.EX.I.001</b> are exhibition display references for this presentation, not archival accession numbers. Where a label omits a field — a date, a named photographer — the information is not recorded here rather than estimated.</p></aside></section><section class="ce-room ce-room-alt" id="room-iv" aria-labelledby="room-iv-t" data-tsd-source="/src/routes/concept-e.tsx:683:9"><div class="ce-room-head ce-walk" data-tsd-source="/src/routes/concept-e.tsx:684:11"><span class="ce-room-num" data-tsd-source="/src/routes/concept-e.tsx:685:13">Gallery IV</span><h2 id="room-iv-t" data-tsd-source="/src/routes/concept-e.tsx:686:13">The Vessels</h2><p class="ce-didactic" data-tsd-source="/src/routes/concept-e.tsx:687:13">Two liveaboards, sixteen guests each. Aqua carries the Citizen Science Expeditions of eight and fifteen days; Galaxy Diver II carries the eight-day Luxury Science Expedition. The object data below is drawn from each vessel's own published specification.</p></div><div class="ce-vessels" data-tsd-source="/src/routes/concept-e.tsx:695:11"><figure class="ce-mount ce-walk" data-tsd-source="/src/routes/concept-e.tsx:697:15"><div class="ce-mat" data-tsd-source="/src/routes/concept-e.tsx:698:17"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1100x10000:format=jpg/path/s2fc4241e2a9d6156/image/ie0db3f63fa49cf65/version/1601745621/image.jpg" alt="The liveaboard Aqua at anchor" loading="lazy" data-tsd-source="/src/routes/concept-e.tsx:699:19"></div><figcaption class="ce-label ce-label-wide" data-tsd-source="/src/routes/concept-e.tsx:701:17"><span class="ce-cat" data-tsd-source="/src/routes/concept-e.tsx:702:19">GSD.EX.IV.001</span><span class="ce-lab-species" data-tsd-source="/src/routes/concept-e.tsx:703:19">Aqua</span><span class="ce-lab-rows ce-lab-rows-2" data-tsd-source="/src/routes/concept-e.tsx:704:19"><span data-tsd-source="/src/routes/concept-e.tsx:705:21"><b data-tsd-source="/src/routes/concept-e.tsx:706:23">Programme</b>Citizen Science Expedition · eight and fifteen days</span><span data-tsd-source="/src/routes/concept-e.tsx:710:23"><b data-tsd-source="/src/routes/concept-e.tsx:711:25">Guests</b>16</span><span data-tsd-source="/src/routes/concept-e.tsx:710:23"><b data-tsd-source="/src/routes/concept-e.tsx:711:25">Guest cabins</b>9</span><span data-tsd-source="/src/routes/concept-e.tsx:710:23"><b data-tsd-source="/src/routes/concept-e.tsx:711:25">Built / renovated</b>1998 / 2019</span><span data-tsd-source="/src/routes/concept-e.tsx:710:23"><b data-tsd-source="/src/routes/concept-e.tsx:711:25">Engines</b>2 × 250 HP Caterpillar</span><span data-tsd-source="/src/routes/concept-e.tsx:710:23"><b data-tsd-source="/src/routes/concept-e.tsx:711:25">Dive deck</b>Capacity for 34 aluminium tanks</span><span data-tsd-source="/src/routes/concept-e.tsx:710:23"><b data-tsd-source="/src/routes/concept-e.tsx:711:25">Compressors</b>Two, Nitrox-capable</span></span></figcaption></figure><figure class="ce-mount ce-walk" data-tsd-source="/src/routes/concept-e.tsx:697:15"><div class="ce-mat" data-tsd-source="/src/routes/concept-e.tsx:698:17"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1100x10000:format=jpg/path/s2fc4241e2a9d6156/image/i5f544858ccb11bd9/version/1740256784/image.jpg" alt="The liveaboard Galaxy Diver II under way" loading="lazy" data-tsd-source="/src/routes/concept-e.tsx:699:19"></div><figcaption class="ce-label ce-label-wide" data-tsd-source="/src/routes/concept-e.tsx:701:17"><span class="ce-cat" data-tsd-source="/src/routes/concept-e.tsx:702:19">GSD.EX.IV.002</span><span class="ce-lab-species" data-tsd-source="/src/routes/concept-e.tsx:703:19">Galaxy Diver II</span><span class="ce-lab-rows ce-lab-rows-2" data-tsd-source="/src/routes/concept-e.tsx:704:19"><span data-tsd-source="/src/routes/concept-e.tsx:705:21"><b data-tsd-source="/src/routes/concept-e.tsx:706:23">Programme</b>Luxury Science Expedition · eight days</span><span data-tsd-source="/src/routes/concept-e.tsx:710:23"><b data-tsd-source="/src/routes/concept-e.tsx:711:25">Guests</b>16</span><span data-tsd-source="/src/routes/concept-e.tsx:710:23"><b data-tsd-source="/src/routes/concept-e.tsx:711:25">Length</b>35 m (114.8 ft)</span><span data-tsd-source="/src/routes/concept-e.tsx:710:23"><b data-tsd-source="/src/routes/concept-e.tsx:711:25">Cruise speed</b>11 knots</span><span data-tsd-source="/src/routes/concept-e.tsx:710:23"><b data-tsd-source="/src/routes/concept-e.tsx:711:25">Engines</b>2 × 600 HP Caterpillar</span><span data-tsd-source="/src/routes/concept-e.tsx:710:23"><b data-tsd-source="/src/routes/concept-e.tsx:711:25">Tank fittings</b>DIN and Yoke, 10 / 12 / 15 L</span><span data-tsd-source="/src/routes/concept-e.tsx:710:23"><b data-tsd-source="/src/routes/concept-e.tsx:711:25">Sundeck</b>117 m² shaded area</span></span></figcaption></figure></div></section><section class="ce-close" aria-labelledby="ce-close-t" data-tsd-source="/src/routes/concept-e.tsx:723:9"><div class="ce-close-in ce-walk" data-tsd-source="/src/routes/concept-e.tsx:724:11"><span class="ce-tag" data-tsd-source="/src/routes/concept-e.tsx:725:13">Leaving the galleries</span><h2 id="ce-close-t" data-tsd-source="/src/routes/concept-e.tsx:726:13">The exhibition is the ocean. It is open in season.</h2><p class="ce-didactic ce-lede" data-tsd-source="/src/routes/concept-e.tsx:727:13">Everything in these four rooms was photographed in the water by the people who run these expeditions. Whale shark season at Darwin runs June to November, sixteen guests at a time, with a shark scientist aboard every Citizen Science departure.</p><div class="ce-close-acts" data-tsd-source="/src/routes/concept-e.tsx:732:13"><a class="ce-btn" href="/departures" data-tsd-source="/src/routes/concept-e.tsx:733:15">See scheduled departures</a><a class="ce-btn-quiet" href="/citizen-science" data-tsd-source="/src/routes/concept-e.tsx:736:15">How the citizen science works</a></div></div><div class="ce-plaque ce-walk" data-tsd-source="/src/routes/concept-e.tsx:741:11"><p data-tsd-source="/src/routes/concept-e.tsx:742:13">Presented by Galapagos Shark Diving in partnership with the Galápagos Whale Shark Project. Photography from the company's own library. Concept E — museum and exhibition treatment, an internal design study.</p></div></section></main></div>
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var walk = document.querySelectorAll('.ce-walk');
+  if (reduce || !('IntersectionObserver' in window)) {
+    walk.forEach(function(el){ el.classList.add('ce-in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries, obs){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('ce-in'); obs.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+    walk.forEach(function(el){ io.observe(el); });
+  }
+  var ids = ['room-i','room-ii','room-iii','room-iv'];
+  function mark(id){
+    document.querySelectorAll('.ce-rail li').forEach(function(li,i){
+      li.classList.toggle('ce-rail-on', ids[i] === id);
+    });
+    document.querySelectorAll('.ce-plan-room').forEach(function(a){
+      a.classList.toggle('ce-plan-on', a.getAttribute('href') === '#' + id);
+    });
+  }
+  if ('IntersectionObserver' in window) {
+    var spy = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting) mark(e.target.id); });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    ids.forEach(function(id){ var el = document.getElementById(id); if (el) spy.observe(el); });
+  }
+})();
+</script>
+<a id="back-to-concepts-index" href="index.html" style="position:fixed;top:10px;right:10px;z-index:999999;background:#000;color:#fff;font:12px/1 system-ui,sans-serif;padding:7px 11px;text-decoration:none;border-radius:3px;opacity:0.55;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.55">&larr; All concepts</a>

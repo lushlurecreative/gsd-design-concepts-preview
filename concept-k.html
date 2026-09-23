@@ -1,0 +1,702 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Concept K — Refraction Index — Galapagos Shark Diving</title>
+<meta name="description" content="Design concept prototype: the Darwin and Wolf expedition record as a scroll-driven water column.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Martian+Mono:wdth,wght@75..112.5,100..800&display=swap">
+<style>html,body{margin:0;padding:0;}</style>
+
+
+<div class="ck" id="ck-root" data-ck-act="1" data-tsd-source="/src/routes/concept-k.tsx:371:5" style=""><style data-tsd-source="/src/routes/concept-k.tsx:372:7">
+.ck *, .ck *::before, .ck *::after { box-sizing: border-box; }
+.ck {
+  --ck-void:#07060F;
+  --ck-abyss:#04030A;
+  --ck-dim:#B9C6C0;
+  --ck-bone:#E4EAE3;
+  --ck-ink:#0A0712;
+  --ck-cyan:#4FF2D0;
+  --ck-violet:#B44CFF;
+  --ck-paper:#EFF3EC;
+  --ck-chalk:#E8F1EC;
+  --ck-mute:#8E9BA6;
+
+  --ck-w:760;
+  --ck-wd:100;
+  --ck-press:0;
+  --ck-dx:0vw;
+  --ck-dy:0vh;
+
+  --ck-gut: clamp(16px, 4vw, 64px);
+
+  position:relative;
+  isolation:isolate;
+  background:var(--ck-void);
+  color:var(--ck-chalk);
+  font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  font-size:16px;
+  line-height:1.5;
+  overflow-x:clip;
+  -webkit-font-smoothing:antialiased;
+}
+.ck img { display:block; max-width:100%; }
+.ck a { color:inherit; }
+.ck h1,.ck h2,.ck h3,.ck p,.ck ul,.ck ol,.ck dl,.ck dd,.ck figure,.ck figcaption { margin:0; padding:0; }
+.ck ul,.ck ol { list-style:none; }
+
+.ck-sr, .ck-skip {
+  position:absolute; width:1px; height:1px; overflow:hidden;
+  clip-path:inset(50%); white-space:nowrap;
+}
+.ck-skip:focus {
+  position:fixed; top:12px; left:12px; z-index:60;
+  width:auto; height:auto; clip-path:none;
+  background:var(--ck-cyan); color:var(--ck-ink);
+  padding:10px 16px; font-weight:700; border-radius:2px;
+}
+.ck :focus-visible { outline:2px solid var(--ck-cyan); outline-offset:3px; }
+
+/* ---------------------------------------------------------------- duotone */
+.ck-duo {
+  position:relative; isolation:isolate; overflow:hidden;
+  background:var(--ck-abyss);
+}
+.ck-duo > img {
+  width:100%; height:100%; object-fit:cover;
+  filter:grayscale(1) contrast(1.45) brightness(1.02);
+  mix-blend-mode:screen;
+}
+.ck-duo::after {
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:var(--ck-cyan); mix-blend-mode:multiply;
+}
+.ck-duo-ghost {
+  position:absolute; inset:-2%;
+  background-size:cover; background-position:center;
+  filter:grayscale(1) contrast(1.6);
+  mix-blend-mode:screen; opacity:.34;
+  transform:translate(calc(6px + var(--ck-press) * 10px), -4px);
+  background-color:var(--ck-violet);
+  background-blend-mode:multiply;
+}
+.ck-duo-lit::after { background:var(--ck-violet); opacity:.86; }
+.ck-duo figcaption {
+  position:relative; z-index:3; mix-blend-mode:normal;
+  font-family:"Martian Mono",ui-monospace,monospace;
+  font-size:10px; line-height:1.55; letter-spacing:.02em;
+  text-transform:uppercase; color:var(--ck-chalk);
+  background:rgba(4,3,10,.82);
+  padding:8px 10px;
+  border-left:2px solid var(--ck-cyan);
+  max-width:38ch;
+  margin:auto 0 0 0;
+}
+.ck-duo { display:flex; flex-direction:column; }
+.ck-duo > img { position:absolute; inset:0; }
+.ck-duo figcaption { margin-top:auto; }
+
+/* ------------------------------------------------------------- instrument */
+.ck-hud {
+  position:fixed; z-index:40; left:0; top:0; bottom:0; width:74px;
+  display:flex; flex-direction:column; align-items:center;
+  padding:18px 0; pointer-events:none;
+  font-family:"Martian Mono",ui-monospace,monospace;
+  color:var(--ck-chalk);
+  mix-blend-mode:difference;
+}
+.ck-hud-rule {
+  --ck-thumb:0;
+  position:relative; flex:1 1 auto; width:1px;
+  background:linear-gradient(180deg,currentColor 0 18%,rgba(140,160,160,.45) 18% 100%);
+  margin:14px 0;
+}
+.ck-hud-rule::before {
+  content:""; position:absolute; left:-4px; right:-4px; top:0; bottom:0;
+  background-image:repeating-linear-gradient(180deg,currentColor 0 1px,transparent 1px 7.5%);
+  opacity:.5;
+}
+.ck-hud-thumb {
+  position:absolute; left:-5px; width:11px; height:11px;
+  top:calc(var(--ck-thumb) * 100%);
+  transform:translateY(-50%) rotate(45deg);
+  background:var(--ck-cyan);
+}
+.ck-hud-read { display:flex; align-items:baseline; gap:2px; }
+.ck-hud-read b { font-size:13px; font-weight:700; letter-spacing:-.04em; }
+.ck-hud-read i { font-size:9px; font-style:normal; opacity:.7; }
+.ck-hud-act {
+  writing-mode:vertical-rl; transform:rotate(180deg);
+  font-size:9px; letter-spacing:.22em; text-transform:uppercase;
+  margin-top:12px; opacity:.85; height:120px;
+}
+
+.ck-jump { position:fixed; z-index:40; right:0; top:50%; transform:translateY(-50%); }
+.ck-jump ol { display:flex; flex-direction:column; gap:2px; align-items:flex-end; }
+.ck-jump a {
+  display:flex; align-items:center; gap:8px;
+  padding:5px 12px 5px 14px; text-decoration:none;
+  font-family:"Martian Mono",ui-monospace,monospace; font-size:9px;
+  letter-spacing:.14em; text-transform:uppercase;
+  background:rgba(7,6,15,.55); color:var(--ck-chalk);
+  border-right:2px solid transparent;
+  backdrop-filter:blur(6px);
+}
+.ck-jump a span { max-width:0; overflow:hidden; white-space:nowrap; opacity:0; transition:max-width .22s ease, opacity .18s ease; }
+.ck-jump a:hover span, .ck-jump a:focus-visible span { max-width:14ch; opacity:1; }
+.ck-jump a:hover, .ck-jump a:focus-visible { border-right-color:var(--ck-cyan); color:var(--ck-cyan); }
+.ck-jump em { font-style:normal; opacity:.6; }
+.ck[data-ck-act="1"] .ck-jump li:nth-child(1) a,
+.ck[data-ck-act="2"] .ck-jump li:nth-child(2) a,
+.ck[data-ck-act="3"] .ck-jump li:nth-child(3) a,
+.ck[data-ck-act="4"] .ck-jump li:nth-child(4) a,
+.ck[data-ck-act="5"] .ck-jump li:nth-child(5) a,
+.ck[data-ck-act="6"] .ck-jump li:nth-child(6) a,
+.ck[data-ck-act="7"] .ck-jump li:nth-child(7) a { border-right-color:var(--ck-cyan); color:var(--ck-cyan); }
+.ck[data-ck-act="7"] .ck-jump a { background:rgba(228,234,227,.66); color:var(--ck-ink); }
+
+/* the diagonal refraction axis, drawn across the whole document */
+.ck-axis {
+  position:absolute; z-index:1; inset:0; pointer-events:none;
+  background-image:linear-gradient(104deg,transparent calc(50% - .5px),rgba(79,242,208,.20) 50%,transparent calc(50% + .5px));
+}
+
+/* --------------------------------------------------------------- lockups */
+.ck-mast {
+  font-family:"Bricolage Grotesque",sans-serif;
+  font-variation-settings:"opsz" 96,"wght" var(--ck-w),"wdth" var(--ck-wd);
+  line-height:.82; letter-spacing:-.045em; text-transform:lowercase;
+}
+.ck-mast-sm {
+  font-size:clamp(46px,9.4vw,124px);
+  font-variation-settings:"opsz" 72,"wght" var(--ck-w),"wdth" var(--ck-wd);
+}
+.ck-mast-sm span { color:var(--ck-cyan); }
+.ck-mast-ink span { color:var(--ck-violet); }
+
+.ck-slug {
+  font-family:"Martian Mono",ui-monospace,monospace;
+  font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--ck-cyan);
+}
+.ck-slug i { font-style:normal; opacity:.45; }
+.ck-slug-ink { color:#4A2E6B; }
+.ck-kicker {
+  font-family:"Martian Mono",ui-monospace,monospace;
+  font-size:10px; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--ck-cyan); margin-bottom:10px;
+}
+.ck-kicker-ink { color:#4A2E6B; margin-top:22px; }
+.ck-note {
+  font-size:13px; line-height:1.62; color:var(--ck-mute); margin-top:14px;
+}
+.ck-note-ink { color:#3D4A47; }
+.ck-lead { font-size:clamp(17px,2.1vw,25px); line-height:1.34; letter-spacing:-.015em; }
+.ck-r { font-size:.5em; vertical-align:super; }
+
+.ck-plate {
+  position:relative; z-index:3;
+  background:rgba(7,6,15,.78);
+  backdrop-filter:blur(7px);
+  border-top:2px solid var(--ck-cyan);
+  padding:20px 22px 22px;
+  translate:var(--ck-dx) var(--ck-dy);
+}
+.ck-btn {
+  display:inline-block; text-decoration:none;
+  font-family:"Martian Mono",ui-monospace,monospace;
+  font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+  padding:14px 22px; border:1px solid currentColor;
+}
+.ck-btn-ghost { color:var(--ck-cyan); margin-top:18px; }
+.ck-btn-ghost:hover { background:var(--ck-cyan); color:var(--ck-ink); }
+.ck-btn-ink { background:var(--ck-ink); color:var(--ck-chalk); border-color:var(--ck-ink); }
+.ck-btn-ink:hover { background:var(--ck-violet); border-color:var(--ck-violet); color:#fff; }
+.ck-btn-ghost-ink { color:var(--ck-ink); }
+.ck-btn-ghost-ink:hover { background:var(--ck-ink); color:var(--ck-chalk); }
+
+.ck-specs { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; background:rgba(142,155,166,.28); }
+.ck-specs > div { background:var(--ck-void); padding:11px 12px; }
+.ck-specs dt {
+  font-family:"Martian Mono",ui-monospace,monospace;
+  font-size:9px; letter-spacing:.13em; text-transform:uppercase; color:var(--ck-mute);
+}
+.ck-specs dd { font-size:15px; font-weight:600; letter-spacing:-.01em; margin-top:3px; }
+
+/* ------------------------------------------------------------ 01 aperture */
+.ck-act { position:relative; z-index:2; }
+.ck-a1 {
+  min-height:100svh; padding:clamp(20px,5vh,54px) var(--ck-gut) 40px calc(var(--ck-gut) + 58px);
+  background:linear-gradient(176deg,var(--ck-bone) 0%,var(--ck-dim) 100%);
+  color:var(--ck-ink);
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  grid-template-rows:auto 1fr auto;
+  gap:0 12px;
+}
+.ck-a1-fig {
+  grid-column:5 / 13; grid-row:1 / 3;
+  aspect-ratio:4 / 5; min-height:46vh;
+  translate:var(--ck-dx) var(--ck-dy);
+  rotate:1.6deg;
+}
+.ck-a1-type { grid-column:1 / 9; grid-row:2 / 3; align-self:center; position:relative; z-index:5; }
+.ck-a1-type .ck-slug { color:#1D4B44; margin-bottom:16px; }
+.ck-mast-l1, .ck-mast-l2 { display:block; }
+.ck-a1 .ck-mast {
+  font-size:clamp(58px,14.6vw,214px);
+  color:var(--ck-paper);
+  mix-blend-mode:exclusion;
+}
+.ck-mast-l2 { margin-left:.14em; }
+.ck-a1-sub {
+  /* 26ch keeps the line clear of the hero plate's left edge; at 34ch the tail of
+     the line ran under the duotone image and lost contrast. */
+  margin-top:20px; max-width:26ch;
+  font-size:clamp(15px,1.7vw,19px); color:var(--ck-ink);
+}
+.ck-a1-sub em { font-style:italic; }
+.ck-a1-foot {
+  grid-column:1 / 8; grid-row:3 / 4; align-self:end;
+  display:grid; gap:14px; max-width:62ch; position:relative; z-index:5;
+}
+.ck-a1-foot p { font-size:15px; line-height:1.55; }
+.ck-lines { display:flex; flex-wrap:wrap; gap:0; }
+.ck-lines li {
+  font-family:"Martian Mono",ui-monospace,monospace;
+  font-size:9.5px; letter-spacing:.14em; text-transform:uppercase;
+  padding:7px 12px; border:1px solid rgba(10,7,18,.32); margin:0 -1px -1px 0;
+}
+.ck-hint { font-family:"Martian Mono",ui-monospace,monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; }
+.ck-hint span { color:#1D4B44; font-weight:700; }
+
+/* ----------------------------------------------------------- 02 seamounts */
+.ck-a2 {
+  padding:16vh var(--ck-gut) 14vh calc(var(--ck-gut) + 58px);
+  background:linear-gradient(178deg,var(--ck-dim) 0%,#5E7078 56%,#1B2530 100%);
+  color:var(--ck-chalk);
+}
+.ck-a2 > .ck-mast { color:#0C1418; margin-left:-.03em; }
+.ck-a2 > .ck-mast span { color:var(--ck-paper); }
+.ck-a2-grid {
+  margin-top:-2.5vh;
+  display:grid; grid-template-columns:repeat(12,1fr); gap:0 12px;
+}
+.ck-a2-f1 { grid-column:1 / 7; grid-row:1 / 3; aspect-ratio:5/6; translate:var(--ck-dx) var(--ck-dy); rotate:-1.8deg; }
+.ck-a2-p1 { grid-column:5 / 11; grid-row:2 / 3; align-self:end; margin-bottom:-8%; z-index:6; rotate:.9deg; }
+.ck-a2-f2 { grid-column:7 / 13; grid-row:3 / 5; aspect-ratio:4/3; margin-top:-6%; translate:var(--ck-dx) var(--ck-dy); rotate:1.4deg; }
+.ck-a2-p2 { grid-column:2 / 7; grid-row:4 / 5; align-self:start; margin-top:-14%; z-index:6; rotate:-1.1deg; }
+.ck-a2-specs { grid-column:1 / 13; grid-row:5 / 6; margin-top:9vh; grid-template-columns:repeat(6,minmax(0,1fr)); }
+.ck-a2-specs > div { background:rgba(4,3,10,.72); }
+.ck-a2-p1 p, .ck-a2-p2 p { font-size:16px; line-height:1.5; }
+.ck-a2-itin { margin-top:12vh; }
+.ck-itin { border-top:1px solid rgba(232,241,236,.24); }
+.ck-itin li {
+  display:grid; grid-template-columns:56px 1fr auto; gap:14px; align-items:baseline;
+  padding:12px 0; border-bottom:1px solid rgba(232,241,236,.14);
+}
+.ck-itin em {
+  font-style:normal; font-family:"Martian Mono",ui-monospace,monospace;
+  font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--ck-cyan);
+}
+.ck-itin span { font-size:clamp(17px,2.4vw,30px); font-variation-settings:"wght" 500,"wdth" 86; letter-spacing:-.02em; }
+.ck-itin b { font-family:"Martian Mono",ui-monospace,monospace; font-size:11px; color:var(--ck-mute); }
+
+/* --------------------------------------------------------- 03 light fails */
+.ck-a3 { min-height:320vh; background:linear-gradient(180deg,#1B2530 0%,#0A0C1A 42%,var(--ck-void) 100%); }
+.ck-a3-stage {
+  position:sticky; top:0; height:100svh; overflow:hidden;
+  display:grid; grid-template-columns:repeat(12,1fr); gap:0 12px;
+  align-content:center;
+  padding:0 var(--ck-gut) 0 calc(var(--ck-gut) + 58px);
+}
+.ck-a3-fig {
+  position:absolute; inset:0; z-index:0;
+}
+.ck-a3-fig > img { filter:grayscale(1) contrast(1.5) brightness(calc(1.15 - var(--ck-press) * .62)); }
+.ck-a3-h { grid-column:1 / 10; grid-row:1; z-index:3; color:var(--ck-paper); mix-blend-mode:exclusion; }
+.ck-a3-plates { grid-column:2 / 9; grid-row:2; z-index:4; position:relative; min-height:34svh; margin-top:4vh; }
+.ck-a3-p {
+  position:absolute; inset:0 0 auto 0;
+  opacity:0; translate:0 18px; transition:opacity .45s ease, translate .45s ease;
+  pointer-events:none;
+}
+.ck-a3-p[data-ck-on="1"] { opacity:1; translate:0 0; pointer-events:auto; }
+
+/* ---------------------------------------------------------- 04 the column */
+.ck-a4 {
+  padding:14vh 0 12vh; background:var(--ck-void);
+}
+.ck-a4-head { padding:0 var(--ck-gut) 0 calc(var(--ck-gut) + 58px); max-width:70ch; }
+.ck-a4-head .ck-mast { color:var(--ck-paper); }
+.ck-col-scroll {
+  margin-top:6vh; display:flex; gap:0;
+  overflow-x:auto; overflow-y:hidden;
+  /* Deliberately NOT scroll-snapped. Snap targets resolve against the
+     scrollport's scroll-padding, which is the same origin the sticky depth rail
+     pins to, so any snap alignment parked a track exactly underneath the rail
+     and hid its label. This is a continuous log-scale chart; free scrolling
+     reads better than per-track snapping anyway. */
+  padding:0 var(--ck-gut) 22px calc(var(--ck-gut) + 58px);
+  position:relative;
+  scrollbar-color:var(--ck-cyan) rgba(142,155,166,.2);
+}
+.ck-col-rail {
+  position:sticky; left:0; flex:0 0 58px; width:58px; z-index:7;
+  background:var(--ck-void);
+  box-shadow:10px 0 12px -6px var(--ck-void);
+}
+.ck-col-scale::after { content:none; }
+.ck-col-rail .ck-col-bars { border-left:0; margin-top:14px; }
+.ck-col-rail span {
+  position:absolute; right:10px; transform:translateY(-50%);
+  font-family:"Martian Mono",ui-monospace,monospace;
+  font-size:9.5px; letter-spacing:.06em;
+  color:var(--ck-mute);
+  white-space:nowrap;
+}
+.ck-col-rail::after {
+  content:"m"; position:absolute; right:10px; bottom:-16px;
+  font-family:"Martian Mono",ui-monospace,monospace; font-size:9px; color:var(--ck-mute);
+}
+.ck-col {
+  flex:0 0 auto; width:min(74vw,304px);
+  border-left:1px solid rgba(142,155,166,.28);
+  padding:0 18px;
+}
+.ck-col-head { height:78px; overflow:hidden; }
+.ck-col h3 {
+  font-size:clamp(20px,2.4vw,27px); font-variation-settings:"wght" 620,"wdth" 84;
+  letter-spacing:-.025em; line-height:1.02;
+}
+.ck-col-latin {
+  font-family:"Martian Mono",ui-monospace,monospace;
+  font-size:9px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--ck-mute); margin-top:8px; min-height:3.2em;
+}
+.ck-col-bars { position:relative; height:64svh; margin-top:14px; border-left:1px dashed rgba(142,155,166,.3); }
+.ck-bar { position:absolute; left:-1px; width:14px; }
+.ck-bar-near { background:var(--ck-cyan); }
+.ck-bar-far { background:repeating-linear-gradient(180deg,var(--ck-violet) 0 3px,transparent 3px 7px); }
+.ck-bar-none {
+  position:absolute; top:0; left:8px;
+  font-family:"Martian Mono",ui-monospace,monospace;
+  font-size:9px; letter-spacing:.1em; text-transform:uppercase; color:var(--ck-mute);
+}
+.ck-col-read { margin-top:16px; display:grid; gap:9px; }
+.ck-col-read dt {
+  font-family:"Martian Mono",ui-monospace,monospace;
+  font-size:9px; letter-spacing:.13em; text-transform:uppercase; color:var(--ck-mute);
+}
+.ck-col-read dd { font-size:16px; font-variation-settings:"wght" 600,"wdth" 90; letter-spacing:-.015em; }
+.ck-col-src { margin-top:14px; font-size:11.5px; line-height:1.6; color:var(--ck-mute); }
+.ck-col-end { width:min(80vw,380px); }
+.ck-col-end h3 { color:var(--ck-cyan); }
+.ck-col-end p { margin-top:14px; font-size:15px; line-height:1.55; }
+
+/* ---------------------------------------------------------- 05 the record */
+.ck-a5 { background:var(--ck-void); }
+.ck-a5-stage {
+  position:sticky; top:0; min-height:100svh;
+  display:grid; grid-template-columns:repeat(12,1fr); gap:0 12px; align-content:center;
+  padding:8vh var(--ck-gut) 8vh calc(var(--ck-gut) + 58px);
+  overflow:hidden;
+}
+.ck-a5 { min-height:400vh; }
+/* Sits ABOVE the plate (z-index 5 > the figure's 1) so the headline overlaps the
+   image instead of the image truncating the word "leaves". */
+.ck-a5-h { grid-column:1 / 10; grid-row:1; color:var(--ck-paper); position:relative; z-index:5; }
+.ck-a5-fig {
+  grid-column:8 / 13; grid-row:1 / 3; aspect-ratio:3/4; align-self:center;
+  rotate:2.2deg; z-index:1;
+}
+.ck-a5-plates { grid-column:1 / 8; grid-row:2; position:relative; min-height:30svh; margin-top:4vh; z-index:4; }
+.ck-a5-p {
+  position:absolute; inset:0 0 auto 0;
+  opacity:0; translate:-12px 14px; transition:opacity .45s ease, translate .45s ease;
+  pointer-events:none;
+}
+.ck-a5-p[data-ck-on="1"] { opacity:1; translate:0 0; pointer-events:auto; }
+.ck-a5-tail {
+  position:relative; z-index:3;
+  padding:0 var(--ck-gut) 14vh calc(var(--ck-gut) + 58px);
+  display:grid; grid-template-columns:repeat(12,1fr); gap:0 12px;
+}
+.ck-a5-t1 { grid-column:1 / 6; grid-row:1; aspect-ratio:4/3; translate:var(--ck-dx) var(--ck-dy); rotate:-1.5deg; }
+.ck-a5-t2 { grid-column:6 / 11; grid-row:1; aspect-ratio:1/1; margin-top:16%; translate:var(--ck-dx) var(--ck-dy); rotate:1.2deg; }
+.ck-a5-t3 { grid-column:4 / 9; grid-row:2; aspect-ratio:3/2; margin-top:-10%; translate:var(--ck-dx) var(--ck-dy); rotate:-.8deg; z-index:2; }
+.ck-a5-who { grid-column:8 / 13; grid-row:2; align-self:end; z-index:6; rotate:.7deg; }
+.ck-who { display:grid; gap:12px; }
+.ck-who li { font-size:14px; line-height:1.5; color:var(--ck-mute); }
+.ck-who b { display:block; color:var(--ck-chalk); font-variation-settings:"wght" 640,"wdth" 92; font-size:15px; }
+
+/* ----------------------------------------------------------- 06 two hulls */
+.ck-a6 {
+  padding:14vh var(--ck-gut) 14vh calc(var(--ck-gut) + 58px);
+  background:linear-gradient(182deg,var(--ck-void) 0%,#0D0722 58%,#150A2E 100%);
+}
+.ck-a6 > .ck-mast { color:var(--ck-paper); }
+.ck-a6 > .ck-mast span { color:var(--ck-violet); }
+.ck-a6-grid { margin-top:6vh; display:grid; grid-template-columns:repeat(12,1fr); gap:0 12px; }
+.ck-hull { grid-column:1 / 7; grid-row:1; }
+.ck-hull-b { grid-column:7 / 13; grid-row:1; margin-top:11vh; }
+.ck-hull .ck-duo { aspect-ratio:3/2; translate:var(--ck-dx) var(--ck-dy); }
+.ck-hull-b .ck-duo::after { background:var(--ck-violet); }
+.ck-hull-name {
+  font-size:clamp(34px,5.4vw,66px); font-variation-settings:"wght" 700,"wdth" 78;
+  letter-spacing:-.04em; line-height:.92; margin-top:-.34em;
+  position:relative; z-index:3; color:var(--ck-paper);
+  mix-blend-mode:exclusion; padding-left:8px;
+}
+.ck-hull .ck-kicker { margin-top:14px; }
+.ck-hull-b .ck-kicker { color:var(--ck-violet); }
+.ck-hull .ck-specs { margin-top:10px; }
+.ck-hull-b .ck-specs > div { background:#0D0722; }
+.ck-a6-wide { grid-column:2 / 12; grid-row:2; aspect-ratio:21/9; margin-top:12vh; translate:var(--ck-dx) var(--ck-dy); rotate:-.7deg; }
+
+/* ------------------------------------------------------------- 07 surface */
+.ck-a7 {
+  background:linear-gradient(180deg,#150A2E 0%,#9AA8A4 22%,var(--ck-bone) 46%,var(--ck-paper) 100%);
+  color:var(--ck-ink);
+  padding:18vh var(--ck-gut) 6vh calc(var(--ck-gut) + 58px);
+}
+.ck-a7-head { max-width:62ch; }
+.ck-a7-head .ck-mast { color:var(--ck-ink); margin-top:14px; }
+.ck-a7-lead { margin-top:20px; font-size:clamp(16px,1.9vw,21px); line-height:1.45; color:#22302C; }
+.ck-table-wrap { margin-top:7vh; overflow-x:auto; }
+.ck-table { width:100%; min-width:680px; border-collapse:collapse; text-align:left; }
+.ck-table th, .ck-table td { padding:14px 12px; border-bottom:1px solid rgba(10,7,18,.16); vertical-align:baseline; }
+.ck-table thead th {
+  font-family:"Martian Mono",ui-monospace,monospace;
+  font-size:9px; letter-spacing:.15em; text-transform:uppercase; color:#4A5A55;
+  border-bottom:1px solid var(--ck-ink);
+}
+.ck-table tbody th {
+  font-variation-settings:"wght" 650,"wdth" 88; font-size:17px; letter-spacing:-.02em;
+}
+.ck-table tbody th i {
+  display:block; margin-top:4px; font-style:normal;
+  font-family:"Martian Mono",ui-monospace,monospace;
+  font-size:9px; letter-spacing:.1em; text-transform:uppercase; color:#5B6A65;
+}
+.ck-table td { font-size:14px; }
+.ck-money { font-variation-settings:"wght" 700,"wdth" 84; font-size:19px; letter-spacing:-.03em; white-space:nowrap; }
+.ck-tag {
+  display:inline-block; font-family:"Martian Mono",ui-monospace,monospace;
+  font-size:9px; letter-spacing:.1em; text-transform:uppercase;
+  padding:4px 8px; background:var(--ck-ink); color:var(--ck-cyan);
+}
+.ck-tag-out { background:transparent; color:#5B6A65; border:1px solid rgba(10,7,18,.3); }
+.ck-table tr[data-ck-state="closed"] { opacity:.62; }
+
+.ck-a7-cols { margin-top:9vh; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:38px; }
+.ck-fares { display:grid; gap:10px; }
+.ck-fares li { font-size:14.5px; line-height:1.5; color:#28352F; border-top:1px solid rgba(10,7,18,.14); padding-top:9px; }
+.ck-fares b { display:block; font-variation-settings:"wght" 640,"wdth" 92; color:var(--ck-ink); }
+
+.ck-a7-cta {
+  margin-top:11vh; display:grid; grid-template-columns:minmax(0,5fr) minmax(0,7fr); gap:0 28px; align-items:end;
+}
+.ck-a7-fig { aspect-ratio:4/5; rotate:-1.4deg; }
+.ck-a7-close {
+  font-size:clamp(22px,3.4vw,44px); font-variation-settings:"wght" 560,"wdth" 86;
+  line-height:1.08; letter-spacing:-.03em; color:var(--ck-ink);
+}
+.ck-a7-btns { display:flex; flex-wrap:wrap; gap:10px; margin-top:26px; }
+.ck-foot { margin-top:8vh; border-top:1px solid rgba(10,7,18,.18); padding-top:18px; }
+.ck-foot p { font-family:"Martian Mono",ui-monospace,monospace; font-size:9.5px; line-height:1.85; letter-spacing:.04em; color:#4A5A55; max-width:92ch; }
+
+/* ------------------------------------------------------------- tablet/phone */
+@media (max-width:1000px) {
+  .ck-a2-specs { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .ck-a7-cols { grid-template-columns:repeat(1,minmax(0,1fr)); gap:30px; }
+  .ck-a7-cta { grid-template-columns:1fr; gap:26px; }
+  .ck-a5-who { grid-column:1 / 13; grid-row:3; margin-top:26px; rotate:0deg; }
+  .ck-a5-t3 { grid-column:2 / 11; }
+}
+
+@media (max-width:760px) {
+  .ck { --ck-gut:16px; }
+  .ck-jump { display:none; }
+  .ck-hud {
+    top:auto; bottom:0; left:0; right:0; width:auto; height:40px;
+    flex-direction:row; align-items:center; gap:12px; padding:0 14px;
+    background:rgba(4,3,10,.62); backdrop-filter:blur(8px);
+    mix-blend-mode:normal; color:var(--ck-chalk);
+  }
+  .ck[data-ck-act="7"] .ck-hud { background:rgba(233,241,236,.72); color:var(--ck-ink); }
+  .ck-hud-rule {
+    flex:1 1 auto; width:auto; height:1px; margin:0;
+    background:linear-gradient(90deg,currentColor 0 18%,rgba(140,160,160,.45) 18% 100%);
+  }
+  .ck-hud-rule::before { background-image:repeating-linear-gradient(90deg,currentColor 0 1px,transparent 1px 7.5%); top:-3px; bottom:-3px; left:0; right:0; }
+  .ck-hud-thumb { left:calc(var(--ck-thumb) * 100%); top:0; width:9px; height:9px; transform:translate(-50%,-50%) rotate(45deg); }
+  .ck-hud-act { writing-mode:horizontal-tb; transform:none; height:auto; margin:0; font-size:8.5px; }
+
+  .ck-act { padding-left:var(--ck-gut) !important; }
+  .ck-a1, .ck-a2, .ck-a3-stage, .ck-a4-head, .ck-a5-stage, .ck-a5-tail, .ck-a6, .ck-a7 { padding-left:var(--ck-gut); }
+  .ck-col-scroll { padding-left:var(--ck-gut); }
+  /* The instrument is a horizontal bar at the bottom on phones, so the rail has
+     no fixed overlay to clear. */
+  .ck-col-rail { left:0; }
+  .ck-a7 { padding-bottom:64px; }
+
+  .ck-a1 { grid-template-rows:auto auto auto; gap:22px 8px; padding-top:26px; padding-bottom:64px; min-height:auto; }
+  .ck-a1-fig { grid-column:4 / 13; grid-row:1; aspect-ratio:3/4; min-height:38vh; rotate:1.2deg; }
+  .ck-a1-type { grid-column:1 / 13; grid-row:2; margin-top:-16%; }
+  /* On phones the masthead falls below the plate onto the pale ground, where
+     exclusion-blended paper is effectively invisible. Solid ink instead. */
+  .ck-a1 .ck-mast { font-size:clamp(46px,17vw,90px); mix-blend-mode:normal; color:var(--ck-ink); }
+  .ck-a1-sub { max-width:none; }
+  .ck-a1-foot { grid-column:1 / 13; grid-row:3; }
+
+  .ck-a2 { padding-top:12vh; padding-bottom:10vh; }
+  .ck-a2-grid { display:block; }
+  .ck-a2-f1 { aspect-ratio:4/5; rotate:-1.2deg; }
+  .ck-a2-p1 { margin:-14% 0 0 0; rotate:.6deg; }
+  .ck-a2-f2 { aspect-ratio:4/3; margin-top:26px; rotate:1deg; }
+  .ck-a2-p2 { margin:-14% 0 0 0; rotate:-.6deg; }
+  .ck-a2-specs { margin-top:34px; grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .ck-a2-itin { margin-top:12vh; }
+  .ck-itin li { grid-template-columns:44px 1fr; }
+  .ck-itin b { grid-column:2; }
+
+  .ck-a3 { min-height:280vh; }
+  .ck-a3-stage { display:block; padding-top:12vh; }
+  .ck-a3-h { position:relative; z-index:3; }
+  .ck-a3-plates { min-height:46svh; margin-top:5vh; }
+
+  .ck-col { width:min(86vw,320px); }
+  .ck-col-rail { height:52svh; }
+  .ck-col-bars { height:52svh; }
+
+  .ck-a5 { min-height:auto; }
+  .ck-a5-stage { position:static; display:block; min-height:auto; padding-top:12vh; padding-bottom:6vh; }
+  .ck-a5-fig { aspect-ratio:4/3; margin-top:22px; rotate:1.4deg; }
+  .ck-a5-plates { position:static; min-height:0; margin-top:22px; display:grid; gap:14px; }
+  .ck-a5-p { position:static; opacity:1; translate:none; pointer-events:auto; }
+  .ck-a5-tail { display:block; }
+  .ck-a5-t1, .ck-a5-t2, .ck-a5-t3 { margin-top:22px; rotate:0deg; }
+  .ck-a5-t1 { aspect-ratio:4/3; }
+  .ck-a5-t2 { aspect-ratio:4/3; }
+  .ck-a5-t3 { aspect-ratio:3/2; }
+  .ck-a5-who { margin-top:26px; }
+
+  .ck-a6-grid { display:block; }
+  .ck-hull-b { margin-top:12vh; }
+  .ck-a6-wide { margin-top:12vh; aspect-ratio:16/10; rotate:0deg; }
+
+  .ck-axis { background-image:linear-gradient(112deg,transparent calc(50% - .5px),rgba(79,242,208,.16) 50%,transparent calc(50% + .5px)); }
+}
+
+/* --------------------------------------------------- reduced-motion fallback */
+@media (prefers-reduced-motion: reduce) {
+  .ck {
+    --ck-w:600; --ck-wd:92; --ck-press:0;
+    --ck-dx:0vw !important; --ck-dy:0vh !important;
+  }
+  .ck-axis { display:none; }
+  .ck-duo-ghost { display:none; }
+  .ck-a1 .ck-mast, .ck-a3-h, .ck-hull-name { mix-blend-mode:normal; }
+  .ck-a1 .ck-mast { color:var(--ck-ink); }
+  .ck-a3-h { color:var(--ck-paper); }
+  .ck-hull-name { color:var(--ck-paper); }
+  .ck-a1-fig, .ck-a2-f1, .ck-a2-f2, .ck-a2-p1, .ck-a2-p2,
+  .ck-a5-fig, .ck-a5-t1, .ck-a5-t2, .ck-a5-t3, .ck-a5-who,
+  .ck-a6-wide, .ck-a7-fig, .ck-hull .ck-duo { rotate:0deg !important; translate:none !important; }
+
+  .ck-a3 { min-height:auto; }
+  .ck-a3-stage { position:static; height:auto; display:block; padding-top:12vh; padding-bottom:10vh; }
+  .ck-a3-fig { position:relative; inset:auto; aspect-ratio:16/9; margin-bottom:28px; }
+  .ck-a3-fig > img { filter:grayscale(1) contrast(1.4) brightness(.72); }
+  .ck-a3-plates { position:static; min-height:0; margin-top:24px; display:grid; gap:16px; }
+  .ck-a3-p { position:static; opacity:1; translate:none; transition:none; pointer-events:auto; }
+
+  .ck-a5 { min-height:auto; }
+  .ck-a5-stage { position:static; display:block; min-height:auto; padding-top:12vh; padding-bottom:6vh; }
+  .ck-a5-fig { aspect-ratio:16/9; margin-top:24px; }
+  .ck-a5-plates { position:static; min-height:0; margin-top:24px; display:grid; gap:16px; }
+  .ck-a5-p { position:static; opacity:1; translate:none; transition:none; pointer-events:auto; }
+  .ck-a5-tail { display:block; }
+  .ck-a5-t1, .ck-a5-t2, .ck-a5-t3 { margin-top:24px; aspect-ratio:16/10; }
+  .ck-a5-who { margin-top:26px; }
+
+  .ck-a1 { min-height:auto; }
+  .ck-jump a span { transition:none; }
+}
+</style><a class="ck-skip" href="#ck-act-7" data-tsd-source="/src/routes/concept-k.tsx:374:7">Skip to departures and prices</a><div class="ck-hud" aria-hidden="true" data-tsd-source="/src/routes/concept-k.tsx:379:7"><div class="ck-hud-rule" id="ck-thumb" data-tsd-source="/src/routes/concept-k.tsx:380:9" style="--ck-thumb: 0.056036143312436525;"><span class="ck-hud-thumb" data-tsd-source="/src/routes/concept-k.tsx:381:11"></span></div><div class="ck-hud-read" data-tsd-source="/src/routes/concept-k.tsx:383:9"><b id="ck-readout" data-tsd-source="/src/routes/concept-k.tsx:384:11">6.1</b><i data-tsd-source="/src/routes/concept-k.tsx:385:11">m</i></div><div class="ck-hud-act" data-tsd-source="/src/routes/concept-k.tsx:387:9"><span id="ck-actname" data-tsd-source="/src/routes/concept-k.tsx:388:11">Aperture</span></div></div><nav class="ck-jump" aria-label="Jump to act" data-tsd-source="/src/routes/concept-k.tsx:392:7"><ol data-tsd-source="/src/routes/concept-k.tsx:393:9"><li data-tsd-source="/src/routes/concept-k.tsx:395:13"><a href="#ck-act-1" data-tsd-source="/src/routes/concept-k.tsx:396:15"><em data-tsd-source="/src/routes/concept-k.tsx:397:17">01</em><span data-tsd-source="/src/routes/concept-k.tsx:398:17">Aperture</span></a></li><li data-tsd-source="/src/routes/concept-k.tsx:395:13"><a href="#ck-act-2" data-tsd-source="/src/routes/concept-k.tsx:396:15"><em data-tsd-source="/src/routes/concept-k.tsx:397:17">02</em><span data-tsd-source="/src/routes/concept-k.tsx:398:17">Seamounts</span></a></li><li data-tsd-source="/src/routes/concept-k.tsx:395:13"><a href="#ck-act-3" data-tsd-source="/src/routes/concept-k.tsx:396:15"><em data-tsd-source="/src/routes/concept-k.tsx:397:17">03</em><span data-tsd-source="/src/routes/concept-k.tsx:398:17">Light fails</span></a></li><li data-tsd-source="/src/routes/concept-k.tsx:395:13"><a href="#ck-act-4" data-tsd-source="/src/routes/concept-k.tsx:396:15"><em data-tsd-source="/src/routes/concept-k.tsx:397:17">04</em><span data-tsd-source="/src/routes/concept-k.tsx:398:17">The column</span></a></li><li data-tsd-source="/src/routes/concept-k.tsx:395:13"><a href="#ck-act-5" data-tsd-source="/src/routes/concept-k.tsx:396:15"><em data-tsd-source="/src/routes/concept-k.tsx:397:17">05</em><span data-tsd-source="/src/routes/concept-k.tsx:398:17">The record</span></a></li><li data-tsd-source="/src/routes/concept-k.tsx:395:13"><a href="#ck-act-6" data-tsd-source="/src/routes/concept-k.tsx:396:15"><em data-tsd-source="/src/routes/concept-k.tsx:397:17">06</em><span data-tsd-source="/src/routes/concept-k.tsx:398:17">Two hulls</span></a></li><li data-tsd-source="/src/routes/concept-k.tsx:395:13"><a href="#ck-act-7" data-tsd-source="/src/routes/concept-k.tsx:396:15"><em data-tsd-source="/src/routes/concept-k.tsx:397:17">07</em><span data-tsd-source="/src/routes/concept-k.tsx:398:17">Surface</span></a></li></ol></nav><div class="ck-axis" aria-hidden="true" data-tsd-source="/src/routes/concept-k.tsx:405:7"></div><section class="ck-act ck-a1" id="ck-act-1" aria-labelledby="ck-h1" data-tsd-source="/src/routes/concept-k.tsx:408:7"><figure class="ck-duo ck-a1-fig" data-ck-drift="0.6" data-tsd-source="/src/routes/concept-k.tsx:409:9" style=""><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1900x10000:format=jpg/path/s2fc4241e2a9d6156/image/i95f46df2a49919bc/version/1771100074/adult-female-whale-shark-swimming-above-a-group-of-divers-in-the-galapagos-islands.jpg" alt="An adult female whale shark swimming above a group of divers in the Galápagos Islands" fetchpriority="high" decoding="async" data-tsd-source="/src/routes/concept-k.tsx:410:11"><span class="ck-duo-ghost" style="background-image:url(https://image.jimcdn.com/app/cms/image/transf/dimension=1900x10000:format=jpg/path/s2fc4241e2a9d6156/image/i95f46df2a49919bc/version/1771100074/adult-female-whale-shark-swimming-above-a-group-of-divers-in-the-galapagos-islands.jpg)" data-tsd-source="/src/routes/concept-k.tsx:416:11"></span></figure><div class="ck-a1-type" data-tsd-source="/src/routes/concept-k.tsx:419:9"><p class="ck-slug" data-tsd-source="/src/routes/concept-k.tsx:420:11">Galápagos <i data-tsd-source="/src/routes/concept-k.tsx:421:23">/</i> Darwin <i data-tsd-source="/src/routes/concept-k.tsx:421:39">+</i> Wolf <i data-tsd-source="/src/routes/concept-k.tsx:421:53">/</i> 0.0 m</p><h1 class="ck-mast" id="ck-h1" data-tsd-source="/src/routes/concept-k.tsx:423:11"><span class="ck-mast-l1" data-tsd-source="/src/routes/concept-k.tsx:424:13">Refraction</span><span class="ck-mast-l2" data-tsd-source="/src/routes/concept-k.tsx:425:13">index</span></h1><p class="ck-a1-sub" data-tsd-source="/src/routes/concept-k.tsx:427:11">Galapagos Shark Diving<span class="ck-r" data-tsd-source="/src/routes/concept-k.tsx:428:35">®</span> — <em data-tsd-source="/src/routes/concept-k.tsx:428:69">Dive with a Purpose.</em></p></div><div class="ck-a1-foot" data-tsd-source="/src/routes/concept-k.tsx:432:9"><p data-tsd-source="/src/routes/concept-k.tsx:433:11">Two seamounts, 160 km north of everything else in the archipelago, standing in open Pacific. Whale shark season at Darwin runs <b data-tsd-source="/src/routes/concept-k.tsx:435:56">June to November</b>. Sixteen guests maximum, either hull.</p><ul class="ck-lines" data-tsd-source="/src/routes/concept-k.tsx:438:11"><li data-tsd-source="/src/routes/concept-k.tsx:439:13">Citizen Science Expeditions</li><li data-tsd-source="/src/routes/concept-k.tsx:440:13">Luxury Science Expeditions</li><li data-tsd-source="/src/routes/concept-k.tsx:441:13">Galápagos Liveaboard Advisory</li></ul><p class="ck-hint" data-tsd-source="/src/routes/concept-k.tsx:443:11"><span data-tsd-source="/src/routes/concept-k.tsx:444:13">Scroll.</span> The instrument on the left reads your depth.</p></div></section><section class="ck-act ck-a2" id="ck-act-2" aria-labelledby="ck-h2" data-tsd-source="/src/routes/concept-k.tsx:450:7"><h2 class="ck-mast ck-mast-sm" id="ck-h2" data-tsd-source="/src/routes/concept-k.tsx:451:9">Two <span data-tsd-source="/src/routes/concept-k.tsx:452:15">seamounts</span></h2><div class="ck-a2-grid" data-tsd-source="/src/routes/concept-k.tsx:455:9"><figure class="ck-duo ck-a2-f1" data-ck-drift="1.2" data-tsd-source="/src/routes/concept-k.tsx:456:11" style=""><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=990x1024:format=jpg/path/s2fc4241e2a9d6156/image/i5c056b7d94152dad/version/1786480028/galapagos-shark-diving-big-school-of-hammerhead-sharks-at-darwin-arch.jpg" alt="A big school of hammerhead sharks at Darwin’s Arch" loading="lazy" decoding="async" data-tsd-source="/src/routes/concept-k.tsx:457:13"><figcaption data-tsd-source="/src/routes/concept-k.tsx:463:13">Darwin’s Arch — renamed <i data-tsd-source="/src/routes/concept-k.tsx:464:39">the Pillars of Evolution</i> after the arch partially collapsed in 2021.</figcaption></figure><div class="ck-plate ck-a2-p1" data-ck-drift="0.5" data-tsd-source="/src/routes/concept-k.tsx:469:11" style=""><p class="ck-kicker" data-tsd-source="/src/routes/concept-k.tsx:470:13">Darwin</p><p data-tsd-source="/src/routes/concept-k.tsx:471:13">Four dives in a single day is the schedule on Thursday. Hammerhead schools and, in season, whale sharks. The arch that named the site is gone; the pillars are not.</p></div><figure class="ck-duo ck-a2-f2" data-ck-drift="1.6" data-tsd-source="/src/routes/concept-k.tsx:477:11" style=""><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=920x10000:format=jpg/path/s2fc4241e2a9d6156/image/i356fae4d47c1b8d3/version/1748460451/dozens-of-scalloped-hammerhead-sharks-swimming-in-the-deep-blue-waters-off-the-galapagos-islands.jpg" alt="Dozens of scalloped hammerhead sharks swimming in the deep blue waters off the Galápagos Islands" loading="lazy" decoding="async" data-tsd-source="/src/routes/concept-k.tsx:478:13"><figcaption data-tsd-source="/src/routes/concept-k.tsx:484:13">Wolf Island — “shark theatre”, and the currents that make it one.</figcaption></figure><div class="ck-plate ck-a2-p2" data-ck-drift="0.8" data-tsd-source="/src/routes/concept-k.tsx:487:11" style=""><p class="ck-kicker" data-tsd-source="/src/routes/concept-k.tsx:488:13">Wolf</p><p data-tsd-source="/src/routes/concept-k.tsx:489:13">Three dives on Saturday, four across Friday and Saturday combined. High shark biomass, strong current, no shelter.</p></div><dl class="ck-specs ck-a2-specs" data-tsd-source="/src/routes/concept-k.tsx:495:11"><div data-tsd-source="/src/routes/concept-k.tsx:496:13"><dt data-tsd-source="/src/routes/concept-k.tsx:497:15">Water, Jun–Nov</dt><dd data-tsd-source="/src/routes/concept-k.tsx:498:15">16–24 °C / 60–75 °F</dd></div><div data-tsd-source="/src/routes/concept-k.tsx:500:13"><dt data-tsd-source="/src/routes/concept-k.tsx:501:15">Air, dry season</dt><dd data-tsd-source="/src/routes/concept-k.tsx:502:15">≈20 °C / 68 °F</dd></div><div data-tsd-source="/src/routes/concept-k.tsx:504:13"><dt data-tsd-source="/src/routes/concept-k.tsx:505:15">Visibility</dt><dd data-tsd-source="/src/routes/concept-k.tsx:506:15">10–30 m</dd></div><div data-tsd-source="/src/routes/concept-k.tsx:508:13"><dt data-tsd-source="/src/routes/concept-k.tsx:509:15">Current</dt><dd data-tsd-source="/src/routes/concept-k.tsx:510:15">1–5 knots</dd></div><div data-tsd-source="/src/routes/concept-k.tsx:512:13"><dt data-tsd-source="/src/routes/concept-k.tsx:513:15">Exposure</dt><dd data-tsd-source="/src/routes/concept-k.tsx:514:15">7 mm + hooded vest</dd></div><div data-tsd-source="/src/routes/concept-k.tsx:516:13"><dt data-tsd-source="/src/routes/concept-k.tsx:517:15">Certification</dt><dd data-tsd-source="/src/routes/concept-k.tsx:518:15">Advanced, 50+ dives</dd></div></dl></div><div class="ck-a2-itin" data-tsd-source="/src/routes/concept-k.tsx:523:9"><p class="ck-kicker" data-tsd-source="/src/routes/concept-k.tsx:524:11">Eight days, as sailed</p><ol class="ck-itin" data-tsd-source="/src/routes/concept-k.tsx:525:11"><li data-tsd-source="/src/routes/concept-k.tsx:527:15"><em data-tsd-source="/src/routes/concept-k.tsx:528:17">Tue</em><span data-tsd-source="/src/routes/concept-k.tsx:529:17">Baltra / Santa Cruz</span><b data-tsd-source="/src/routes/concept-k.tsx:530:17">1 check dive</b></li><li data-tsd-source="/src/routes/concept-k.tsx:527:15"><em data-tsd-source="/src/routes/concept-k.tsx:528:17">Wed</em><span data-tsd-source="/src/routes/concept-k.tsx:529:17">Cape Marshall · City of Mantas</span><b data-tsd-source="/src/routes/concept-k.tsx:530:17">2 + 1</b></li><li data-tsd-source="/src/routes/concept-k.tsx:527:15"><em data-tsd-source="/src/routes/concept-k.tsx:528:17">Thu</em><span data-tsd-source="/src/routes/concept-k.tsx:529:17">Darwin’s Arch</span><b data-tsd-source="/src/routes/concept-k.tsx:530:17">4</b></li><li data-tsd-source="/src/routes/concept-k.tsx:527:15"><em data-tsd-source="/src/routes/concept-k.tsx:528:17">Fri</em><span data-tsd-source="/src/routes/concept-k.tsx:529:17">Darwin’s Arch · Wolf Island</span><b data-tsd-source="/src/routes/concept-k.tsx:530:17">2 + 2</b></li><li data-tsd-source="/src/routes/concept-k.tsx:527:15"><em data-tsd-source="/src/routes/concept-k.tsx:528:17">Sat</em><span data-tsd-source="/src/routes/concept-k.tsx:529:17">Wolf Island</span><b data-tsd-source="/src/routes/concept-k.tsx:530:17">3</b></li><li data-tsd-source="/src/routes/concept-k.tsx:527:15"><em data-tsd-source="/src/routes/concept-k.tsx:528:17">Sun</em><span data-tsd-source="/src/routes/concept-k.tsx:529:17">Punta Vicente Roca · Cape Douglas</span><b data-tsd-source="/src/routes/concept-k.tsx:530:17">1 + 1</b></li><li data-tsd-source="/src/routes/concept-k.tsx:527:15"><em data-tsd-source="/src/routes/concept-k.tsx:528:17">Mon</em><span data-tsd-source="/src/routes/concept-k.tsx:529:17">Cousin’s Rock · Santa Cruz highlands</span><b data-tsd-source="/src/routes/concept-k.tsx:530:17">2 + land</b></li><li data-tsd-source="/src/routes/concept-k.tsx:527:15"><em data-tsd-source="/src/routes/concept-k.tsx:528:17">Tue</em><span data-tsd-source="/src/routes/concept-k.tsx:529:17">Baltra</span><b data-tsd-source="/src/routes/concept-k.tsx:530:17">disembark</b></li></ol><p class="ck-note" data-tsd-source="/src/routes/concept-k.tsx:534:11">The 15-day extends this with more days at Wolf and Darwin plus Roca Blanca, Pijón, Beagle Rocks, Marchena, Roca Redonda, and one night dive.</p></div></section><section class="ck-act ck-a3" id="ck-act-3" data-ck-plates="true" aria-labelledby="ck-h3" data-tsd-source="/src/routes/concept-k.tsx:542:7"><div class="ck-a3-stage" data-tsd-source="/src/routes/concept-k.tsx:543:9"><figure class="ck-duo ck-a3-fig" data-tsd-source="/src/routes/concept-k.tsx:544:11"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=920x10000:format=jpg/path/s2fc4241e2a9d6156/image/i20e9b35fd6bc6a4e/version/1743170726/a-massive-whale-shark-swims-toward-the-camera-while-a-diver-swims-above-in-the-galapagos-islands.jpg" alt="A massive whale shark swims toward the camera while a diver swims above, in the Galápagos Islands" loading="lazy" decoding="async" data-tsd-source="/src/routes/concept-k.tsx:545:13"></figure><h2 class="ck-mast ck-mast-sm ck-a3-h" id="ck-h3" data-tsd-source="/src/routes/concept-k.tsx:553:11">The light <span data-tsd-source="/src/routes/concept-k.tsx:554:23">fails</span></h2><div class="ck-a3-plates" data-tsd-source="/src/routes/concept-k.tsx:557:11"><div class="ck-plate ck-a3-p" data-ck-plate="true" data-ck-on="1" data-tsd-source="/src/routes/concept-k.tsx:558:13"><p class="ck-kicker" data-tsd-source="/src/routes/concept-k.tsx:559:15">30 m</p><p class="ck-lead" data-tsd-source="/src/routes/concept-k.tsx:560:15">Thirty metres is the floor. One hundred feet. “Decompression and solo diving is not allowed under any conditions” — GSD’s own words, on both expeditions’ tips pages.</p></div><div class="ck-plate ck-a3-p" data-ck-plate="true" data-ck-on="0" data-tsd-source="/src/routes/concept-k.tsx:565:13"><p class="ck-kicker" data-tsd-source="/src/routes/concept-k.tsx:566:15">Colour</p><p class="ck-lead" data-tsd-source="/src/routes/concept-k.tsx:567:15">Red leaves first, then orange, then yellow. By the depth these animals hold, the whole scene is one hue and whatever your torch finds. This page loses its colour on the same schedule.</p></div><div class="ck-plate ck-a3-p" data-ck-plate="true" data-ck-on="0" data-tsd-source="/src/routes/concept-k.tsx:573:13"><p class="ck-kicker" data-tsd-source="/src/routes/concept-k.tsx:574:15">Below you</p><p class="ck-lead" data-tsd-source="/src/routes/concept-k.tsx:575:15">Everything you came to see goes further down than you can. The next act is the part of the column you never enter — drawn to a log scale, scrolled sideways.</p></div></div></div></section><section class="ck-act ck-a4" id="ck-act-4" aria-labelledby="ck-h4" data-tsd-source="/src/routes/concept-k.tsx:585:7"><header class="ck-a4-head" data-tsd-source="/src/routes/concept-k.tsx:586:9"><h2 class="ck-mast ck-mast-sm" id="ck-h4" data-tsd-source="/src/routes/concept-k.tsx:587:11">The <span data-tsd-source="/src/routes/concept-k.tsx:588:17">column</span></h2><p class="ck-note" data-tsd-source="/src/routes/concept-k.tsx:590:11">Log scale, 1 m to 1,800 m. Solid band: where a diver meets the animal. Open band: where telemetry says it actually goes. Scroll sideways, or use the arrow keys.</p></header><div class="ck-col-scroll" tabindex="0" role="group" aria-label="Depth column, scrolls horizontally" data-tsd-source="/src/routes/concept-k.tsx:596:9"><div class="ck-col-rail" aria-hidden="true" data-tsd-source="/src/routes/concept-k.tsx:602:11"><div class="ck-col-head" data-tsd-source="/src/routes/concept-k.tsx:603:13"></div><div class="ck-col-bars ck-col-scale" data-tsd-source="/src/routes/concept-k.tsx:604:13"><span style="top:0%" data-tsd-source="/src/routes/concept-k.tsx:606:17">0</span><span style="top:30.71939441113748%" data-tsd-source="/src/routes/concept-k.tsx:606:17">10</span><span style="top:45.37627041680758%" data-tsd-source="/src/routes/concept-k.tsx:606:17">30</span><span style="top:61.43878882227496%" data-tsd-source="/src/routes/concept-k.tsx:606:17">100</span><span style="top:76.09566482794506%" data-tsd-source="/src/routes/concept-k.tsx:606:17">300</span><span style="top:92.15818323341244%" data-tsd-source="/src/routes/concept-k.tsx:606:17">1000</span><span style="top:100%" data-tsd-source="/src/routes/concept-k.tsx:606:17">1800</span></div></div><article class="ck-col" data-tsd-source="/src/routes/concept-k.tsx:614:13"><div class="ck-col-head" data-tsd-source="/src/routes/concept-k.tsx:615:15"><h3 data-tsd-source="/src/routes/concept-k.tsx:616:17">You</h3><p class="ck-col-latin" data-tsd-source="/src/routes/concept-k.tsx:617:17">Recreational limit, GSD expeditions</p></div><div class="ck-col-bars" data-tsd-source="/src/routes/concept-k.tsx:619:15"><span class="ck-bar ck-bar-near" style="top:0%;height:45.37627041680758%" data-tsd-source="/src/routes/concept-k.tsx:621:19"></span></div><dl class="ck-col-read" data-tsd-source="/src/routes/concept-k.tsx:641:15"><div data-tsd-source="/src/routes/concept-k.tsx:642:17"><dt data-tsd-source="/src/routes/concept-k.tsx:643:19">Encounter</dt><dd data-tsd-source="/src/routes/concept-k.tsx:644:19">30 m / 100 ft</dd></div><div data-tsd-source="/src/routes/concept-k.tsx:646:17"><dt data-tsd-source="/src/routes/concept-k.tsx:647:19">Recorded</dt><dd data-tsd-source="/src/routes/concept-k.tsx:648:19">—</dd></div></dl><p class="ck-col-src" data-tsd-source="/src/routes/concept-k.tsx:651:15">GSD’s own rule, both expeditions: “decompression and solo diving is not allowed under any conditions.”</p></article><article class="ck-col" data-tsd-source="/src/routes/concept-k.tsx:614:13"><div class="ck-col-head" data-tsd-source="/src/routes/concept-k.tsx:615:15"><h3 data-tsd-source="/src/routes/concept-k.tsx:616:17">Whale shark</h3><p class="ck-col-latin" data-tsd-source="/src/routes/concept-k.tsx:617:17">Rhincodon typus · IUCN Endangered</p></div><div class="ck-col-bars" data-tsd-source="/src/routes/concept-k.tsx:619:15"><span class="ck-bar ck-bar-near" style="top:36.128811250422736%;height:13.08550149348443%" data-tsd-source="/src/routes/concept-k.tsx:621:19"></span><span class="ck-bar ck-bar-far" style="top:91.87503310750401%;height:8.12496689249599%" data-tsd-source="/src/routes/concept-k.tsx:632:19"></span></div><dl class="ck-col-read" data-tsd-source="/src/routes/concept-k.tsx:641:15"><div data-tsd-source="/src/routes/concept-k.tsx:642:17"><dt data-tsd-source="/src/routes/concept-k.tsx:643:19">Encounter</dt><dd data-tsd-source="/src/routes/concept-k.tsx:644:19">≈15–40 m</dd></div><div data-tsd-source="/src/routes/concept-k.tsx:646:17"><dt data-tsd-source="/src/routes/concept-k.tsx:647:19">Recorded</dt><dd data-tsd-source="/src/routes/concept-k.tsx:648:19">979.5 m – ≈1,800 m</dd></div></dl><p class="ck-col-src" data-tsd-source="/src/routes/concept-k.tsx:651:15">Encounter band is a general range, still to be confirmed by the GSD dive team. Tagged-dive range across Graham et al., Brunnschweiler &amp; Sims, and a WHOI Red Sea study.</p></article><article class="ck-col" data-tsd-source="/src/routes/concept-k.tsx:614:13"><div class="ck-col-head" data-tsd-source="/src/routes/concept-k.tsx:615:15"><h3 data-tsd-source="/src/routes/concept-k.tsx:616:17">Scalloped hammerhead</h3><p class="ck-col-latin" data-tsd-source="/src/routes/concept-k.tsx:617:17">Sphyrna lewini</p></div><div class="ck-col-bars" data-tsd-source="/src/routes/concept-k.tsx:619:15"><span class="ck-bar ck-bar-near" style="top:39.96685357752233%;height:7.4659816745075105%" data-tsd-source="/src/routes/concept-k.tsx:621:19"></span><span class="ck-bar ck-bar-far" style="top:73.66326490064274%;height:18.4949183327697%" data-tsd-source="/src/routes/concept-k.tsx:632:19"></span></div><dl class="ck-col-read" data-tsd-source="/src/routes/concept-k.tsx:641:15"><div data-tsd-source="/src/routes/concept-k.tsx:642:17"><dt data-tsd-source="/src/routes/concept-k.tsx:643:19">Encounter</dt><dd data-tsd-source="/src/routes/concept-k.tsx:644:19">≈20–35 m by day</dd></div><div data-tsd-source="/src/routes/concept-k.tsx:646:17"><dt data-tsd-source="/src/routes/concept-k.tsx:647:19">Recorded</dt><dd data-tsd-source="/src/routes/concept-k.tsx:648:19">to 1,000 m at night</dd></div></dl><p class="ck-col-src" data-tsd-source="/src/routes/concept-k.tsx:651:15">Daytime schooling band needs Galápagos-site confirmation. Nocturnal figure from Malpelo / Cocos telemetry; juveniles in the Gulf of California to ≈250 m.</p></article><article class="ck-col" data-tsd-source="/src/routes/concept-k.tsx:614:13"><div class="ck-col-head" data-tsd-source="/src/routes/concept-k.tsx:615:15"><h3 data-tsd-source="/src/routes/concept-k.tsx:616:17">Oceanic manta ray</h3><p class="ck-col-latin" data-tsd-source="/src/routes/concept-k.tsx:617:17">Mobula birostris</p></div><div class="ck-col-bars" data-tsd-source="/src/routes/concept-k.tsx:619:15"><span class="ck-bar ck-bar-near" style="top:21.471935244752636%;height:21.471935244752636%" data-tsd-source="/src/routes/concept-k.tsx:621:19"></span><span class="ck-bar ck-bar-far" style="top:95.09243964891704%;height:1.2%" data-tsd-source="/src/routes/concept-k.tsx:632:19"></span></div><dl class="ck-col-read" data-tsd-source="/src/routes/concept-k.tsx:641:15"><div data-tsd-source="/src/routes/concept-k.tsx:642:17"><dt data-tsd-source="/src/routes/concept-k.tsx:643:19">Encounter</dt><dd data-tsd-source="/src/routes/concept-k.tsx:644:19">≈5–25 m at cleaning stations</dd></div><div data-tsd-source="/src/routes/concept-k.tsx:646:17"><dt data-tsd-source="/src/routes/concept-k.tsx:647:19">Recorded</dt><dd data-tsd-source="/src/routes/concept-k.tsx:648:19">1,246 – 1,250 m</dd></div></dl><p class="ck-col-src" data-tsd-source="/src/routes/concept-k.tsx:651:15">Cleaning-station band is general recreational-diving reference, not Galápagos-specific. Extreme dives from Beale et al. 2025.</p></article><article class="ck-col" data-tsd-source="/src/routes/concept-k.tsx:614:13"><div class="ck-col-head" data-tsd-source="/src/routes/concept-k.tsx:615:15"><h3 data-tsd-source="/src/routes/concept-k.tsx:616:17">Mola mola</h3><p class="ck-col-latin" data-tsd-source="/src/routes/concept-k.tsx:617:17">Ocean sunfish</p></div><div class="ck-col-bars" data-tsd-source="/src/routes/concept-k.tsx:619:15"><span class="ck-bar-none" data-tsd-source="/src/routes/concept-k.tsx:629:19">not established</span><span class="ck-bar ck-bar-far" style="top:70.6862479886598%;height:22.888246388405292%" data-tsd-source="/src/routes/concept-k.tsx:632:19"></span></div><dl class="ck-col-read" data-tsd-source="/src/routes/concept-k.tsx:641:15"><div data-tsd-source="/src/routes/concept-k.tsx:642:17"><dt data-tsd-source="/src/routes/concept-k.tsx:643:19">Encounter</dt><dd data-tsd-source="/src/routes/concept-k.tsx:644:19">—</dd></div><div data-tsd-source="/src/routes/concept-k.tsx:646:17"><dt data-tsd-source="/src/routes/concept-k.tsx:647:19">Recorded</dt><dd data-tsd-source="/src/routes/concept-k.tsx:648:19">1,112 m</dd></div></dl><p class="ck-col-src" data-tsd-source="/src/routes/concept-k.tsx:651:15">Encounter depth deliberately left blank — no adequate source found. 1,112 m from a Galápagos-specific USFQ tracking study; 844 m and a typical 200–600 m band recorded elsewhere.</p></article><article class="ck-col ck-col-end" data-tsd-source="/src/routes/concept-k.tsx:655:11"><div class="ck-col-head" data-tsd-source="/src/routes/concept-k.tsx:656:13"><h3 data-tsd-source="/src/routes/concept-k.tsx:657:15">Read it honestly</h3></div><p data-tsd-source="/src/routes/concept-k.tsx:659:13">Two of the shallow bands above are general species reference rather than a figure the GSD dive team has confirmed, and one is blank because no adequate source exists. They are printed that way on purpose.</p><a class="ck-btn ck-btn-ghost" href="#ck-act-5" data-tsd-source="/src/routes/concept-k.tsx:664:13">On to the research</a></article></div></section><section class="ck-act ck-a5" id="ck-act-5" data-ck-plates="true" aria-labelledby="ck-h5" data-tsd-source="/src/routes/concept-k.tsx:672:7"><div class="ck-a5-stage" data-tsd-source="/src/routes/concept-k.tsx:673:9"><h2 class="ck-mast ck-mast-sm ck-a5-h" id="ck-h5" data-tsd-source="/src/routes/concept-k.tsx:674:11">What a guest <span data-tsd-source="/src/routes/concept-k.tsx:675:26">leaves behind</span></h2><figure class="ck-duo ck-duo-v ck-a5-fig" data-tsd-source="/src/routes/concept-k.tsx:678:11"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=910x1024:format=jpg/path/s2fc4241e2a9d6156/image/i3072837b5856a47c/version/1730299295/galapagos-shark-diving-diver-taking-id-photos-from-a-shark-in-the-galapagos-islands.jpg" alt="A diver taking identification photos of a shark in the Galápagos Islands" loading="lazy" decoding="async" data-tsd-source="/src/routes/concept-k.tsx:679:13"></figure><div class="ck-a5-plates" data-tsd-source="/src/routes/concept-k.tsx:687:11"><div class="ck-plate ck-a5-p" data-ck-plate="true" data-ck-on="0" data-tsd-source="/src/routes/concept-k.tsx:688:13"><p class="ck-kicker" data-tsd-source="/src/routes/concept-k.tsx:689:15">01 / Partnership</p><p class="ck-lead" data-tsd-source="/src/routes/concept-k.tsx:690:15">GSD has supported the Galápagos Whale Shark Project since <b data-tsd-source="/src/routes/concept-k.tsx:691:75">2019</b> — satellite tags and tracking time, contributions to Sharkbook.ai, field logistics, and data analysis.</p></div><div class="ck-plate ck-a5-p" data-ck-plate="true" data-ck-on="0" data-tsd-source="/src/routes/concept-k.tsx:696:13"><p class="ck-kicker" data-tsd-source="/src/routes/concept-k.tsx:697:15">02 / Method</p><p class="ck-lead" data-tsd-source="/src/routes/concept-k.tsx:698:15">Three methods, no more: <b data-tsd-source="/src/routes/concept-k.tsx:699:41">photo-identification</b>, <b data-tsd-source="/src/routes/concept-k.tsx:699:70">satellite tagging</b>, and<!-- --> <b data-tsd-source="/src/routes/concept-k.tsx:700:17">in-water behavioural research</b>. A spot pattern behind the gills is matched the way star fields are matched.</p></div><div class="ck-plate ck-a5-p" data-ck-plate="true" data-ck-on="0" data-tsd-source="/src/routes/concept-k.tsx:704:13"><p class="ck-kicker" data-tsd-source="/src/routes/concept-k.tsx:705:15">03 / Your part</p><p class="ck-lead" data-tsd-source="/src/routes/concept-k.tsx:706:15">One GWSP shark scientist is aboard <b data-tsd-source="/src/routes/concept-k.tsx:707:52">every</b> Citizen Science departure. Guests contribute photo-ID submissions and standardised observation counts —<!-- --> <b data-tsd-source="/src/routes/concept-k.tsx:709:17">SharkCount</b> — that go to Sharkbook.ai.</p></div><div class="ck-plate ck-a5-p" data-ck-plate="true" data-ck-on="0" data-tsd-source="/src/routes/concept-k.tsx:712:13"><p class="ck-kicker" data-tsd-source="/src/routes/concept-k.tsx:713:15">04 / Stakes</p><p class="ck-lead" data-tsd-source="/src/routes/concept-k.tsx:714:15">Whale sharks are <b data-tsd-source="/src/routes/concept-k.tsx:715:34">Endangered</b> on the IUCN Red List. Dr Simon J. Pierce led the 2016 global assessment that established that, and the 2017 push that uplisted the species under the UN Convention on Migratory Species.</p></div></div></div><div class="ck-a5-tail" data-tsd-source="/src/routes/concept-k.tsx:723:9"><figure class="ck-duo ck-a5-t1" data-ck-drift="1.1" data-tsd-source="/src/routes/concept-k.tsx:724:11" style=""><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=920x10000:format=jpg/path/s2fc4241e2a9d6156/image/ied9910ab19595c47/version/1744390256/a-photo-taken-from-above-of-a-whale-shark-with-it-s-beautiful-spotted-pattern.jpg" alt="A photo taken from above of a whale shark with its spotted pattern" loading="lazy" decoding="async" data-tsd-source="/src/routes/concept-k.tsx:725:13"><figcaption data-tsd-source="/src/routes/concept-k.tsx:731:13">The pattern that is the identifier.</figcaption></figure><figure class="ck-duo ck-a5-t2" data-ck-drift="0.7" data-tsd-source="/src/routes/concept-k.tsx:733:11" style=""><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=920x10000:format=jpg/path/s2fc4241e2a9d6156/image/i5275e6ecf5e9b051/version/1741638653/elise-the-whale-sharks-journey-spanning-5-000-kilometers-into-the-pacific-ocean.jpg" alt="Map of Elise the whale shark’s journey spanning 5,000 kilometres into the Pacific Ocean" loading="lazy" decoding="async" data-tsd-source="/src/routes/concept-k.tsx:734:13"><figcaption data-tsd-source="/src/routes/concept-k.tsx:740:13">Elise, tracked 5,000 km out into the Pacific — as published by the project.</figcaption></figure><figure class="ck-duo ck-a5-t3" data-ck-drift="1.4" data-tsd-source="/src/routes/concept-k.tsx:744:11" style=""><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1020x1024:format=jpg/path/s2fc4241e2a9d6156/image/i5f4f817df1299bee/version/1770759538/galapagos-shark-diving-team-of-galapagos-whale-shark-project.jpg" alt="The team of the Galápagos Whale Shark Project" loading="lazy" decoding="async" data-tsd-source="/src/routes/concept-k.tsx:745:13"><figcaption data-tsd-source="/src/routes/concept-k.tsx:751:13">The Galápagos Whale Shark Project team.</figcaption></figure><div class="ck-plate ck-a5-who" data-tsd-source="/src/routes/concept-k.tsx:754:11"><p class="ck-kicker" data-tsd-source="/src/routes/concept-k.tsx:755:13">Aboard</p><ul class="ck-who" data-tsd-source="/src/routes/concept-k.tsx:756:13"><li data-tsd-source="/src/routes/concept-k.tsx:757:15"><b data-tsd-source="/src/routes/concept-k.tsx:758:17">Jenny Green (Waack)</b> Founder; field researcher and board member, GWSP.</li><li data-tsd-source="/src/routes/concept-k.tsx:760:15"><b data-tsd-source="/src/routes/concept-k.tsx:761:17">Jonathan R. Green, FRGS</b> Founder and director of GWSP; about thirty years working in the Galápagos.</li><li data-tsd-source="/src/routes/concept-k.tsx:764:15"><b data-tsd-source="/src/routes/concept-k.tsx:765:17">Dr Simon J. Pierce</b> Founder, Marine Megafauna Foundation; collaborating scientist, GWSP.</li><li data-tsd-source="/src/routes/concept-k.tsx:768:15"><b data-tsd-source="/src/routes/concept-k.tsx:769:17">Sofía M. Green Iturralde</b> Researcher and data analyst, GWSP; in the Galápagos since 2017.</li></ul><p class="ck-note" data-tsd-source="/src/routes/concept-k.tsx:773:13">Separately, GSD has supported <b data-tsd-source="/src/routes/concept-k.tsx:774:45">Chicas con Agallas</b> (Gill’s Club) since 2025 — an educational science programme for girls aged 8–12 on San Cristóbal, Santa Cruz and Isabela.</p></div></div></section><section class="ck-act ck-a6" id="ck-act-6" aria-labelledby="ck-h6" data-tsd-source="/src/routes/concept-k.tsx:783:7"><h2 class="ck-mast ck-mast-sm" id="ck-h6" data-tsd-source="/src/routes/concept-k.tsx:784:9">Two <span data-tsd-source="/src/routes/concept-k.tsx:785:15">hulls</span></h2><div class="ck-a6-grid" data-tsd-source="/src/routes/concept-k.tsx:788:9"><article class="ck-hull" data-tsd-source="/src/routes/concept-k.tsx:789:11"><figure class="ck-duo" data-ck-drift="0.9" data-tsd-source="/src/routes/concept-k.tsx:790:13" style=""><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=882x10000:format=jpg/path/s2fc4241e2a9d6156/image/i5573aa053ead2805/version/1576635679/galapagos-shark-diving-boat-dive-expedition-galapagos-islands.jpg" alt="Galapagos Shark Diving boat on a dive expedition in the Galápagos Islands" loading="lazy" decoding="async" data-tsd-source="/src/routes/concept-k.tsx:791:15"></figure><h3 class="ck-hull-name" data-tsd-source="/src/routes/concept-k.tsx:798:13">Aqua</h3><p class="ck-kicker" data-tsd-source="/src/routes/concept-k.tsx:799:13">Citizen Science</p><dl class="ck-specs" data-tsd-source="/src/routes/concept-k.tsx:800:13"><div data-tsd-source="/src/routes/concept-k.tsx:801:15"><dt data-tsd-source="/src/routes/concept-k.tsx:802:17">Built / renovated</dt><dd data-tsd-source="/src/routes/concept-k.tsx:803:17">1998 / 2019</dd></div><div data-tsd-source="/src/routes/concept-k.tsx:805:15"><dt data-tsd-source="/src/routes/concept-k.tsx:806:17">Guest cabins</dt><dd data-tsd-source="/src/routes/concept-k.tsx:807:17">9</dd></div><div data-tsd-source="/src/routes/concept-k.tsx:809:15"><dt data-tsd-source="/src/routes/concept-k.tsx:810:17">Maximum guests</dt><dd data-tsd-source="/src/routes/concept-k.tsx:811:17">16</dd></div><div data-tsd-source="/src/routes/concept-k.tsx:813:15"><dt data-tsd-source="/src/routes/concept-k.tsx:814:17">Speed</dt><dd data-tsd-source="/src/routes/concept-k.tsx:815:17">9 knots</dd></div><div data-tsd-source="/src/routes/concept-k.tsx:817:15"><dt data-tsd-source="/src/routes/concept-k.tsx:818:17">Engines</dt><dd data-tsd-source="/src/routes/concept-k.tsx:819:17">2 × 250 HP Caterpillar</dd></div><div data-tsd-source="/src/routes/concept-k.tsx:821:15"><dt data-tsd-source="/src/routes/concept-k.tsx:822:17">Dive platform</dt><dd data-tsd-source="/src/routes/concept-k.tsx:823:17">Remodelled 2017</dd></div><div data-tsd-source="/src/routes/concept-k.tsx:825:15"><dt data-tsd-source="/src/routes/concept-k.tsx:826:17">Tanks</dt><dd data-tsd-source="/src/routes/concept-k.tsx:827:17">34 × 12 L aluminium</dd></div><div data-tsd-source="/src/routes/concept-k.tsx:829:15"><dt data-tsd-source="/src/routes/concept-k.tsx:830:17">Compressors</dt><dd data-tsd-source="/src/routes/concept-k.tsx:831:17">2, Nitrox-capable</dd></div></dl><p class="ck-note" data-tsd-source="/src/routes/concept-k.tsx:834:13">Every cabin: private bathroom, air conditioning, towels, linens, soap, shampoo. Two Caribe tenders on 50 HP Yamaha four-strokes. Camera table; separate fresh-water tanks for wetsuits and for electronics.</p></article><article class="ck-hull ck-hull-b" data-tsd-source="/src/routes/concept-k.tsx:841:11"><figure class="ck-duo" data-ck-drift="1.3" data-tsd-source="/src/routes/concept-k.tsx:842:13" style=""><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=892x10000:format=jpg/path/s2fc4241e2a9d6156/image/i8bafb73a91e9d28a/version/1736371409/galaxy-diver-ii-luxury-yacht-galapagos-islands.jpg" alt="Galaxy Diver II luxury yacht in the Galápagos Islands" loading="lazy" decoding="async" data-tsd-source="/src/routes/concept-k.tsx:843:15"></figure><h3 class="ck-hull-name" data-tsd-source="/src/routes/concept-k.tsx:850:13">Galaxy Diver II</h3><p class="ck-kicker" data-tsd-source="/src/routes/concept-k.tsx:851:13">Luxury Science</p><dl class="ck-specs" data-tsd-source="/src/routes/concept-k.tsx:852:13"><div data-tsd-source="/src/routes/concept-k.tsx:853:15"><dt data-tsd-source="/src/routes/concept-k.tsx:854:17">Length / beam</dt><dd data-tsd-source="/src/routes/concept-k.tsx:855:17">35 m / 8.20 m</dd></div><div data-tsd-source="/src/routes/concept-k.tsx:857:15"><dt data-tsd-source="/src/routes/concept-k.tsx:858:17">Maximum guests</dt><dd data-tsd-source="/src/routes/concept-k.tsx:859:17">16</dd></div><div data-tsd-source="/src/routes/concept-k.tsx:861:15"><dt data-tsd-source="/src/routes/concept-k.tsx:862:17">Speed</dt><dd data-tsd-source="/src/routes/concept-k.tsx:863:17">15 kn max, 11 kn cruise</dd></div><div data-tsd-source="/src/routes/concept-k.tsx:865:15"><dt data-tsd-source="/src/routes/concept-k.tsx:866:17">Engines</dt><dd data-tsd-source="/src/routes/concept-k.tsx:867:17">2 × 600 HP Caterpillar</dd></div><div data-tsd-source="/src/routes/concept-k.tsx:869:15"><dt data-tsd-source="/src/routes/concept-k.tsx:870:17">Generators</dt><dd data-tsd-source="/src/routes/concept-k.tsx:871:17">2 × 90 KW John Deere</dd></div><div data-tsd-source="/src/routes/concept-k.tsx:873:15"><dt data-tsd-source="/src/routes/concept-k.tsx:874:17">Sundeck</dt><dd data-tsd-source="/src/routes/concept-k.tsx:875:17">117 m², jacuzzi</dd></div><div data-tsd-source="/src/routes/concept-k.tsx:877:15"><dt data-tsd-source="/src/routes/concept-k.tsx:878:17">Nitrox</dt><dd data-tsd-source="/src/routes/concept-k.tsx:879:17">Included</dd></div><div data-tsd-source="/src/routes/concept-k.tsx:881:15"><dt data-tsd-source="/src/routes/concept-k.tsx:882:17">Tanks</dt><dd data-tsd-source="/src/routes/concept-k.tsx:883:17">34 × 10/12/15 L</dd></div></dl><p class="ck-note" data-tsd-source="/src/routes/concept-k.tsx:886:13">Four fresh-water showers on the dive deck, camera table and separate rinse tank. Electronic diver tracking, radar, AED, emergency oxygen. Cabin count is stated inconsistently by the operator’s own material, so it is left off this plate rather than guessed.</p></article><figure class="ck-duo ck-a6-wide" data-ck-drift="0.6" data-tsd-source="/src/routes/concept-k.tsx:894:11" style=""><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=960x1024:format=jpg/path/s2fc4241e2a9d6156/image/idbda94df8f0cb938/version/1786480132/galapagos-shark-diving-giant-manta-swimming-over-the-head-of-the-divers-in-cape-marshall-in-the-galapagos-islands.jpg" alt="A giant manta swimming over the heads of divers at Cape Marshall in the Galápagos Islands" loading="lazy" decoding="async" data-tsd-source="/src/routes/concept-k.tsx:895:13"><figcaption data-tsd-source="/src/routes/concept-k.tsx:901:13">Cape Marshall, day two. Manta rays overhead.</figcaption></figure></div></section><section class="ck-act ck-a7" id="ck-act-7" aria-labelledby="ck-h7" data-tsd-source="/src/routes/concept-k.tsx:907:7"><header class="ck-a7-head" data-tsd-source="/src/routes/concept-k.tsx:908:9"><p class="ck-slug ck-slug-ink" data-tsd-source="/src/routes/concept-k.tsx:909:11">Ascent complete <i data-tsd-source="/src/routes/concept-k.tsx:909:62">/</i> 0.0 m</p><h2 class="ck-mast ck-mast-sm ck-mast-ink" id="ck-h7" data-tsd-source="/src/routes/concept-k.tsx:910:11">The <span data-tsd-source="/src/routes/concept-k.tsx:911:17">register</span></h2><p class="ck-a7-lead" data-tsd-source="/src/routes/concept-k.tsx:913:11">Seven sailings across the 2027 season, on two hulls, with a shark scientist aboard every Citizen Science departure. Read from the live departure register on 22 September 2026.</p></header><div class="ck-table-wrap" data-tsd-source="/src/routes/concept-k.tsx:919:9"><table class="ck-table" data-tsd-source="/src/routes/concept-k.tsx:920:11"><caption class="ck-sr" data-tsd-source="/src/routes/concept-k.tsx:921:13">2027 departures with programme, vessel, berths remaining and price per person</caption><thead data-tsd-source="/src/routes/concept-k.tsx:924:13"><tr data-tsd-source="/src/routes/concept-k.tsx:925:15"><th scope="col" data-tsd-source="/src/routes/concept-k.tsx:926:17">Dates</th><th scope="col" data-tsd-source="/src/routes/concept-k.tsx:927:17">Days</th><th scope="col" data-tsd-source="/src/routes/concept-k.tsx:928:17">Programme</th><th scope="col" data-tsd-source="/src/routes/concept-k.tsx:929:17">Vessel</th><th scope="col" data-tsd-source="/src/routes/concept-k.tsx:930:17">Berths</th><th scope="col" data-tsd-source="/src/routes/concept-k.tsx:931:17">Per person</th></tr></thead><tbody data-tsd-source="/src/routes/concept-k.tsx:934:13"><tr data-ck-state="open" data-tsd-source="/src/routes/concept-k.tsx:936:17"><th scope="row" data-tsd-source="/src/routes/concept-k.tsx:937:19">21 – 28 Jul 2027<i data-tsd-source="/src/routes/concept-k.tsx:939:21">Nitrox included</i></th><td data-tsd-source="/src/routes/concept-k.tsx:941:19">8</td><td data-tsd-source="/src/routes/concept-k.tsx:942:19">Luxury Citizen Science</td><td data-tsd-source="/src/routes/concept-k.tsx:943:19">Galaxy Diver II</td><td data-tsd-source="/src/routes/concept-k.tsx:944:19"><span class="ck-tag" data-tsd-source="/src/routes/concept-k.tsx:948:23">9<!-- --> left</span></td><td class="ck-money" data-tsd-source="/src/routes/concept-k.tsx:951:19">$<!-- -->8,200</td></tr><tr data-ck-state="closed" data-tsd-source="/src/routes/concept-k.tsx:936:17"><th scope="row" data-tsd-source="/src/routes/concept-k.tsx:937:19">27 Jul – 3 Aug 2027<i data-tsd-source="/src/routes/concept-k.tsx:939:21">Sofía M. Green aboard</i></th><td data-tsd-source="/src/routes/concept-k.tsx:941:19">8</td><td data-tsd-source="/src/routes/concept-k.tsx:942:19">Citizen Science</td><td data-tsd-source="/src/routes/concept-k.tsx:943:19">Aqua</td><td data-tsd-source="/src/routes/concept-k.tsx:944:19"><span class="ck-tag ck-tag-out" data-tsd-source="/src/routes/concept-k.tsx:946:23">Waitlist</span></td><td class="ck-money" data-tsd-source="/src/routes/concept-k.tsx:951:19">$<!-- -->6,690</td></tr><tr data-ck-state="low" data-tsd-source="/src/routes/concept-k.tsx:936:17"><th scope="row" data-tsd-source="/src/routes/concept-k.tsx:937:19">3 – 17 Aug 2027<i data-tsd-source="/src/routes/concept-k.tsx:939:21">Jonathan R. Green aboard</i></th><td data-tsd-source="/src/routes/concept-k.tsx:941:19">15</td><td data-tsd-source="/src/routes/concept-k.tsx:942:19">Special 15-Day Citizen Science</td><td data-tsd-source="/src/routes/concept-k.tsx:943:19">Aqua</td><td data-tsd-source="/src/routes/concept-k.tsx:944:19"><span class="ck-tag" data-tsd-source="/src/routes/concept-k.tsx:948:23">3<!-- --> left</span></td><td class="ck-money" data-tsd-source="/src/routes/concept-k.tsx:951:19">$<!-- -->13,490</td></tr><tr data-ck-state="low" data-tsd-source="/src/routes/concept-k.tsx:936:17"><th scope="row" data-tsd-source="/src/routes/concept-k.tsx:937:19">17 – 31 Aug 2027<i data-tsd-source="/src/routes/concept-k.tsx:939:21">Jonathan R. Green aboard</i></th><td data-tsd-source="/src/routes/concept-k.tsx:941:19">15</td><td data-tsd-source="/src/routes/concept-k.tsx:942:19">Special 15-Day Citizen Science</td><td data-tsd-source="/src/routes/concept-k.tsx:943:19">Aqua</td><td data-tsd-source="/src/routes/concept-k.tsx:944:19"><span class="ck-tag" data-tsd-source="/src/routes/concept-k.tsx:948:23">6<!-- --> left</span></td><td class="ck-money" data-tsd-source="/src/routes/concept-k.tsx:951:19">$<!-- -->13,490</td></tr><tr data-ck-state="closed" data-tsd-source="/src/routes/concept-k.tsx:936:17"><th scope="row" data-tsd-source="/src/routes/concept-k.tsx:937:19">31 Aug – 7 Sep 2027<i data-tsd-source="/src/routes/concept-k.tsx:939:21">Jonathan R. Green aboard</i></th><td data-tsd-source="/src/routes/concept-k.tsx:941:19">8</td><td data-tsd-source="/src/routes/concept-k.tsx:942:19">Citizen Science</td><td data-tsd-source="/src/routes/concept-k.tsx:943:19">Aqua</td><td data-tsd-source="/src/routes/concept-k.tsx:944:19"><span class="ck-tag ck-tag-out" data-tsd-source="/src/routes/concept-k.tsx:946:23">Waitlist</span></td><td class="ck-money" data-tsd-source="/src/routes/concept-k.tsx:951:19">$<!-- -->6,690</td></tr><tr data-ck-state="closed" data-tsd-source="/src/routes/concept-k.tsx:936:17"><th scope="row" data-tsd-source="/src/routes/concept-k.tsx:937:19">8 – 15 Sep 2027<i data-tsd-source="/src/routes/concept-k.tsx:939:21">Gourmet full board</i></th><td data-tsd-source="/src/routes/concept-k.tsx:941:19">8</td><td data-tsd-source="/src/routes/concept-k.tsx:942:19">Luxury Citizen Science</td><td data-tsd-source="/src/routes/concept-k.tsx:943:19">Galaxy Diver II</td><td data-tsd-source="/src/routes/concept-k.tsx:944:19"><span class="ck-tag ck-tag-out" data-tsd-source="/src/routes/concept-k.tsx:946:23">Waitlist</span></td><td class="ck-money" data-tsd-source="/src/routes/concept-k.tsx:951:19">$<!-- -->8,200</td></tr><tr data-ck-state="low" data-tsd-source="/src/routes/concept-k.tsx:936:17"><th scope="row" data-tsd-source="/src/routes/concept-k.tsx:937:19">15 – 22 Sep 2027<i data-tsd-source="/src/routes/concept-k.tsx:939:21">16 guests maximum</i></th><td data-tsd-source="/src/routes/concept-k.tsx:941:19">8</td><td data-tsd-source="/src/routes/concept-k.tsx:942:19">Luxury Citizen Science</td><td data-tsd-source="/src/routes/concept-k.tsx:943:19">Galaxy Diver II</td><td data-tsd-source="/src/routes/concept-k.tsx:944:19"><span class="ck-tag" data-tsd-source="/src/routes/concept-k.tsx:948:23">6<!-- --> left</span></td><td class="ck-money" data-tsd-source="/src/routes/concept-k.tsx:951:19">$<!-- -->8,200</td></tr></tbody></table></div><div class="ck-a7-cols" data-tsd-source="/src/routes/concept-k.tsx:958:9"><div data-tsd-source="/src/routes/concept-k.tsx:959:11"><p class="ck-kicker ck-kicker-ink" data-tsd-source="/src/routes/concept-k.tsx:960:13">Published fares</p><ul class="ck-fares" data-tsd-source="/src/routes/concept-k.tsx:961:13"><li data-tsd-source="/src/routes/concept-k.tsx:962:15"><b data-tsd-source="/src/routes/concept-k.tsx:963:17">8-day Citizen Science, Aqua</b> $6,390 (2026) · $6,690 (2027)</li><li data-tsd-source="/src/routes/concept-k.tsx:965:15"><b data-tsd-source="/src/routes/concept-k.tsx:966:17">Special 15-day, Aqua</b> $13,190 (2026) · $13,490 (2027)</li></ul><p class="ck-note ck-note-ink" data-tsd-source="/src/routes/concept-k.tsx:969:13">Per person, double occupancy. Included: cabin, 2–4 dives a day, Galápagos airport transfers, all meals and snacks, tanks, weights and belts, bilingual dive masters, a shark researcher aboard, onboard presentations, safety equipment, toiletries.</p></div><div data-tsd-source="/src/routes/concept-k.tsx:975:11"><p class="ck-kicker ck-kicker-ink" data-tsd-source="/src/routes/concept-k.tsx:976:13">Not included</p><ul class="ck-fares" data-tsd-source="/src/routes/concept-k.tsx:977:13"><li data-tsd-source="/src/routes/concept-k.tsx:978:15">International flights</li><li data-tsd-source="/src/routes/concept-k.tsx:979:15">Galápagos National Park tax — $200</li><li data-tsd-source="/src/routes/concept-k.tsx:980:15">Transit Control Card — $20</li><li data-tsd-source="/src/routes/concept-k.tsx:981:15">Personal gear rental, alcohol, dive and travel insurance</li></ul><p class="ck-note ck-note-ink" data-tsd-source="/src/routes/concept-k.tsx:983:13">30% deposit; balance due 120 days before departure. 30% / 100% cancellation tiers.</p></div><div data-tsd-source="/src/routes/concept-k.tsx:987:11"><p class="ck-kicker ck-kicker-ink" data-tsd-source="/src/routes/concept-k.tsx:988:13">Arriving</p><p class="ck-note ck-note-ink" data-tsd-source="/src/routes/concept-k.tsx:989:13">Flights into Baltra on sailing day must land <b data-tsd-source="/src/routes/concept-k.tsx:990:60">no later than 10:30</b> local. The dive guides collect guests at the airport at <b data-tsd-source="/src/routes/concept-k.tsx:991:60">11:00</b>. On the final day, book a flight leaving <b data-tsd-source="/src/routes/concept-k.tsx:992:30">no earlier than 12:00</b>.</p><p class="ck-kicker ck-kicker-ink" data-tsd-source="/src/routes/concept-k.tsx:994:13">Recognition</p><ul class="ck-fares" data-tsd-source="/src/routes/concept-k.tsx:995:13"><li data-tsd-source="/src/routes/concept-k.tsx:996:15">TripAdvisor Travelers’ Choice 2023, Scuba Diving &amp; Shark Diving</li><li data-tsd-source="/src/routes/concept-k.tsx:997:15">Scuba Diving Magazine 2023 Readers Choice — #1 Best Overall Liveaboards, Pacific and Indian Oceans</li><li data-tsd-source="/src/routes/concept-k.tsx:998:15">South America Prestige Awards 2024/25 — Scuba Diving Centre of the Year, Ecuador</li></ul></div></div><div class="ck-a7-cta" data-tsd-source="/src/routes/concept-k.tsx:1003:9"><figure class="ck-duo ck-duo-lit ck-a7-fig" data-tsd-source="/src/routes/concept-k.tsx:1004:11"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=950x1024:format=jpg/path/s2fc4241e2a9d6156/image/i73d9dfe4c3f59f3a/version/1615433669/diver-face-to-face-with-a-huge-adult-whale-shark-in-the-galapagos-islands.jpg" alt="A diver face to face with a huge adult whale shark in the Galápagos Islands" loading="lazy" decoding="async" data-tsd-source="/src/routes/concept-k.tsx:1005:13"></figure><div data-tsd-source="/src/routes/concept-k.tsx:1012:11"><p class="ck-a7-close" data-tsd-source="/src/routes/concept-k.tsx:1013:13">Season opens in June. Sixteen guests, either hull, and a scientist aboard on every Citizen Science sailing.</p><p class="ck-a7-btns" data-tsd-source="/src/routes/concept-k.tsx:1017:13"><a class="ck-btn ck-btn-ink" href="#ck-act-7" data-tsd-source="/src/routes/concept-k.tsx:1018:15">Hold a berth</a><a class="ck-btn ck-btn-ghost-ink" href="#ck-act-4" data-tsd-source="/src/routes/concept-k.tsx:1021:15">Back to the column</a></p></div></div><footer class="ck-foot" data-tsd-source="/src/routes/concept-k.tsx:1028:9"><p data-tsd-source="/src/routes/concept-k.tsx:1029:11">Concept prototype K — “Refraction index”. Not a published page. Photography © Galapagos Shark Diving and the credited project photographers. Figures as published by the operator on 22 September 2026; two vessel details are recorded here as inconsistent on the source rather than resolved.</p></footer></section></div>
+<script>
+(function () {
+  var ACTS = [{"id":"ck-act-1","label":"Aperture","depth":0},{"id":"ck-act-2","label":"Seamounts","depth":18},{"id":"ck-act-3","label":"Light fails","depth":30},{"id":"ck-act-4","label":"The column","depth":30},{"id":"ck-act-5","label":"The record","depth":24},{"id":"ck-act-6","label":"Two hulls","depth":12},{"id":"ck-act-7","label":"Surface","depth":0}];
+  var root = document.getElementById("ck-root");
+  if (!root) return;
+  var reduce = typeof window.matchMedia === "function" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var readout = document.getElementById("ck-readout");
+  var actName = document.getElementById("ck-actname");
+  var thumb = document.getElementById("ck-thumb");
+  var acts = ACTS.map(function (a) { return document.getElementById(a.id); });
+  var plateGroups = Array.prototype.map.call(
+    root.querySelectorAll("[data-ck-plates]"),
+    function (g) {
+      return { g: g, plates: Array.prototype.slice.call(g.querySelectorAll("[data-ck-plate]")) };
+    }
+  );
+  var raf = 0;
+  function clamp(n, lo, hi) { return Math.min(hi, Math.max(lo, n)); }
+
+  function frame() {
+    raf = 0;
+    var vh = window.innerHeight || 1;
+    var idx = 0, within = 0;
+    for (var i = 0; i < acts.length; i++) {
+      var el = acts[i];
+      if (!el) continue;
+      var r = el.getBoundingClientRect();
+      if (r.top <= vh * 0.5 && r.bottom > vh * 0.5) {
+        idx = i;
+        within = clamp((vh * 0.5 - r.top) / Math.max(1, r.height), 0, 1);
+        break;
+      }
+      if (r.top > vh * 0.5) break;
+      idx = i; within = 1;
+    }
+    var here = ACTS[idx] || ACTS[0];
+    var next = ACTS[Math.min(ACTS.length - 1, idx + 1)] || here;
+    var depth = here.depth + (next.depth - here.depth) * within;
+
+    if (readout) readout.textContent = depth.toFixed(1);
+    if (actName) actName.textContent = here.label;
+    if (thumb) thumb.style.setProperty("--ck-thumb", String(clamp((idx + within) / (ACTS.length - 1), 0, 1)));
+    root.setAttribute("data-ck-act", String(idx + 1));
+
+    if (reduce) return;
+
+    var press = clamp(depth / 30, 0, 1);
+    root.style.setProperty("--ck-press", press.toFixed(3));
+    root.style.setProperty("--ck-w", String(Math.round(760 - 300 * press)));
+    root.style.setProperty("--ck-wd", String((100 - 22 * press).toFixed(1)));
+
+    Array.prototype.forEach.call(root.querySelectorAll("[data-ck-drift]"), function (el) {
+      var r = el.getBoundingClientRect();
+      var mid = (r.top + r.height / 2 - vh / 2) / vh;
+      var k = Number(el.getAttribute("data-ck-drift") || "1");
+      el.style.setProperty("--ck-dx", (-mid * 5 * k).toFixed(2) + "vw");
+      el.style.setProperty("--ck-dy", (mid * 3.4 * k).toFixed(2) + "vh");
+    });
+
+    plateGroups.forEach(function (grp) {
+      var r = grp.g.getBoundingClientRect();
+      var span = Math.max(1, r.height - vh);
+      var pr = clamp(-r.top / span, 0, 1);
+      var live = Math.min(grp.plates.length - 1, Math.floor(pr * grp.plates.length * 0.999));
+      grp.plates.forEach(function (pl, i) { pl.setAttribute("data-ck-on", i === live ? "1" : "0"); });
+    });
+  }
+  function onScroll() { if (!raf) raf = window.requestAnimationFrame(frame); }
+  frame();
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+})();
+</script>
+<a id="back-to-concepts-index" href="index.html" style="position:fixed;top:10px;right:10px;z-index:999999;background:#000;color:#fff;font:12px/1 system-ui,sans-serif;padding:7px 11px;text-decoration:none;border-radius:3px;opacity:0.55;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.55">&larr; All concepts</a>

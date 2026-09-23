@@ -1,0 +1,1009 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Concept M — Expedition Outfitter — Galapagos Shark Diving</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" />
+<style>
+/* ============================================================
+   CONCEPT M — PREMIUM OUTDOOR OUTFITTER / EXPEDITION PREP
+   Namespace: .cm-  · self-contained · no shared imports
+   ============================================================ */
+.cm-root{
+  --cm-stone-900:#1e1e1b;
+  --cm-stone-800:#2a2a26;
+  --cm-stone-700:#3c3c35;
+  --cm-stone-600:#55554c;
+  --cm-stone-400:#8b897d;
+  --cm-stone-300:#b3b0a3;
+  --cm-canvas:#e6e1d3;
+  --cm-canvas-2:#d6cfba;
+  --cm-paper:#f4f1e9;
+  --cm-forest:#1f3a2e;
+  --cm-forest-2:#2d5241;
+  --cm-blaze:#9c4416;
+  --cm-rule:#c8c2ae;
+  --cm-rule-dark:#434339;
+
+  --cm-gut:clamp(18px,4vw,40px);
+  --cm-max:1280px;
+
+  background:var(--cm-paper);
+  color:var(--cm-stone-900);
+  font-family:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,sans-serif;
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+.cm-root *,.cm-root *::before,.cm-root *::after{box-sizing:border-box}
+.cm-root h1,.cm-root h2,.cm-root h3,.cm-root h4,.cm-root h5,.cm-root p,
+.cm-root ul,.cm-root ol,.cm-root dl,.cm-root dd,.cm-root figure,.cm-root table{margin:0;padding:0}
+.cm-root ul,.cm-root ol{list-style:none}
+.cm-root img{display:block;width:100%;height:auto}
+.cm-root a{color:inherit;text-decoration:none}
+
+/* ---- display type: robust technical grotesque ---- */
+.cm-root .cm-d{
+  font-family:"Archivo","Archivo Expanded",Helvetica Neue,Arial,sans-serif;
+  font-stretch:112%;
+  font-weight:700;
+  letter-spacing:-0.015em;
+  line-height:1.02;
+  text-transform:uppercase;
+}
+.cm-mono{
+  font-family:"IBM Plex Sans",system-ui,sans-serif;
+  font-variant-numeric:tabular-nums;
+  font-feature-settings:"tnum" 1;
+}
+
+/* ---- layout primitives ---- */
+.cm-wrap{max-width:var(--cm-max);margin:0 auto;padding-left:var(--cm-gut);padding-right:var(--cm-gut)}
+.cm-rule{border-top:1px solid var(--cm-rule)}
+.cm-sec{padding:clamp(48px,6vw,88px) 0;border-top:1px solid var(--cm-rule)}
+.cm-sec--dark{background:var(--cm-stone-900);color:var(--cm-canvas);border-top:1px solid var(--cm-rule-dark)}
+.cm-sec--canvas{background:var(--cm-canvas)}
+
+/* section label: 00 / NAME */
+.cm-lab{
+  display:flex;align-items:baseline;gap:14px;
+  font-size:11px;font-weight:600;letter-spacing:.20em;text-transform:uppercase;
+  color:var(--cm-stone-600);
+  padding-bottom:14px;margin-bottom:26px;
+  border-bottom:1px solid var(--cm-rule);
+}
+.cm-sec--dark .cm-lab{color:var(--cm-stone-300);border-bottom-color:var(--cm-rule-dark)}
+.cm-lab b{color:var(--cm-blaze);font-weight:700}
+.cm-sec--dark .cm-lab b{color:#e08a4d}
+.cm-lab span.cm-lab__r{margin-left:auto;color:var(--cm-stone-400);letter-spacing:.14em;font-weight:500}
+
+.cm-h2{font-size:clamp(26px,3.6vw,46px);max-width:22ch}
+.cm-h2--wide{max-width:34ch}
+.cm-lede{font-size:clamp(15px,1.25vw,18px);color:var(--cm-stone-700);max-width:62ch;margin-top:18px}
+.cm-sec--dark .cm-lede{color:var(--cm-stone-300)}
+.cm-note{font-size:12.5px;color:var(--cm-stone-600);max-width:70ch;line-height:1.6}
+.cm-sec--dark .cm-note{color:var(--cm-stone-400)}
+
+/* ============ MASTHEAD ============ */
+.cm-util{
+  background:var(--cm-stone-900);color:var(--cm-stone-300);
+  font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;
+}
+.cm-util__in{display:flex;flex-wrap:wrap;gap:6px 24px;align-items:center;padding-top:9px;padding-bottom:9px}
+.cm-util__in span:nth-child(2){margin-left:auto}
+.cm-util b{color:var(--cm-canvas);font-weight:600}
+
+.cm-mast{border-bottom:1px solid var(--cm-rule);background:var(--cm-paper)}
+.cm-mast__in{display:flex;align-items:center;gap:20px;padding-top:16px;padding-bottom:16px;flex-wrap:wrap}
+.cm-logo{font-size:clamp(15px,1.5vw,19px);letter-spacing:.02em}
+.cm-logo em{font-style:normal;color:var(--cm-blaze)}
+.cm-nav{display:flex;gap:clamp(12px,1.8vw,26px);margin-left:auto;flex-wrap:wrap}
+.cm-nav a{
+  font-size:11px;letter-spacing:.15em;text-transform:uppercase;font-weight:600;
+  color:var(--cm-stone-600);padding-bottom:3px;border-bottom:1px solid transparent;
+}
+.cm-nav a:hover,.cm-nav a:focus-visible{color:var(--cm-stone-900);border-bottom-color:var(--cm-blaze)}
+
+/* ============ BUTTONS ============ */
+.cm-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  padding:14px 20px;border:1px solid var(--cm-stone-900);
+  background:var(--cm-stone-900);color:var(--cm-paper);
+}
+.cm-btn:hover,.cm-btn:focus-visible{background:var(--cm-forest);border-color:var(--cm-forest)}
+.cm-btn--ghost{background:transparent;color:var(--cm-stone-900)}
+.cm-btn--ghost:hover,.cm-btn--ghost:focus-visible{background:var(--cm-stone-900);color:var(--cm-paper)}
+.cm-btn--blaze{background:var(--cm-blaze);border-color:var(--cm-blaze);color:#fff}
+.cm-btn--blaze:hover,.cm-btn--blaze:focus-visible{background:#7f350f;border-color:#7f350f}
+.cm-btn__k{font-size:14px;line-height:1}
+.cm-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+
+/* ============ HERO ============ */
+.cm-hero{padding-top:clamp(34px,4.5vw,58px);padding-bottom:0}
+.cm-hero__grid{display:grid;grid-template-columns:minmax(0,5.6fr) minmax(0,6.4fr);gap:clamp(24px,3.5vw,52px);align-items:end}
+.cm-eyebrow{
+  font-size:11px;font-weight:600;letter-spacing:.20em;text-transform:uppercase;color:var(--cm-blaze);
+  display:flex;align-items:center;gap:10px;margin-bottom:20px;
+}
+.cm-eyebrow::after{content:"";flex:1;height:1px;background:var(--cm-rule)}
+.cm-h1{font-size:clamp(33px,4.15vw,54px);letter-spacing:-0.02em;text-wrap:balance}
+.cm-hero__lede{margin-top:20px;font-size:clamp(15px,1.3vw,18px);color:var(--cm-stone-700);max-width:48ch}
+
+.cm-fig{position:relative;border:1px solid var(--cm-rule)}
+.cm-fig img{filter:saturate(.88) contrast(1.04)}
+.cm-plate{
+  position:absolute;top:0;left:0;
+  background:var(--cm-stone-900);color:var(--cm-canvas);
+  font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  padding:8px 12px;
+}
+.cm-fig__cap{
+  display:flex;flex-wrap:wrap;gap:4px 18px;
+  border-top:1px solid var(--cm-rule);padding:10px 12px;
+  font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--cm-stone-600);font-weight:500;
+}
+.cm-fig__cap i{font-style:normal;color:var(--cm-stone-900);font-weight:600}
+
+/* spec strip under hero */
+.cm-strip{
+  display:grid;grid-template-columns:repeat(6,minmax(0,1fr));
+  border:1px solid var(--cm-rule);border-bottom:none;
+  margin-top:clamp(30px,3.4vw,50px);
+}
+.cm-strip>div{padding:16px 16px 18px;border-right:1px solid var(--cm-rule);border-bottom:1px solid var(--cm-rule)}
+.cm-strip>div:last-child{border-right:none}
+.cm-strip dt{font-size:10px;font-weight:600;letter-spacing:.17em;text-transform:uppercase;color:var(--cm-stone-600)}
+.cm-strip dd{font-size:clamp(19px,2.1vw,27px);margin-top:8px}
+.cm-strip dd small{text-wrap:balance;font-size:11px;letter-spacing:.1em;font-weight:600;color:var(--cm-stone-600);display:block;margin-top:4px;text-transform:uppercase}
+
+/* ============ REQUIREMENT CARDS ============ */
+.cm-cols2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2vw,26px)}
+.cm-cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,26px)}
+.cm-cols4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,1.6vw,22px)}
+.cm-grid-lede{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,3vw,48px);align-items:start}
+
+.cm-card{border:1px solid var(--cm-rule);background:var(--cm-paper)}
+.cm-card__hd{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  background:var(--cm-canvas);border-bottom:1px solid var(--cm-rule);
+  padding:12px 16px;
+  font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+}
+.cm-card__hd em{font-style:normal;color:var(--cm-blaze);letter-spacing:.14em}
+.cm-card__bd{padding:18px 16px 20px}
+.cm-card__bd p{font-size:14.5px;color:var(--cm-stone-700)}
+.cm-req{font-size:17px;line-height:1.45;font-weight:500}
+.cm-req b{font-weight:600;box-shadow:inset 0 -0.42em 0 rgba(156,68,22,.14)}
+
+/* checklist / kit list */
+.cm-kit{border-top:1px solid var(--cm-rule)}
+.cm-kit li{
+  display:grid;grid-template-columns:22px minmax(0,1fr) auto;gap:12px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--cm-rule);font-size:14.5px;
+}
+.cm-sec--dark .cm-kit,.cm-sec--dark .cm-kit li{border-color:var(--cm-rule-dark)}
+.cm-kit li>span:first-child{
+  font-size:10px;font-weight:700;letter-spacing:.06em;color:var(--cm-blaze);
+  border:1px solid currentColor;text-align:center;line-height:18px;height:18px;
+  transform:translateY(-1px);
+}
+.cm-kit li>span:last-child{
+  font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--cm-stone-500);font-weight:600;
+  white-space:nowrap;
+}
+.cm-sec--dark .cm-kit li>span:last-child{color:var(--cm-stone-400)}
+.cm-kit--tight li{padding:8px 0;font-size:13.5px}
+
+/* rules / non-negotiables */
+.cm-rules{border:1px solid var(--cm-blaze);margin-top:clamp(20px,2.4vw,32px)}
+.cm-rules__hd{
+  background:var(--cm-blaze);color:#fff;padding:11px 16px;
+  font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+}
+.cm-rules ul{padding:6px 16px 14px}
+.cm-rules li{padding:9px 0;border-bottom:1px solid var(--cm-rule);font-size:14.5px;display:flex;gap:12px}
+.cm-rules li:last-child{border-bottom:none}
+.cm-rules li b{font-weight:600}
+.cm-rules li::before{content:"—";color:var(--cm-blaze);font-weight:700}
+
+/* ============ NUMERIC PLATES (conditions) ============ */
+.cm-plates{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--cm-rule-dark)}
+.cm-plates>div{padding:clamp(18px,2.2vw,26px);border-right:1px solid var(--cm-rule-dark);border-bottom:1px solid var(--cm-rule-dark)}
+.cm-plates>div:nth-child(3n){border-right:none}
+.cm-plates>div:nth-last-child(-n+3){border-bottom:none}
+.cm-plates dt{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--cm-stone-400)}
+.cm-plates dd{font-size:clamp(26px,3.2vw,40px);margin-top:10px;color:var(--cm-canvas)}
+.cm-plates dd small{display:block;margin-top:6px;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--cm-stone-400)}
+
+/* ============ SPEC TABLES ============ */
+.cm-spec{width:100%;border-collapse:collapse;font-size:14px}
+.cm-spec th{
+  text-align:left;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--cm-stone-600);padding:0 0 9px;border-bottom:1px solid var(--cm-rule);
+}
+.cm-spec td{padding:9px 0;border-bottom:1px solid var(--cm-rule);vertical-align:top}
+.cm-spec td:first-child{color:var(--cm-stone-600);width:46%;padding-right:14px}
+.cm-spec td:last-child{font-weight:500}
+.cm-spec tr:last-child td{border-bottom:none}
+
+/* ============ SCHEDULE ============ */
+.cm-sched{border-top:1px solid var(--cm-rule)}
+.cm-sched__row{
+  display:grid;grid-template-columns:78px minmax(0,1fr) 108px;gap:clamp(12px,2vw,28px);
+  padding:16px 0;border-bottom:1px solid var(--cm-rule);align-items:baseline;
+}
+.cm-sched__day{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--cm-blaze)}
+.cm-sched__site{font-size:clamp(16px,1.6vw,20px);font-weight:600;letter-spacing:-0.005em}
+.cm-sched__site span{display:block;font-weight:400;font-size:13.5px;color:var(--cm-stone-600);margin-top:5px;letter-spacing:0}
+.cm-sched__dv{
+  font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--cm-stone-600);text-align:right;white-space:nowrap;
+}
+.cm-sched__row:hover{background:var(--cm-canvas)}
+
+/* ============ SPECIES ============ */
+.cm-spp li{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:baseline;
+  padding:12px 0;border-bottom:1px solid var(--cm-rule-dark);
+}
+.cm-spp li strong{font-weight:600;font-size:15.5px}
+.cm-spp li strong span{display:block;font-weight:400;font-size:13px;color:var(--cm-stone-400);margin-top:4px}
+.cm-spp li em{
+  font-style:normal;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:#e08a4d;white-space:nowrap;
+}
+
+/* ============ GUIDES ============ */
+.cm-guide{border:1px solid var(--cm-rule);background:var(--cm-paper)}
+.cm-guide img{aspect-ratio:4/5;object-fit:cover;filter:saturate(.8) contrast(1.03);border-bottom:1px solid var(--cm-rule)}
+.cm-guide__np{
+  aspect-ratio:4/5;background:var(--cm-canvas);border-bottom:1px solid var(--cm-rule);
+  display:flex;flex-direction:column;justify-content:space-between;padding:16px;
+}
+.cm-guide__np>span:first-child{
+  font-size:clamp(24px,2.6vw,34px);font-weight:700;letter-spacing:.04em;color:var(--cm-stone-900);
+  font-family:"Archivo",Helvetica Neue,Arial,sans-serif;font-stretch:112%;
+}
+.cm-guide__np>span:last-child{
+  font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
+  line-height:1.8;color:var(--cm-stone-600);
+}
+.cm-guide__bd{padding:15px 15px 18px}
+.cm-h3{font-size:clamp(17px,1.8vw,22px);margin-bottom:14px}
+.cm-guide__nm{font-size:15.5px;font-weight:600}
+.cm-guide__rl{font-size:10.5px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--cm-blaze);margin-top:6px}
+.cm-guide__bd p{font-size:13.5px;color:var(--cm-stone-700);margin-top:10px;line-height:1.55}
+
+/* ============ DEPARTURES ============ */
+.cm-dep{border-top:1px solid var(--cm-rule-dark)}
+.cm-dep__row{
+  display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1.5fr) minmax(0,.9fr) auto;
+  gap:clamp(12px,2vw,26px);padding:18px 0;border-bottom:1px solid var(--cm-rule-dark);align-items:center;
+}
+.cm-dep__hd{
+  font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--cm-stone-400);
+  padding-bottom:10px;
+}
+.cm-dep__nm{font-size:16px;font-weight:600;color:var(--cm-canvas)}
+.cm-dep__nm span{display:block;font-weight:400;font-size:12.5px;color:var(--cm-stone-400);margin-top:5px}
+.cm-dep__dt{font-size:13.5px;color:var(--cm-stone-300);line-height:1.7}
+.cm-dep__pr{font-size:clamp(17px,1.8vw,22px);color:var(--cm-canvas)}
+.cm-dep__pr small{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--cm-stone-400);margin-top:4px;font-weight:600}
+
+.cm-terms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,28px);margin-top:clamp(26px,3vw,40px)}
+.cm-terms h4{font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#e08a4d;padding-bottom:9px;border-bottom:1px solid var(--cm-rule-dark)}
+.cm-terms p{font-size:13.5px;color:var(--cm-stone-300);margin-top:11px;line-height:1.6}
+
+/* ============ FOOTER ============ */
+.cm-foot{background:var(--cm-stone-900);color:var(--cm-stone-400);border-top:1px solid var(--cm-rule-dark);padding:clamp(34px,4vw,56px) 0}
+.cm-foot__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(18px,2.4vw,34px)}
+.cm-foot h5{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--cm-canvas);padding-bottom:10px;border-bottom:1px solid var(--cm-rule-dark)}
+.cm-foot li,.cm-foot p{font-size:13px;margin-top:9px;line-height:1.55}
+.cm-foot a:hover{color:var(--cm-canvas)}
+.cm-foot__end{margin-top:clamp(26px,3vw,42px);padding-top:16px;border-top:1px solid var(--cm-rule-dark);font-size:11px;letter-spacing:.09em;text-transform:uppercase}
+
+/* ============ MOTION: minimal, functional ============ */
+.cm-root a,.cm-root .cm-btn,.cm-sched__row{transition:background-color .14s linear,color .14s linear,border-color .14s linear}
+@media (prefers-reduced-motion:reduce){.cm-root *{transition:none!important;animation:none!important}}
+.cm-root a:focus-visible,.cm-root .cm-btn:focus-visible{outline:2px solid var(--cm-blaze);outline-offset:2px}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:1040px){
+  .cm-strip{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .cm-strip>div:nth-child(3n){border-right:none}
+  .cm-cols4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cm-foot__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:860px){
+  .cm-hero__grid{grid-template-columns:minmax(0,1fr)}
+  .cm-grid-lede{grid-template-columns:minmax(0,1fr)}
+  .cm-cols2,.cm-cols3{grid-template-columns:minmax(0,1fr)}
+  .cm-plates{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cm-plates>div:nth-child(3n){border-right:1px solid var(--cm-rule-dark)}
+  .cm-plates>div:nth-child(2n){border-right:none}
+  .cm-plates>div:nth-last-child(-n+3){border-bottom:1px solid var(--cm-rule-dark)}
+  .cm-plates>div:last-child{border-bottom:none}
+  .cm-terms{grid-template-columns:minmax(0,1fr)}
+  .cm-dep__row{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .cm-dep__hd:nth-child(3),.cm-dep__hd:nth-child(4){display:none}
+}
+@media (max-width:560px){
+  .cm-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cm-strip>div:nth-child(2n){border-right:none}
+  .cm-strip>div:nth-child(3n){border-right:1px solid var(--cm-rule)}
+  .cm-strip>div:nth-child(2n){border-right:none}
+  .cm-plates{grid-template-columns:minmax(0,1fr)}
+  .cm-plates>div{border-right:none!important}
+  .cm-cols4{grid-template-columns:minmax(0,1fr)}
+  .cm-foot__grid{grid-template-columns:minmax(0,1fr)}
+  .cm-sched__row{grid-template-columns:64px minmax(0,1fr);row-gap:6px}
+  .cm-sched__dv{grid-column:2;text-align:left}
+  .cm-dep__row{grid-template-columns:minmax(0,1fr)}
+  .cm-nav{gap:10px 14px}
+  .cm-util__in span:nth-child(2){margin-left:0}
+  .cm-lab{flex-wrap:wrap}
+  .cm-lab span.cm-lab__r{margin-left:0;flex-basis:100%;margin-top:6px}
+  .cm-fig__cap{gap:4px 12px}
+}
+</style>
+
+
+<div class="cm-root">
+
+  <!-- ===== UTILITY BAR ===== -->
+  <div class="cm-util">
+    <div class="cm-wrap cm-util__in cm-mono">
+      <span>Galápagos Shark Diving<b> ®</b></span>
+      <span>Puerto Ayora, Santa Cruz, Galápagos · Operating since <b>2017</b></span>
+      <span>Max <b>16</b> guests · Advanced Diver required</span>
+    </div>
+  </div>
+
+  <!-- ===== MASTHEAD ===== -->
+  <header class="cm-mast">
+    <div class="cm-wrap cm-mast__in">
+      <div class="cm-d cm-logo">Galapagos Shark Diving<em>.</em></div>
+      <nav class="cm-nav" aria-label="Concept M sections"> <a href="#readiness">Readiness</a> <a href="#conditions">Conditions</a> <a href="#kit">Kit</a> <a href="#vessels">Vessels</a> <a href="#schedule">Schedule</a> <a href="#water">The water</a> <a href="#berths">Berths</a> </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO: THE EXPEDITION AHEAD ===== -->
+  <section class="cm-hero">
+    <div class="cm-wrap">
+      <div class="cm-hero__grid">
+        <div>
+          <p class="cm-eyebrow">Expedition brief — Darwin &amp; Wolf</p>
+          <h1 class="cm-d cm-h1">This is not a beginner's ocean. Come equipped for it.</h1>
+          <p class="cm-hero__lede">
+            Eight days on a liveaboard at the northern seamounts of the Galápagos Marine Reserve:
+            sixteen dives, currents of one to five knots, water at 16–24&nbsp;°C, and a shark
+            researcher in the water with you. Everything below is what the diving actually demands
+            and exactly how you will be equipped for it.
+          </p>
+          <div class="cm-btns"> <a class="cm-btn cm-btn--blaze" href="#readiness"><span class="cm-btn__k" aria-hidden="true">↓</span>Check your readiness</a> <a class="cm-btn cm-btn--ghost" href="#schedule">Read the 8-day schedule</a> </div>
+        </div>
+        <figure class="cm-fig">
+          <span class="cm-plate cm-mono">Fig. 01 — Working dive</span>
+          <img
+            src="https://image.jimcdn.com/app/cms/image/transf/dimension=1200x10000:format=jpg/path/s2fc4241e2a9d6156/image/i3c7de9084888c9b9/version/1770760303/galapagos-shark-diving-diver-taking-photo-of-whale-shark.jpg"
+            alt="A diver photographing a whale shark for photo-identification during a Galapagos Shark Diving expedition"
+            width="1200" height="800" />
+          <figcaption class="cm-fig__cap cm-mono">
+            <span>Task: <i>photo-ID capture</i></span>
+            <span>Max depth <i>30 m / 100 ft</i></span>
+            <span>Current <i>1–5 kn</i></span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <dl class="cm-strip cm-mono">
+        <div><dt>Duration</dt><dd class="cm-d">8 days<small>7 nights aboard</small></dd></div>
+        <div><dt>Dives</dt><dd class="cm-d">16<small>2–4 per day</small></dd></div>
+        <div><dt>Logged dives</dt><dd class="cm-d">50+<small>Required minimum</small></dd></div>
+        <div><dt>Water</dt><dd class="cm-d">16–24°<small>Celsius, Jun–Nov</small></dd></div>
+        <div><dt>Guests</dt><dd class="cm-d">16<small>Vessel maximum</small></dd></div>
+        <div><dt>Vessels</dt><dd class="cm-d">2<small>Aqua · Galaxy Diver II</small></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ===== 01 READINESS ===== -->
+  <section class="cm-sec" id="readiness">
+    <div class="cm-wrap">
+      <p class="cm-lab"><b>01</b> Readiness <span class="cm-lab__r">Certification · logs · currency · paperwork</span></p>
+      <div class="cm-grid-lede">
+        <div>
+          <h2 class="cm-d cm-h2">What the expedition asks of you before you board.</h2>
+        </div>
+        <div>
+          <p class="cm-lede" style="margin-top:0">
+            The requirement is not a formality. Darwin and Wolf are open-ocean seamounts with
+            real current, real surge and real surface conditions, and the certification bar differs
+            between our two expeditions. Read the one you intend to book.
+          </p>
+        </div>
+      </div>
+
+      <div class="cm-cols2" style="margin-top:clamp(28px,3.2vw,44px)">
+        <div class="cm-card">
+          <div class="cm-card__hd"><span>Citizen Science Expedition</span><em>Aqua</em></div>
+          <div class="cm-card__bd">
+            <p class="cm-req">A valid internationally recognised dive licence equivalent to <b>Advanced Diver (PADI)</b> — <b>or</b> an Open Water licence <b>plus a Deep Diver specialty course</b> — with more than <b>50 logged dives</b>.</p>
+            <ul class="cm-kit cm-kit--tight" style="margin-top:18px">
+              <li><span aria-hidden="true">✓</span><span>Certification card and logbook</span><span>At booking</span></li>
+              <li><span aria-hidden="true">✓</span><span>Completed dive forms</span><span>1 month prior</span></li>
+              <li><span aria-hidden="true">✓</span><span>Nitrox</span><span>Paid extra</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="cm-card">
+          <div class="cm-card__hd"><span>Luxury Science Expedition</span><em>Galaxy Diver II</em></div>
+          <div class="cm-card__bd">
+            <p class="cm-req">A valid licence equivalent to <b>Advanced Diver (PADI)</b> with more than <b>50 logged dives</b>. The Open Water plus Deep Diver alternative <b>is not accepted</b> on this expedition.</p>
+            <ul class="cm-kit cm-kit--tight" style="margin-top:18px">
+              <li><span aria-hidden="true">✓</span><span>Certification card and logbook</span><span>At booking</span></li>
+              <li><span aria-hidden="true">✓</span><span>Completed dive forms</span><span>3 months prior</span></li>
+              <li><span aria-hidden="true">✓</span><span>Nitrox</span><span>Included</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="cm-rules">
+        <div class="cm-rules__hd">Non-negotiable, both expeditions</div>
+        <ul>
+          <li><span><b>Maximum depth 30 m / 100 ft.</b> Decompression and solo diving are not allowed under any conditions.</span></li>
+          <li><span><b>At least one dive within the six months</b> before your departure date. If you have been dry longer than that, do a refresher at home first.</span></li>
+          <li><span><b>A personal dive computer.</b> Not optional, not shared, not rented as an afterthought.</span></li>
+          <li><span><b>Dive-accident insurance.</b> DAN or Aquamed recommended. Travel insurance is separate and also your own.</span></li>
+          <li><span><b>Motion-sickness preparation.</b> Bring medication or Transderm patches from your own doctor — the crossing to Darwin is open water.</span></li>
+        </ul>
+      </div>
+
+      <p class="cm-note" style="margin-top:20px">
+        If you are not there yet, say so when you enquire. We would rather move you to a later
+        departure, or point you at a different Galápagos liveaboard through our advisory service,
+        than put you on a Darwin dive you are not ready for.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== 02 CONDITIONS ===== -->
+  <section class="cm-sec cm-sec--dark" id="conditions">
+    <div class="cm-wrap">
+      <p class="cm-lab"><b>02</b> Conditions <span class="cm-lab__r">June – November season</span></p>
+      <div class="cm-grid-lede" style="margin-bottom:clamp(28px,3.2vw,42px)">
+        <div><h2 class="cm-d cm-h2">The numbers you are dressing for.</h2></div>
+        <div>
+          <p class="cm-lede" style="margin-top:0">
+            Galápagos water is colder than divers expect and the current is stronger than they
+            expect. These are the figures we publish, not softened ones — plan your thermal
+            protection against the bottom of each range, not the top.
+          </p>
+        </div>
+      </div>
+
+      <dl class="cm-plates cm-mono">
+        <div><dt>Water temperature</dt><dd class="cm-d">16–24 °C<small>60–75 °F, June–November</small></dd></div>
+        <div><dt>Air temperature</dt><dd class="cm-d">≈ 20 °C<small>68 °F, dry season</small></dd></div>
+        <div><dt>Visibility</dt><dd class="cm-d">10–30 m<small>Site and tide dependent</small></dd></div>
+        <div><dt>Current</dt><dd class="cm-d">1–5 kn<small>Negative entries, reef hooks in use</small></dd></div>
+        <div><dt>Maximum depth</dt><dd class="cm-d">30 m<small>100 ft, hard limit</small></dd></div>
+        <div><dt>Dives per day</dt><dd class="cm-d">2–4<small>16 dives over 8 days</small></dd></div>
+      </dl>
+
+      <div class="cm-cols2" style="margin-top:clamp(26px,3vw,40px);align-items:start">
+        <div>
+          <h3 class="cm-d cm-h3">Thermal protection, as we actually recommend it</h3>
+          <p class="cm-lede" style="max-width:52ch">
+            Most divers find a <strong style="color:var(--cm-canvas)">7&nbsp;mm wetsuit from June through
+            November, with a hooded vest</strong> suitable. Gloves and hood are strongly
+            recommended. A 3&nbsp;mm suit alone will not carry you through four dives a day at
+            Wolf.
+          </p>
+          <p class="cm-note" style="margin-top:14px">
+            Note: the Galápagos National Park applies general restrictions on gloves. This is a
+            live operational question we will answer honestly for your specific departure rather
+            than paper over here.
+          </p>
+        </div>
+        <figure class="cm-fig" style="border-color:var(--cm-rule-dark)">
+          <span class="cm-plate cm-mono">Fig. 02 — Hammerhead aggregation</span>
+          <img
+            src="https://image.jimcdn.com/app/cms/image/transf/dimension=1100x10000:format=jpg/path/s2fc4241e2a9d6156/image/i1e62173842f11a44/version/1601949845/image.jpg"
+            alt="A school of scalloped hammerhead sharks in open water at a northern Galápagos seamount"
+            width="1100" height="700" loading="lazy" />
+          <figcaption class="cm-fig__cap cm-mono" style="border-top-color:var(--cm-rule-dark);color:var(--cm-stone-400)">
+            <span>Scalloped hammerheads, <i style="color:var(--cm-canvas)">schooling in current</i></span>
+            <span>Thermal: <i style="color:var(--cm-canvas)">7 mm + hooded vest</i></span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 03 KIT / HOW YOU ARE EQUIPPED ===== -->
+  <section class="cm-sec" id="kit">
+    <div class="cm-wrap">
+      <p class="cm-lab"><b>03</b> Kit list <span class="cm-lab__r">Issued aboard · carried by you · rentable</span></p>
+      <div class="cm-grid-lede" style="margin-bottom:clamp(28px,3.2vw,42px)">
+        <div><h2 class="cm-d cm-h2">How you will be equipped.</h2></div>
+        <div>
+          <p class="cm-lede" style="margin-top:0">
+            Tanks, weights and the dive platform are ours. Your personal life-support gear is
+            yours — bring it, or rent it from the boat before you leave home, not on the dock.
+            Soft luggage only; the cabins have no room for hard cases.
+          </p>
+        </div>
+      </div>
+
+      <div class="cm-cols3">
+        <div>
+          <p class="cm-lab" style="margin-bottom:0;padding-bottom:10px"><b>A</b> Issued on board</p>
+          <ul class="cm-kit">
+            <li><span aria-hidden="true">✓</span><span>Aluminium tanks, 12 L (10 L / 15 L on Galaxy Diver II)</span><span>Included</span></li>
+            <li><span aria-hidden="true">✓</span><span>Weights and weight belt</span><span>Included</span></li>
+            <li><span aria-hidden="true">✓</span><span>Bilingual dive masters</span><span>Included</span></li>
+            <li><span aria-hidden="true">✓</span><span>Whale Shark Project researcher aboard</span><span>Citizen Science</span></li>
+            <li><span aria-hidden="true">✓</span><span>All meals, snacks, 24-hour hot drinks</span><span>Included</span></li>
+            <li><span aria-hidden="true">✓</span><span>Galápagos airport transfers</span><span>Included</span></li>
+            <li><span aria-hidden="true">✓</span><span>Onboard science presentations</span><span>Daily</span></li>
+            <li><span aria-hidden="true">✓</span><span>Safety equipment and toiletries</span><span>Included</span></li>
+            <li><span aria-hidden="true">✓</span><span>Marine Reserve transport &amp; fuel surcharge</span><span>In the price</span></li>
+          </ul>
+        </div>
+        <div>
+          <p class="cm-lab" style="margin-bottom:0;padding-bottom:10px"><b>B</b> You bring</p>
+          <ul class="cm-kit">
+            <li><span aria-hidden="true">□</span><span>Mask and snorkel</span><span>Personal fit</span></li>
+            <li><span aria-hidden="true">□</span><span>Fins and booties</span><span>Personal fit</span></li>
+            <li><span aria-hidden="true">□</span><span>BCD</span><span>Or rent</span></li>
+            <li><span aria-hidden="true">□</span><span>Regulator set</span><span>Or rent</span></li>
+            <li><span aria-hidden="true">□</span><span>Wetsuit, 3–7 mm</span><span>7 mm advised</span></li>
+            <li><span aria-hidden="true">□</span><span>Hooded vest, hood, gloves</span><span>Advised</span></li>
+            <li><span aria-hidden="true">□</span><span>Dive computer</span><span>Required</span></li>
+            <li><span aria-hidden="true">□</span><span>Dive-accident insurance certificate</span><span>Required</span></li>
+            <li><span aria-hidden="true">□</span><span>Soft luggage, motion-sickness medication</span><span>Advised</span></li>
+          </ul>
+        </div>
+        <div>
+          <p class="cm-lab" style="margin-bottom:0;padding-bottom:10px"><b>C</b> Rental, Aqua</p>
+          <ul class="cm-kit cm-kit--tight cm-mono">
+            <li><span aria-hidden="true">·</span><span>Complete scuba set, 8 days</span><span>$250</span></li>
+            <li><span aria-hidden="true">·</span><span>BCD</span><span>$80</span></li>
+            <li><span aria-hidden="true">·</span><span>Regulator</span><span>$80</span></li>
+            <li><span aria-hidden="true">·</span><span>Wetsuit, 7 mm full body</span><span>$60</span></li>
+            <li><span aria-hidden="true">·</span><span>Wetsuit, 3 mm full body</span><span>$40</span></li>
+            <li><span aria-hidden="true">·</span><span>Fins</span><span>$35</span></li>
+            <li><span aria-hidden="true">·</span><span>Boots</span><span>$25</span></li>
+            <li><span aria-hidden="true">·</span><span>Hood · Gloves</span><span>$20 each</span></li>
+            <li><span aria-hidden="true">·</span><span>15 L tank upgrade</span><span>$75</span></li>
+            <li><span aria-hidden="true">·</span><span>DIN / Yoke adaptor</span><span>$25</span></li>
+            <li><span aria-hidden="true">·</span><span>Nitrox fills</span><span>$150</span></li>
+          </ul>
+          <p class="cm-note" style="margin-top:12px">
+            From the on-board rate card as published, 2023, subject to change. Daily rates exist for
+            every line. Galaxy Diver II runs its own separate rate list — ask and we will send the
+            current one for your vessel rather than quote you the wrong boat's prices.
+          </p>
+        </div>
+      </div>
+
+      <div class="cm-rules" style="border-color:var(--cm-stone-700)">
+        <div class="cm-rules__hd" style="background:var(--cm-stone-900)">Not included in the expedition price</div>
+        <ul>
+          <li><span>International flights to Ecuador, and flights to and from the Galápagos Islands.</span></li>
+          <li><span><b>Galápagos National Park entrance fee, $200.</b> Paid on arrival.</span></li>
+          <li><span><b>Transit Control Card, $20.</b> Paid at the mainland airport.</span></li>
+          <li><span>Personal gear rental · alcohol · dive and travel insurance.</span></li>
+          <li><span><b>Nitrox on the Citizen Science Expedition</b> — a paid extra there, included on the Luxury Science Expedition.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 04 VESSELS ===== -->
+  <section class="cm-sec cm-sec--canvas" id="vessels">
+    <div class="cm-wrap">
+      <p class="cm-lab"><b>04</b> Vessel capability <span class="cm-lab__r">Two boats · 16 guests each</span></p>
+      <div class="cm-grid-lede" style="margin-bottom:clamp(28px,3.2vw,42px)">
+        <div><h2 class="cm-d cm-h2">The platform you dive from.</h2></div>
+        <div>
+          <p class="cm-lede" style="margin-top:0">
+            A liveaboard at Darwin is a working dive platform first and a hotel second. What
+            matters is compressor capacity, tank count, rinse tanks that keep your camera away
+            from your wetsuit, and a tender that can pick you up in current. Both boats are
+            specified below as the operator publishes them.
+          </p>
+        </div>
+      </div>
+
+      <div class="cm-cols2" style="margin-bottom:clamp(20px,2.4vw,32px)">
+        <figure class="cm-fig">
+          <span class="cm-plate cm-mono">Fig. 04 — Aqua</span>
+          <img
+            src="https://image.jimcdn.com/app/cms/image/transf/dimension=1100x10000:format=jpg/path/s2fc4241e2a9d6156/image/ie0db3f63fa49cf65/version/1601745621/image.jpg"
+            alt="The liveaboard Aqua under way in open water in the Galápagos Marine Reserve"
+            width="1100" height="700" loading="lazy" />
+          <figcaption class="cm-fig__cap cm-mono"><span>Aqua · <i>16 guests</i> · <i>9 cabins</i> · built 1998, renovated 2019</span></figcaption>
+        </figure>
+        <figure class="cm-fig">
+          <span class="cm-plate cm-mono">Fig. 05 — What the platform is for</span>
+          <img
+            src="https://image.jimcdn.com/app/cms/image/transf/dimension=1100x10000:format=jpg/path/s2fc4241e2a9d6156/image/i278e2e517fba89fa/version/1601913347/image.jpg"
+            alt="A scuba diver in the water alongside a Galápagos shark on a Galapagos Shark Diving expedition"
+            width="1100" height="700" loading="lazy" />
+          <figcaption class="cm-fig__cap cm-mono"><span>Diver and Galápagos shark · <i>max depth 30 m</i> · <i>no solo diving</i></span></figcaption>
+        </figure>
+      </div>
+
+      <div class="cm-cols2">
+        <div class="cm-card" style="background:transparent">
+          <div class="cm-card__hd" style="background:var(--cm-stone-900);color:var(--cm-canvas);border-bottom-color:var(--cm-stone-900)">
+            <span>Aqua</span><em style="color:#e08a4d">Citizen Science</em> </div>
+          <div class="cm-card__bd">
+            <table class="cm-spec cm-mono">
+              <tbody>
+                <tr><th>Specification</th><th style="text-align:right">Value</th></tr>
+                <tr><td>Maximum guests</td><td>16</td></tr>
+                <tr><td>Guest cabins</td><td>9, all with private bathroom and air conditioning</td></tr>
+                <tr><td>Built · renovated</td><td>1998 · 2019</td></tr>
+                <tr><td>Length · beam</td><td>26 m · 5.5 m</td></tr>
+                <tr><td>Cruising speed</td><td>9 knots</td></tr>
+                <tr><td>Engines</td><td>2 × 250 HP Caterpillar</td></tr>
+                <tr><td>Tenders</td><td>2 × Caribe (C-20, C-17), 50 HP Yamaha four-stroke</td></tr>
+                <tr><td>Fuel · fresh water</td><td>2,000 gal · watermaker 1,200 gal</td></tr>
+                <tr><td>Dive platform</td><td>Remodelled and expanded 2017</td></tr>
+                <tr><td>Compressors</td><td>2, Nitrox capable</td></tr>
+                <tr><td>Tank capacity</td><td>34 aluminium 12 L</td></tr>
+                <tr><td>Rinse tanks</td><td>2 — one for wetsuits, one for electronics only</td></tr>
+                <tr><td>Deck showers</td><td>2, hot and cold water</td></tr>
+                <tr><td>Camera</td><td>Dedicated camera table</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="cm-card" style="background:transparent">
+          <div class="cm-card__hd" style="background:var(--cm-forest);color:var(--cm-canvas);border-bottom-color:var(--cm-forest)">
+            <span>Galaxy Diver II</span><em style="color:#9fd0b4">Luxury Science</em> </div>
+          <div class="cm-card__bd">
+            <table class="cm-spec cm-mono">
+              <tbody>
+                <tr><th>Specification</th><th style="text-align:right">Value</th></tr>
+                <tr><td>Maximum guests</td><td>16</td></tr>
+                <tr><td>Length · beam</td><td>35 m (114.82 ft) · 8.20 m (26.90 ft)</td></tr>
+                <tr><td>Maximum · cruise speed</td><td>15 knots · 11 knots</td></tr>
+                <tr><td>Engines</td><td>2 × 600 HP Caterpillar</td></tr>
+                <tr><td>Generators</td><td>2 × 90 KW John Deere</td></tr>
+                <tr><td>Electricity</td><td>110 V / 220 V, 24 hours</td></tr>
+                <tr><td>Fuel · fresh water</td><td>15,100 L · 9,800 L</td></tr>
+                <tr><td>Compressors</td><td>2 × LW, Nitrox capable</td></tr>
+                <tr><td>Tank capacity</td><td>34 aluminium, 10 / 12 / 15 L, DIN and Yoke</td></tr>
+                <tr><td>Deck showers</td><td>4 freshwater</td></tr>
+                <tr><td>Camera</td><td>Large camera table, separate rinse tank</td></tr>
+                <tr><td>Dive boats</td><td>2 × 40 HP motorised</td></tr>
+                <tr><td>Sundeck</td><td>117 m² (1,259 sq ft) shaded and open</td></tr>
+                <tr><td>Nitrox</td><td>Included in the expedition price</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="cm-rules" style="border-color:var(--cm-forest)">
+        <div class="cm-rules__hd" style="background:var(--cm-forest)">Safety and support, Galaxy Diver II as specified</div>
+        <ul>
+          <li><span><b>Emergency oxygen, 10,000 litres</b>, and an AED on board.</span></li>
+          <li><span><b>Electronic diver tracking system</b> — every diver carries a unit in the water.</span></li>
+          <li><span>Life raft · life jackets and fire extinguishers throughout · fire alarm system · bilge pump alarm · engine-room CCTV.</span></li>
+          <li><span>SSB and VHF radio · navigation radar · GPS · depth sounder · fishfinder · autopilot · plotter.</span></li>
+          <li><span>Iridium satellite and mobile phones · spotlight and horn · sealed parachute flare, hand flare and smoke-signal kits.</span></li>
+        </ul>
+      </div>
+
+      <p class="cm-note" style="margin-top:20px">
+        One honest note on specifications: the operator's own published cabin count for Galaxy
+        Diver II differs between its written description and its deck plans. We have not picked a
+        number for you. Ask before you book a specific cabin and you will get the confirmed
+        answer for your departure.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== 05 SCHEDULE ===== -->
+  <section class="cm-sec" id="schedule">
+    <div class="cm-wrap">
+      <p class="cm-lab"><b>05</b> Schedule <span class="cm-lab__r">8 days · 16 dives · Citizen Science, Aqua</span></p>
+      <div class="cm-grid-lede" style="margin-bottom:clamp(24px,3vw,38px)">
+        <div><h2 class="cm-d cm-h2">Day by day, as the week actually runs.</h2></div>
+        <div>
+          <p class="cm-lede" style="margin-top:0">
+            No marketing prose in this section. This is the dive plan: where the boat is, how many
+            dives that day, and what you are diving for. The 15-day variant extends the time at
+            Wolf and Darwin and adds Roca Blanca, Pizón, Beagle Rocks, Marchena, Roca Redonda and
+            one night dive.
+          </p>
+        </div>
+      </div>
+
+      <div class="cm-sched">
+        <div class="cm-sched__row">
+          <span class="cm-sched__day cm-mono">Day 1 · Tue</span>
+          <span class="cm-sched__site">Baltra / Santa Cruz<span>Board, gear setup and buoyancy check. Guides collect you at the airport at 11:00.</span></span>
+          <span class="cm-sched__dv cm-mono">1 check dive</span>
+        </div>
+        <div class="cm-sched__row">
+          <span class="cm-sched__day cm-mono">Day 2 · Wed</span>
+          <span class="cm-sched__site">Cape Marshall &amp; City of Mantas<span>Isabela's east coast. Manta rays on the walls; your first real current.</span></span>
+          <span class="cm-sched__dv cm-mono">3 dives</span>
+        </div>
+        <div class="cm-sched__row">
+          <span class="cm-sched__day cm-mono">Day 3 · Thu</span>
+          <span class="cm-sched__site">Darwin's Arch<span>The Pillars of Evolution. Whale sharks in season, hammerhead schools, negative entries.</span></span>
+          <span class="cm-sched__dv cm-mono">4 dives</span>
+        </div>
+        <div class="cm-sched__row">
+          <span class="cm-sched__day cm-mono">Day 4 · Fri</span>
+          <span class="cm-sched__site">Darwin's Arch &amp; Wolf Island<span>Two more at Darwin, then the crossing south to Wolf.</span></span>
+          <span class="cm-sched__dv cm-mono">4 dives</span>
+        </div>
+        <div class="cm-sched__row">
+          <span class="cm-sched__day cm-mono">Day 5 · Sat</span>
+          <span class="cm-sched__site">Wolf Island<span>High shark biomass, strong current, reef-hook diving.</span></span>
+          <span class="cm-sched__dv cm-mono">3 dives</span>
+        </div>
+        <div class="cm-sched__row">
+          <span class="cm-sched__day cm-mono">Day 6 · Sun</span>
+          <span class="cm-sched__site">Punta Vicente Roca &amp; Cape Douglas<span>Cold water. Mola mola cleaning station; marine iguanas feeding underwater at Fernandina.</span></span>
+          <span class="cm-sched__dv cm-mono">2 dives</span>
+        </div>
+        <div class="cm-sched__row">
+          <span class="cm-sched__day cm-mono">Day 7 · Mon</span>
+          <span class="cm-sched__site">Cousin's Rock &amp; Santa Cruz highlands<span>Macro, hammerheads and sea lions, then a land excursion in the highlands.</span></span>
+          <span class="cm-sched__dv cm-mono">2 dives</span>
+        </div>
+        <div class="cm-sched__row">
+          <span class="cm-sched__day cm-mono">Day 8 · Tue</span>
+          <span class="cm-sched__site">Disembark Baltra<span>Or continue to a land extension.</span></span>
+          <span class="cm-sched__dv cm-mono">No diving</span>
+        </div>
+      </div>
+
+      <div class="cm-cols3" style="margin-top:clamp(26px,3vw,40px)">
+        <div>
+          <p class="cm-lab" style="margin-bottom:0;padding-bottom:10px"><b>→</b> Arriving</p>
+          <p class="cm-note">
+            If you fly to Baltra on the sailing day, be on a flight that lands <strong>no later than 10:30 local time</strong>. Guides collect divers at the airport at <strong>11:00</strong>. Staying in Puerto Ayora the night before: be back at Baltra by
+            11:00, or head straight to Baltra port.
+          </p>
+        </div>
+        <div>
+          <p class="cm-lab" style="margin-bottom:0;padding-bottom:10px"><b>←</b> Leaving</p>
+          <p class="cm-note">
+            On the day the trip ends, book a flight leaving <strong>no earlier than 12:00</strong>. Standard practice is to allow a further night
+            before any international flight after a week of repetitive diving.
+          </p>
+        </div>
+        <div>
+          <p class="cm-lab" style="margin-bottom:0;padding-bottom:10px"><b>≡</b> Before sailing</p>
+          <p class="cm-note">
+            Dive forms are due <strong>one month</strong> before a Citizen Science departure and <strong>three months</strong> before a Luxury Science departure. Flag dietary
+            requirements in advance; some specific brands are not available on board.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 06 THE WATER ===== -->
+  <section class="cm-sec cm-sec--dark" id="water">
+    <div class="cm-wrap">
+      <p class="cm-lab"><b>06</b> The water <span class="cm-lab__r">What you are diving among, and what you are recording</span></p>
+      <div class="cm-grid-lede" style="margin-bottom:clamp(26px,3vw,40px)">
+        <div><h2 class="cm-d cm-h2 cm-h2--wide">Wildlife, season, and the work you do in the water.</h2></div>
+        <div>
+          <p class="cm-lede" style="margin-top:0">
+            A shark scientist from the Galápagos Whale Shark Project has been in the water on every
+            Citizen Science departure since <strong style="color:var(--cm-canvas)">2019</strong>.
+            You are not watching research happen from the rail — your photographs go into the
+            identification record.
+          </p>
+        </div>
+      </div>
+
+      <div class="cm-grid-lede" style="align-items:start">
+        <div>
+          <ul class="cm-spp">
+            <li><strong>Whale shark<span>Adult females, at the northern seamounts. IUCN Red List: Endangered.</span></strong><em>Jun – Nov</em></li>
+            <li><strong>Scalloped hammerhead<span>Daytime schooling aggregations at Wolf and Darwin.</span></strong><em>Season-long</em></li>
+            <li><strong>Galápagos shark<span>Resident, in numbers, across the northern circuit.</span></strong><em>Season-long</em></li>
+            <li><strong>Oceanic manta ray<span>Cape Marshall and City of Mantas, on the walls.</span></strong><em>Season-long</em></li>
+            <li><strong>Mola mola<span>Cold-water cleaning station at Punta Vicente Roca.</span></strong><em>Cold water</em></li>
+            <li><strong>Marine iguana<span>Feeding underwater at Cabo Douglas, Fernandina — nowhere else on earth.</span></strong><em>Cabo Douglas</em></li>
+            <li><strong>Green turtle · sea lion · Galápagos penguin<span>Throughout the circuit, most reliably on the western sites.</span></strong><em>Throughout</em></li>
+          </ul>
+          <p class="cm-note" style="margin-top:16px">
+            Over 30 shark species have been identified in Galápagos waters, and nearly 99% of the
+            whale sharks visiting these seamounts are adult females — which is precisely why the
+            research happens here.
+          </p>
+        </div>
+        <div>
+          <figure class="cm-fig" style="border-color:var(--cm-rule-dark)">
+            <span class="cm-plate cm-mono">Fig. 03 — Scale</span>
+            <img
+              src="https://image.jimcdn.com/app/cms/image/transf/dimension=1200x10000:format=jpg/path/s2fc4241e2a9d6156/image/i94b5a8f9795e8d58/version/1771099762/adult-female-whale-shark-swimming-above-a-group-of-divers-in-the-galapagos-islands.jpg"
+              alt="An adult female whale shark swimming above a group of scuba divers in the Galapagos Islands"
+              width="1200" height="800" loading="lazy" />
+            <figcaption class="cm-fig__cap cm-mono" style="border-top-color:var(--cm-rule-dark);color:var(--cm-stone-400)">
+              <span>Adult female whale shark above a dive group</span>
+            </figcaption>
+          </figure>
+
+          <div class="cm-rules" style="border-color:var(--cm-forest-2)">
+            <div class="cm-rules__hd" style="background:var(--cm-forest)">Your work in the water</div>
+            <ul>
+              <li><span><b>Photo-identification.</b> Gill-region spot patterns for whale sharks, facial patterns for turtles, ventral spots for mantas. Submitted to <b>Sharkbook.ai</b>.</span></li>
+              <li><span><b>Shark Count.</b> Standardised observation protocol across archipelago dive sites, recorded dive by dive.</span></li>
+              <li><span><b>Dive Against Debris.</b> Underwater debris data collection on the circuit.</span></li>
+              <li><span><b>Daily presentations</b> from the researcher on board — satellite tagging, photo-ID and in-water behavioural work.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 07 WHO IS LEADING ===== -->
+  <section class="cm-sec" id="guides">
+    <div class="cm-wrap">
+      <p class="cm-lab"><b>07</b> Who leads it <span class="cm-lab__r">Credentials, plainly</span></p>
+      <h2 class="cm-d cm-h2 cm-h2--wide" style="margin-bottom:clamp(24px,3vw,38px)">The people in the water with you.</h2>
+      <div class="cm-cols4">
+        <div class="cm-guide">
+          <img
+            src="https://image.jimcdn.com/app/cms/image/transf/dimension=640x10000:format=jpg/path/s2fc4241e2a9d6156/image/i9e1cf49655c8730e/version/1588473589/galapagos-shark-diving-jonathan-r-green.jpg"
+            alt="Jonathan R. Green, tour leader and director of the Galápagos Whale Shark Project"
+            width="640" height="800" loading="lazy" />
+          <div class="cm-guide__bd">
+            <p class="cm-guide__nm">Jonathan R. Green, FRGS</p>
+            <p class="cm-guide__rl">Tour leader · Director, GWSP</p>
+            <p>Close to 30 years working in the Galápagos and several thousand dives in the region. Fellow of the Royal Geographical Society. English, Spanish, French.</p>
+          </div>
+        </div>
+        <div class="cm-guide">
+          <img
+            src="https://image.jimcdn.com/app/cms/image/transf/dimension=640x10000:format=png/path/s2fc4241e2a9d6156/image/icb85875bebff7e85/version/1588976370/simon-j-pierce.png"
+            alt="Dr Simon J. Pierce, marine conservation biologist and tour leader"
+            width="640" height="800" loading="lazy" />
+          <div class="cm-guide__bd">
+            <p class="cm-guide__nm">Dr Simon J. Pierce</p>
+            <p class="cm-guide__rl">Tour leader · Founder, MMF</p>
+            <p>Led the 2016 IUCN Red List global whale shark assessment and the 2017 uplisting under the UN Convention on Migratory Species. Co-Chair, IUCN Shark Specialist Group.</p>
+          </div>
+        </div>
+        <div class="cm-guide">
+          <img
+            src="https://image.jimcdn.com/app/cms/image/transf/dimension=640x10000:format=jpg/path/s2fc4241e2a9d6156/image/i806c82e6817de1c1/version/1751156290/galapagos-shark-diving-jenny-waack.jpg"
+            alt="Jenny Green, founder of Galapagos Shark Diving"
+            width="640" height="800" loading="lazy" />
+          <div class="cm-guide__bd">
+            <p class="cm-guide__nm">Jenny Green</p>
+            <p class="cm-guide__rl">Founder · GWSP board member</p>
+            <p>Dive master, field researcher and underwater photographer. Founded Galapagos Shark Diving in 2017. Works Arctic and Antarctic expedition ships in the off-season.</p>
+          </div>
+        </div>
+        <div class="cm-guide">
+          <div class="cm-guide__np cm-mono" aria-hidden="true">
+            <span>GWSP</span>
+            <span>Researcher aboard<br />every Citizen Science<br />departure since 2019</span>
+          </div>
+          <div class="cm-guide__bd">
+            <p class="cm-guide__nm">Sofía M. Green Iturralde</p>
+            <p class="cm-guide__rl">Tour leader · Researcher, GWSP</p>
+            <p>Ecuadorian, working in the Galápagos since 2017. International Master's in Marine Biological Resources (IMBRSea). Dive master and underwater photographer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 08 RESERVE A BERTH ===== -->
+  <section class="cm-sec cm-sec--dark" id="berths">
+    <div class="cm-wrap">
+      <p class="cm-lab"><b>08</b> Berths <span class="cm-lab__r">Per person, double occupancy</span></p>
+      <div class="cm-grid-lede" style="margin-bottom:clamp(26px,3vw,38px)">
+        <div><h2 class="cm-d cm-h2">Reserve your berth.</h2></div>
+        <div>
+          <p class="cm-lede" style="margin-top:0">
+            Sixteen berths per departure and a small number of departures a year. Dates below are as
+            published — confirm live availability with us before you book flights.
+          </p>
+        </div>
+      </div>
+
+      <div class="cm-dep cm-mono">
+        <div class="cm-dep__row" aria-hidden="true">
+          <span class="cm-dep__hd">Expedition</span>
+          <span class="cm-dep__hd">Published dates</span>
+          <span class="cm-dep__hd">Per person</span>
+          <span class="cm-dep__hd"></span>
+        </div>
+        <div class="cm-dep__row">
+          <span class="cm-dep__nm">Citizen Science, 8 days<span>Aqua · 16 dives · researcher aboard</span></span>
+          <span class="cm-dep__dt">2026 — 21–28 Jul · 28 Jul–4 Aug · 1–8 Sep<br />2027 — 27 Jul–3 Aug · 31 Aug–7 Sep</span>
+          <span class="cm-dep__pr cm-d">$6,390<small>2026 · $6,690 in 2027</small></span> <a class="cm-btn cm-btn--blaze" href="mailto:info@galapagossharkdiving.com?subject=Berth%20enquiry%20%E2%80%94%20Citizen%20Science%208-day">Reserve</a> </div>
+        <div class="cm-dep__row">
+          <span class="cm-dep__nm">Citizen Science, 15 days<span>Aqua · extended Wolf &amp; Darwin · one night dive</span></span>
+          <span class="cm-dep__dt">2026 — 4–18 Aug<br />2027 — 3–17 Aug · 17–31 Aug</span>
+          <span class="cm-dep__pr cm-d">$13,190<small>2026 · $13,490 in 2027</small></span> <a class="cm-btn cm-btn--blaze" href="mailto:info@galapagossharkdiving.com?subject=Berth%20enquiry%20%E2%80%94%20Citizen%20Science%2015-day">Reserve</a> </div>
+        <div class="cm-dep__row">
+          <span class="cm-dep__nm">Luxury Science, 8 days<span>Galaxy Diver II · Nitrox included</span></span>
+          <span class="cm-dep__dt">2026 and 2027 seasons — dates on request</span>
+          <span class="cm-dep__pr cm-d">$7,500<small>2026 · $8,200 in 2027</small></span> <a class="cm-btn cm-btn--blaze" href="mailto:info@galapagossharkdiving.com?subject=Berth%20enquiry%20%E2%80%94%20Luxury%20Science%208-day">Reserve</a> </div>
+      </div>
+
+      <div class="cm-terms">
+        <div>
+          <h4>Payment</h4>
+          <p>A <strong>30% deposit</strong> holds the berth. The balance is due <strong>120 days</strong> before departure. Cancellation is tiered at 30% and 100%; we will give you the exact terms in writing before you pay anything.</p>
+        </div>
+        <div>
+          <h4>Solo travellers</h4>
+          <p>You are matched with a same-sex cabin mate and pay the single-person price. A private cabin is available if you would rather have one — ask and we will price it for your departure.</p>
+        </div>
+        <div>
+          <h4>If it is not the right fit</h4>
+          <p>If our dates, budget or certification bar do not work for you, our Galápagos Liveaboard Advisory will point you at a different liveaboard that does. That is a real service, not a brush-off.</p>
+        </div>
+      </div>
+
+      <div class="cm-btns"> <a class="cm-btn cm-btn--blaze" href="mailto:info@galapagossharkdiving.com?subject=Galapagos%20berth%20enquiry">Email the expedition desk</a> <a class="cm-btn cm-btn--ghost" style="color:var(--cm-canvas);border-color:var(--cm-stone-600)" href="https://wa.me/593999667219">WhatsApp +593 999 66 7219</a> </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="cm-foot">
+    <div class="cm-wrap">
+      <div class="cm-foot__grid">
+        <div>
+          <h5>Expedition desk</h5>
+          <ul>
+            <li><a href="mailto:info@galapagossharkdiving.com">info@galapagossharkdiving.com</a></li>
+            <li><a href="https://wa.me/593999667219">WhatsApp +593 999 66 7219</a></li>
+            <li>128 Adolf Hanny y Av Seymour, El Edén, Puerto Ayora, Santa Cruz, Galápagos, Ecuador</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Expeditions</h5>
+          <ul>
+            <li>Citizen Science Expedition — Aqua</li>
+            <li>Luxury Science Expedition — Galaxy Diver II</li>
+            <li>Galápagos Liveaboard Advisory</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Research</h5>
+          <ul>
+            <li>Galápagos Whale Shark Project, supported since 2019</li>
+            <li>Sharkbook.ai photo-identification</li>
+            <li>Chicas con Agallas, supported since 2025</li>
+          </ul>
+        </div>
+        <div>
+          <h5>Notes on this page</h5>
+          <p>Every specification, requirement, date and price here is as published by the operator. Where the published record contradicts itself, this page says so instead of choosing for you.</p>
+        </div>
+      </div>
+      <div class="cm-foot__end cm-mono">
+        Concept M — Expedition Outfitter · Internal design prototype · Galapagos Shark Diving®
+      </div>
+    </div>
+  </footer>
+
+</div>
+<a id="back-to-concepts-index" href="index.html" style="position:fixed;top:10px;right:10px;z-index:999999;background:#000;color:#fff;font:12px/1 system-ui,sans-serif;padding:7px 11px;text-decoration:none;border-radius:3px;opacity:0.55;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.55">&larr; All concepts</a>

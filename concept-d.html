@@ -1,0 +1,372 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Concept D — Station Report — Galapagos Shark Diving</title>
+<meta name="description" content="Design concept prototype: the Darwin and Wolf expedition record set as a Swiss typographic grid system.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  html,body{margin:0;padding:0;background:#FAFAF8;}
+</style>
+
+
+<div class="cd"><style>
+.cd{
+  --gnd:#FAFAF8;
+  --pap:#F2F2EE;
+  --ink:#111214;
+  --ink-2:#4E5157;
+  --ink-3:#83868C;
+  --acc:#D2242B;
+  --rule:rgba(17,18,20,.16);
+  --rule-2:rgba(17,18,20,.09);
+  --u:22px;
+  --t0:10.5px; --t1:13px; --t2:17px; --t3:23px; --t4:31px; --t5:41px; --t6:55px; --t7:73px;
+  --t8:97px;
+  background:var(--gnd);
+  color:var(--ink);
+  font-family:'IBM Plex Sans','Helvetica Neue',Arial,sans-serif;
+  font-size:var(--t1);
+  line-height:var(--u);
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+  letter-spacing:0;
+}
+.cd *{box-sizing:border-box;border-radius:0;}
+.cd h1,.cd h2,.cd h3,.cd h4,.cd p,.cd dl,.cd dd,.cd dt,.cd ul,.cd figure,.cd figcaption{margin:0;padding:0;}
+.cd ul{list-style:none;}
+.cd a{color:inherit;text-decoration:none;}
+.cd img{display:block;width:100%;height:100%;object-fit:cover;}
+.cd sup{font-size:.55em;vertical-align:super;}
+.cd b,.cd strong{font-weight:600;}
+
+.cd-w{max-width:1560px;margin:0 auto;padding:0 32px;}
+.cd-grid{display:grid;grid-template-columns:repeat(24,1fr);column-gap:16px;}
+
+/* ---------------------------------------------------------------- masthead */
+.cd-mast{position:sticky;top:0;z-index:50;background:var(--gnd);border-bottom:1px solid var(--ink);}
+.cd-mast-row{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,14fr) minmax(0,3fr);
+  column-gap:16px;align-items:stretch;height:calc(var(--u) * 2.5);}
+.cd-wordmark{display:flex;align-items:center;font-size:var(--t2);font-weight:600;
+  letter-spacing:-.018em;border-right:1px solid var(--rule);padding-right:16px;}
+.cd-nav{display:flex;align-items:stretch;}
+.cd-nav-i{display:flex;align-items:center;gap:7px;padding:0 18px;font-size:var(--t1);
+  font-weight:500;border-right:1px solid var(--rule-2);white-space:nowrap;}
+.cd-nav-i:first-child{padding-left:18px;}
+.cd-nav-n{font-family:'IBM Plex Mono',monospace;font-size:var(--t0);color:var(--ink-3);
+  letter-spacing:.04em;}
+.cd-nav-i:hover{color:var(--acc);}
+.cd-nav-i:hover .cd-nav-n{color:var(--acc);}
+.cd-act{display:flex;align-items:center;justify-content:flex-end;font-size:var(--t1);
+  font-weight:600;color:var(--acc);letter-spacing:.01em;}
+.cd-act:hover{text-decoration:underline;text-underline-offset:3px;}
+
+.cd-meta{background:var(--ink);color:var(--gnd);}
+.cd-meta-row{display:flex;align-items:center;gap:0;height:calc(var(--u) * 1.4);overflow-x:auto;
+  font-family:'IBM Plex Mono',monospace;font-size:var(--t0);letter-spacing:.06em;
+  text-transform:uppercase;white-space:nowrap;scrollbar-width:none;}
+.cd-meta-row::-webkit-scrollbar{display:none;}
+.cd-meta-k{padding-right:20px;border-right:1px solid rgba(250,250,248,.22);color:#fff;}
+.cd-meta-i{padding:0 20px;border-right:1px solid rgba(250,250,248,.22);color:rgba(250,250,248,.9);}
+.cd-meta-i i{font-style:normal;color:rgba(250,250,248,.5);margin-right:8px;}
+.cd-meta-end{border-right:0;}
+
+/* ---------------------------------------------------------------- sections */
+.cd-sec{border-bottom:1px solid var(--ink);padding-bottom:calc(var(--u) * 3);}
+.cd-sec-inv{background:var(--pap);}
+.cd-sec-end{padding-bottom:0;border-bottom:0;}
+
+.cd-rule-lab{display:flex;align-items:baseline;gap:20px;border-bottom:1px solid var(--ink);
+  padding:calc(var(--u) * .5) 0;margin-bottom:calc(var(--u) * 2);
+  font-family:'IBM Plex Mono',monospace;font-size:var(--t0);letter-spacing:.08em;
+  text-transform:uppercase;}
+.cd-rule-lab span:first-child{color:var(--acc);font-weight:500;}
+.cd-rule-lab span:nth-child(2){font-weight:500;}
+.cd-rule-lab span:last-child{margin-left:auto;color:var(--ink-3);text-align:right;}
+
+.cd-h1{grid-column:1 / span 14;font-size:var(--t7);font-weight:600;line-height:.92;
+  letter-spacing:-.032em;}
+.cd-h2{font-size:var(--t5);font-weight:600;line-height:1.02;letter-spacing:-.026em;}
+.cd-h4{font-family:'IBM Plex Mono',monospace;font-size:var(--t0);letter-spacing:.08em;
+  text-transform:uppercase;font-weight:500;padding-bottom:calc(var(--u) * .4);
+  border-bottom:1px solid var(--ink);margin-bottom:calc(var(--u) * .7);}
+
+.cd-abs{font-size:var(--t2);line-height:calc(var(--u) * 1.32);letter-spacing:-.006em;
+  color:var(--ink);max-width:56ch;}
+
+/* opening */
+.cd-open{padding-top:calc(var(--u) * .5);align-items:start;}
+.cd-open-r{grid-column:16 / span 9;border-left:1px solid var(--rule);padding-left:16px;
+  margin-left:-16px;}
+.cd-keys{margin-top:calc(var(--u) * 1.5);border-top:1px solid var(--ink);}
+.cd-key:last-child{border-bottom:1px solid var(--ink);}
+.cd-key{display:grid;grid-template-columns:32px 1fr auto;align-items:baseline;gap:12px;
+  padding:calc(var(--u) * .34) 0;border-bottom:1px solid var(--rule-2);}
+.cd-key-n{font-family:'IBM Plex Mono',monospace;font-size:var(--t0);color:var(--ink-3);}
+.cd-key dt{font-size:var(--t1);color:var(--ink-2);}
+.cd-key dd{font-family:'IBM Plex Mono',monospace;font-size:var(--t1);font-weight:500;
+  font-variant-numeric:tabular-nums;text-align:right;}
+
+/* plates — photography snapped to grid units */
+.cd-plates{margin-top:calc(var(--u) * 2);}
+.cd-plate figcaption{font-family:'IBM Plex Mono',monospace;font-size:var(--t0);
+  line-height:calc(var(--u) * .74);color:var(--ink-3);padding-top:7px;letter-spacing:.01em;}
+.cd-plate figcaption b{color:var(--ink);font-weight:500;margin-right:7px;}
+.cd-plate img{filter:saturate(.88) contrast(1.02);}
+.cd-plate-a{grid-column:1 / span 12;}
+.cd-plate-a img{height:calc(var(--u) * 15);}
+.cd-plate-b{grid-column:13 / span 6;}
+.cd-plate-b img{height:calc(var(--u) * 15);}
+.cd-plate-c{grid-column:19 / span 6;}
+.cd-plate-c img{height:calc(var(--u) * 15);}
+
+.cd-ruler{display:grid;grid-template-columns:repeat(24,1fr);column-gap:16px;
+  margin-top:calc(var(--u) * 2);border-top:1px solid var(--ink);padding-top:6px;}
+.cd-ruler span{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.04em;
+  color:var(--ink-3);border-left:1px solid var(--rule-2);padding-left:3px;}
+
+/* tables */
+.cd-tab{width:100%;border-collapse:collapse;}
+.cd-tab th{font-family:'IBM Plex Mono',monospace;font-size:var(--t0);letter-spacing:.07em;
+  text-transform:uppercase;font-weight:500;color:var(--ink-2);text-align:left;
+  padding:calc(var(--u) * .32) 12px calc(var(--u) * .32) 0;border-bottom:1px solid var(--ink);
+  vertical-align:bottom;}
+.cd-tab td{font-size:var(--t1);padding:calc(var(--u) * .46) 12px calc(var(--u) * .46) 0;
+  border-bottom:1px solid var(--rule-2);vertical-align:baseline;}
+.cd-tab tr:last-child td{border-bottom:1px solid var(--ink);}
+.cd-tab .cd-num{text-align:right;font-family:'IBM Plex Mono',monospace;
+  font-variant-numeric:tabular-nums;padding-right:20px;}
+.cd-tab .cd-n{font-family:'IBM Plex Mono',monospace;font-size:var(--t0);color:var(--ink-3);
+  width:34px;}
+.cd-strong{font-weight:600;}
+.cd-dim{color:var(--ink-2);}
+.cd-tab-reg{margin-top:calc(var(--u) * 1.4);}
+.cd-tab-reg tbody tr:hover{background:rgba(17,18,20,.035);}
+.cd-st{text-align:right;font-family:'IBM Plex Mono',monospace;font-size:var(--t0);
+  letter-spacing:.07em;text-transform:uppercase;white-space:nowrap;padding-right:0!important;}
+.cd-st-open{color:var(--acc);font-weight:500;}
+.cd-st-low{color:var(--acc);font-weight:500;}
+.cd-st-closed{color:var(--ink-3);}
+
+.cd-pricing{margin-top:calc(var(--u) * 2.2);}
+.cd-pricing-l{grid-column:1 / span 15;}
+.cd-pricing-r{grid-column:17 / span 8;}
+.cd-list li{display:flex;justify-content:space-between;gap:16px;align-items:baseline;
+  padding:calc(var(--u) * .34) 0;border-bottom:1px solid var(--rule-2);font-size:var(--t1);}
+.cd-list li b{font-family:'IBM Plex Mono',monospace;font-weight:500;
+  font-variant-numeric:tabular-nums;}
+.cd-fn{font-size:11.5px;line-height:calc(var(--u) * .78);color:var(--ink-2);
+  margin-top:calc(var(--u) * .6);max-width:52ch;}
+
+/* transect */
+.cd-days{row-gap:0;}
+.cd-day{grid-column:span 6;border-top:1px solid var(--ink);border-left:1px solid var(--rule-2);
+  padding:calc(var(--u) * .6) 14px calc(var(--u) * 1.2);min-height:calc(var(--u) * 8);}
+.cd-day-top{display:flex;align-items:baseline;justify-content:space-between;
+  font-family:'IBM Plex Mono',monospace;font-size:var(--t0);letter-spacing:.06em;
+  text-transform:uppercase;color:var(--ink-3);}
+.cd-day-n{color:var(--acc);font-weight:500;}
+.cd-day h3{font-size:var(--t2);font-weight:600;letter-spacing:-.016em;
+  line-height:calc(var(--u) * .95);margin-top:calc(var(--u) * .4);}
+.cd-day-dives{display:flex;align-items:baseline;gap:6px;margin-top:calc(var(--u) * .4);}
+.cd-day-dives b{font-size:var(--t4);font-weight:600;letter-spacing:-.03em;line-height:1;
+  font-variant-numeric:tabular-nums;}
+.cd-day-dives i{font-family:'IBM Plex Mono',monospace;font-style:normal;font-size:var(--t0);
+  letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);}
+.cd-day p{font-size:11.5px;line-height:calc(var(--u) * .78);color:var(--ink-2);
+  margin-top:calc(var(--u) * .35);}
+
+.cd-total{display:flex;align-items:baseline;gap:12px;border-top:1px solid var(--ink);
+  border-bottom:1px solid var(--ink);padding:calc(var(--u) * .5) 0;
+  font-family:'IBM Plex Mono',monospace;font-size:var(--t0);letter-spacing:.07em;
+  text-transform:uppercase;color:var(--ink-2);}
+.cd-total b{font-family:'IBM Plex Sans',sans-serif;font-size:var(--t4);font-weight:600;
+  letter-spacing:-.03em;color:var(--ink);line-height:1;}
+.cd-total-x{margin-left:auto;color:var(--ink-3);text-align:right;}
+
+/* research */
+.cd-res{align-items:start;}
+.cd-res-h{grid-column:1 / span 11;}
+.cd-res-b{grid-column:13 / span 12;}
+.cd-methods{display:grid;grid-template-columns:repeat(5,1fr);column-gap:16px;
+  margin-top:calc(var(--u) * 2);border-top:1px solid var(--ink);}
+.cd-method{padding:calc(var(--u) * .6) 14px calc(var(--u) * .9) 0;
+  border-left:1px solid var(--rule-2);padding-left:14px;}
+.cd-method:first-child{border-left:0;padding-left:0;}
+.cd-method-n{font-family:'IBM Plex Mono',monospace;font-size:var(--t0);color:var(--acc);
+  letter-spacing:.06em;}
+.cd-method h3{font-size:var(--t2);font-weight:600;letter-spacing:-.016em;
+  line-height:calc(var(--u) * .95);margin-top:calc(var(--u) * .3);}
+.cd-method p{font-size:11.5px;line-height:calc(var(--u) * .78);color:var(--ink-2);
+  margin-top:calc(var(--u) * .35);}
+
+.cd-res2{margin-top:calc(var(--u) * 2.2);align-items:start;}
+.cd-res2-l{grid-column:1 / span 14;}
+.cd-plate-d{grid-column:16 / span 9;}
+.cd-plate-d img{height:calc(var(--u) * 12);}
+
+.cd-people{display:grid;grid-template-columns:repeat(4,1fr);column-gap:16px;
+  margin-top:calc(var(--u) * 2.2);border-top:1px solid var(--ink);}
+.cd-person{padding:calc(var(--u) * .6) 14px 0 14px;border-left:1px solid var(--rule-2);}
+.cd-person:first-child{border-left:0;padding-left:0;}
+.cd-person-n{font-family:'IBM Plex Mono',monospace;font-size:var(--t0);color:var(--acc);}
+.cd-person-img{margin-top:calc(var(--u) * .4);aspect-ratio:1/1;background:#DEDEDA;overflow:hidden;}
+.cd-person-img img{filter:grayscale(1) contrast(1.05);}
+.cd-person-img-e{background:repeating-linear-gradient(45deg,#E4E4E0 0 6px,#DBDBD6 6px 12px);}
+.cd-person h3{font-size:var(--t2);font-weight:600;letter-spacing:-.016em;
+  line-height:calc(var(--u) * .95);margin-top:calc(var(--u) * .5);}
+.cd-person-r{font-family:'IBM Plex Mono',monospace;font-size:var(--t0);letter-spacing:.04em;
+  color:var(--acc);margin-top:4px!important;line-height:calc(var(--u) * .7);}
+.cd-person p:last-child{font-size:11.5px;line-height:calc(var(--u) * .78);color:var(--ink-2);
+  margin-top:calc(var(--u) * .35);}
+
+/* vessels */
+.cd-vess{align-items:start;}
+.cd-vessel{grid-column:span 12;border-top:1px solid var(--ink);padding-top:calc(var(--u) * .6);}
+.cd-vessel:last-child{padding-left:16px;border-left:1px solid var(--rule-2);}
+.cd-vessel-h span{font-family:'IBM Plex Mono',monospace;font-size:var(--t0);color:var(--acc);}
+.cd-vessel-h h3{font-size:var(--t5);font-weight:600;letter-spacing:-.028em;line-height:1.02;
+  margin-top:calc(var(--u) * .2);}
+.cd-vessel-h p{font-family:'IBM Plex Mono',monospace;font-size:var(--t0);letter-spacing:.06em;
+  text-transform:uppercase;color:var(--ink-3);margin-top:4px;}
+.cd-plate-v{margin-top:calc(var(--u) * .8);}
+.cd-plate-v img{height:calc(var(--u) * 11);}
+.cd-tab-spec{margin-top:calc(var(--u) * .8);}
+.cd-tab-spec td:first-child{color:var(--ink-2);}
+.cd-tab-spec td{padding-top:calc(var(--u) * .3);padding-bottom:calc(var(--u) * .3);}
+
+.cd-reqs{margin-top:calc(var(--u) * 2.2);align-items:start;}
+.cd-reqs-h{grid-column:1 / span 5;}
+.cd-tab-req{grid-column:7 / span 18;}
+.cd-tab-req td:first-child{width:34%;}
+
+/* closing */
+.cd-end{padding-top:calc(var(--u) * .4);align-items:start;}
+.cd-end-h{grid-column:1 / span 11;font-size:var(--t6);}
+.cd-end-b{grid-column:13 / span 12;}
+.cd-end-acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:calc(var(--u) * 1);}
+.cd-btn{display:inline-block;background:var(--acc);color:#fff;font-size:var(--t1);
+  font-weight:600;padding:calc(var(--u) * .38) 20px;letter-spacing:.005em;}
+.cd-btn:hover{background:var(--ink);}
+.cd-btn-o{background:transparent;color:var(--ink);border:1px solid var(--ink);
+  font-family:'IBM Plex Mono',monospace;font-weight:400;font-size:12px;
+  padding:calc(var(--u) * .38 - 1px) 20px;line-height:var(--u);}
+.cd-btn-o:hover{background:var(--ink);color:var(--gnd);}
+.cd-contact{margin-top:calc(var(--u) * 1.4);border-top:1px solid var(--ink);}
+.cd-contact > div{display:grid;grid-template-columns:150px 1fr;gap:16px;
+  padding:calc(var(--u) * .36) 0;border-bottom:1px solid var(--rule-2);}
+.cd-contact dt{font-family:'IBM Plex Mono',monospace;font-size:var(--t0);letter-spacing:.06em;
+  text-transform:uppercase;color:var(--ink-3);}
+.cd-contact dd{font-size:var(--t1);}
+
+.cd-strip{margin-top:calc(var(--u) * 2.2);}
+.cd-plate-s{grid-column:span 12;}
+.cd-plate-s img{height:calc(var(--u) * 10);}
+
+.cd-foot{margin-top:calc(var(--u) * 2.4);border-top:1px solid var(--ink);}
+.cd-foot-g{padding-top:calc(var(--u) * .7);}
+.cd-foot-c{grid-column:span 6;display:flex;flex-direction:column;gap:2px;
+  border-left:1px solid var(--rule-2);padding-left:14px;}
+.cd-foot-c:first-child{border-left:0;padding-left:0;}
+.cd-foot-k{font-family:'IBM Plex Mono',monospace;font-size:var(--t0);letter-spacing:.07em;
+  text-transform:uppercase;color:var(--ink-3);margin-bottom:calc(var(--u) * .3);}
+.cd-foot-c a{font-size:var(--t1);}
+.cd-foot-c a:hover{color:var(--acc);}
+.cd-foot-c p{font-size:11.5px;line-height:calc(var(--u) * .78);color:var(--ink-2);}
+.cd-foot-b{display:flex;gap:24px;flex-wrap:wrap;border-top:1px solid var(--rule-2);
+  margin-top:calc(var(--u) * 1.2);padding:calc(var(--u) * .5) 0 calc(var(--u) * 1.4);
+  font-family:'IBM Plex Mono',monospace;font-size:var(--t0);letter-spacing:.06em;
+  text-transform:uppercase;color:var(--ink-3);}
+.cd-foot-b span:last-child{margin-left:auto;color:var(--acc);}
+
+/* ------------------------------------------------------------- responsive */
+@media (min-width:1280px){
+  .cd-h1{font-size:var(--t8);}
+}
+@media (max-width:1180px){
+  .cd{--t7:57px;--t6:45px;--t5:35px;}
+  .cd-mast-row{grid-template-columns:minmax(0,9fr) minmax(0,12fr) minmax(0,3fr);}
+  .cd-nav-i{padding:0 12px;}
+  .cd-methods{grid-template-columns:repeat(3,1fr);row-gap:0;}
+  .cd-method:nth-child(4){border-left:0;padding-left:0;}
+  .cd-method:nth-child(n+4){border-top:1px solid var(--rule-2);}
+  .cd-day{grid-column:span 12;}
+}
+@media (max-width:900px){
+  .cd{--t7:44px;--t6:38px;--t5:30px;--t4:26px;}
+  .cd-w{padding:0 18px;}
+  .cd-grid{grid-template-columns:repeat(12,1fr);column-gap:12px;}
+  .cd-mast-row{grid-template-columns:1fr auto;height:auto;padding:10px 0;}
+  .cd-mast{position:static;}
+  .cd-wordmark{border-right:0;padding-right:0;font-size:15px;}
+  .cd-nav{display:none;}
+  .cd-h1{grid-column:1 / span 12;}
+  .cd-open-r{grid-column:1 / span 12;margin-top:calc(var(--u) * 1.4);border-left:0;
+    padding-left:0;margin-left:0;}
+  .cd-plate-a,.cd-plate-b,.cd-plate-c{grid-column:1 / span 12;margin-bottom:calc(var(--u) * .8);}
+  .cd-plate-b img,.cd-plate-c img{height:calc(var(--u) * 9);}
+  .cd-plate-a img{height:calc(var(--u) * 11);}
+  .cd-ruler{display:none;}
+  .cd-pricing-l,.cd-pricing-r{grid-column:1 / span 12;}
+  .cd-pricing-r{margin-top:calc(var(--u) * 1.6);}
+  .cd-res-h,.cd-res-b{grid-column:1 / span 12;}
+  .cd-res-b{margin-top:calc(var(--u) * 1);}
+  .cd-methods{grid-template-columns:1fr;}
+  .cd-method{border-left:0;padding-left:0;border-top:1px solid var(--rule-2);}
+  .cd-method:first-child{border-top:0;}
+  .cd-res2-l,.cd-plate-d{grid-column:1 / span 12;}
+  .cd-plate-d{margin-top:calc(var(--u) * 1.4);}
+  .cd-people{grid-template-columns:repeat(2,1fr);}
+  .cd-person{border-left:0;padding-left:0;padding-right:10px;}
+  .cd-person:nth-child(n+3){border-top:1px solid var(--rule-2);margin-top:calc(var(--u) * .8);}
+  .cd-vessel{grid-column:1 / span 12;}
+  .cd-vessel:last-child{padding-left:0;border-left:0;margin-top:calc(var(--u) * 1.6);}
+  .cd-reqs-h,.cd-tab-req{grid-column:1 / span 12;}
+  .cd-end-h,.cd-end-b{grid-column:1 / span 12;}
+  .cd-end-b{margin-top:calc(var(--u) * 1.2);}
+  .cd-plate-s{grid-column:1 / span 12;margin-bottom:calc(var(--u) * .8);}
+  .cd-foot-c{grid-column:1 / span 6;border-left:0;padding-left:0;margin-bottom:calc(var(--u) * 1);}
+  .cd-day{grid-column:1 / span 12;min-height:0;padding-left:0;border-left:0;}
+  .cd-contact > div{grid-template-columns:1fr;gap:2px;}
+  .cd-tab-reg{display:block;}
+  .cd-tab-reg thead{display:none;}
+  .cd-tab-reg tbody,.cd-tab-reg tr,.cd-tab-reg td{display:block;width:100%;}
+  .cd-tab-reg tr{border-top:1px solid var(--ink);padding:calc(var(--u) * .5) 0;}
+  .cd-tab-reg td{border-bottom:0;padding:0;}
+  .cd-tab-reg td.cd-num,.cd-tab-reg td.cd-st{text-align:left;padding-right:0;}
+  .cd-tab-reg td.cd-n{display:inline-block;width:auto;margin-right:10px;}
+  .cd-tab-reg td.cd-strong:nth-child(2){display:inline-block;width:auto;font-size:var(--t2);}
+  .cd-tab-reg tr td:nth-child(3):before{content:"Days ";color:var(--ink-3);}
+  .cd-tab-reg tr td:nth-child(7):before{content:"Berths ";color:var(--ink-3);}
+  .cd-tab-reg tr td:nth-child(8):before{content:"USD ";color:var(--ink-3);}
+  .cd-tab-reg tr:last-child td,.cd-tab-req tr:last-child td{border-bottom:0;}
+  .cd-tab-req td:first-child{width:auto;}
+  .cd-tab-req,.cd-tab-req tbody,.cd-tab-req tr,.cd-tab-req td{display:block;width:100%;}
+  .cd-tab-req tr{border-top:1px solid var(--rule-2);padding:calc(var(--u) * .4) 0;}
+  .cd-tab-req td{border-bottom:0;padding:0;}
+}
+@media (max-width:560px){
+  .cd{--t7:36px;--t6:31px;--t5:26px;}
+  .cd-people{grid-template-columns:1fr;}
+  .cd-person:nth-child(n+2){border-top:1px solid var(--rule-2);margin-top:calc(var(--u) * .8);}
+  .cd-foot-c{grid-column:1 / span 12;}
+  .cd-rule-lab{flex-wrap:wrap;gap:10px;}
+  .cd-rule-lab span:last-child{margin-left:0;text-align:left;flex-basis:100%;}
+  .cd-meta-row{height:auto;flex-wrap:wrap;white-space:normal;padding:6px 0;}
+  .cd-meta-k{flex-basis:100%;border-right:0;padding:2px 0;}
+  .cd-meta-i{padding:2px 12px;}
+  .cd-meta-i:first-of-type{padding-left:0;}
+}
+@media (prefers-reduced-motion:reduce){.cd *{transition:none!important;animation:none!important;}}
+</style><header class="cd-mast"><div class="cd-w"><div class="cd-mast-row"><a href="/concept-d" class="cd-wordmark">Galapagos Shark Diving<sup>®</sup></a><nav class="cd-nav" aria-label="Sections"><a href="#s01" class="cd-nav-i"><span class="cd-nav-n">01</span>Expeditions</a><a href="#s01" class="cd-nav-i"><span class="cd-nav-n">02</span>Departures</a><a href="#s01" class="cd-nav-i"><span class="cd-nav-n">03</span>Research</a><a href="#s01" class="cd-nav-i"><span class="cd-nav-n">04</span>Vessels</a><a href="#s01" class="cd-nav-i"><span class="cd-nav-n">05</span>Wildlife</a><a href="#s01" class="cd-nav-i"><span class="cd-nav-n">06</span>About</a></nav><a href="#s05" class="cd-act">Enquire</a></div></div><div class="cd-meta"><div class="cd-w"><div class="cd-meta-row"><span class="cd-meta-k">Galápagos Marine Reserve · Darwin &amp; Wolf</span><span class="cd-meta-i"><i>Lat</i>01°40′ N</span><span class="cd-meta-i"><i>Long</i>92°00′ W</span><span class="cd-meta-i"><i>Water</i>16–24 °C</span><span class="cd-meta-i"><i>Vis</i>10–30 m</span><span class="cd-meta-i"><i>Current</i>1–5 kn</span><span class="cd-meta-i"><i>Max depth</i>30 m</span><span class="cd-meta-i cd-meta-end"><i>Season</i>2027</span></div></div></div></header><section class="cd-sec" id="s00"><div class="cd-w"><div class="cd-rule-lab"><span>00</span><span>Station</span><span>Galapagos Shark Diving®, established 2017</span></div><div class="cd-grid cd-open"><h1 class="cd-h1">Darwin.<br>Wolf.<br>Sixteen&nbsp;guests.<br>A scientist<br>aboard.</h1><div class="cd-open-r"><p class="cd-abs">Galapagos Shark Diving operates liveaboard expeditions to the Darwin and Wolf seamounts, in the north of the Galápagos Marine Reserve. Eight-day and fifteen-day programmes, two vessels, sixteen guests to a departure. Whale shark season runs June to November. A Galápagos Whale Shark Project scientist has sailed on every Citizen Science departure since 2019.</p><dl class="cd-keys"><div class="cd-key"><span class="cd-key-n">01</span><dt>Vessels in service</dt><dd>2</dd></div><div class="cd-key"><span class="cd-key-n">02</span><dt>Guests per departure</dt><dd>16</dd></div><div class="cd-key"><span class="cd-key-n">03</span><dt>Programme length</dt><dd>8 / 15 days</dd></div><div class="cd-key"><span class="cd-key-n">04</span><dt>Dives, 8-day programme</dt><dd>16</dd></div><div class="cd-key"><span class="cd-key-n">05</span><dt>Whale shark season</dt><dd>Jun – Nov</dd></div><div class="cd-key"><span class="cd-key-n">06</span><dt>Scientist aboard since</dt><dd>2019</dd></div></dl></div></div><div class="cd-grid cd-plates"><figure class="cd-plate cd-plate-a"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1920x10000:format=jpg/path/s2fc4241e2a9d6156/image/i94b5a8f9795e8d58/version/1771099762/adult-female-whale-shark-swimming-above-a-group-of-divers-in-the-galapagos-islands.jpg" alt="Adult female whale shark swimming above a group of divers in the Galápagos Islands" loading="lazy"><figcaption><b>Fig. 00.1</b> Adult female whale shark above a group of divers, Darwin. © Galapagos Shark Diving</figcaption></figure><figure class="cd-plate cd-plate-b"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=760x10000:format=jpg/path/s2fc4241e2a9d6156/image/i1e62173842f11a44/version/1601949845/image.jpg" alt="School of scalloped hammerhead sharks" loading="lazy"><figcaption><b>Fig. 00.2</b> Scalloped hammerhead school, Wolf.</figcaption></figure><figure class="cd-plate cd-plate-c"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1200x10000:format=jpg/path/s2fc4241e2a9d6156/image/i3c7de9084888c9b9/version/1770760303/galapagos-shark-diving-diver-taking-photo-of-whale-shark.jpg" alt="Diver photographing a whale shark for photo identification" loading="lazy"><figcaption><b>Fig. 00.3</b> Photo-ID capture in progress.</figcaption></figure></div><div class="cd-ruler" aria-hidden="true"><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span><span>07</span><span>08</span><span>09</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span></div></div></section><section class="cd-sec" id="s01"><div class="cd-w"><div class="cd-rule-lab"><span>01</span><span>Departure register</span><span>Seven sailings · 2027 season · per person, double occupancy, USD</span></div><h2 class="cd-h2">Seven sailings.<br>Two vessels.</h2><table class="cd-tab cd-tab-reg"><thead><tr><th class="cd-n">№</th><th>Dates</th><th class="cd-num">Days</th><th>Programme</th><th>Vessel</th><th>Aboard</th><th class="cd-num">Berths</th><th class="cd-num">USD</th><th class="cd-st">Status</th></tr></thead><tbody><tr><td class="cd-n">01</td><td class="cd-strong">21 – 28 Jul</td><td class="cd-num">8</td><td>Luxury Citizen Science</td><td>Galaxy Diver II</td><td class="cd-dim">Nitrox included</td><td class="cd-num">9</td><td class="cd-num cd-strong">8,200</td><td class="cd-st cd-st-open">Available</td></tr><tr><td class="cd-n">02</td><td class="cd-strong">27 Jul – 3 Aug</td><td class="cd-num">8</td><td>Citizen Science</td><td>Aqua</td><td class="cd-dim">Sofía M. Green</td><td class="cd-num">0</td><td class="cd-num cd-strong">6,690</td><td class="cd-st cd-st-closed">Waitlist</td></tr><tr><td class="cd-n">03</td><td class="cd-strong">3 – 17 Aug</td><td class="cd-num">15</td><td>Special 15-Day Citizen Science</td><td>Aqua</td><td class="cd-dim">Jonathan R. Green</td><td class="cd-num">3</td><td class="cd-num cd-strong">13,490</td><td class="cd-st cd-st-low">3 left</td></tr><tr><td class="cd-n">04</td><td class="cd-strong">17 – 31 Aug</td><td class="cd-num">15</td><td>Special 15-Day Citizen Science</td><td>Aqua</td><td class="cd-dim">Jonathan R. Green</td><td class="cd-num">6</td><td class="cd-num cd-strong">13,490</td><td class="cd-st cd-st-low">6 left</td></tr><tr><td class="cd-n">05</td><td class="cd-strong">31 Aug – 7 Sep</td><td class="cd-num">8</td><td>Citizen Science</td><td>Aqua</td><td class="cd-dim">Jonathan R. Green</td><td class="cd-num">0</td><td class="cd-num cd-strong">6,690</td><td class="cd-st cd-st-closed">Waitlist</td></tr><tr><td class="cd-n">06</td><td class="cd-strong">8 – 15 Sep</td><td class="cd-num">8</td><td>Luxury Citizen Science</td><td>Galaxy Diver II</td><td class="cd-dim">Gourmet full board</td><td class="cd-num">0</td><td class="cd-num cd-strong">8,200</td><td class="cd-st cd-st-closed">Waitlist</td></tr><tr><td class="cd-n">07</td><td class="cd-strong">15 – 22 Sep</td><td class="cd-num">8</td><td>Luxury Citizen Science</td><td>Galaxy Diver II</td><td class="cd-dim">16 guests</td><td class="cd-num">6</td><td class="cd-num cd-strong">8,200</td><td class="cd-st cd-st-low">6 left</td></tr></tbody></table><div class="cd-grid cd-pricing"><div class="cd-pricing-l"><h3 class="cd-h4">Programme rates</h3><table class="cd-tab cd-tab-price"><thead><tr><th>Programme</th><th>Vessel</th><th class="cd-num">Days</th><th class="cd-num">2026</th><th class="cd-num">2027</th></tr></thead><tbody><tr><td class="cd-strong">Citizen Science Expedition</td><td>Aqua</td><td class="cd-num">8</td><td class="cd-num">6,390</td><td class="cd-num cd-strong">6,690</td></tr><tr><td class="cd-strong">Special 15-Day Citizen Science</td><td>Aqua</td><td class="cd-num">15</td><td class="cd-num">13,190</td><td class="cd-num cd-strong">13,490</td></tr><tr><td class="cd-strong">Luxury Science Expedition</td><td>Galaxy Diver II</td><td class="cd-num">8</td><td class="cd-num">7,500</td><td class="cd-num cd-strong">8,200</td></tr></tbody></table></div><div class="cd-pricing-r"><h3 class="cd-h4">Not included</h3><ul class="cd-list"><li><span>Galápagos National Park entrance fee</span><b>$200</b></li><li><span>Transit Control Card</span><b>$20</b></li><li><span>International flights</span><b>—</b></li><li><span>Personal gear rental</span><b>—</b></li><li><span>Dive and travel insurance</span><b>—</b></li></ul><p class="cd-fn">Nitrox is a paid extra on the Citizen Science programme and included on the Luxury Science Expedition. Deposit 30 % at booking; balance due 120 days before departure.</p></div></div></div></section><section class="cd-sec" id="s02"><div class="cd-w"><div class="cd-rule-lab"><span>02</span><span>Transect</span><span>Eight-day programme · sixteen dives · two to four dives a day</span></div><div class="cd-grid cd-days"><article class="cd-day"><div class="cd-day-top"><span class="cd-day-n">1</span><span class="cd-day-d">Tue</span></div><h3>Baltra · Santa Cruz</h3><div class="cd-day-dives"><b>1</b><i>dives</i></div><p>Board. One check dive before the northern crossing.</p></article><article class="cd-day"><div class="cd-day-top"><span class="cd-day-n">2</span><span class="cd-day-d">Wed</span></div><h3>Cape Marshall · City of Mantas</h3><div class="cd-day-dives"><b>3</b><i>dives</i></div><p>Isabela's eastern wall. Giant mantas on the current line.</p></article><article class="cd-day"><div class="cd-day-top"><span class="cd-day-n">3</span><span class="cd-day-d">Thu</span></div><h3>Darwin's Arch</h3><div class="cd-day-dives"><b>4</b><i>dives</i></div><p>Now the Pillars of Evolution. Hammerhead schools on the plateau.</p></article><article class="cd-day"><div class="cd-day-top"><span class="cd-day-n">4</span><span class="cd-day-d">Fri</span></div><h3>Darwin's Arch · Wolf</h3><div class="cd-day-dives"><b>4</b><i>dives</i></div><p>Two more at Darwin, then the overnight run south.</p></article><article class="cd-day"><div class="cd-day-top"><span class="cd-day-n">5</span><span class="cd-day-d">Sat</span></div><h3>Wolf Island</h3><div class="cd-day-dives"><b>3</b><i>dives</i></div><p>The highest shark biomass on the route.</p></article><article class="cd-day"><div class="cd-day-top"><span class="cd-day-n">6</span><span class="cd-day-d">Sun</span></div><h3>Punta Vicente Roca · Cape Douglas</h3><div class="cd-day-dives"><b>2</b><i>dives</i></div><p>Cold upwelling. Mola cleaning stations; iguanas feeding.</p></article><article class="cd-day"><div class="cd-day-top"><span class="cd-day-n">7</span><span class="cd-day-d">Mon</span></div><h3>Cousin's Rock</h3><div class="cd-day-dives"><b>2</b><i>dives</i></div><p>Macro life, then the Santa Cruz highlands.</p></article><article class="cd-day"><div class="cd-day-top"><span class="cd-day-n">8</span><span class="cd-day-d">Tue</span></div><h3>Baltra</h3><div class="cd-day-dives"><b>—</b><i>dives</i></div><p>Disembark, or continue on a land extension.</p></article></div><div class="cd-total"><span>Total, eight-day programme</span><b>16</b><span>dives</span><span class="cd-total-x">Maximum depth 30 m · no decompression, no solo diving</span></div></div></section><section class="cd-sec cd-sec-inv" id="s03"><div class="cd-w"><div class="cd-rule-lab"><span>03</span><span>Research</span><span>Galápagos Whale Shark Project · partnership since 2019</span></div><div class="cd-grid cd-res"><h2 class="cd-h2 cd-res-h">The whale shark<br>is listed<br>Endangered.</h2><div class="cd-res-b"><p class="cd-abs">Nearly all of the whale sharks recorded at Darwin are large adult females. Since 2019 Galapagos Shark Diving has placed one Galápagos Whale Shark Project scientist on every Citizen Science departure, and funded satellite tags, tracking time and field logistics. Guests contribute photo identifications and standardised counts. The data goes to the Galápagos National Park Directorate and to Sharkbook.ai.</p></div></div><div class="cd-methods"><div class="cd-method"><span class="cd-method-n">3.1</span><h3>Photo-identification</h3><p>Gill-region spot patterns matched against Sharkbook.ai, the international whale shark photo-ID database.</p></div><div class="cd-method"><span class="cd-method-n">3.2</span><h3>Satellite tagging</h3><p>Tags and tracking time funded by Galapagos Shark Diving since 2019.</p></div><div class="cd-method"><span class="cd-method-n">3.3</span><h3>In-water behavioural research</h3><p>Observation of adult female aggregations at Darwin during the June–November season.</p></div><div class="cd-method"><span class="cd-method-n">3.4</span><h3>SharkCount</h3><p>Standardised observation and count protocols recorded by guests across archipelago dive sites.</p></div><div class="cd-method"><span class="cd-method-n">3.5</span><h3>Dive Against Debris</h3><p>Underwater debris survey data contributed through Project AWARE.</p></div></div><div class="cd-grid cd-res2"><div class="cd-res2-l"><h3 class="cd-h4">Recorded dive depths, telemetry</h3><table class="cd-tab cd-tab-depth"><thead><tr><th>Species</th><th class="cd-num">Recorded depth</th><th>Source</th></tr></thead><tbody><tr><td class="cd-strong">Whale shark</td><td class="cd-num">979.5 – 1,800 m</td><td class="cd-dim">Tagged dives, multiple studies</td></tr><tr><td class="cd-strong">Scalloped hammerhead</td><td class="cd-num">to 1,000 m</td><td class="cd-dim">Nocturnal, Malpelo / Cocos telemetry</td></tr><tr><td class="cd-strong">Oceanic manta ray</td><td class="cd-num">1,246 – 1,250 m</td><td class="cd-dim">Beale et al. 2025</td></tr><tr><td class="cd-strong">Mola mola</td><td class="cd-num">1,112 m</td><td class="cd-dim">USFQ Galápagos tracking study</td></tr></tbody></table><p class="cd-fn">Tagged dive depths, not diver encounter depths. Sport diving on these expeditions is limited to 30 m.</p></div><figure class="cd-plate cd-plate-d"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1920x10000:format=jpg/path/s2fc4241e2a9d6156/image/i208de835a0056f2e/version/1601949846/image.jpg" alt="Whale shark swimming beneath a diver" loading="lazy"><figcaption><b>Fig. 03.1</b> Whale shark beneath a diver. © Galapagos Shark Diving</figcaption></figure></div><div class="cd-people"><div class="cd-person"><span class="cd-person-n">3.1</span><div class="cd-person-img"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=640x10000:format=jpg/path/s2fc4241e2a9d6156/image/i9e1cf49655c8730e/version/1588473589/galapagos-shark-diving-jonathan-r-green.jpg" alt="Jonathan R. Green, FRGS" loading="lazy"></div><h3>Jonathan R. Green, FRGS</h3><p class="cd-person-r">Tour leader · Director, Galápagos Whale Shark Project</p><p>Nearly thirty years working in the Galápagos; several thousand dives in the region. Fellow of the Royal Geographical Society.</p></div><div class="cd-person"><span class="cd-person-n">3.2</span><div class="cd-person-img"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=640x10000:format=png/path/s2fc4241e2a9d6156/image/icb85875bebff7e85/version/1588976370/simon-j-pierce.png" alt="Dr Simon J. Pierce" loading="lazy"></div><h3>Dr Simon J. Pierce</h3><p class="cd-person-r">Tour leader · Founder, Marine Megafauna Foundation</p><p>Led the 2016 IUCN Red List global whale shark assessment and the 2017 CMS uplisting. Co-Chair, IUCN Shark Specialist Group.</p></div><div class="cd-person"><span class="cd-person-n">3.3</span><div class="cd-person-img"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=640x10000:format=jpg/path/s2fc4241e2a9d6156/image/i806c82e6817de1c1/version/1751156290/galapagos-shark-diving-jenny-waack.jpg" alt="Jenny Green" loading="lazy"></div><h3>Jenny Green</h3><p class="cd-person-r">Founder · Board member, Galápagos Whale Shark Project</p><p>Founded Galapagos Shark Diving in 2017. Field researcher, dive master and underwater photographer.</p></div><div class="cd-person"><span class="cd-person-n">3.4</span><div class="cd-person-img cd-person-img-e" aria-hidden="true"></div><h3>Sofía M. Green Iturralde</h3><p class="cd-person-r">Tour leader · Researcher and data analyst, GWSP</p><p>With the Whale Shark Project since 2017. Master's in Marine Biological Resources (IMBRSea).</p></div></div></div></section><section class="cd-sec" id="s04"><div class="cd-w"><div class="cd-rule-lab"><span>04</span><span>Vessels</span><span>Two vessels in service · sixteen guests each</span></div><div class="cd-grid cd-vess"><article class="cd-vessel"><div class="cd-vessel-h"><span>4.1</span><h3>Aqua</h3><p>Citizen Science Expedition, 8 and 15 days</p></div><figure class="cd-plate cd-plate-v"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1100x10000:format=jpg/path/s2fc4241e2a9d6156/image/ie0db3f63fa49cf65/version/1601745621/image.jpg" alt="The liveaboard vessel Aqua" loading="lazy"></figure><table class="cd-tab cd-tab-spec"><tbody><tr><td>Guests</td><td class="cd-num cd-strong">16</td></tr><tr><td>Cabins</td><td class="cd-num cd-strong">9</td></tr><tr><td>Bathrooms</td><td class="cd-num cd-strong">9</td></tr><tr><td>Built / renovated</td><td class="cd-num cd-strong">1998 / 2019</td></tr><tr><td>Length · beam</td><td class="cd-num cd-strong">26 m · 5.5 m</td></tr><tr><td>Speed</td><td class="cd-num cd-strong">9 kn</td></tr><tr><td>Engines</td><td class="cd-num cd-strong">2 × 250 HP Caterpillar</td></tr><tr><td>Tenders</td><td class="cd-num cd-strong">2 Caribe, 50 HP Yamaha</td></tr><tr><td>Tank capacity</td><td class="cd-num cd-strong">34 × 12 L aluminium</td></tr><tr><td>Compressors</td><td class="cd-num cd-strong">2, Nitrox-capable</td></tr></tbody></table><p class="cd-fn">Every cabin has a private bathroom and air conditioning. Dive platform remodelled 2017: two compressors, camera table, separate freshwater tanks for suits and for electronics.</p></article><article class="cd-vessel"><div class="cd-vessel-h"><span>4.2</span><h3>Galaxy Diver II</h3><p>Luxury Science Expedition, 8 days</p></div><figure class="cd-plate cd-plate-v"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1100x10000:format=jpg/path/s2fc4241e2a9d6156/image/i5f544858ccb11bd9/version/1740256784/image.jpg" alt="The liveaboard vessel Galaxy Diver II" loading="lazy"></figure><table class="cd-tab cd-tab-spec"><tbody><tr><td>Guests</td><td class="cd-num cd-strong">16</td></tr><tr><td>Cabins</td><td class="cd-num cd-strong">8 – 9 †</td></tr><tr><td>Length · beam</td><td class="cd-num cd-strong">35 m · 8.20 m</td></tr><tr><td>Speed, max · cruise</td><td class="cd-num cd-strong">15 kn · 11 kn</td></tr><tr><td>Engines</td><td class="cd-num cd-strong">2 × 600 HP Caterpillar</td></tr><tr><td>Generators</td><td class="cd-num cd-strong">2 × 90 KW John Deere</td></tr><tr><td>Fresh water</td><td class="cd-num cd-strong">9,800 L</td></tr><tr><td>Fuel</td><td class="cd-num cd-strong">15,100 L</td></tr><tr><td>Tank capacity</td><td class="cd-num cd-strong">34 × 10/12/15 L</td></tr><tr><td>Sundeck</td><td class="cd-num cd-strong">117 m², jacuzzi</td></tr></tbody></table><p class="cd-fn">† The operator's own page states eight cabins in prose and nine on its deck plans. Recorded here as unconfirmed rather than resolved. Nitrox is included on this programme.</p></article></div><div class="cd-grid cd-reqs"><h3 class="cd-h4 cd-reqs-h">Requirements to dive</h3><table class="cd-tab cd-tab-req"><tbody><tr><td class="cd-strong">Certification, Citizen Science</td><td>Advanced Diver equivalent, or Open Water plus a Deep Diver specialty</td></tr><tr><td class="cd-strong">Certification, Luxury</td><td>Advanced Diver equivalent</td></tr><tr><td class="cd-strong">Logged dives</td><td>More than 50</td></tr><tr><td class="cd-strong">Recency</td><td>At least one dive within the previous six months</td></tr><tr><td class="cd-strong">Insurance</td><td>Dive-accident cover required; DAN or Aquamed recommended</td></tr><tr><td class="cd-strong">Instrument</td><td>A dive computer, per diver</td></tr><tr><td class="cd-strong">Prohibited</td><td>Decompression diving and solo diving, under any conditions</td></tr><tr><td class="cd-strong">Exposure protection</td><td>7 mm wetsuit, hooded vest and gloves, June to November</td></tr></tbody></table></div></div></section><section class="cd-sec cd-sec-end" id="s05"><div class="cd-w"><div class="cd-rule-lab"><span>05</span><span>Enquiry</span><span>Dive with a Purpose.</span></div><div class="cd-grid cd-end"><h2 class="cd-h2 cd-end-h">Seats are<br>allocated by<br>departure.</h2><div class="cd-end-b"><p class="cd-abs">Four of the seven 2027 sailings still have berths. Tell us the window you can travel in and the certification you hold, and we will confirm which departures fit.</p><div class="cd-end-acts"><a class="cd-btn" href="#s01">See the register</a><a class="cd-btn cd-btn-o" href="mailto:info@galapagossharkdiving.com">info@galapagossharkdiving.com</a></div><dl class="cd-contact"><div><dt>WhatsApp</dt><dd>+593 999 66 7219</dd></div><div><dt>Operations</dt><dd>128 Adolf Hanny y Av Seymour, El Edén, Puerto Ayora, Santa Cruz, Galápagos, Ecuador</dd></div><div><dt>Languages aboard</dt><dd>English, Spanish, German, French</dd></div><div><dt>Recognition</dt><dd>Scuba Diving Magazine 2023 Readers Choice, #1 Best Overall, Pacific &amp; Indian Ocean · South America Prestige Awards 2024/25, Scuba Diving Centre of the Year, Ecuador · TripAdvisor Travelers' Choice 2023</dd></div></dl></div></div><div class="cd-grid cd-strip"><figure class="cd-plate cd-plate-s"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=760x10000:format=jpg/path/s2fc4241e2a9d6156/image/id26c48107a722551/version/1601907430/galapagos-shark-diving-galapagos-shark.jpg" alt="A Galápagos shark" loading="lazy"><figcaption><b>Fig. 05.1</b> Galápagos shark.</figcaption></figure><figure class="cd-plate cd-plate-s"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=760x10000:format=jpg/path/s2fc4241e2a9d6156/image/i21c9201699babaca/version/1601949845/image.jpg" alt="A marine iguana feeding underwater" loading="lazy"><figcaption><b>Fig. 05.2</b> Marine iguana, Cape Douglas.</figcaption></figure></div><footer class="cd-foot"><div class="cd-grid cd-foot-g"><div class="cd-foot-c"><span class="cd-foot-k">Programmes</span><a href="#s01">Citizen Science Expedition</a><a href="#s01">Special 15-Day Citizen Science</a><a href="#s01">Luxury Science Expedition</a><a href="#s01">Galápagos Liveaboard Advisory</a></div><div class="cd-foot-c"><span class="cd-foot-k">Research</span><a href="#s03">Galápagos Whale Shark Project</a><a href="#s03">Photo identification</a><a href="#s03">SharkCount</a><a href="#s03">Chicas con Agallas</a></div><div class="cd-foot-c"><span class="cd-foot-k">Vessels</span><a href="#s04">Aqua</a><a href="#s04">Galaxy Diver II</a><a href="#s04">Requirements</a></div><div class="cd-foot-c"><span class="cd-foot-k">Colophon</span><p>Concept prototype D. Set in IBM Plex Sans and IBM Plex Mono on a 24-column grid, a 22 px baseline and a 1.333 modular scale. No motion.</p></div></div><div class="cd-foot-b"><span>Galapagos Shark Diving®</span><span>Galápagos Marine Reserve · Darwin &amp; Wolf</span><span>Dive with a Purpose.</span></div></footer></div></section></div>
+<script>
+/* Static port of concept D. No motion, no dependencies. The only script here
+   marks the section the reader is in, in the masthead nav. */
+(function () {
+  var items = Array.prototype.slice.call(document.querySelectorAll('.cd-nav-i'));
+  var ids = ['s01', 's01', 's03', 's04', 's03', 's00'];
+  items.forEach(function (a, i) { a.setAttribute('href', '#' + ids[i]); });
+})();
+</script>
+<a id="back-to-concepts-index" href="index.html" style="position:fixed;top:10px;right:10px;z-index:999999;background:#000;color:#fff;font:12px/1 system-ui,sans-serif;padding:7px 11px;text-decoration:none;border-radius:3px;opacity:0.55;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.55">&larr; All concepts</a>

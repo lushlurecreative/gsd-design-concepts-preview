@@ -1,0 +1,275 @@
+<!--
+  CONCEPT PROTOTYPE — "SILENCE" (concept O), standalone static mirror.
+  Galapagos Shark Diving. Modern hospitality minimalism taken to its extreme.
+  No build step, no framework, no imports. Open this file directly.
+  Every fact and image URL is real (verified-content.md, image-inventory.md,
+  read 2026-09-22). No donation percentage or dollar figure appears anywhere.
+-->
+
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Galapagos Shark Diving</title>
+<meta name="description" content="Liveaboard expeditions to Darwin and Wolf, in the far north of the Galápagos." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@200;300;400&display=swap" />
+<style>
+.co-root{
+  /* Near-monochrome. Bone, two stones, one deep ink. No accent hue exists. */
+  --co-bone:#F2F0EC;
+  --co-bone-2:#E8E5E0;
+  --co-stone:#8B877F;
+  --co-ink:#15181B;
+
+  --co-gut:clamp(22px,7vw,128px);
+  --co-rule:1px solid rgba(21,24,27,.10);
+
+  background:var(--co-bone);
+  color:var(--co-ink);
+  font-family:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:300;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+html,body{margin:0;padding:0;background:#F2F0EC}
+.co-root *{box-sizing:border-box;margin:0;padding:0}
+.co-root ul{list-style:none}
+.co-root img{display:block;width:100%;height:100%;object-fit:cover}
+.co-root a{color:inherit;text-decoration:none}
+
+/* ---- four type sizes, nothing else ---- */
+.co-label{font-size:12.5px;letter-spacing:.14em;color:var(--co-stone);font-weight:400}
+.co-say{
+  font-size:clamp(21px,2.05vw,30px);
+  line-height:1.5;font-weight:200;letter-spacing:-.005em;max-width:19em;
+}
+.co-mark{font-size:13px;letter-spacing:.2em;font-weight:400}
+
+/* ---- chrome: nearly invisible ---- */
+.co-chrome{
+  position:fixed;top:0;left:0;right:0;z-index:20;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:26px var(--co-gut);
+  pointer-events:none;
+  color:var(--co-ink);
+}
+.co-chrome > *{pointer-events:auto;transition:color 280ms ease}
+.co-chrome .co-on-dark{
+  color:rgba(255,255,255,.92);
+  text-shadow:0 0 2px rgba(0,0,0,.4),0 1px 22px rgba(0,0,0,.6);
+}
+.co-menu-btn{
+  background:none;border:0;cursor:pointer;color:inherit;
+  font:inherit;font-size:12.5px;letter-spacing:.14em;font-weight:400;padding:4px 0;
+}
+.co-menu{
+  position:fixed;inset:0;z-index:19;background:var(--co-bone);
+  display:flex;align-items:center;padding:0 var(--co-gut);
+}
+.co-menu[hidden]{display:none}
+.co-menu ul{display:grid;gap:18px}
+.co-menu a{font-size:clamp(21px,2.05vw,30px);font-weight:200;letter-spacing:-.005em}
+.co-menu a:hover{color:var(--co-stone)}
+
+/* ---- 1 · opening ---- */
+.co-open{position:relative;height:100svh;min-height:560px;background:var(--co-ink)}
+.co-open-img{object-position:50% 44%;opacity:0;animation:co-settle 2400ms cubic-bezier(.22,.61,.36,1) 120ms forwards}
+@keyframes co-settle{to{opacity:1}}
+.co-open-line{
+  position:absolute;left:var(--co-gut);bottom:clamp(40px,8vh,88px);
+  color:#fff;font-size:13px;letter-spacing:.2em;font-weight:400;
+  text-shadow:0 1px 24px rgba(0,0,0,.5);
+}
+
+/* ---- 2 & 5 · silence panels ---- */
+.co-still{min-height:88vh;display:flex;align-items:center;padding:clamp(96px,16vh,220px) var(--co-gut)}
+.co-still-short{min-height:66vh}
+
+/* the column that makes the emptiness read as intentional */
+.co-col{display:grid;grid-template-columns:8.5em 1fr;gap:0 clamp(24px,5vw,88px);align-items:baseline}
+.co-col .co-label{padding-top:.5em}
+
+/* ---- 3 & 4 · matted plates ---- */
+.co-plate{padding:clamp(56px,10vh,140px) var(--co-gut) clamp(96px,16vh,200px)}
+.co-plate figure{height:clamp(340px,74vh,760px);margin-bottom:clamp(40px,7vh,92px);background:var(--co-bone-2)}
+.co-plate-alt figure{height:clamp(300px,58vh,600px);width:min(100%,62ch);margin-left:auto}
+
+/* ---- 6 · closing ---- */
+.co-close{height:92svh;min-height:480px;background:var(--co-ink)}
+.co-invite{display:flex;justify-content:center;padding:clamp(120px,22vh,280px) var(--co-gut)}
+.co-begin{
+  font-size:clamp(21px,2.05vw,30px);font-weight:200;letter-spacing:.02em;
+  padding-bottom:10px;border-bottom:1px solid rgba(21,24,27,.28);
+  transition:border-color 400ms ease,color 400ms ease;
+}
+.co-begin:hover{border-color:var(--co-ink)}
+
+/* ---- footer: the information architecture lives elsewhere ---- */
+.co-foot{
+  border-top:var(--co-rule);margin:0 var(--co-gut);
+  padding:34px 0 clamp(40px,7vh,80px);
+  display:flex;align-items:baseline;justify-content:space-between;gap:32px;
+}
+.co-mark-foot{color:var(--co-stone)}
+.co-foot ul{display:flex;gap:clamp(18px,3vw,44px);flex-wrap:wrap}
+.co-foot a{font-size:12.5px;letter-spacing:.14em;color:var(--co-stone)}
+.co-foot a:hover{color:var(--co-ink)}
+
+/* ---- 375px ---- */
+@media (max-width:640px){
+  .co-chrome{padding:20px var(--co-gut)}
+  .co-mark{font-size:11.5px;letter-spacing:.16em}
+  .co-col{grid-template-columns:1fr;gap:20px 0}
+  .co-col .co-label{padding-top:0}
+  .co-say{max-width:none}
+  .co-still{min-height:78vh}
+  .co-still-short{min-height:56vh}
+  .co-open-img{object-position:64% 50%}
+  .co-open-line{font-size:12px}
+  .co-plate figure{height:64svh}
+  .co-plate-alt figure{height:52svh;width:100%}
+  .co-foot{flex-direction:column;align-items:flex-start;gap:24px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .co-open-img{opacity:1;animation:none}
+  .co-begin,.co-chrome > *{transition:none}
+}
+</style>
+
+
+<div class="co-root">
+
+  <header class="co-chrome">
+    <a class="co-mark co-on-dark" id="coMark" href="#">Galapagos Shark Diving</a>
+    <button type="button" class="co-menu-btn co-on-dark" id="coBtn" aria-expanded="false">Menu</button>
+  </header>
+
+  <nav class="co-menu" id="coMenu" aria-label="Site" hidden>
+    <ul>
+      <li><a href="/expeditions">Expeditions</a></li>
+      <li><a href="/vessels">Vessels</a></li>
+      <li><a href="/departures">Departures</a></li>
+      <li><a href="/research">Research</a></li>
+      <li><a href="/contact">Enquire</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- 1 — Opening -->
+    <section class="co-open co-dark">
+      <img class="co-open-img"
+           src="https://image.jimcdn.com/app/cms/image/transf/dimension=2400x10000:format=jpg/path/s2fc4241e2a9d6156/image/i0732d0710069ab07/version/1727121098/a-diver-swims-closely-alongside-a-massive-whale-shark-surrounded-by-a-school-of-fish-in-the-serene-depths-of-the-ocean.jpg"
+           alt="A diver swims alongside an adult whale shark, surrounded by a school of fish" />
+      <p class="co-open-line">Darwin and Wolf</p>
+    </section>
+
+    <!-- 2 — The statement -->
+    <section class="co-still">
+      <div class="co-col">
+        <p class="co-label">The expedition</p>
+        <p class="co-say">Eight days in the far north of the Galápagos, with a shark scientist aboard.</p>
+      </div>
+    </section>
+
+    <!-- 3 — Season -->
+    <section class="co-plate">
+      <figure class="co-dark">
+        <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=2000x10000:format=jpg/path/s2fc4241e2a9d6156/image/i0591fc7922ba217f/version/1730299290/galapagos-shark-diving-huge-hammerhead-shark-school-in-the-galapagos-islands.jpg"
+             alt="A large school of scalloped hammerhead sharks in Galápagos water" loading="lazy" />
+      </figure>
+      <div class="co-col">
+        <p class="co-label">Season</p>
+        <p class="co-say">June to November, the whale sharks come.</p>
+      </div>
+    </section>
+
+    <!-- 4 — Vessels -->
+    <section class="co-plate co-plate-alt">
+      <figure class="co-dark">
+        <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=2000x10000:format=jpg/path/s2fc4241e2a9d6156/image/i8bafb73a91e9d28a/version/1736371409/galaxy-diver-ii-luxury-yacht-galapagos-islands.jpg"
+             alt="The liveaboard Galaxy Diver II at anchor in the Galápagos Islands" loading="lazy" />
+      </figure>
+      <div class="co-col">
+        <p class="co-label">Aboard</p>
+        <p class="co-say">Two vessels. Aqua, and Galaxy Diver II.</p>
+      </div>
+    </section>
+
+    <!-- 5 — Research -->
+    <section class="co-still co-still-short">
+      <div class="co-col">
+        <p class="co-label">Research</p>
+        <p class="co-say">In partnership with the Galápagos Whale Shark Project.</p>
+      </div>
+    </section>
+
+    <!-- 6 — Closing invitation -->
+    <section class="co-close co-dark">
+      <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=2400x10000:format=jpg/path/s2fc4241e2a9d6156/image/i94b5a8f9795e8d58/version/1771099762/adult-female-whale-shark-swimming-above-a-group-of-divers-in-the-galapagos-islands.jpg"
+           alt="An adult female whale shark swimming above a group of divers" loading="lazy" />
+    </section>
+
+    <section class="co-invite">
+      <a class="co-begin" href="/contact">Begin</a>
+    </section>
+  </main>
+
+  <footer class="co-foot">
+    <p class="co-mark co-mark-foot">Galapagos Shark Diving</p>
+    <ul>
+      <li><a href="/expeditions">Expeditions</a></li>
+      <li><a href="/vessels">Vessels</a></li>
+      <li><a href="/departures">Departures</a></li>
+      <li><a href="/research">Research</a></li>
+    </ul>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var mark = document.getElementById("coMark");
+  var btn = document.getElementById("coBtn");
+  var menu = document.getElementById("coMenu");
+  var root = document.querySelector(".co-root");
+  var open = false;
+
+  // The mark and the menu control each sit on whatever is behind them —
+  // photography or bone — and are written in the ink that stays legible there.
+  function read() {
+    var y = 40;
+    var rects = [].map.call(document.querySelectorAll(".co-dark"), function (el) {
+      return el.getBoundingClientRect();
+    });
+    function over(x) {
+      return rects.some(function (r) {
+        return r.top <= y && r.bottom >= y && r.left <= x && r.right >= x;
+      });
+    }
+    var g = parseFloat(getComputedStyle(root).getPropertyValue("--co-gut")) ||
+      Math.min(128, Math.max(22, window.innerWidth * 0.07));
+    mark.classList.toggle("co-on-dark", !open && over(g + 8));
+    btn.classList.toggle("co-on-dark", !open && over(window.innerWidth - g - 8));
+  }
+
+  function setMenu(v) {
+    open = v;
+    menu.hidden = !v;
+    btn.textContent = v ? "Close" : "Menu";
+    btn.setAttribute("aria-expanded", String(v));
+    read();
+  }
+
+  btn.addEventListener("click", function () { setMenu(!open); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && open) setMenu(false);
+  });
+  window.addEventListener("scroll", read, { passive: true });
+  window.addEventListener("resize", read);
+  window.addEventListener("load", read);
+  read();
+})();
+</script>
+<a id="back-to-concepts-index" href="index.html" style="position:fixed;top:10px;right:10px;z-index:999999;background:#000;color:#fff;font:12px/1 system-ui,sans-serif;padding:7px 11px;text-decoration:none;border-radius:3px;opacity:0.55;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.55">&larr; All concepts</a>

@@ -1,0 +1,800 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Concept A — Field Journal — Galapagos Shark Diving</title>
+<meta name="description" content="Design concept prototype: an editorial field-journal treatment of the Darwin and Wolf expedition record.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+  html,body{margin:0;padding:0;background:#EDEAE1;}
+</style>
+
+
+<div class="ca ca-grain">
+<style>
+.ca {
+  --ca-paper: #EDEAE1;
+  --ca-leaf: #F7F5EF;
+  --ca-plate: #15181B;
+  --ca-plate-2: #1F2429;
+  --ca-ink: #14171A;
+  --ca-ink-2: #4C545B;
+  --ca-ink-3: #767D83;
+  --ca-rule: #C9C5B9;
+  --ca-rule-soft: #DCD8CD;
+  --ca-mark: #1D3A5C;
+  --ca-serif: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --ca-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --ca-gut: clamp(20px, 4vw, 56px);
+
+  background: var(--ca-paper);
+  color: var(--ca-ink);
+  font-family: var(--ca-serif);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.ca *, .ca *::before, .ca *::after { box-sizing: border-box; }
+.ca img { display: block; width: 100%; height: auto; }
+.ca h1, .ca h2, .ca h3, .ca h4, .ca p, .ca dl, .ca dd, .ca dt, .ca figure, .ca ol, .ca ul {
+  margin: 0; padding: 0;
+}
+.ca ol, .ca ul { list-style: none; }
+.ca a { color: inherit; text-decoration: none; }
+
+/* the logbook substrate: a faint ruled grain, kept low enough to read as paper */
+.ca-grain {
+  background-image:
+    repeating-linear-gradient(to bottom, rgba(20,23,26,.035) 0 1px, transparent 1px 30px),
+    repeating-linear-gradient(to right, rgba(20,23,26,.022) 0 1px, transparent 1px 30px);
+}
+
+.ca-wrap { max-width: 1280px; margin: 0 auto; padding: 0 var(--ca-gut); }
+.ca-rule { border-top: 1px solid var(--ca-rule); }
+.ca-hair { border-top: 1px solid var(--ca-rule-soft); }
+
+/* ---- mono / data voice ---- */
+.ca-m {
+  font-family: var(--ca-mono);
+  font-size: 11.5px;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--ca-ink-3);
+  font-weight: 500;
+}
+.ca-num { font-family: var(--ca-mono); font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
+
+/* ---- masthead ---- */
+.ca-bar {
+  position: sticky; top: 0; z-index: 30;
+  background: var(--ca-paper);
+  border-bottom: 1px solid var(--ca-rule);
+}
+.ca-bar-in {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 18px;
+  padding-block: 9px; overflow: hidden;
+}
+.ca-bar-in .ca-m { white-space: nowrap; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.ca-bar-in .ca-m span { color: var(--ca-ink); }
+
+.ca-mast { padding-block: clamp(28px, 5vw, 62px) 22px; }
+.ca-mast-top { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.ca-word {
+  font-size: clamp(30px, 5.4vw, 62px); line-height: .94; font-weight: 500;
+  letter-spacing: -.022em;
+}
+.ca-word em { font-style: italic; font-weight: 300; }
+.ca-nav { display: flex; flex-wrap: wrap; gap: 4px 22px; }
+.ca-nav a { display: flex; gap: 7px; align-items: baseline; padding: 3px 0; border-bottom: 1px solid transparent; }
+.ca-nav a:hover { border-bottom-color: var(--ca-ink); }
+.ca-nav i { font-style: normal; font-family: var(--ca-mono); font-size: 10px; color: var(--ca-mark); letter-spacing: .06em; }
+.ca-nav b { font-weight: 400; font-size: 15px; color: var(--ca-ink); }
+
+/* ---- opening spread ---- */
+.ca-open { padding-block: clamp(26px, 4vw, 46px) clamp(40px, 6vw, 76px); }
+.ca-open-grid { display: grid; grid-template-columns: minmax(0, 1.72fr) minmax(0, 1fr); gap: clamp(26px, 4vw, 60px); }
+.ca-kicker { display: flex; gap: 14px; flex-wrap: wrap; align-items: baseline; padding-bottom: 14px; }
+.ca-kicker .ca-m span { color: var(--ca-ink); }
+.ca-lede h1 {
+  font-size: clamp(34px, 5.1vw, 63px); line-height: 1.02; font-weight: 400;
+  letter-spacing: -.026em; max-width: 21ch; text-wrap: balance;
+}
+.ca-deck { columns: 2; column-gap: 36px; column-rule: 1px solid var(--ca-rule); margin-top: 26px; }
+.ca [id^="s-"] { scroll-margin-top: 58px; }
+.ca-deck p { font-size: 17.5px; line-height: 1.62; color: var(--ca-ink-2); margin-bottom: 15px; }
+.ca-deck p:first-child { color: var(--ca-ink); }
+.ca-deck p:first-child::first-letter {
+  float: left; font-size: 3.05em; line-height: .84; padding: 4px 9px 0 0; font-weight: 400;
+}
+
+/* right rail: station readings */
+.ca-rail { border-left: 1px solid var(--ca-rule); padding-left: clamp(16px, 2vw, 26px); }
+.ca-rail-h { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 10px; }
+.ca-readings { border-top: 1px solid var(--ca-ink); }
+.ca-readings > div {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+  padding: 8px 0; border-bottom: 1px solid var(--ca-rule-soft);
+}
+.ca-readings dt { font-family: var(--ca-mono); font-size: 11.5px; letter-spacing: .05em; color: var(--ca-ink-3); text-transform: uppercase; }
+.ca-readings dd { font-family: var(--ca-mono); font-size: 14px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.ca-aside {
+  margin-top: 18px; font-size: 14.5px; line-height: 1.55; color: var(--ca-ink-2);
+  border-left: 2px solid var(--ca-mark); padding-left: 12px;
+}
+.ca-aside b { font-weight: 600; color: var(--ca-ink); }
+.ca-aside + .ca-aside { margin-top: 16px; }
+
+/* evidence strip: documentary photos, captioned, never full-bleed spectacle */
+.ca-evid { display: grid; grid-template-columns: 1.35fr 1fr 1fr; gap: clamp(14px, 2vw, 26px); margin-top: clamp(28px, 4vw, 48px); }
+.ca-fig { display: flex; flex-direction: column; }
+.ca-fig-img { background: var(--ca-plate); border: 1px solid var(--ca-rule); overflow: hidden; }
+.ca-fig-img img { aspect-ratio: 4 / 3; object-fit: cover; }
+.ca-fig.tall .ca-fig-img img { aspect-ratio: 16 / 10; }
+.ca-fig figcaption { padding-top: 8px; border-top: 1px solid var(--ca-rule); margin-top: 8px; }
+.ca-fig figcaption .t { font-size: 14.5px; line-height: 1.45; color: var(--ca-ink); }
+.ca-fig figcaption .c { margin-top: 5px; }
+
+/* ---- section furniture ---- */
+.ca-sec { padding-block: clamp(40px, 6vw, 82px); }
+.ca-sec-h { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: clamp(18px, 3vw, 48px); align-items: end; padding-bottom: 22px; }
+.ca-sec-h h2 { font-size: clamp(25px, 3.1vw, 39px); line-height: 1.07; font-weight: 400; letter-spacing: -.02em; max-width: 24ch; }
+.ca-sec-h .sub { font-size: 16.5px; color: var(--ca-ink-2); max-width: 62ch; }
+.ca-sec-n { padding-bottom: 8px; }
+
+/* ---- ship's log ---- */
+.ca-log { border-top: 1px solid var(--ca-ink); }
+.ca-log-hd, .ca-log-row {
+  display: grid; grid-template-columns: 116px minmax(0, 1.1fr) 62px minmax(0, 2fr);
+  gap: clamp(10px, 1.6vw, 26px); align-items: baseline;
+  padding: 11px 0; border-bottom: 1px solid var(--ca-rule-soft);
+}
+.ca-log-hd { padding: 7px 0; border-bottom: 1px solid var(--ca-rule); }
+.ca-log-row:hover { background: rgba(29,58,92,.035); }
+.ca-log-row .d { font-family: var(--ca-mono); font-size: 11.5px; letter-spacing: .05em; color: var(--ca-mark); text-transform: uppercase; }
+.ca-log-row .s { font-size: 17px; letter-spacing: -.01em; }
+.ca-log-row .n { font-family: var(--ca-mono); font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.ca-log-row .o { font-size: 15.5px; line-height: 1.5; color: var(--ca-ink-2); }
+.ca-log-foot { display: flex; flex-wrap: wrap; gap: 10px 34px; padding-top: 14px; }
+.ca-log-foot div { display: flex; gap: 8px; align-items: baseline; }
+.ca-log-foot .v { font-family: var(--ca-mono); font-size: 14px; font-weight: 600; }
+
+/* ---- register (the decision layer) ---- */
+.ca-reg-wrap { background: var(--ca-leaf); border: 1px solid var(--ca-rule); padding: clamp(16px, 2.4vw, 32px); }
+.ca-reg { border-top: 1px solid var(--ca-ink); }
+.ca-reg-hd, .ca-reg-row {
+  display: grid;
+  grid-template-columns: 150px 44px minmax(0, 1.35fr) minmax(0, 1fr) 74px 104px;
+  gap: clamp(8px, 1.4vw, 22px); align-items: baseline;
+  padding: 12px 0; border-bottom: 1px solid var(--ca-rule-soft);
+}
+.ca-reg-hd { padding: 7px 0; border-bottom: 1px solid var(--ca-rule); }
+.ca-reg-hd .r, .ca-reg-row .r { text-align: right; }
+.ca-reg-row .dt { font-family: var(--ca-mono); font-size: 13px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.ca-reg-row .dy { font-family: var(--ca-mono); font-size: 13px; color: var(--ca-ink-3); font-variant-numeric: tabular-nums; }
+.ca-reg-row .pr { font-size: 16.5px; letter-spacing: -.01em; }
+.ca-reg-row .vs { font-size: 15px; color: var(--ca-ink-2); font-style: italic; }
+.ca-reg-row .br { font-family: var(--ca-mono); font-size: 13px; font-variant-numeric: tabular-nums; text-align: right; }
+.ca-reg-row .pc { font-family: var(--ca-mono); font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; }
+.ca-reg-row.closed .dt, .ca-reg-row.closed .pr, .ca-reg-row.closed .pc { color: var(--ca-ink-3); }
+.ca-tag { font-family: var(--ca-mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+.ca-tag.open { color: var(--ca-mark); }
+.ca-tag.low { color: #8A5A16; }
+.ca-tag.closed { color: var(--ca-ink-3); }
+.ca-reg-note { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 24px; padding-top: 18px; align-items: start; }
+.ca-reg-note p { font-size: 14.5px; line-height: 1.55; color: var(--ca-ink-2); }
+.ca-link {
+  display: inline-block; font-family: var(--ca-mono); font-size: 12px; letter-spacing: .07em;
+  text-transform: uppercase; border-bottom: 1px solid var(--ca-ink); padding-bottom: 2px; color: var(--ca-ink);
+}
+.ca-link:hover { color: var(--ca-mark); border-bottom-color: var(--ca-mark); }
+
+/* ---- vessels: comparative spec sheet ---- */
+.ca-ships { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 3vw, 54px); }
+.ca-ship { border-top: 1px solid var(--ca-ink); padding-top: 12px; }
+.ca-ship h3 { font-size: clamp(21px, 2.3vw, 28px); font-weight: 400; letter-spacing: -.02em; }
+.ca-ship .pg { margin: 2px 0 14px; }
+.ca-ship-img { border: 1px solid var(--ca-rule); overflow: hidden; background: var(--ca-plate); }
+.ca-ship-img img { aspect-ratio: 3 / 2; object-fit: cover; }
+.ca-ship dl { margin-top: 14px; }
+.ca-ship dl > div {
+  display: grid; grid-template-columns: 40% 1fr; gap: 12px; align-items: baseline;
+  padding: 7px 0; border-bottom: 1px solid var(--ca-rule-soft);
+}
+.ca-ship dt { font-family: var(--ca-mono); font-size: 11px; letter-spacing: .05em; text-transform: uppercase; color: var(--ca-ink-3); }
+.ca-ship dd { font-family: var(--ca-mono); font-size: 13.5px; font-weight: 500; font-variant-numeric: tabular-nums; }
+
+/* ---- plates (dark section: the photographic plates of the report) ---- */
+.ca-plates { background: var(--ca-plate); color: #E8E4DA; }
+.ca-plates .ca-sec-h h2 { color: #F4F1E8; }
+.ca-plates .ca-sec-h .sub { color: #9BA2A8; }
+.ca-plates .ca-m { color: #8A9196; }
+.ca-plate-g { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2.2vw, 34px); border-top: 1px solid #343A40; padding-top: 22px; }
+.ca-plate-c figure { border: 1px solid #2E343A; background: var(--ca-plate-2); }
+.ca-plate-c img { aspect-ratio: 5 / 4; object-fit: cover; }
+.ca-plate-c .meta { display: flex; justify-content: space-between; gap: 10px; padding: 9px 11px 0; }
+.ca-plate-c .body { padding: 5px 11px 13px; }
+.ca-plate-c h4 { font-size: 19px; font-weight: 400; letter-spacing: -.015em; color: #F4F1E8; }
+.ca-plate-c .lat { font-family: var(--ca-mono); font-size: 11.5px; font-style: italic; color: #8A9196; letter-spacing: .01em; text-transform: none; }
+.ca-plate-c .nt { font-size: 14.5px; line-height: 1.5; color: #AEB4B9; margin-top: 8px; }
+.ca-plate-c .cr { margin-top: 9px; padding-top: 7px; border-top: 1px solid #2E343A; }
+.ca-plates-foot { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; padding-top: 20px; margin-top: 22px; border-top: 1px solid #343A40; }
+
+/* ---- method ---- */
+.ca-meth { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 58px); }
+.ca-proto { border-top: 1px solid var(--ca-ink); }
+.ca-proto li {
+  display: grid; grid-template-columns: 38px 1fr; gap: 14px; align-items: baseline;
+  padding: 13px 0; border-bottom: 1px solid var(--ca-rule-soft);
+}
+.ca-proto .k { font-family: var(--ca-mono); font-size: 12px; font-weight: 600; color: var(--ca-mark); }
+.ca-proto .t { font-size: 17px; line-height: 1.52; }
+.ca-season { margin-top: 26px; border-top: 1px solid var(--ca-ink); }
+.ca-season > div { display: grid; grid-template-columns: 116px 1fr; gap: 16px; align-items: baseline; padding: 11px 0; border-bottom: 1px solid var(--ca-rule-soft); }
+.ca-season .v { font-family: var(--ca-mono); font-size: clamp(20px, 2.2vw, 27px); font-weight: 600; font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+.ca-season .l { font-size: 15px; line-height: 1.5; color: var(--ca-ink-2); }
+.ca-foot-note { font-size: 13.5px; line-height: 1.55; color: var(--ca-ink-3); margin-top: 18px; padding-top: 12px; border-top: 1px solid var(--ca-rule-soft); }
+.ca-foot-note sup { font-family: var(--ca-mono); font-size: 10px; color: var(--ca-mark); }
+
+/* ---- personnel ---- */
+.ca-ppl { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(16px, 2.2vw, 36px); border-top: 1px solid var(--ca-ink); padding-top: 20px; }
+.ca-ppl article .ph { border: 1px solid var(--ca-rule); background: var(--ca-leaf); overflow: hidden; }
+.ca-ppl article .ph img { aspect-ratio: 4 / 5; object-fit: cover; filter: grayscale(1) contrast(1.04); }
+.ca-ppl article .none {
+  aspect-ratio: 4 / 5; display: flex; align-items: center; justify-content: center;
+  font-family: var(--ca-mono); font-size: 26px; color: var(--ca-ink-3); letter-spacing: .06em;
+}
+.ca-ppl h4 { font-size: 18px; font-weight: 400; letter-spacing: -.015em; margin-top: 11px; }
+.ca-ppl .ro { margin: 3px 0 7px; }
+.ca-ppl .cr { font-size: 14px; line-height: 1.5; color: var(--ca-ink-2); }
+
+/* ---- closing + colophon ---- */
+.ca-close { border-top: 1px solid var(--ca-ink); padding-block: clamp(32px, 5vw, 64px); }
+.ca-close-g { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 60px); align-items: start; }
+.ca-close h2 { font-size: clamp(26px, 3.4vw, 43px); line-height: 1.05; font-weight: 400; letter-spacing: -.025em; max-width: 22ch; }
+.ca-close p { margin-top: 14px; font-size: 17px; color: var(--ca-ink-2); max-width: 54ch; }
+.ca-close .acts { display: flex; gap: 22px; flex-wrap: wrap; margin-top: 22px; }
+.ca-colo { border-top: 1px solid var(--ca-rule); }
+.ca-colo-g { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; padding-block: 26px 34px; }
+.ca-colo-g h5 { font-family: var(--ca-mono); font-size: 10.5px; letter-spacing: .09em; text-transform: uppercase; color: var(--ca-ink-3); font-weight: 500; margin-bottom: 9px; }
+.ca-colo-g p, .ca-colo-g li { font-size: 14.5px; line-height: 1.55; color: var(--ca-ink-2); }
+.ca-colo-g li { padding: 2px 0; }
+.ca-stamp {
+  display: inline-block; border: 1px solid var(--ca-mark); color: var(--ca-mark);
+  font-family: var(--ca-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase;
+  padding: 5px 9px; transform: rotate(-1.4deg);
+}
+
+/* ---- one print-like settle, nothing cinematic ---- */
+@keyframes ca-settle { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+.ca-settle { animation: ca-settle .5s cubic-bezier(.2,.7,.3,1) both; }
+.ca-settle.d1 { animation-delay: .07s; }
+.ca-settle.d2 { animation-delay: .14s; }
+@media (prefers-reduced-motion: reduce) {
+  .ca-settle { animation: none; }
+}
+
+/* ---- responsive ---- */
+@media (max-width: 1040px) {
+  .ca-open-grid { grid-template-columns: 1fr; }
+  .ca-rail { border-left: 0; border-top: 1px solid var(--ca-rule); padding-left: 0; padding-top: 18px; }
+  .ca-readings { display: grid; grid-template-columns: 1fr 1fr; column-gap: 26px; }
+  .ca-plate-g { grid-template-columns: 1fr 1fr; }
+  .ca-ppl { grid-template-columns: 1fr 1fr; }
+  .ca-colo-g { grid-template-columns: 1fr 1fr; }
+  .ca-reg-hd, .ca-reg-row { grid-template-columns: 132px 36px minmax(0,1.2fr) 68px 92px; }
+  .ca-reg-hd .h-sci, .ca-reg-row .vs { display: none; }
+}
+@media (max-width: 720px) {
+  .ca { font-size: 16.5px; }
+  .ca-bar-in { gap: 10px; }
+  .ca-bar-in .ca-m.hide-s, .ca-bar-in .ca-m.hide-s2 { display: none; }
+  .ca-deck { columns: 1; }
+  .ca-deck p:first-child::first-letter { font-size: 2.55em; padding-right: 8px; }
+  .ca-aside + .ca-aside { margin-top: 14px; }
+  .ca-word { font-size: clamp(30px, 8.6vw, 44px); }
+  .ca-mast { padding-block-end: 16px; }
+  .ca-nav { gap: 2px 18px; margin-top: 16px; }
+  .ca-plates-foot { flex-direction: column; gap: 8px; }
+  .ca-evid { grid-template-columns: 1fr; }
+  .ca-sec-h { grid-template-columns: 1fr; align-items: start; }
+  .ca-log-hd { display: none; }
+  .ca-log-row { grid-template-columns: 1fr auto; gap: 4px 12px; padding: 14px 0; }
+  .ca-log-row .d { grid-column: 1; }
+  .ca-log-row .n { grid-column: 2; grid-row: 1; text-align: right; }
+  .ca-log-row .s { grid-column: 1 / -1; }
+  .ca-log-row .o { grid-column: 1 / -1; }
+  .ca-ships { grid-template-columns: 1fr; }
+  .ca-plate-g { grid-template-columns: 1fr; }
+  .ca-meth { grid-template-columns: 1fr; }
+  .ca-close-g { grid-template-columns: 1fr; }
+  .ca-ppl { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .ca-colo-g { grid-template-columns: 1fr; }
+  .ca-reg-wrap { padding: 14px; }
+  .ca-reg-hd { display: none; }
+  .ca-reg-row { grid-template-columns: 1fr auto; gap: 3px 12px; padding: 15px 0; }
+  .ca-reg-row .dt { grid-column: 1; }
+  .ca-reg-row .pc { grid-column: 2; grid-row: 1; }
+  .ca-reg-row .dy { display: none; }
+  .ca-reg-row .pr { grid-column: 1 / -1; }
+  .ca-reg-row .br { grid-column: 1 / -1; text-align: left; }
+  .ca-reg-note { grid-template-columns: 1fr; }
+  .ca-readings { grid-template-columns: 1fr; }
+}
+</style>
+
+<!-- running header — the log's own metadata line -->
+<div class="ca-bar">
+  <div class="ca-wrap ca-bar-in">
+    <div class="ca-m">Station <span>Darwin Island</span> · 01°40′N 92°00′W</div>
+    <div class="ca-m hide-s">Record <span>2027 season</span> · seven sailings</div>
+    <div class="ca-m hide-s2"><span>Galapagos Shark Diving®</span></div>
+  </div>
+</div>
+
+<header class="ca-wrap ca-mast">
+  <div class="ca-mast-top ca-settle">
+    <div class="ca-word">The Darwin<br>and Wolf <em>Record</em></div>
+    <nav class="ca-nav" aria-label="Sections of this record">
+      <a href="#s-01"><i>01</i><b>The station</b></a>
+      <a href="#s-02"><i>02</i><b>Ship's log</b></a>
+      <a href="#s-03"><i>03</i><b>Register</b></a>
+      <a href="#s-04"><i>04</i><b>Vessels</b></a>
+      <a href="#s-05"><i>05</i><b>Plates</b></a>
+      <a href="#s-06"><i>06</i><b>Method</b></a>
+    </nav>
+  </div>
+</header>
+
+<!-- ---------------------------------------------------- opening spread -->
+<section class="ca-wrap ca-open ca-rule" id="s-01">
+  <div class="ca-open-grid">
+    <div class="ca-lede ca-settle d1">
+      <div class="ca-kicker">
+        <span class="ca-m">Entry 01 — <span>the station</span></span>
+        <span class="ca-m">Liveaboard expeditions · 8 and 15 days</span>
+      </div>
+      <h1>Two seamounts at the top of the archipelago, reachable only by boat.</h1>
+      <div class="ca-deck">
+        <p>Darwin and Wolf sit alone in open Pacific water north of the main islands. There is no land to dive from and no day boat that reaches them. You arrive by liveaboard, after an overnight crossing, and you stay for three full days.</p>
+        <p>The audience for this page already knows what those two names mean. So this is written as the record it is: the transect we run, the sites we dive, the vessels we run it on, the animals actually logged there, and the research the observations feed. Sixteen guests. One shark scientist aboard every Citizen Science departure.</p>
+        <p>Whale sharks are at Darwin between June and November, and at the Arch almost every recorded animal is an adult female in apparent advanced pregnancy — which is the whole reason the Galápagos Whale Shark Project works there, and the reason a photograph taken by a guest can matter.</p>
+      </div>
+    </div>
+
+    <aside class="ca-rail ca-settle d2">
+      <div class="ca-rail-h">
+        <span class="ca-m">Station conditions</span>
+        <span class="ca-m">Jun – Nov</span>
+      </div>
+      <dl class="ca-readings">
+        <div><dt>Latitude</dt><dd>01°40′ N</dd></div>
+        <div><dt>Longitude</dt><dd>92°00′ W</dd></div>
+        <div><dt>Water</dt><dd>16–24 °C</dd></div>
+        <div><dt>Visibility</dt><dd>10–30 m</dd></div>
+        <div><dt>Current</dt><dd>1–5 kn</dd></div>
+        <div><dt>Max depth</dt><dd>30 m</dd></div>
+        <div><dt>Whale shark season</dt><dd>Jun – Nov</dd></div>
+        <div><dt>Exposure</dt><dd>7 mm + hood</dd></div>
+      </dl>
+      <p class="ca-aside"><b>Entry requirement.</b> Advanced certification or equivalent, more than fifty logged dives, one dive within the previous six months, a dive computer and dive-accident insurance. Maximum depth thirty metres. Decompression and solo diving are not permitted under any conditions.</p>
+      <p class="ca-aside" style="border-left-color: var(--ca-rule)"><b>Second island.</b> Wolf lies at 01°23′N 91°49′W, south of Darwin — the highest shark biomass anywhere on the route, and dived on days four and five.</p>
+    </aside>
+  </div>
+
+  <!-- documentary evidence, captioned and credited -->
+  <div class="ca-evid">
+    <figure class="ca-fig tall ca-settle d2">
+      <div class="ca-fig-img">
+        <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1920x10000:format=jpg/path/s2fc4241e2a9d6156/image/i94b5a8f9795e8d58/version/1771099762/adult-female-whale-shark-swimming-above-a-group-of-divers-in-the-galapagos-islands.jpg" alt="An adult female whale shark swimming above a group of divers in the Galápagos" fetchpriority="high" decoding="async">
+      </div>
+      <figcaption>
+        <div class="t">An adult female passes above the group at Darwin. The divers give the scale; the spot pattern behind her gills gives the identification.</div>
+        <div class="c ca-m">Fig. 1 · Darwin Island · © Galapagos Shark Diving</div>
+      </figcaption>
+    </figure>
+
+    <figure class="ca-fig ca-settle d2">
+      <div class="ca-fig-img">
+        <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1200x10000:format=jpg/path/s2fc4241e2a9d6156/image/i3c7de9084888c9b9/version/1770760303/galapagos-shark-diving-diver-taking-photo-of-whale-shark.jpg" alt="A diver photographs a whale shark for identification" loading="lazy">
+      </div>
+      <figcaption>
+        <div class="t">Photo-identification in the water. The useful frame is square to the flank, behind the fifth gill slit.</div>
+        <div class="c ca-m">Fig. 2 · © Galapagos Shark Diving</div>
+      </figcaption>
+    </figure>
+
+    <figure class="ca-fig ca-settle d2">
+      <div class="ca-fig-img">
+        <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1920x10000:format=jpg/path/s2fc4241e2a9d6156/image/i208de835a0056f2e/version/1601949846/image.jpg" alt="An adult whale shark passes beneath a diver at Darwin" loading="lazy">
+      </div>
+      <figcaption>
+        <div class="t">Beneath the group, moving on her own terms. Nothing about the encounter is arranged.</div>
+        <div class="c ca-m">Fig. 3 · Darwin Island · © Galapagos Shark Diving</div>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ------------------------------------------------------- ship's log -->
+<section class="ca-wrap ca-sec ca-rule" id="s-02">
+  <div class="ca-sec-h">
+    <div>
+      <div class="ca-sec-n ca-m">Entry 02 — ship's log</div>
+      <h2>The eight-day transect, day by day.</h2>
+    </div>
+    <p class="sub">GSD's own published Citizen Science itinerary. Sixteen dives, three full days at the northern seamounts, and two cold-water days on the western islands on the way back. Every itinerary falls under the jurisdiction of the Galápagos National Park and can change at short notice.</p>
+  </div>
+
+  <div class="ca-log">
+    <div class="ca-log-hd">
+      <div class="ca-m">Date</div>
+      <div class="ca-m">Site</div>
+      <div class="ca-m">Dives</div>
+      <div class="ca-m">Observation</div>
+    </div>
+    <div class="ca-log-row"><div class="d">Day 1 · Tue</div><div class="s">Baltra / Santa Cruz</div><div class="n">1</div><div class="o">Board, weight and trim check. One check dive before the northern crossing.</div></div>
+    <div class="ca-log-row"><div class="d">Day 2 · Wed</div><div class="s">Cape Marshall · City of Mantas</div><div class="n">3</div><div class="o">Isabela's eastern wall. Giant manta rays working the current line.</div></div>
+    <div class="ca-log-row"><div class="d">Day 3 · Thu</div><div class="s">Darwin's Arch</div><div class="n">4</div><div class="o">Now the Pillars of Evolution. Hammerhead schools on the plateau; whale sharks in season.</div></div>
+    <div class="ca-log-row"><div class="d">Day 4 · Fri</div><div class="s">Darwin's Arch · Wolf Island</div><div class="n">4</div><div class="o">Two more at Darwin, then the overnight run south to Wolf.</div></div>
+    <div class="ca-log-row"><div class="d">Day 5 · Sat</div><div class="s">Wolf Island</div><div class="n">3</div><div class="o">Shark Bay, La Banana, El Derrumbe. The highest shark biomass on the route.</div></div>
+    <div class="ca-log-row"><div class="d">Day 6 · Sun</div><div class="s">Punta Vicente Roca · Cape Douglas</div><div class="n">2</div><div class="o">Cold Cromwell upwelling. Mola alexandrini at the cleaning stations; iguanas feeding at Douglas.</div></div>
+    <div class="ca-log-row"><div class="d">Day 7 · Mon</div><div class="s">Cousin's Rock</div><div class="n">2</div><div class="o">Black coral, seahorses, frogfish. Afternoon in the Santa Cruz highlands.</div></div>
+    <div class="ca-log-row"><div class="d">Day 8 · Tue</div><div class="s">Baltra</div><div class="n">—</div><div class="o">Disembark, or continue on a land extension.</div></div>
+  </div>
+  <div class="ca-log-foot">
+    <div><span class="ca-m">Dives, 8-day</span><span class="v">16</span></div>
+    <div><span class="ca-m">At Darwin's Arch</span><span class="v">6</span></div>
+    <div><span class="ca-m">At Wolf</span><span class="v">5</span></div>
+    <div><span class="ca-m">Dives, 15-day</span><span class="v">13–18 at Darwin · 9 at Wolf</span></div>
+    <div><span class="ca-m">Night dive</span><span class="v">15-day only</span></div>
+  </div>
+</section>
+
+<!-- -------------------------------------------------------- register -->
+<section class="ca-wrap ca-sec ca-rule" id="s-03">
+  <div class="ca-sec-h">
+    <div>
+      <div class="ca-sec-n ca-m">Entry 03 — register of sailings</div>
+      <h2>2027 season, as it currently stands.</h2>
+    </div>
+    <p class="sub">Seven scheduled sailings. Prices are per person, double occupancy, in US dollars. Deposit, balance and dive requirements are confirmed against the specific departure you choose.</p>
+  </div>
+
+  <div class="ca-reg-wrap">
+    <div class="ca-reg">
+      <div class="ca-reg-hd">
+        <div class="ca-m">Dates</div>
+        <div class="ca-m">Days</div>
+        <div class="ca-m">Programme</div>
+        <div class="ca-m h-sci">Vessel / aboard</div>
+        <div class="ca-m r">Berths</div>
+        <div class="ca-m r">USD pp</div>
+      </div>
+
+      <div class="ca-reg-row open">
+        <div class="dt">21 – 28 Jul 2027</div>
+        <div class="dy">8</div>
+        <div class="pr">Luxury Citizen Science<br><span class="ca-tag open">Open</span></div>
+        <div class="vs">Galaxy Diver II · Nitrox included</div>
+        <div class="br">9</div>
+        <div class="pc">8,200</div>
+      </div>
+      <div class="ca-reg-row closed">
+        <div class="dt">27 Jul – 3 Aug 2027</div>
+        <div class="dy">8</div>
+        <div class="pr">Citizen Science<br><span class="ca-tag closed">Waitlist only</span></div>
+        <div class="vs">Aqua · Sofía M. Green</div>
+        <div class="br">—</div>
+        <div class="pc">6,690</div>
+      </div>
+      <div class="ca-reg-row low">
+        <div class="dt">3 – 17 Aug 2027</div>
+        <div class="dy">15</div>
+        <div class="pr">Special 15-Day Citizen Science<br><span class="ca-tag low">3 berths left</span></div>
+        <div class="vs">Aqua · Jonathan R. Green</div>
+        <div class="br">3</div>
+        <div class="pc">13,490</div>
+      </div>
+      <div class="ca-reg-row low">
+        <div class="dt">17 – 31 Aug 2027</div>
+        <div class="dy">15</div>
+        <div class="pr">Special 15-Day Citizen Science<br><span class="ca-tag low">6 berths left</span></div>
+        <div class="vs">Aqua · Jonathan R. Green</div>
+        <div class="br">6</div>
+        <div class="pc">13,490</div>
+      </div>
+      <div class="ca-reg-row closed">
+        <div class="dt">31 Aug – 7 Sep 2027</div>
+        <div class="dy">8</div>
+        <div class="pr">Citizen Science<br><span class="ca-tag closed">Waitlist only</span></div>
+        <div class="vs">Aqua · Jonathan R. Green</div>
+        <div class="br">—</div>
+        <div class="pc">6,690</div>
+      </div>
+      <div class="ca-reg-row closed">
+        <div class="dt">8 – 15 Sep 2027</div>
+        <div class="dy">8</div>
+        <div class="pr">Luxury Citizen Science<br><span class="ca-tag closed">Waitlist only</span></div>
+        <div class="vs">Galaxy Diver II · Gourmet full board</div>
+        <div class="br">—</div>
+        <div class="pc">8,200</div>
+      </div>
+      <div class="ca-reg-row low">
+        <div class="dt">15 – 22 Sep 2027</div>
+        <div class="dy">8</div>
+        <div class="pr">Luxury Citizen Science<br><span class="ca-tag low">6 berths left</span></div>
+        <div class="vs">Galaxy Diver II · 16 guests</div>
+        <div class="br">6</div>
+        <div class="pc">8,200</div>
+      </div>
+    </div>
+
+    <div class="ca-reg-note">
+      <p>Not included in any price: international flights, the Galápagos National Park tax ($200), the Transit Control Card ($20), personal gear rental, dive and travel insurance, and alcohol. Nitrox is included on the Luxury Citizen Science programme and is a paid extra on Citizen Science. Solo travellers are matched with a same-sex cabin mate at the single-person price; a private cabin is available.</p>
+      <div><a class="ca-link" href="/departures">Open the full departure register</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- --------------------------------------------------------- vessels -->
+<section class="ca-wrap ca-sec ca-rule" id="s-04">
+  <div class="ca-sec-h">
+    <div>
+      <div class="ca-sec-n ca-m">Entry 04 — vessels</div>
+      <h2>Two liveaboards, both sixteen guests.</h2>
+    </div>
+    <p class="sub">Specifications as published by each vessel. Both carry Nitrox-capable compressors and a dive deck built for thirty-four tanks, which is what three days at Darwin actually requires.</p>
+  </div>
+
+  <div class="ca-ships">
+    <article class="ca-ship">
+      <h3>Aqua</h3>
+      <div class="pg ca-m">Citizen Science · 8-day and 15-day</div>
+      <div class="ca-ship-img"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1100x10000:format=jpg/path/s2fc4241e2a9d6156/image/ie0db3f63fa49cf65/version/1601745621/image.jpg" alt="The liveaboard Aqua" loading="lazy"></div>
+      <dl>
+        <div><dt>Guests</dt><dd>16</dd></div>
+        <div><dt>Cabins</dt><dd>9, each en suite</dd></div>
+        <div><dt>Length / beam</dt><dd>26 m / 5.5 m</dd></div>
+        <div><dt>Built / refit</dt><dd>1998 / 2019</dd></div>
+        <div><dt>Cruise speed</dt><dd>9 kn</dd></div>
+        <div><dt>Engines</dt><dd>2 × 250 hp Caterpillar</dd></div>
+        <div><dt>Tenders</dt><dd>2 Caribe, 50 hp Yamaha</dd></div>
+        <div><dt>Tank capacity</dt><dd>34 × 12 L aluminium</dd></div>
+        <div><dt>Compressors</dt><dd>2, Nitrox capable</dd></div>
+        <div><dt>Dive deck</dt><dd>Camera table · 2 rinse tanks · 2 showers</dd></div>
+      </dl>
+    </article>
+    <article class="ca-ship">
+      <h3>Galaxy Diver II</h3>
+      <div class="pg ca-m">Luxury Citizen Science · 8-day</div>
+      <div class="ca-ship-img"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1100x10000:format=jpg/path/s2fc4241e2a9d6156/image/i5f544858ccb11bd9/version/1740256784/image.jpg" alt="The yacht Galaxy Diver II" loading="lazy"></div>
+      <dl>
+        <div><dt>Guests</dt><dd>16</dd></div>
+        <div><dt>Length / beam</dt><dd>35 m / 8.2 m</dd></div>
+        <div><dt>Cruise / max speed</dt><dd>11 kn / 15 kn</dd></div>
+        <div><dt>Engines</dt><dd>2 × 600 hp Caterpillar</dd></div>
+        <div><dt>Generators</dt><dd>2 × 90 kW John Deere</dd></div>
+        <div><dt>Fresh water</dt><dd>9,800 L</dd></div>
+        <div><dt>Tank capacity</dt><dd>34 × 10/12/15 L, DIN + yoke</dd></div>
+        <div><dt>Compressors</dt><dd>2 LW, Nitrox capable</dd></div>
+        <div><dt>Dive deck</dt><dd>4 showers · camera table · rinse tank</dd></div>
+        <div><dt>Sun deck</dt><dd>117 m² shaded, jacuzzi</dd></div>
+      </dl>
+    </article>
+  </div>
+</section>
+
+<!-- ---------------------------------------------------------- plates -->
+<section class="ca-plates" id="s-05">
+  <div class="ca-wrap ca-sec">
+    <div class="ca-sec-h">
+      <div>
+        <div class="ca-sec-n ca-m">Entry 05 — plates</div>
+        <h2>Logged on this route. Promised on none of it.</h2>
+      </div>
+      <p class="sub">Wild animals in open ocean. These are photographs taken by the team on the itinerary above, at the sites named beneath each plate — not a list of what a week will contain.</p>
+    </div>
+
+    <div class="ca-plate-g">
+      <article class="ca-plate-c">
+        <figure>
+          <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=760x10000:format=jpg/path/s2fc4241e2a9d6156/image/ie948445b925f18eb/version/1680720722/massive-galapagos-whale-shark-and-tiny-scuba-diver-follows.jpg" alt="A whale shark dwarfing a diver" loading="lazy">
+          <div class="meta"><span class="ca-m">Plate I</span><span class="ca-m">Darwin Island</span></div>
+          <figcaption class="body">
+            <h4>Whale shark</h4>
+            <div class="lat">Rhincodon typus</div>
+            <p class="nt">IUCN Endangered. At Darwin, nearly all recorded animals are adult females in apparent advanced pregnancy — the reason the seamount matters to the research at all.</p>
+            <div class="cr ca-m">© Jenny Waack</div>
+          </figcaption>
+        </figure>
+      </article>
+      <article class="ca-plate-c">
+        <figure>
+          <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=760x10000:format=jpg/path/s2fc4241e2a9d6156/image/i1e62173842f11a44/version/1601949845/image.jpg" alt="A school of scalloped hammerheads at Darwin" loading="lazy">
+          <div class="meta"><span class="ca-m">Plate II</span><span class="ca-m">Darwin · Wolf</span></div>
+          <figcaption class="body">
+            <h4>Scalloped hammerhead</h4>
+            <div class="lat">Sphyrna lewini</div>
+            <p class="nt">Schooling on the plateau in the current. Wolf and Darwin are the primary aggregation sites, with recorded sightings of over one hundred animals per dive.</p>
+            <div class="cr ca-m">© Galapagos Shark Diving</div>
+          </figcaption>
+        </figure>
+      </article>
+      <article class="ca-plate-c">
+        <figure>
+          <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=760x10000:format=jpg/path/s2fc4241e2a9d6156/image/id26c48107a722551/version/1601907430/galapagos-shark-diving-galapagos-shark.jpg" alt="A Galápagos shark" loading="lazy">
+          <div class="meta"><span class="ca-m">Plate III</span><span class="ca-m">Wolf Island</span></div>
+          <figcaption class="body">
+            <h4>Galápagos shark</h4>
+            <div class="lat">Carcharhinus galapagensis</div>
+            <p class="nt">Resident and unbothered. Wolf carries the highest shark biomass anywhere on the route.</p>
+            <div class="cr ca-m">© Galapagos Shark Diving</div>
+          </figcaption>
+        </figure>
+      </article>
+      <article class="ca-plate-c">
+        <figure>
+          <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=760x10000:format=jpg/path/s2fc4241e2a9d6156/image/i5e240b80ee3917ac/version/1601913347/image.jpg" alt="Giant manta rays at Cape Marshall" loading="lazy">
+          <div class="meta"><span class="ca-m">Plate IV</span><span class="ca-m">Cape Marshall</span></div>
+          <figcaption class="body">
+            <h4>Giant manta ray</h4>
+            <div class="lat">Mobula birostris</div>
+            <p class="nt">Eastern Isabela, on the way north. Cape Marshall and City of Mantas are dived on the second day.</p>
+            <div class="cr ca-m">© Jonathan R. Green</div>
+          </figcaption>
+        </figure>
+      </article>
+      <article class="ca-plate-c">
+        <figure>
+          <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=760x10000:format=jpg/path/s2fc4241e2a9d6156/image/i35795385c6fa057a/version/1601952477/image.jpg" alt="A mola at Punta Vicente Roca" loading="lazy">
+          <div class="meta"><span class="ca-m">Plate V</span><span class="ca-m">Punta Vicente Roca</span></div>
+          <figcaption class="body">
+            <h4>Southern ocean sunfish</h4>
+            <div class="lat">Mola alexandrini</div>
+            <p class="nt">A cold-water cleaning station on the Isabela wall, where wrasses and angelfish wait. Cromwell upwelling; the coldest water of the week.</p>
+            <div class="cr ca-m">© Galapagos Shark Diving</div>
+          </figcaption>
+        </figure>
+      </article>
+      <article class="ca-plate-c">
+        <figure>
+          <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=760x10000:format=jpg/path/s2fc4241e2a9d6156/image/i21c9201699babaca/version/1601949845/image.jpg" alt="A marine iguana feeding underwater at Cape Douglas" loading="lazy">
+          <div class="meta"><span class="ca-m">Plate VI</span><span class="ca-m">Cape Douglas</span></div>
+          <figcaption class="body">
+            <h4>Marine iguana</h4>
+            <div class="lat">Amblyrhynchus cristatus</div>
+            <p class="nt">Grazing algae underwater off Fernandina — the only marine lizard on earth, photographed doing the thing that makes it one.</p>
+            <div class="cr ca-m">© Galapagos Shark Diving</div>
+          </figcaption>
+        </figure>
+      </article>
+    </div>
+
+    <div class="ca-plates-foot">
+      <span class="ca-m">Six of the species logged on this route — photographed on it, not licensed</span>
+      <span class="ca-m">Galápagos Marine Reserve · sites as named</span>
+    </div>
+  </div>
+</section>
+
+<!-- ---------------------------------------------------------- method -->
+<section class="ca-wrap ca-sec" id="s-06">
+  <div class="ca-sec-h">
+    <div>
+      <div class="ca-sec-n ca-m">Entry 06 — method</div>
+      <h2>What a guest actually contributes, and how it is checked.</h2>
+    </div>
+    <p class="sub">Galapagos Shark Diving has supported the Galápagos Whale Shark Project since 2019 — satellite tags and tracking time, contributions to Sharkbook.ai, field logistics and data analysis. Photo-identification can involve guests. Satellite tagging and in-water behavioural research are scientist-led, and we keep those roles separate.</p>
+  </div>
+
+  <div class="ca-meth">
+    <div>
+      <ol class="ca-proto">
+        <li><span class="k">01</span><span class="t">A GWSP shark scientist is aboard every Citizen Science departure and briefs the water work before it happens.</span></li>
+        <li><span class="k">02</span><span class="t">Observations are recorded to a standardised count protocol — SharkCount — rather than to memory.</span></li>
+        <li><span class="k">03</span><span class="t">Photographs are taken of the spot pattern behind the gills, which is unique to the individual and identifies her again.</span></li>
+        <li><span class="k">04</span><span class="t">Suitable images are submitted to Sharkbook.ai, the photo-identification database the project contributes to.</span></li>
+        <li><span class="k">05</span><span class="t">Submissions are reviewed before they enter the research record. Only accepted contributions count.</span></li>
+      </ol>
+      <p class="ca-foot-note"><sup>†</sup> The spot pattern behind a whale shark's gills is unique to the individual and stable over her life. The matching technique descends from software written to match star fields; Sharkbook.ai is the database the project contributes to.</p>
+    </div>
+
+    <div>
+      <div class="ca-m" style="padding-bottom: 10px">2024 field season · published outputs</div>
+      <dl class="ca-season">
+        <div><dt class="v">6</dt><dd class="l">adult female whale sharks tagged at Darwin Island with SPLASH10-346 fin-mounted satellite tags</dd></div>
+        <div><dt class="v">15</dt><dd class="l">ultrasound scans attempted on free-swimming adults</dd></div>
+        <div><dt class="v">5</dt><dd class="l">blood samples collected</dd></div>
+        <div><dt class="v">17,000</dt><dd class="l">kilometres tracked across the Pacific by Elise (#262715) over seven months before her return</dd></div>
+      </dl>
+      <p class="ca-foot-note">Named individuals from the 2024 catalogue include Luna, first tagged in June 2024, with notches on her anal and caudal fins; Makeba, with a dorsal fin injury likely caused by an old propeller strike; Olivia; and Star. Whale sharks are IUCN Red List Endangered.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ------------------------------------------------------- personnel -->
+<section class="ca-wrap ca-sec ca-rule">
+  <div class="ca-sec-h">
+    <div>
+      <div class="ca-sec-n ca-m">Entry 07 — personnel</div>
+      <h2>The people in the water with you.</h2>
+    </div>
+    <p class="sub">Not a guide who has read about whale sharks. The people who study them, listed with the work that qualifies them.</p>
+  </div>
+
+  <div class="ca-ppl">
+    <article>
+      <div class="ph"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=640x10000:format=jpg/path/s2fc4241e2a9d6156/image/i806c82e6817de1c1/version/1751156290/galapagos-shark-diving-jenny-waack.jpg" alt="Jenny Green" loading="lazy"></div>
+      <h4>Jenny Green</h4>
+      <div class="ro ca-m">Founder, Galapagos Shark Diving®</div>
+      <p class="cr">Field researcher and board member, Galápagos Whale Shark Project. Works polar expedition ships in the off-season.</p>
+    </article>
+    <article>
+      <div class="ph"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=640x10000:format=jpg/path/s2fc4241e2a9d6156/image/i9e1cf49655c8730e/version/1588473589/galapagos-shark-diving-jonathan-r-green.jpg" alt="Jonathan R. Green, FRGS" loading="lazy"></div>
+      <h4>Jonathan R. Green, FRGS</h4>
+      <div class="ro ca-m">Founder and director, Galápagos Whale Shark Project</div>
+      <p class="cr">Around thirty years working in the Galápagos; several thousand dives in the region. Elected Fellow of the Royal Geographical Society. First whale shark at Darwin's Arch, 1990.</p>
+    </article>
+    <article>
+      <div class="ph"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=640x10000:format=png/path/s2fc4241e2a9d6156/image/icb85875bebff7e85/version/1588976370/simon-j-pierce.png" alt="Dr Simon J. Pierce" loading="lazy"></div>
+      <h4>Dr Simon J. Pierce</h4>
+      <div class="ro ca-m">Collaborating scientist, GWSP</div>
+      <p class="cr">Led the 2016 IUCN Red List global whale shark assessment that established the species as Endangered, and the 2017 CMS uplisting. PhD, University of Queensland.</p>
+    </article>
+    <article>
+      <div class="none" aria-hidden="true">SG</div>
+      <h4>Sofía M. Green Iturralde</h4>
+      <div class="ro ca-m">Researcher and data analyst, GWSP</div>
+      <p class="cr">Working in the Galápagos since 2017. MSc, IMBRSea, marine biological resources. Also works on invasive species, marine debris and sea turtles.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ------------------------------------------------------------ close -->
+<section class="ca-wrap ca-close">
+  <div class="ca-close-g">
+    <div>
+      <h2>The record is open. Start at the register.</h2>
+      <p>Seven sailings in 2027, on two vessels, with a shark scientist aboard every Citizen Science departure. If you want to read the methods before you read the prices, that is the correct order.</p>
+      <div class="acts">
+        <a class="ca-link" href="/departures">The register</a>
+        <a class="ca-link" href="/citizen-science">The method</a>
+        <a class="ca-link" href="/research">The research</a>
+        <a class="ca-link" href="/contact">Ask a question</a>
+      </div>
+    </div>
+    <div><span class="ca-stamp">Concept prototype — direction A</span></div>
+  </div>
+</section>
+
+<footer class="ca-colo">
+  <div class="ca-wrap ca-colo-g">
+    <div>
+      <h5>Galapagos Shark Diving®</h5>
+      <p>128 Adolf Hanny y Av Seymour, El Eden<br>Puerto Ayora, Santa Cruz<br>Galápagos, Ecuador</p>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <p>info@galapagossharkdiving.com<br>WhatsApp +593 999 66 7219</p>
+    </div>
+    <div>
+      <h5>Research partner</h5>
+      <ul>
+        <li>Galápagos Whale Shark Project, since 2019</li>
+        <li>Sharkbook.ai photo-identification</li>
+        <li>Chicas con Agallas, supported since 2025</li>
+      </ul>
+    </div>
+    <div>
+      <h5>Colophon</h5>
+      <p>Newsreader and IBM Plex Mono. Photography by the GSD team and the Galápagos Whale Shark Project. Figures and specifications as published by the operator and the project.</p>
+    </div>
+  </div>
+</footer>
+
+</div>
+<a id="back-to-concepts-index" href="index.html" style="position:fixed;top:10px;right:10px;z-index:999999;background:#000;color:#fff;font:12px/1 system-ui,sans-serif;padding:7px 11px;text-decoration:none;border-radius:3px;opacity:0.55;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.55">&larr; All concepts</a>

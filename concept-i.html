@@ -1,0 +1,976 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concept I — The Vessel Register — Galapagos Shark Diving</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Design concept prototype: a charter-brokerage treatment of the two vessels behind Galapagos Shark Diving expeditions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap">
+<style>
+html,body{margin:0;padding:0;background:#0B1A2A;}
+
+.ci-root{
+  --ci-navy:#0B1A2A;
+  --ci-deep:#06101C;
+  --ci-mid:#12283D;
+  --ci-line:rgba(201,174,124,.24);
+  --ci-line-soft:rgba(201,174,124,.13);
+  --ci-brass:#A8874E;
+  --ci-brass-lt:#C9AE7C;
+  --ci-ivory:#F1ECE2;
+  --ci-canvas:#FAF7F1;
+  --ci-ink:#111C26;
+  --ci-slate:#7D8FA0;
+  --ci-slate-dk:#5C6E7E;
+  --ci-teak:#4A3A28;
+  --ci-max:1240px;
+  background:var(--ci-navy);
+  color:var(--ci-ivory);
+  font-family:'Jost',system-ui,-apple-system,sans-serif;
+  font-weight:300;
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.ci-root *,.ci-root *::before,.ci-root *::after{box-sizing:border-box;}
+.ci-root img{display:block;width:100%;height:100%;object-fit:cover;}
+.ci-root h1,.ci-root h2,.ci-root h3{margin:0;font-weight:400;}
+.ci-root p{margin:0;}
+.ci-root ul,.ci-root ol,.ci-root dl{margin:0;padding:0;list-style:none;}
+.ci-root a{color:inherit;text-decoration:none;}
+
+.ci-display{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-weight:300;
+  font-size:clamp(2.4rem,5.2vw,4.4rem);
+  line-height:1.02;
+  letter-spacing:-.012em;
+}
+.ci-display-sm{font-size:clamp(1.9rem,3.4vw,2.9rem);}
+.ci-eyebrow{
+  font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--ci-brass-lt);font-weight:500;margin-bottom:1.1rem;
+}
+.ci-lede{font-size:1.06rem;line-height:1.62;color:rgba(241,236,226,.82);max-width:56ch;}
+.ci-p{font-size:.97rem;line-height:1.68;color:rgba(241,236,226,.74);max-width:62ch;}
+.ci-fine{font-size:.8rem;line-height:1.6;color:var(--ci-slate);max-width:60ch;}
+.ci-kicker{
+  font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--ci-brass-lt);font-weight:500;
+}
+
+/* masthead */
+.ci-mast{
+  position:relative;z-index:20;
+  border-bottom:1px solid var(--ci-line);
+  background:var(--ci-deep);
+}
+.ci-mast-in{
+  max-width:var(--ci-max);margin:0 auto;padding:0 28px;
+  display:flex;align-items:center;gap:28px;min-height:76px;
+}
+.ci-mast-mark{display:flex;flex-direction:column;line-height:1.1;}
+.ci-mast-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.22rem;letter-spacing:.01em;}
+.ci-mast-sub{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ci-brass);margin-top:3px;}
+.ci-mast-nav{margin-left:auto;display:flex;gap:26px;}
+.ci-mast-nav a{
+  font-size:.76rem;letter-spacing:.09em;color:rgba(241,236,226,.66);
+  padding-bottom:2px;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;
+}
+.ci-mast-nav a:hover,.ci-mast-nav a:focus-visible{color:var(--ci-ivory);border-color:var(--ci-brass);}
+.ci-mast-cta{
+  font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;
+  border:1px solid var(--ci-brass);color:var(--ci-brass-lt);
+  padding:9px 18px;transition:background .2s,color .2s;
+}
+.ci-mast-cta:hover,.ci-mast-cta:focus-visible{background:var(--ci-brass);color:var(--ci-deep);}
+
+/* opening */
+.ci-open{position:relative;overflow:hidden;background:var(--ci-deep);}
+.ci-open-plate{position:absolute;inset:0;}
+.ci-open-plate::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(105deg,rgba(6,16,28,.96) 0%,rgba(6,16,28,.9) 42%,rgba(11,26,42,.72) 100%);
+}
+.ci-open-plate img{opacity:.42;filter:saturate(.62);}
+.ci-open-in{
+  position:relative;max-width:var(--ci-max);margin:0 auto;
+  padding:86px 28px 78px;
+}
+.ci-open-h{
+  font-family:'Cormorant Garamond',Georgia,serif;font-weight:300;
+  font-size:clamp(2.6rem,6.2vw,5.3rem);line-height:.99;letter-spacing:-.016em;
+  margin:1.4rem 0 1.5rem;max-width:20ch;
+}
+.ci-open-p{font-size:1.02rem;line-height:1.66;color:rgba(241,236,226,.76);max-width:60ch;}
+
+/* fleet gate */
+.ci-gate{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:56px;background:var(--ci-line-soft);}
+.ci-gate-card{
+  appearance:none;border:0;margin:0;text-align:left;cursor:pointer;
+  font:inherit;color:inherit;
+  background:rgba(6,16,28,.72);
+  padding:0;display:block;position:relative;
+  transition:background .3s ease;
+}
+.ci-gate-card::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  border:1px solid transparent;transition:border-color .3s ease;
+}
+.ci-gate-card:hover{background:rgba(18,40,61,.82);}
+.ci-gate-card.is-on{background:rgba(18,40,61,.95);}
+.ci-gate-card.is-on::after{border-color:var(--ci-brass);}
+.ci-gate-card:focus-visible{outline:2px solid var(--ci-brass-lt);outline-offset:-2px;}
+.ci-gate-img{display:block;height:216px;overflow:hidden;position:relative;}
+.ci-gate-img img{transition:transform .8s cubic-bezier(.2,.7,.2,1);filter:saturate(.82);}
+.ci-gate-card:hover .ci-gate-img img{transform:scale(1.035);}
+.ci-gate-card.is-on .ci-gate-img img{filter:saturate(1);}
+.ci-gate-body{display:block;padding:26px 28px 28px;}
+.ci-gate-name{
+  display:block;font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:2.05rem;line-height:1.05;letter-spacing:-.008em;
+}
+.ci-gate-suffix{
+  display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ci-brass);margin-top:8px;
+}
+.ci-gate-specs{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  margin:22px 0 20px;border-top:1px solid var(--ci-line-soft);
+  border-bottom:1px solid var(--ci-line-soft);padding:14px 0;
+}
+.ci-gate-spec{display:block;}
+.ci-gate-spec-v{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:1.5rem;line-height:1;}
+.ci-gate-spec-l{
+  display:block;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ci-slate);margin-top:6px;
+}
+.ci-gate-act{
+  display:block;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ci-brass-lt);
+}
+.ci-gate-card.is-on .ci-gate-act{color:var(--ci-ivory);}
+
+/* sticky bar */
+.ci-bar{
+  position:sticky;top:0;z-index:15;
+  background:rgba(6,16,28,.94);backdrop-filter:blur(10px);
+  border-top:1px solid var(--ci-line);border-bottom:1px solid var(--ci-line);
+}
+.ci-bar-in{
+  max-width:var(--ci-max);margin:0 auto;padding:12px 28px;
+  display:flex;align-items:center;gap:14px;
+}
+.ci-bar-label{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ci-slate);}
+.ci-bar-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.28rem;}
+.ci-bar-sep{width:1px;height:16px;background:var(--ci-line);}
+.ci-bar-prog{font-size:.76rem;letter-spacing:.1em;color:var(--ci-brass-lt);}
+.ci-bar-swap{
+  margin-left:auto;appearance:none;background:none;cursor:pointer;font:inherit;
+  border:1px solid var(--ci-line);color:rgba(241,236,226,.8);
+  font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;padding:8px 15px;
+  transition:border-color .2s,color .2s;
+}
+.ci-bar-swap:hover,.ci-bar-swap:focus-visible{border-color:var(--ci-brass);color:var(--ci-brass-lt);}
+
+/* specification */
+.ci-spec{background:var(--ci-navy);padding:92px 0 0;}
+.ci-spec-in{
+  max-width:var(--ci-max);margin:0 auto;padding:0 28px;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:64px;align-items:start;
+}
+.ci-spec-suffix{
+  font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ci-brass);margin:14px 0 22px;
+}
+.ci-spec .ci-lede{margin-bottom:28px;}
+.ci-from{display:flex;align-items:baseline;gap:10px;margin-bottom:10px;}
+.ci-from-l{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ci-slate);}
+.ci-from-v{font-family:'Cormorant Garamond',Georgia,serif;font-size:2.1rem;line-height:1;}
+.ci-from-u{font-size:.8rem;color:var(--ci-slate);}
+.ci-btn{
+  display:inline-block;margin-top:26px;
+  border:1px solid var(--ci-brass);color:var(--ci-brass-lt);
+  font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;
+  padding:14px 28px;transition:background .25s,color .25s;
+}
+.ci-btn:hover,.ci-btn:focus-visible{background:var(--ci-brass);color:var(--ci-deep);}
+.ci-btn-full{display:block;width:100%;text-align:center;border:1px solid var(--ci-brass);
+  background:var(--ci-brass);color:var(--ci-deep);cursor:pointer;font-family:inherit;margin-top:8px;}
+.ci-btn-full:hover{background:var(--ci-brass-lt);}
+.ci-spec-fig{margin:0;}
+.ci-spec-fig img{aspect-ratio:4/3;}
+.ci-spec-fig figcaption{
+  margin-top:12px;font-size:.74rem;color:var(--ci-slate);
+  border-top:1px solid var(--ci-line-soft);padding-top:10px;
+}
+
+.ci-tables{
+  max-width:var(--ci-max);margin:76px auto 0;padding:0 28px 92px;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ci-line-soft);
+}
+.ci-table{background:var(--ci-navy);padding:30px 26px 32px;}
+.ci-th{
+  font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ci-brass);margin-bottom:20px;font-weight:500;
+}
+.ci-dl-row{
+  display:flex;align-items:baseline;gap:8px;
+  padding:9px 0;border-bottom:1px dotted rgba(201,174,124,.2);
+}
+.ci-dl-row dt{font-size:.85rem;color:var(--ci-slate);flex:0 0 auto;}
+.ci-dl-row dd{margin:0 0 0 auto;font-size:.9rem;text-align:right;color:var(--ci-ivory);}
+.ci-ul li{
+  position:relative;padding:8px 0 8px 18px;font-size:.88rem;
+  color:rgba(241,236,226,.78);border-bottom:1px dotted rgba(201,174,124,.2);
+}
+.ci-ul li::before{
+  content:"";position:absolute;left:0;top:16px;width:6px;height:1px;background:var(--ci-brass);
+}
+.ci-ul-lg li{font-size:.95rem;padding:11px 0 11px 20px;}
+.ci-ul-lg li::before{top:20px;}
+
+/* deck stack */
+.ci-decks{background:var(--ci-deep);border-top:1px solid var(--ci-line);padding:88px 0;}
+.ci-decks-in{max-width:var(--ci-max);margin:0 auto;padding:0 28px;
+  display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:start;}
+.ci-decks-hd .ci-display{margin-bottom:18px;}
+.ci-stack{display:flex;flex-direction:column;gap:1px;}
+.ci-stack-deck{display:grid;grid-template-columns:200px 1fr;gap:20px;align-items:center;
+  padding:16px 0;border-top:1px solid var(--ci-line-soft);}
+.ci-stack-deck:first-child{border-top:1px solid var(--ci-line);}
+.ci-stack-label{display:flex;flex-direction:column;}
+.ci-stack-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.28rem;line-height:1.1;}
+.ci-stack-note{font-size:.7rem;color:var(--ci-slate);margin-top:4px;line-height:1.4;}
+.ci-stack-hull{
+  display:flex;gap:6px;align-items:center;min-height:52px;
+  background:linear-gradient(90deg,rgba(18,40,61,.9),rgba(18,40,61,.4));
+  border:1px solid var(--ci-line-soft);padding:8px 12px;
+}
+.ci-stack-cab{
+  flex:1 1 0;min-width:0;display:flex;align-items:center;justify-content:center;
+  height:36px;border:1px solid var(--ci-line);
+  font-family:'Cormorant Garamond',Georgia,serif;font-size:1.05rem;
+  color:var(--ci-brass-lt);background:rgba(11,26,42,.7);
+}
+.ci-stack-cab.is-unconfirmed{
+  border-style:dashed;color:var(--ci-slate);background:transparent;
+}
+.ci-stack-blank{
+  flex:1 1 auto;height:36px;border:1px solid var(--ci-line-soft);
+  background-image:repeating-linear-gradient(135deg,
+    rgba(201,174,124,.16) 0 1px, transparent 1px 9px);
+}
+.ci-stack-keel{
+  margin-top:8px;border-top:1px solid var(--ci-brass);padding-top:7px;
+  display:grid;grid-template-columns:200px 1fr;gap:20px;
+}
+.ci-stack-keel span{
+  grid-column:2;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ci-brass);
+}
+
+/* accommodation listing */
+.ci-accom{background:var(--ci-canvas);color:var(--ci-ink);padding:92px 0;}
+.ci-accom .ci-eyebrow{color:var(--ci-teak);}
+.ci-accom .ci-p{color:#3E4C59;}
+.ci-accom-in{max-width:var(--ci-max);margin:0 auto;padding:0 28px;}
+.ci-accom-hd{max-width:62ch;margin-bottom:46px;}
+.ci-accom-hd .ci-display{margin-bottom:16px;}
+.ci-list-row{
+  display:grid;grid-template-columns:168px 210px minmax(0,1fr) 160px;
+  gap:28px;align-items:center;
+  padding:22px 0;border-top:1px solid rgba(17,28,38,.14);
+}
+.ci-list-row:last-child{border-bottom:1px solid rgba(17,28,38,.14);}
+.ci-list-img{height:120px;overflow:hidden;background:#DED7CA;}
+.ci-list-img img{transition:transform .8s cubic-bezier(.2,.7,.2,1);}
+.ci-list-row:hover .ci-list-img img{transform:scale(1.04);}
+.ci-list-deck{font-size:.63rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ci-teak);}
+.ci-list-ref{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.65rem;line-height:1.1;margin:5px 0 4px;}
+.ci-list-berth{font-size:.84rem;color:#5A6875;}
+.ci-list-note{font-size:.88rem;line-height:1.6;color:#3E4C59;}
+.ci-list-act{text-align:right;}
+.ci-list-act a{
+  display:inline-block;font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;
+  border:1px solid rgba(74,58,40,.42);color:var(--ci-teak);padding:10px 15px;
+  transition:background .2s,color .2s,border-color .2s;
+}
+.ci-list-act a:hover,.ci-list-act a:focus-visible{background:var(--ci-teak);color:var(--ci-canvas);border-color:var(--ci-teak);}
+
+/* dive platform */
+.ci-plat{background:var(--ci-navy);padding:92px 0;}
+.ci-plat-in{max-width:var(--ci-max);margin:0 auto;padding:0 28px;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);gap:60px;align-items:start;}
+.ci-plat-copy .ci-display{margin-bottom:26px;}
+.ci-nitrox{margin-top:30px;border-left:2px solid var(--ci-brass);padding:4px 0 4px 20px;}
+.ci-nitrox-l{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ci-brass-lt);margin-bottom:8px;}
+.ci-nitrox-p{font-size:.92rem;line-height:1.66;color:rgba(241,236,226,.78);max-width:56ch;}
+.ci-plat-imgs{display:grid;gap:22px;}
+.ci-plat-imgs figure{margin:0;}
+.ci-plat-imgs img{aspect-ratio:16/10;filter:saturate(.88);}
+.ci-plat-imgs figcaption{
+  margin-top:10px;font-size:.72rem;color:var(--ci-slate);
+  border-top:1px solid var(--ci-line-soft);padding-top:9px;
+}
+
+/* itinerary */
+.ci-itin{background:var(--ci-deep);border-top:1px solid var(--ci-line);padding:88px 0;}
+.ci-itin-in{max-width:var(--ci-max);margin:0 auto;padding:0 28px;}
+.ci-itin-hd{max-width:64ch;margin-bottom:44px;}
+.ci-itin-hd .ci-display{margin-bottom:16px;}
+.ci-days{border-top:1px solid var(--ci-line);}
+.ci-days li{
+  display:grid;grid-template-columns:56px 160px minmax(0,1fr);gap:24px;align-items:baseline;
+  padding:18px 0;border-bottom:1px solid var(--ci-line-soft);
+}
+.ci-days-n{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.3rem;color:var(--ci-brass);}
+.ci-days-d{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ci-brass-lt);}
+.ci-days-b{font-size:.95rem;line-height:1.62;color:rgba(241,236,226,.8);}
+.ci-alloc{width:100%;border-collapse:collapse;text-align:left;}
+.ci-alloc th,.ci-alloc td{padding:16px 14px;border-bottom:1px solid var(--ci-line-soft);font-weight:400;}
+.ci-alloc thead th{
+  font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ci-brass);
+  border-bottom:1px solid var(--ci-brass);
+}
+.ci-alloc tbody th{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.25rem;}
+.ci-alloc tbody td{font-size:.95rem;color:rgba(241,236,226,.8);}
+.ci-alloc th:first-child,.ci-alloc td:first-child{padding-left:0;}
+
+/* cruising grounds */
+.ci-grounds{background:var(--ci-navy);padding:92px 0;}
+.ci-grounds-in{max-width:var(--ci-max);margin:0 auto;padding:0 28px;}
+.ci-grounds-hd{max-width:64ch;margin-bottom:52px;}
+.ci-grounds-hd .ci-display{margin-bottom:18px;}
+.ci-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--ci-line-soft);}
+.ci-ground{background:var(--ci-navy);padding:0 0 30px;}
+.ci-ground-img{height:262px;overflow:hidden;margin-bottom:24px;}
+.ci-ground-img img{transition:transform 1s cubic-bezier(.2,.7,.2,1);filter:saturate(.9);}
+.ci-ground:hover .ci-ground-img img{transform:scale(1.03);}
+.ci-ground-n{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.85rem;line-height:1.08;padding:0 26px;}
+.ci-ground-s{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ci-brass);padding:0 26px;margin:9px 0 14px;}
+.ci-ground-b{font-size:.92rem;line-height:1.66;color:rgba(241,236,226,.74);padding:0 26px;}
+
+/* science */
+.ci-sci{background:var(--ci-deep);border-top:1px solid var(--ci-line);padding:88px 0;}
+.ci-sci-in{max-width:var(--ci-max);margin:0 auto;padding:0 28px;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:60px;align-items:center;}
+.ci-sci-fig{margin:0;}
+.ci-sci-fig img{aspect-ratio:5/4;filter:saturate(.9);}
+.ci-sci-copy .ci-display{margin-bottom:22px;}
+.ci-sci-copy .ci-p{margin-bottom:16px;}
+
+/* availability */
+.ci-avail{background:var(--ci-canvas);color:var(--ci-ink);padding:92px 0;}
+.ci-avail .ci-eyebrow{color:var(--ci-teak);}
+.ci-avail .ci-p{color:#3E4C59;}
+.ci-avail-in{max-width:var(--ci-max);margin:0 auto;padding:0 28px;}
+.ci-avail-hd{max-width:62ch;margin-bottom:40px;}
+.ci-avail-hd .ci-display{margin-bottom:16px;}
+.ci-reg{width:100%;border-collapse:collapse;text-align:left;}
+.ci-reg thead th{
+  font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ci-teak);
+  padding:0 14px 12px;border-bottom:1px solid rgba(74,58,40,.5);font-weight:500;
+}
+.ci-reg tbody th,.ci-reg tbody td{
+  padding:16px 14px;border-bottom:1px solid rgba(17,28,38,.12);font-weight:400;font-size:.92rem;
+}
+.ci-reg tbody th{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.2rem;white-space:nowrap;}
+.ci-reg th:first-child,.ci-reg td:first-child{padding-left:0;}
+.ci-reg tbody tr.is-sel{background:rgba(168,135,78,.09);}
+.ci-state{font-size:.7rem;letter-spacing:.11em;text-transform:uppercase;}
+.ci-state-open{color:#1F5E3C;}
+.ci-state-low{color:#7A5A16;}
+.ci-state-closed{color:#7C6F63;}
+
+/* enquiry */
+.ci-enq{background:var(--ci-navy);padding:96px 0;border-top:1px solid var(--ci-line);}
+.ci-enq-in{max-width:var(--ci-max);margin:0 auto;padding:0 28px;
+  display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:64px;align-items:start;}
+.ci-enq-copy .ci-display{margin:0 0 22px;}
+.ci-enq-facts{margin-top:34px;border-top:1px solid var(--ci-line);}
+.ci-enq-facts>div{padding:14px 0;border-bottom:1px solid var(--ci-line-soft);display:grid;
+  grid-template-columns:130px minmax(0,1fr);gap:18px;}
+.ci-enq-facts dt{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ci-brass);}
+.ci-enq-facts dd{margin:0;font-size:.92rem;color:rgba(241,236,226,.82);}
+.ci-form{border:1px solid var(--ci-line);padding:32px 30px 30px;background:rgba(6,16,28,.6);}
+.ci-form-h{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.6rem;margin-bottom:22px;}
+.ci-field{margin-bottom:17px;}
+.ci-field label{
+  display:block;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ci-brass-lt);margin-bottom:7px;
+}
+.ci-field input,.ci-field select,.ci-field textarea{
+  width:100%;background:rgba(11,26,42,.8);border:1px solid var(--ci-line);
+  color:var(--ci-ivory);font-family:inherit;font-size:.92rem;font-weight:300;
+  padding:11px 12px;border-radius:0;
+}
+.ci-field input::placeholder{color:var(--ci-slate-dk);}
+.ci-field input:focus,.ci-field select:focus,.ci-field textarea:focus{
+  outline:none;border-color:var(--ci-brass);
+}
+.ci-field textarea{resize:vertical;}
+.ci-form-fine{margin-top:14px;font-size:.72rem;color:var(--ci-slate);}
+
+/* footer */
+.ci-foot{background:var(--ci-deep);border-top:1px solid var(--ci-line);padding:40px 0 52px;}
+.ci-foot-in{max-width:var(--ci-max);margin:0 auto;padding:0 28px;}
+.ci-foot-in p{font-size:.78rem;color:var(--ci-slate);}
+.ci-foot-note{margin-top:10px;max-width:80ch;line-height:1.6;color:var(--ci-slate-dk);}
+
+/* ---- responsive ---- */
+@media (max-width:1040px){
+  .ci-mast-nav{display:none;}
+  .ci-spec-in,.ci-decks-in,.ci-plat-in,.ci-sci-in,.ci-enq-in{grid-template-columns:1fr;gap:42px;}
+  .ci-tables{grid-template-columns:1fr;}
+  .ci-list-row{grid-template-columns:140px 180px minmax(0,1fr);}
+  .ci-list-act{grid-column:1 / -1;text-align:left;}
+}
+@media (max-width:760px){
+  .ci-root{font-size:15px;}
+  .ci-mast-in{padding:0 18px;min-height:64px;gap:14px;}
+  .ci-mast-name{font-size:1.05rem;}
+  .ci-mast-cta{margin-left:auto;padding:8px 13px;font-size:.66rem;}
+  .ci-open-in{padding:54px 18px 52px;}
+  .ci-open-h{font-size:clamp(2.1rem,10vw,3rem);}
+  .ci-gate{grid-template-columns:1fr;margin-top:38px;}
+  .ci-gate-img{height:170px;}
+  .ci-gate-body{padding:22px 20px 24px;}
+  .ci-gate-specs{grid-template-columns:repeat(2,1fr);row-gap:16px;}
+  .ci-bar-in{padding:10px 18px;flex-wrap:wrap;gap:8px 12px;}
+  .ci-bar-swap{margin-left:0;flex:1 1 100%;text-align:center;}
+  .ci-spec{padding:56px 0 0;}
+  .ci-spec-in,.ci-tables,.ci-decks-in,.ci-accom-in,.ci-plat-in,.ci-itin-in,.ci-grounds-in,.ci-sci-in,.ci-avail-in,.ci-enq-in,.ci-foot-in{padding-left:18px;padding-right:18px;}
+  .ci-tables{margin-top:46px;padding-bottom:58px;}
+  .ci-decks,.ci-plat,.ci-itin,.ci-grounds,.ci-sci,.ci-accom,.ci-avail,.ci-enq{padding:58px 0;}
+  .ci-stack-deck{grid-template-columns:1fr;gap:10px;}
+  .ci-stack-keel{grid-template-columns:1fr;}
+  .ci-stack-keel span{grid-column:1;}
+  .ci-list-row{grid-template-columns:1fr;gap:14px;}
+  .ci-list-img{height:200px;}
+  .ci-days li{grid-template-columns:44px 1fr;row-gap:6px;}
+  .ci-days-b{grid-column:2;}
+  .ci-grid{grid-template-columns:1fr;}
+  .ci-ground-img{height:210px;}
+  .ci-ground-n,.ci-ground-s,.ci-ground-b{padding-left:20px;padding-right:20px;}
+  .ci-alloc th,.ci-alloc td,.ci-reg tbody th,.ci-reg tbody td,.ci-reg thead th{padding:12px 8px;font-size:.84rem;}
+  .ci-alloc tbody th,.ci-reg tbody th{font-size:1.02rem;white-space:normal;}
+  .ci-enq-facts>div{grid-template-columns:1fr;gap:5px;}
+  .ci-form{padding:24px 20px 24px;}
+}
+@media (prefers-reduced-motion:reduce){
+  .ci-root *{transition:none !important;animation:none !important;}
+}
+</style>
+
+
+<div class="ci-root" id="ci-root"></div>
+<script>
+const IMG = {
+  aquaExterior:
+    "https://image.jimcdn.com/app/cms/image/transf/none/path/s2fc4241e2a9d6156/image/if9b548a01f97ac7f/version/1736371407/aqua-yacht-in-the-galapagos-islands.jpg",
+  galaxyExterior:
+    "https://image.jimcdn.com/app/cms/image/transf/dimension=892x10000:format=jpg/path/s2fc4241e2a9d6156/image/i8bafb73a91e9d28a/version/1736371409/galaxy-diver-ii-luxury-yacht-galapagos-islands.jpg",
+  aquaCabinUpper:
+    "https://image.jimcdn.com/app/cms/image/transf/dimension=668x1024:format=jpg/path/s2fc4241e2a9d6156/image/i279cb048a66aa57a/version/1740269668/upper-deck-cabin-with-double-bed-on-board-the-aqua-galapagos-shark-diving.jpg",
+  aquaCabinUpperTwin:
+    "https://image.jimcdn.com/app/cms/image/transf/dimension=668x1024:format=jpg/path/s2fc4241e2a9d6156/image/ia3706443faac55f0/version/1740269660/upper-deck-cabin-on-board-the-aqua-galapagos-shark-diving.jpg",
+  aquaCabinMain:
+    "https://image.jimcdn.com/app/cms/image/transf/dimension=668x1024:format=jpg/path/s2fc4241e2a9d6156/image/i2885de90bfdd26e4/version/1740269692/main-deck-cabin-on-board-the-aqua-galapagos-shark-diving.jpg",
+  aquaCabinLower:
+    "https://image.jimcdn.com/app/cms/image/transf/dimension=668x1024:format=jpg/path/s2fc4241e2a9d6156/image/i3d5fa4e117fba7ef/version/1740270426/lower-deck-cabin-on-board-the-aqua-galapagos-shark-diving.jpg",
+  galaxyCabinUpper:
+    "https://image.jimcdn.com/app/cms/image/transf/dimension=710x1024:format=jpg/path/s2fc4241e2a9d6156/image/ie113a0ad5d2c2534/version/1740258436/camarotes-de-la-cubierta-superior-del-barco-galaxy-diver-ii-galapagos-shark-diving.jpg",
+  galaxyCabinMain:
+    "https://image.jimcdn.com/app/cms/image/transf/dimension=710x1024:format=jpg/path/s2fc4241e2a9d6156/image/i1d779b678859e4a2/version/1740256720/main-deck-cabin-on-board-the-vessel-galaxy-diver-ii-galapagos-shark-diving.jpg",
+  galaxyCabinMainDouble:
+    "https://image.jimcdn.com/app/cms/image/transf/dimension=710x1024:format=jpg/path/s2fc4241e2a9d6156/image/i31314ffd293d4b69/version/1740258332/main-deck-cabin-with-double-bed-on-board-the-vessel-galaxy-diver-ii-galapagos-shark-diving.jpg",
+  galaxyCabinLower:
+    "https://image.jimcdn.com/app/cms/image/transf/dimension=710x1024:format=jpg/path/s2fc4241e2a9d6156/image/i4bbad5573e95b1a7/version/1740258333/lower-deck-cabin-on-board-the-vessel-galaxy-diver-ii-galapagos-shark-diving.jpg",
+  diveDeck:
+    "https://image.jimcdn.com/app/cms/image/transf/none/path/s2fc4241e2a9d6156/image/ic9504a1d4a42b5f9/version/1743185985/dive-deck-of-the-aqua-with-several-scuba-tanks-organized-on-benches-in-the-galapagos-on-the-aqua.jpg",
+  kittingUp:
+    "https://image.jimcdn.com/app/cms/image/transf/none/path/s2fc4241e2a9d6156/image/i346f0c055414b0a9/version/1743185911/scuba-divers-kitting-up-for-a-galapagos-dive-with-wetsuit-scuba-tanks-and-other-dive-gear-on-the-aqua.jpg",
+  hammerheadsWolf:
+    "https://image.jimcdn.com/app/cms/image/transf/dimension=802x10000:format=jpg/path/s2fc4241e2a9d6156/image/i2e26eaccd15faa23/version/1736371424/hundreds-of-hammerhead-sharks-swim-at-wolf-islands-dive-site-galapagos.jpg",
+  whaleSharkDivers:
+    "https://image.jimcdn.com/app/cms/image/transf/dimension=1900x10000:format=jpg/path/s2fc4241e2a9d6156/image/i95f46df2a49919bc/version/1771100074/adult-female-whale-shark-swimming-above-a-group-of-divers-in-the-galapagos-islands.jpg",
+  hammerheadSurface:
+    "https://image.jimcdn.com/app/cms/image/transf/dimension=1900x10000:format=jpg/path/s2fc4241e2a9d6156/image/id5a56a4416a7b1bf/version/1739236602/huge-hammerhead-shark-school-close-to-the-surface-galapagos-shark-diving.jpg",
+  seaLion:
+    "https://image.jimcdn.com/app/cms/image/transf/dimension=1012x1024:format=jpg/path/s2fc4241e2a9d6156/image/i717adcbe719d13d7/version/1786433308/galapagos-shark-diving-sea-lion-playing-very-curious-about-a-diver.jpg",
+  eagleRay:
+    "https://image.jimcdn.com/app/cms/image/transf/dimension=920x10000:format=jpg/path/s2fc4241e2a9d6156/image/id72741dcc3bf3bae/version/1704833352/close-up-of-a-spotted-eagle-ray-with-distinctive-markings-swimming-near-the-ocean-floor-with-sun-rays-filtering-through-the-water-above-illustrating-the-beauty-of-aquatic-life.jpg",
+  tagging:
+    "https://image.jimcdn.com/app/cms/image/transf/dimension=1900x10000:format=jpg/path/s2fc4241e2a9d6156/image/i38b61344e92489c1/version/1771099961/research-diver-tagging-a-adult-female-whale-shark-in-the-galapagos-islands.jpg",
+  heroPlate:
+    "https://image.jimcdn.com/app/cms/image/transf/dimension=1840x10000:format=jpg/path/s2fc4241e2a9d6156/image/i8ffa6158397125e7/version/1703103540/liveaboard-trips-are-run-during-peak-season-for-hammerheads-and-whale-sharks-huge-school-hundreds-of-hammerhead-sharks-swimming.jpg",
+};
+
+const VESSELS = {
+  aqua: {
+    key: "aqua",
+    name: "Aqua",
+    suffix: "Citizen Science Expeditions · 8 and 15 day",
+    programme: "Citizen Science",
+    standfirst:
+      "Built 1998, renovated 2019. Nine guest cabins, sixteen guests, and a dive platform rebuilt and expanded in 2017 around a working expedition programme rather than a leisure one.",
+    exterior: IMG.aquaExterior,
+    exteriorAlt: "The Aqua at anchor in the Galápagos Islands",
+    headline: [
+      ["Guests", "16"],
+      ["Cabins", "9"],
+      ["Bathrooms", "9"],
+      ["Built · refit", "1998 · 2019"],
+    ],
+    particulars: [
+      ["Length", "26 m"],
+      ["Beam", "5.5 m"],
+      ["Maximum guests", "16"],
+      ["Guest cabins", "9"],
+      ["Bathrooms", "9"],
+      ["Year built", "1998"],
+      ["Renovated", "2019"],
+      ["Cruising and top speed", "9 knots"],
+      ["Electrical", "110V / 220V outlets"],
+    ],
+    machinery: [
+      ["Main engines", "2 × 250 HP Caterpillar"],
+      ["Tenders", "2 × Caribe, C-20 and C-17"],
+      ["Outboards", "50 HP Yamaha four-stroke"],
+      ["Fuel capacity", "2,000 gallons"],
+      ["Freshwater maker", "1,200 gallons"],
+      ["Water capacity", "176"],
+    ],
+    platform: [
+      "Dive platform remodelled and expanded in 2017",
+      "2 compressors, including Nitrox capability",
+      "Capacity for 34 aluminium 12 L tanks",
+      "Camera table",
+      "2 freshwater tanks — one for wetsuits, one for electronics only",
+      "2 showers with hot and cold water",
+    ],
+    amenities: [
+      "Private bathroom in every cabin",
+      "Air conditioning throughout",
+      "Orthopedic mattresses and closets in cabins",
+      "Towels, bed linens, soap and shampoo supplied",
+      "No hairdryers on board",
+    ],
+    cabinsIntro:
+      "Nine guest cabins across three decks, numbered 1 to 9 on the vessel's own deck plans. Every cabin has a private bathroom and air conditioning.",
+    cabins: [
+      {
+        deck: "Main deck",
+        ref: "Cabin 4",
+        berth: "Master cabin",
+        note: "The single main-deck cabin, on the vessel's own deck plan the Master.",
+        img: IMG.aquaCabinMain,
+        alt: "Main deck cabin on board the Aqua",
+      },
+      {
+        deck: "Upper deck",
+        ref: "Cabins 5 – 9",
+        berth: "Double and twin",
+        note: "Five cabins on the upper deck, double-bed and twin configurations.",
+        img: IMG.aquaCabinUpper,
+        alt: "Upper deck cabin with double bed on board the Aqua",
+      },
+      {
+        deck: "Upper deck",
+        ref: "Twin configuration",
+        berth: "Within cabins 5 – 9",
+        note: "Twin-berth layout on the same deck, with closet and orthopedic mattresses.",
+        img: IMG.aquaCabinUpperTwin,
+        alt: "Upper deck cabin on board the Aqua",
+      },
+      {
+        deck: "Lower deck",
+        ref: "Cabins 1 – 3",
+        berth: "Twin, portholes",
+        note: "Three cabins forward on the lower deck, with portholes. A separate guides' room sits on the same deck and is not a guest cabin.",
+        img: IMG.aquaCabinLower,
+        alt: "Lower deck cabin on board the Aqua",
+      },
+    ],
+    decks: [
+      { name: "Sun deck", cabins: [], note: "Open and shaded deck space" },
+      { name: "Upper deck", cabins: ["5", "6", "7", "8", "9"], note: "Five guest cabins" },
+      { name: "Main deck", cabins: ["4"], note: "Master cabin · salon and dining" },
+      {
+        name: "Lower deck",
+        cabins: ["1", "2", "3"],
+        note: "Three guest cabins · guides' room · dive platform aft",
+      },
+    ],
+    nitrox:
+      "Nitrox is available on board — two compressors carry the capability — and is a paid extra on this programme rather than an inclusion. The published fill price contradicts itself across the operator's own pages, so we quote it on enquiry rather than in print.",
+    fromPrice: "6,690",
+    priceNote:
+      "8 days, per person, double occupancy, 2027 season. The 15-day expedition on the same vessel is 13,490. 2026 rates are 6,390 and 13,190. Excludes the Galápagos National Park tax of 200 and the Transit Control Card of 20.",
+    itineraryTitle: "Dive allocation across the cruising grounds",
+    itineraryKind: "allocation",
+    days: [],
+    allocation: [
+      ["Darwin's Arch", "6 dives", "13 – 18 dives"],
+      ["Wolf Island", "5 dives", "9 dives"],
+      ["Punta Vicente Roca", "1 dive", "3 – 4 dives"],
+      ["Cape Douglas", "1 dive", "2 dives"],
+    ],
+  },
+  galaxy: {
+    key: "galaxy",
+    name: "Galaxy Diver II",
+    suffix: "Luxury Citizen Science Expedition · 8 day",
+    programme: "Luxury Citizen Science",
+    standfirst:
+      "Thirty-five metres, sixteen guests, twin 600 HP Caterpillars and a 117 m² sundeck with a jacuzzi. The larger and faster of the two hulls, and the one on which Nitrox is included.",
+    exterior: IMG.galaxyExterior,
+    exteriorAlt: "The Galaxy Diver II, a luxury yacht in the Galápagos Islands",
+    headline: [
+      ["Guests", "16"],
+      ["Length", "35 m"],
+      ["Cruise speed", "11 kn"],
+      ["Sundeck", "117 m²"],
+    ],
+    particulars: [
+      ["Length", "35 m · 114.82 ft"],
+      ["Beam", "8.20 m · 26.90 ft"],
+      ["Maximum guests", "16"],
+      ["Guest cabins", "Confirmed on enquiry"],
+      ["Maximum speed", "15 knots"],
+      ["Cruising speed", "11 knots"],
+      ["Freshwater capacity", "9,800 litres"],
+      ["Fuel capacity", "15,100 litres"],
+      ["Electricity", "110V / 220V, 24 hours"],
+    ],
+    machinery: [
+      ["Main engines", "2 × 600 HP Caterpillar"],
+      ["Generators", "2 × 90 KW John Deere"],
+      ["Dive tenders", "2 × 40 HP motorised dive boats"],
+      ["Navigation", "Radar, GPS, autopilot, plotter, depth sounder"],
+      ["Communications", "SSB and VHF radio, Iridium satellite"],
+      ["Safety", "Life raft, AED, emergency oxygen 10,000 L, diver tracking"],
+    ],
+    platform: [
+      "Capacity for 34 aluminium tanks — 10 L, 12 L and 15 L, DIN and Yoke",
+      "2 × LW dive-tank compressors, enriched air / Nitrox capable",
+      "4 freshwater showers with hot and cold water",
+      "Large camera table and a separate rinse tank",
+      "Freshwater tank for electronics",
+      "Room to hang dive suits and clothing",
+    ],
+    amenities: [
+      "Jacuzzi on the sundeck",
+      "117 m² · 1,259 sq ft shaded sundeck with loungers and mattresses",
+      "Bar and lounge with TV, DVD, small library and toy library",
+      "Restaurant on the main deck, national and international menu with buffet",
+      "Vegetarian, vegan and gluten-free on request",
+      "Purified water station and 24-hour hot drinks",
+    ],
+    cabinsIntro:
+      "Cabins across three decks. The operator's own prose and its own deck plans disagree on the total, so we give you the configuration rather than a number, and confirm the count in writing on enquiry.",
+    cabins: [
+      {
+        deck: "Upper deck",
+        ref: "Upper deck cabins",
+        berth: "Twin, convertible to double",
+        note: "Large windows. Private bathroom with shower, hot and cold water, hair dryer and towel dryer.",
+        img: IMG.galaxyCabinUpper,
+        alt: "Upper deck cabins on board the vessel Galaxy Diver II",
+      },
+      {
+        deck: "Main deck",
+        ref: "Main deck cabins",
+        berth: "2 × convertible twin / double",
+        note: "Direct access to the lounge and dining area.",
+        img: IMG.galaxyCabinMain,
+        alt: "Main deck cabin on board the vessel Galaxy Diver II",
+      },
+      {
+        deck: "Main deck, bow",
+        ref: "Matrimonial cabin",
+        berth: "Dedicated double bed",
+        note: "A dedicated double-bed cabin at the bow of the main deck.",
+        img: IMG.galaxyCabinMainDouble,
+        alt: "Main deck cabin with double bed on board the vessel Galaxy Diver II",
+      },
+      {
+        deck: "Lower deck",
+        ref: "Lower deck cabin(s)",
+        berth: "Twin",
+        note: "No window or porthole, per the vessel's own specification. Number of cabins on this deck is the point in dispute.",
+        img: IMG.galaxyCabinLower,
+        alt: "Lower deck cabin on board the vessel Galaxy Diver II",
+      },
+    ],
+    decks: [
+      { name: "Sun deck", cabins: [], note: "Jacuzzi · 117 m² shaded area · loungers" },
+      {
+        name: "Upper deck",
+        cabins: ["·", "·", "·", "·"],
+        note: "Four guest cabins, large windows — prose and deck plan agree",
+      },
+      {
+        name: "Main deck",
+        cabins: ["·", "·", "·"],
+        note: "Three guest cabins, one matrimonial at the bow · restaurant · bar and lounge",
+      },
+      {
+        name: "Lower deck",
+        cabins: ["·", "?"],
+        note: "No window. Prose says one cabin here, the deck plan shows two — unconfirmed · dive deck aft",
+      },
+    ],
+    nitrox:
+      "Nitrox use is included on this programme, to extend bottom time safely. Two LW compressors on the dive deck are enriched-air capable, and tanks are carried in 10, 12 and 15 litre sizes with both DIN and Yoke fittings.",
+    fromPrice: "8,200",
+    priceNote:
+      "8 days, 7 nights, per person, double or twin, 2027 season. The 2026 rate is 7,500. Excludes the Galápagos National Park tax of 200 and the Transit Control Card of 20.",
+    itineraryTitle: "Charter itinerary — eight days, sixteen dives",
+    itineraryKind: "days",
+    days: [
+      ["Wednesday", "Santa Cruz / Baltra airport. Baltra Northeast, one check dive to 12 m maximum."],
+      ["Thursday", "Carrion Point, Santa Cruz Island — two dives. Afternoon navigation to Wolf Island."],
+      ["Friday", "Wolf Island: Shark Bay / La Banana, two dives. La Ventana Islet / El Derrumbe, two dives."],
+      ["Saturday", "Darwin Island: El Arenal, two dives. Darwin's Arch, two dives."],
+      ["Sunday", "Darwin Island, El Arenal — two dives. Wolf Island, El Derrumbe / Shark Bay — one dive."],
+      ["Monday", "Cape Douglas, Fernandina — one dive. Punta Vicente Roca, Isabela — one dive."],
+      ["Tuesday", "Cousin Rock, Santiago — two dives. Santa Cruz Highlands and giant tortoises."],
+      ["Wednesday", "Baltra airport departure, or land extension."],
+    ],
+    allocation: [],
+  },
+};
+
+const AVAILABILITY = [
+  { vessel: "Galaxy Diver II", dates: "21 – 28 Jul 2027", days: "8", berths: "9", state: "open" },
+  { vessel: "Aqua", dates: "27 Jul – 3 Aug 2027", days: "8", berths: "0", state: "closed" },
+  { vessel: "Aqua", dates: "3 – 17 Aug 2027", days: "15", berths: "3", state: "low" },
+  { vessel: "Aqua", dates: "17 – 31 Aug 2027", days: "15", berths: "6", state: "low" },
+  { vessel: "Aqua", dates: "31 Aug – 7 Sep 2027", days: "8", berths: "0", state: "closed" },
+  { vessel: "Galaxy Diver II", dates: "8 – 15 Sep 2027", days: "8", berths: "0", state: "closed" },
+  { vessel: "Galaxy Diver II", dates: "15 – 22 Sep 2027", days: "8", berths: "6", state: "low" },
+];
+
+const GROUNDS = [
+  {
+    name: "Darwin Island",
+    sub: "El Arenal · Darwin's Arch",
+    img: IMG.whaleSharkDivers,
+    alt: "Adult female whale shark swimming above a group of divers in the Galápagos Islands",
+    body:
+      "Over 95% of the archipelago's whale shark sightings occur here at the Arch, between June and December, and 99% of those animals are female and in an apparent state of advanced pregnancy. Six dives here on the eight-day itinerary; thirteen to eighteen on the fifteen.",
+  },
+  {
+    name: "Wolf Island",
+    sub: "Shark Bay · La Banana · El Derrumbe · La Ventana",
+    img: IMG.hammerheadsWolf,
+    alt: "Hundreds of hammerhead sharks swim at Wolf Island's dive site, Galápagos",
+    body:
+      "Scalloped hammerhead schooling, green and hawksbill turtles. Above the waterline: red-footed and Nazca boobies, frigate birds, the endemic swallow-tailed gull, red-billed tropicbird and the vampire finches.",
+  },
+  {
+    name: "Cape Douglas, Fernandina",
+    sub: "Cromwell current upwelling",
+    img: IMG.seaLion,
+    alt: "Galápagos sea lion playing, very curious about a diver",
+    body:
+      "Marine iguanas feeding in shallow bays between five and ten metres — filmed for BBC's Blue Planet I and II. They bask to warm before diving for around twenty minutes to feed. Flightless cormorant and Galápagos penguins feeding in the same cold water.",
+  },
+  {
+    name: "Punta Vicente Roca, Isabela",
+    sub: "Wall and cleaning stations",
+    img: IMG.eagleRay,
+    alt: "Spotted eagle ray swimming near the ocean floor with sun rays filtering through the water above",
+    body:
+      "Known for frequent sightings of Mola alexandrini, the southern ocean sunfish, which approach the wall to visit cleaning stations where wrasses and angelfish wait. Macro: blennies, long-nose coral hawkfish, frogfish, sea horses.",
+  },
+];
+
+/* ---------------------------------------------------------------- render --- */
+
+
+
+var activeKey = "aqua";
+var VESSEL_ORDER = [VESSELS.aqua, VESSELS.galaxy];
+
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+
+function render(){
+  var v = VESSELS[activeKey];
+  var other = VESSELS[activeKey === "aqua" ? "galaxy" : "aqua"];
+  var h = "";
+
+  h += '<header class="ci-mast"><div class="ci-mast-in">'
+    + '<div class="ci-mast-mark"><span class="ci-mast-name">Gal\u00e1pagos Shark Diving</span><span class="ci-mast-sub">Vessel register</span></div>'
+    + '<nav class="ci-mast-nav" aria-label="Register sections"><a href="#ci-fleet">Fleet</a><a href="#ci-spec">Specification</a><a href="#ci-accom">Accommodation</a><a href="#ci-grounds">Cruising grounds</a><a href="#ci-avail">Availability</a></nav>'
+    + '<a class="ci-mast-cta" href="#ci-enquire">Enquire</a></div></header>';
+
+  h += '<section class="ci-open" id="ci-fleet">'
+    + '<div class="ci-open-plate" aria-hidden="true"><img src="' + IMG.heroPlate + '" alt=""></div>'
+    + '<div class="ci-open-in">'
+    + '<p class="ci-kicker">Two vessels \u00b7 Darwin and Wolf \u00b7 sixteen guests each</p>'
+    + '<h1 class="ci-open-h">Choose the hull<br>before you choose the week.</h1>'
+    + '<p class="ci-open-p">Every Gal\u00e1pagos Shark Diving expedition is defined first by the vessel that carries it. Two are on the register. They are not interchangeable: different lengths, different speeds, different dive decks, different programmes, and different rules on enriched air. Begin with the boat.</p>'
+    + '<div class="ci-gate">';
+  VESSEL_ORDER.forEach(function(x){
+    var on = x.key === activeKey;
+    h += '<button type="button" class="ci-gate-card' + (on ? " is-on" : "") + '" aria-pressed="' + on + '" data-vessel="' + x.key + '">'
+      + '<span class="ci-gate-img"><img src="' + x.exterior + '" alt="' + esc(x.exteriorAlt) + '" loading="lazy"></span>'
+      + '<span class="ci-gate-body"><span class="ci-gate-name">' + esc(x.name) + '</span>'
+      + '<span class="ci-gate-suffix">' + esc(x.suffix) + '</span><span class="ci-gate-specs">'
+      + x.headline.map(function(p){return '<span class="ci-gate-spec"><span class="ci-gate-spec-v">' + esc(p[1]) + '</span><span class="ci-gate-spec-l">' + esc(p[0]) + '</span></span>';}).join("")
+      + '</span><span class="ci-gate-act">' + (on ? "Selected \u2014 register below" : "Open this vessel\u2019s register") + '</span></span></button>';
+  });
+  h += '</div></div></section>';
+
+  h += '<div class="ci-bar"><div class="ci-bar-in"><span class="ci-bar-label">Viewing</span>'
+    + '<span class="ci-bar-name">' + esc(v.name) + '</span><span class="ci-bar-sep" aria-hidden="true"></span>'
+    + '<span class="ci-bar-prog">' + esc(v.programme) + '</span>'
+    + '<button type="button" class="ci-bar-swap" data-vessel="' + other.key + '">Switch to ' + esc(other.name) + '</button></div></div>';
+
+  h += '<section class="ci-spec" id="ci-spec"><div class="ci-spec-in"><div class="ci-spec-hd">'
+    + '<p class="ci-eyebrow">Vessel specification</p><h2 class="ci-display">' + esc(v.name) + '</h2>'
+    + '<p class="ci-spec-suffix">' + esc(v.suffix) + '</p><p class="ci-lede">' + esc(v.standfirst) + '</p>'
+    + '<p class="ci-from"><span class="ci-from-l">From</span><span class="ci-from-v">USD ' + esc(v.fromPrice) + '</span><span class="ci-from-u">per person</span></p>'
+    + '<p class="ci-fine">' + esc(v.priceNote) + '</p>'
+    + '<a class="ci-btn" href="#ci-enquire">Enquire about ' + esc(v.name) + '</a></div>'
+    + '<figure class="ci-spec-fig"><img src="' + v.exterior + '" alt="' + esc(v.exteriorAlt) + '" loading="lazy"><figcaption>' + esc(v.exteriorAlt) + '</figcaption></figure></div>';
+
+  h += '<div class="ci-tables"><div class="ci-table"><h3 class="ci-th">Principal particulars</h3><dl class="ci-dl">'
+    + v.particulars.map(function(p){return '<div class="ci-dl-row"><dt>' + esc(p[0]) + '</dt><dd>' + esc(p[1]) + '</dd></div>';}).join("")
+    + '</dl></div><div class="ci-table"><h3 class="ci-th">Machinery and equipment</h3><dl class="ci-dl">'
+    + v.machinery.map(function(p){return '<div class="ci-dl-row"><dt>' + esc(p[0]) + '</dt><dd>' + esc(p[1]) + '</dd></div>';}).join("")
+    + '</dl></div><div class="ci-table"><h3 class="ci-th">On board</h3><ul class="ci-ul">'
+    + v.amenities.map(function(a){return '<li>' + esc(a) + '</li>';}).join("")
+    + '</ul></div></div></section>';
+
+  var deckCopy = v.key === "aqua"
+    ? "Three guest decks over the dive platform. The vessel\u2019s own deck plans number every cabin 1 to 9 with none repeated or skipped: three forward on the lower deck, the Master alone on the main deck, five on the upper."
+    : "Three guest decks over the dive deck, with the jacuzzi and the shaded 117 m\u00b2 area above. The upper and main decks are drawn as the operator\u2019s prose and its own deck plans both describe them, four cabins and three. The lower deck carries one confirmed cabin and one the two sources disagree about \u2014 drawn dashed, and confirmed in writing on enquiry rather than guessed at here.";
+
+  h += '<section class="ci-decks"><div class="ci-decks-in"><div class="ci-decks-hd">'
+    + '<p class="ci-eyebrow">Deck arrangement</p><h2 class="ci-display ci-display-sm">' + esc(v.name) + ' \u2014 deck stack</h2>'
+    + '<p class="ci-p">' + deckCopy + '</p></div>'
+    + '<div class="ci-stack" role="img" aria-label="Deck arrangement diagram for ' + esc(v.name) + '">';
+  v.decks.forEach(function(d){
+    h += '<div class="ci-stack-deck"><div class="ci-stack-label"><span class="ci-stack-name">' + esc(d.name) + '</span>'
+      + '<span class="ci-stack-note">' + esc(d.note) + '</span></div><div class="ci-stack-hull">'
+      + (d.cabins.length
+        ? d.cabins.map(function(c){return '<span class="ci-stack-cab' + (c === "?" ? " is-unconfirmed" : "") + '">' + esc(c) + '</span>';}).join("")
+        : '<span class="ci-stack-blank" aria-hidden="true"></span>')
+      + '</div></div>';
+  });
+  h += '<div class="ci-stack-keel"><span>Waterline</span></div></div></div></section>';
+
+  h += '<section class="ci-accom" id="ci-accom"><div class="ci-accom-in"><div class="ci-accom-hd">'
+    + '<p class="ci-eyebrow">Accommodation</p><h2 class="ci-display ci-display-sm">Cabins aboard ' + esc(v.name) + '</h2>'
+    + '<p class="ci-p">' + esc(v.cabinsIntro) + '</p></div><ol class="ci-list">'
+    + v.cabins.map(function(c){
+        return '<li class="ci-list-row"><div class="ci-list-img"><img src="' + c.img + '" alt="' + esc(c.alt) + '" loading="lazy"></div>'
+          + '<div class="ci-list-meta"><p class="ci-list-deck">' + esc(c.deck) + '</p><h3 class="ci-list-ref">' + esc(c.ref) + '</h3>'
+          + '<p class="ci-list-berth">' + esc(c.berth) + '</p></div><p class="ci-list-note">' + esc(c.note) + '</p>'
+          + '<div class="ci-list-act"><a href="#ci-enquire">Request availability</a></div></li>';
+      }).join("")
+    + '</ol></div></section>';
+
+  h += '<section class="ci-plat"><div class="ci-plat-in"><div class="ci-plat-copy">'
+    + '<p class="ci-eyebrow">Dive platform</p><h2 class="ci-display ci-display-sm">Thirty-four tanks<br>and somewhere to put a camera down.</h2>'
+    + '<ul class="ci-ul ci-ul-lg">' + v.platform.map(function(p){return '<li>' + esc(p) + '</li>';}).join("") + '</ul>'
+    + '<div class="ci-nitrox"><p class="ci-nitrox-l">Enriched air on this vessel</p><p class="ci-nitrox-p">' + esc(v.nitrox) + '</p></div></div>'
+    + '<div class="ci-plat-imgs">'
+    + '<figure><img src="' + IMG.diveDeck + '" alt="Dive deck of the Aqua with several scuba tanks organised on benches, Gal\u00e1pagos" loading="lazy"><figcaption>Dive deck, tanks racked on benches</figcaption></figure>'
+    + '<figure><img src="' + IMG.kittingUp + '" alt="Scuba divers kitting up for a Gal\u00e1pagos dive with wetsuits, tanks and dive gear on the Aqua" loading="lazy"><figcaption>Kitting up before a Darwin dive</figcaption></figure>'
+    + '</div></div></section>';
+
+  var itinCopy = v.itineraryKind === "days"
+    ? "Sixteen dives across eight days by the operator\u2019s own per-stop counts. All itineraries fall under the jurisdiction of the Gal\u00e1pagos National Park and may change at short notice."
+    : "Rather than a fixed day-by-day, the Citizen Science expeditions are published as a dive allocation across the cruising grounds \u2014 the eight-day and the fifteen-day side by side. All itineraries fall under the jurisdiction of the Gal\u00e1pagos National Park and may change at short notice.";
+
+  h += '<section class="ci-itin"><div class="ci-itin-in"><div class="ci-itin-hd">'
+    + '<p class="ci-eyebrow">Charter itinerary</p><h2 class="ci-display ci-display-sm">' + esc(v.itineraryTitle) + '</h2>'
+    + '<p class="ci-p">' + itinCopy + '</p></div>';
+  if (v.itineraryKind === "days") {
+    h += '<ol class="ci-days">' + v.days.map(function(d, i){
+      return '<li><span class="ci-days-n">' + String(i + 1).padStart(2, "0") + '</span><span class="ci-days-d">' + esc(d[0]) + '</span><span class="ci-days-b">' + esc(d[1]) + '</span></li>';
+    }).join("") + '</ol>';
+  } else {
+    h += '<table class="ci-alloc"><thead><tr><th scope="col">Cruising ground</th><th scope="col">8-day expedition</th><th scope="col">15-day expedition</th></tr></thead><tbody>'
+      + v.allocation.map(function(r){return '<tr><th scope="row">' + esc(r[0]) + '</th><td>' + esc(r[1]) + '</td><td>' + esc(r[2]) + '</td></tr>';}).join("")
+      + '</tbody></table>';
+  }
+  h += '</div></section>';
+
+  h += '<section class="ci-grounds" id="ci-grounds"><div class="ci-grounds-in"><div class="ci-grounds-hd">'
+    + '<p class="ci-eyebrow">Cruising grounds</p><h2 class="ci-display">What this hull reaches.</h2>'
+    + '<p class="ci-lede">Darwin and Wolf are seamounts three hundred kilometres north of the inhabited islands. No day boat gets there. The reason to read a specification sheet this closely is that the specification is what puts you in that water, on those sites, in whale shark season between June and November.</p></div>'
+    + '<div class="ci-grid">'
+    + GROUNDS.map(function(g){
+        return '<article class="ci-ground"><div class="ci-ground-img"><img src="' + g.img + '" alt="' + esc(g.alt) + '" loading="lazy"></div>'
+          + '<h3 class="ci-ground-n">' + esc(g.name) + '</h3><p class="ci-ground-s">' + esc(g.sub) + '</p><p class="ci-ground-b">' + esc(g.body) + '</p></article>';
+      }).join("")
+    + '</div></div></section>';
+
+  h += '<section class="ci-sci"><div class="ci-sci-in">'
+    + '<figure class="ci-sci-fig"><img src="' + IMG.tagging + '" alt="Research diver tagging an adult female whale shark in the Gal\u00e1pagos Islands" loading="lazy"></figure>'
+    + '<div class="ci-sci-copy"><p class="ci-eyebrow">Aboard, on every departure</p>'
+    + '<h2 class="ci-display ci-display-sm">A shark researcher is part of the manifest.</h2>'
+    + '<p class="ci-p">Both programmes carry a shark researcher on board, with onboard presentations, and both are run in partnership with the Gal\u00e1pagos Whale Shark Project. Citizen science is not a bolt-on excursion here \u2014 it is one of the berths.</p>'
+    + '<p class="ci-p">Included on every expedition: cabin, two to four dives a day, Gal\u00e1pagos airport transfers, all meals and snacks, tanks, weights and belts, bilingual dive masters, safety equipment and toiletries.</p>'
+    + '<p class="ci-fine">Certification minimum: at least one dive within the prior six months, dive-accident insurance, and a dive computer. The vessel supplies tanks, weights and belts; divers bring mask, snorkel, fins, booties, BCD, regulator and a 3\u20137 mm wetsuit, or rent on board.</p></div></div></section>';
+
+  h += '<section class="ci-avail" id="ci-avail"><div class="ci-avail-in"><div class="ci-avail-hd">'
+    + '<p class="ci-eyebrow">Availability register</p><h2 class="ci-display ci-display-sm">2027 season, both hulls</h2>'
+    + '<p class="ci-p">Berth counts as published. Solo travellers are matched with a same-sex cabin mate and pay the single-person price, with a private-cabin option available.</p></div>'
+    + '<table class="ci-reg"><thead><tr><th scope="col">Dates</th><th scope="col">Vessel</th><th scope="col">Days</th><th scope="col">Berths</th><th scope="col">Status</th></tr></thead><tbody>'
+    + AVAILABILITY.map(function(r){
+        var label = r.state === "open" ? "Open" : (r.state === "low" ? "Limited berths" : "Fully booked");
+        return '<tr class="' + (r.vessel === v.name ? "is-sel" : "") + '"><th scope="row">' + esc(r.dates) + '</th><td>' + esc(r.vessel) + '</td><td>' + esc(r.days) + '</td><td>' + esc(r.berths) + '</td><td><span class="ci-state ci-state-' + r.state + '">' + label + '</span></td></tr>';
+      }).join("")
+    + '</tbody></table></div></section>';
+
+  h += '<section class="ci-enq" id="ci-enquire"><div class="ci-enq-in"><div class="ci-enq-copy">'
+    + '<p class="ci-eyebrow">Broker enquiry</p><h2 class="ci-display">Enquire about<br>' + esc(v.name) + '.</h2>'
+    + '<p class="ci-lede">Tell us the hull and the window. We will come back with the berths actually available, the cabin on the deck you asked for, the scientist sailing that week, and the written confirmation of anything on this register you want stood behind.</p>'
+    + '<dl class="ci-enq-facts">'
+    + '<div><dt>WhatsApp</dt><dd>+593 999 66 7219</dd></div>'
+    + '<div><dt>Boarding</dt><dd>Baltra no later than 10:30 \u00b7 departure no earlier than 12:00</dd></div>'
+    + '<div><dt>Season</dt><dd>Whale shark season June \u2013 November</dd></div>'
+    + '</dl></div>'
+    + '<form class="ci-form" id="ci-form"><p class="ci-form-h">Request availability</p>'
+    + '<div class="ci-field"><label for="ci-vessel">Vessel</label><select id="ci-vessel">'
+    + '<option value="aqua"' + (activeKey === "aqua" ? " selected" : "") + '>Aqua \u2014 Citizen Science</option>'
+    + '<option value="galaxy"' + (activeKey === "galaxy" ? " selected" : "") + '>Galaxy Diver II \u2014 Luxury Citizen Science</option>'
+    + '</select></div>'
+    + '<div class="ci-field"><label for="ci-name">Name</label><input id="ci-name" type="text" autocomplete="name"></div>'
+    + '<div class="ci-field"><label for="ci-email">Email</label><input id="ci-email" type="email" autocomplete="email"></div>'
+    + '<div class="ci-field"><label for="ci-window">Preferred window</label><input id="ci-window" type="text" placeholder="e.g. August 2027"></div>'
+    + '<div class="ci-field"><label for="ci-notes">Cabin preference or questions</label><textarea id="ci-notes" rows="3"></textarea></div>'
+    + '<button type="submit" class="ci-btn ci-btn-full">Enquire about this vessel</button>'
+    + '<p class="ci-form-fine">Prototype form \u2014 nothing is submitted. A real enquiry goes to the team on WhatsApp.</p></form></div></section>';
+
+  h += '<footer class="ci-foot"><div class="ci-foot-in"><p>Gal\u00e1pagos Shark Diving\u00ae \u2014 vessel register, design concept I.</p>'
+    + '<p class="ci-foot-note">Specifications as published by the operator and its vessels. Galaxy Diver II\u2019s cabin count is unresolved in the source material and is deliberately not stated. Itineraries fall under the jurisdiction of the Gal\u00e1pagos National Park.</p></div></footer>';
+
+  var root = document.getElementById("ci-root");
+  root.innerHTML = h;
+
+  root.querySelectorAll("[data-vessel]").forEach(function(el){
+    el.addEventListener("click", function(){
+      var y = window.scrollY;
+      activeKey = el.getAttribute("data-vessel");
+      render();
+      window.scrollTo(0, y);
+    });
+  });
+  var sel = document.getElementById("ci-vessel");
+  if (sel) sel.addEventListener("change", function(){
+    var y = window.scrollY; activeKey = sel.value; render(); window.scrollTo(0, y);
+  });
+  var form = document.getElementById("ci-form");
+  if (form) form.addEventListener("submit", function(e){ e.preventDefault(); });
+}
+
+render();
+</script>
+<a id="back-to-concepts-index" href="index.html" style="position:fixed;top:10px;right:10px;z-index:999999;background:#000;color:#fff;font:12px/1 system-ui,sans-serif;padding:7px 11px;text-decoration:none;border-radius:3px;opacity:0.55;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.55">&larr; All concepts</a>

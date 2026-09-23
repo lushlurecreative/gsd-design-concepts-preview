@@ -1,0 +1,725 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
+<title>GSD — Concept H — The Blue Issue</title>
+<meta name="description" content="High-fashion editorial design concept for Galapagos Shark Diving. Darwin and Wolf, set as a magazine spread." />
+<style>
+html,body{margin:0;padding:0;background:#F7F6F3;}
+
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;0,6..96,900;1,6..96,400;1,6..96,500;1,6..96,700&family=Jost:wght@300;400;500&display=swap');
+
+.ch{
+  --paper:#F7F6F3;
+  --ink:#0A0A0B;
+  --void:#000;
+  --rule:rgba(10,10,11,.22);
+  --rule-light:rgba(247,246,243,.26);
+  --muted:rgba(10,10,11,.58);
+  --muted-light:rgba(247,246,243,.62);
+  --serif:'Bodoni Moda',"Didot","Bodoni MT",Georgia,serif;
+  --sans:'Jost',"Futura","Helvetica Neue",Arial,sans-serif;
+  --gut: clamp(14px, 4vw, 64px);
+
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:clip;
+  min-height:100vh;
+}
+.ch *{box-sizing:border-box;}
+.ch img{display:block;width:100%;height:100%;object-fit:cover;}
+.ch h1,.ch h2,.ch h3{margin:0;font-family:var(--serif);font-weight:400;letter-spacing:-.02em;line-height:.82;}
+.ch p{margin:0;}
+.ch a{color:inherit;}
+
+/* ---- editorial motion: one settle, long and slow ---- */
+.ch .ch-rise{opacity:0;transform:translateY(22px);transition:opacity 1.1s cubic-bezier(.16,.84,.28,1),transform 1.1s cubic-bezier(.16,.84,.28,1);}
+.ch .ch-rise.is-in{opacity:1;transform:none;}
+@media (prefers-reduced-motion:reduce){
+  .ch .ch-rise{opacity:1;transform:none;transition:none;}
+}
+
+/* ---- shared micro-type ---- */
+.ch .ch-overline{
+  font-family:var(--sans);font-size:11px;font-weight:400;
+  letter-spacing:.42em;text-transform:uppercase;color:var(--muted);
+}
+.ch .ch-overline.light{color:var(--muted-light);}
+.ch .ch-quiet{
+  font-family:var(--sans);font-size:11px;letter-spacing:.3em;text-transform:uppercase;
+  text-decoration:none;color:var(--ink);padding-bottom:4px;
+  border-bottom:1px solid var(--rule);transition:border-color .5s ease;
+}
+.ch .ch-quiet:hover,.ch .ch-quiet:focus-visible{border-color:var(--ink);}
+.ch .ch-quiet.light{color:var(--paper);border-color:var(--rule-light);}
+.ch .ch-quiet.light:hover,.ch .ch-quiet.light:focus-visible{border-color:var(--paper);}
+.ch .ch-folio{
+  position:absolute;right:var(--gut);bottom:clamp(16px,3vw,34px);
+  font-family:var(--serif);font-size:13px;letter-spacing:.2em;color:var(--muted);
+}
+.ch .ch-folio-dark{color:var(--muted-light);}
+.ch figcaption{
+  font-family:var(--sans);font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--muted);padding-top:10px;
+}
+.ch .ital{font-style:italic;}
+.ch :focus-visible{outline:1px solid currentColor;outline-offset:4px;}
+
+/* ============================ COVER ============================ */
+.ch .ch-cover{
+  position:relative;min-height:100svh;padding:0 var(--gut) clamp(18px,3vw,34px);
+  display:flex;flex-direction:column;
+}
+.ch .ch-masthead{
+  display:flex;justify-content:space-between;align-items:baseline;gap:18px;flex-wrap:wrap;
+  padding:clamp(16px,2.4vw,26px) 0 clamp(12px,1.6vw,18px);
+  border-bottom:1px solid var(--rule);
+  font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);
+}
+.ch .ch-mh-a{color:var(--ink);letter-spacing:.3em;}
+.ch .ch-mh-b{font-family:var(--serif);font-style:italic;letter-spacing:.06em;text-transform:none;font-size:14px;}
+
+.ch .ch-cover-body{
+  flex:1;display:grid;
+  grid-template-columns:repeat(12,1fr);
+  align-items:end;
+  padding-top:clamp(20px,4vh,60px);
+}
+.ch .ch-cover-type{grid-column:1 / 9;grid-row:1;align-self:end;position:relative;z-index:2;}
+.ch .ch-wordmark{
+  font-size:clamp(4.2rem,15.4vw,16.5rem);
+  line-height:.78;
+  margin:clamp(14px,2vw,26px) 0 0;
+  margin-left:-.055em;           /* optical bleed to the left edge */
+  font-weight:500;
+  letter-spacing:-.035em;
+  white-space:nowrap;
+}
+.ch .ch-wordmark .l1{display:block;}
+.ch .ch-wordmark .l2{display:block;margin-left:.36em;font-style:italic;font-weight:400;}
+.ch .ch-cover-sub{
+  max-width:34ch;margin-top:clamp(18px,2.6vw,34px);
+  font-size:clamp(13px,1.05vw,15px);line-height:1.7;color:var(--muted);
+}
+.ch .ch-cover-plate{
+  grid-column:8 / 13;grid-row:1;margin:0;position:relative;z-index:1;
+  align-self:end;height:min(76vh,780px);overflow:clip;
+}
+.ch .ch-cover-plate img{
+  height:100%;
+  object-position:62% 46%;
+  transform:scale(1.85);            /* extreme crop: skin, spots, fin */
+  transform-origin:58% 44%;
+}
+.ch .ch-cover-plate figcaption{
+  position:absolute;left:0;bottom:0;margin:0;padding:12px 14px;
+  color:rgba(247,246,243,.82);background:linear-gradient(0deg,rgba(0,0,0,.42),transparent);
+}
+.ch .ch-cover-foot{
+  display:flex;align-items:center;gap:clamp(18px,3vw,40px);
+  padding-top:clamp(16px,2vw,24px);border-top:1px solid var(--rule);
+}
+.ch .ch-cover-foot .ch-folio{position:static;margin-left:auto;}
+
+/* ====================== SPREAD 02 — ONE IMAGE ==================== */
+.ch .ch-bleed{
+  position:relative;background:var(--void);color:var(--paper);
+  min-height:min(112svh,1100px);overflow:clip;display:flex;align-items:center;
+}
+.ch .ch-bleed-img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:50% 46%;
+  transform:scale(1.35);
+}
+.ch .ch-bleed-scrim{
+  position:absolute;inset:0;
+  background:linear-gradient(100deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.12) 48%,rgba(0,0,0,.55) 100%);
+}
+.ch .ch-bleed-type{
+  position:relative;z-index:2;margin:0;
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(2.7rem,9.4vw,9rem);line-height:.88;letter-spacing:-.03em;
+  padding-left:var(--gut);
+  margin-right:-8vw;                 /* bleeds off the right edge */
+}
+.ch .ch-bleed-type span{display:block;}
+.ch .ch-bleed-type .ital{margin-left:.42em;}
+.ch .ch-bleed-type .ind{margin-left:1.1em;}
+.ch .ch-bleed-attrib{
+  position:absolute;z-index:2;right:var(--gut);top:calc(50% + clamp(120px,19vh,210px));
+  max-width:22ch;text-align:right;
+  font-size:10px;letter-spacing:.26em;text-transform:uppercase;line-height:2;
+  color:var(--muted-light);
+}
+.ch .ch-bleed-caption{
+  position:absolute;left:var(--gut);bottom:clamp(16px,3vw,34px);z-index:2;
+  font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted-light);
+  max-width:46ch;
+}
+
+/* ================== SPREAD 03 — DENSE TEXT, NO IMAGE ============= */
+.ch .ch-text-spread{
+  position:relative;padding:clamp(80px,14vh,190px) var(--gut) clamp(78px,12vh,170px);
+  display:grid;grid-template-columns:repeat(12,1fr);
+  column-gap:clamp(14px,2vw,32px);row-gap:clamp(40px,7vh,96px);
+  overflow:clip;
+}
+.ch .ch-pull{
+  grid-column:1 / 9;
+  font-size:clamp(2.4rem,7.1vw,6.6rem);line-height:.92;
+  margin-left:-.06em;
+}
+.ch .ch-pull span{display:block;}
+.ch .ch-pull .ind{margin-left:.9em;}
+.ch .ch-pull .ind2{margin-left:1.9em;}
+.ch .ch-column{
+  grid-column:9 / 13;align-self:end;
+  font-size:13.5px;line-height:1.82;color:var(--muted);
+  border-top:1px solid var(--rule);padding-top:18px;
+}
+.ch .ch-column p + p{margin-top:1.1em;}
+.ch .ch-drop::first-letter{
+  float:left;font-family:var(--serif);font-size:4.1em;line-height:.76;
+  padding:.06em .12em 0 0;color:var(--ink);
+}
+.ch .ch-folio-facts{
+  grid-column:1 / 13;margin:0;
+  display:grid;grid-template-columns:repeat(12,1fr);
+  row-gap:clamp(34px,5vh,64px);
+  border-top:1px solid var(--rule);padding-top:clamp(28px,4vh,54px);
+}
+.ch .ch-folio-facts > div{grid-column:span 3;}
+.ch .ch-folio-facts .f2{margin-top:clamp(18px,4vh,64px);}   /* deliberate rag */
+.ch .ch-folio-facts .f3{margin-top:clamp(8px,2vh,30px);}
+.ch .ch-folio-facts .f4{margin-top:clamp(26px,6vh,92px);}
+.ch .ch-folio-facts dt{
+  font-family:var(--serif);font-size:clamp(2.6rem,5.4vw,5rem);line-height:.84;letter-spacing:-.03em;
+}
+.ch .ch-folio-facts dt em{font-style:normal;font-size:.5em;vertical-align:.34em;padding:0 .06em;color:var(--muted);}
+.ch .ch-folio-facts dd{
+  margin:14px 0 0;max-width:22ch;
+  font-size:11.5px;line-height:1.66;color:var(--muted);
+}
+
+/* ================== SPREAD 04 — ASYMMETRIC DUET ================= */
+.ch .ch-duet{
+  position:relative;padding:0 var(--gut) clamp(78px,12vh,170px);
+  display:grid;grid-template-columns:repeat(12,1fr);
+  column-gap:clamp(14px,2vw,32px);
+  align-items:start;overflow:clip;
+}
+.ch .ch-duet-tall{grid-column:1 / 5;grid-row:1 / 3;margin:0;}
+.ch .ch-duet-tall img{aspect-ratio:2 / 3.35;object-position:56% 34%;transform:scale(1.28);transform-origin:56% 34%;}
+.ch .ch-gutter-type{
+  grid-column:5 / 6;grid-row:1 / 3;
+  writing-mode:vertical-rl;justify-self:center;align-self:start;
+  margin-top:clamp(40px,10vh,150px);
+  font-size:10px;letter-spacing:.44em;text-transform:uppercase;color:var(--muted);
+}
+.ch .ch-duet-say{grid-column:7 / 13;grid-row:1;padding-top:clamp(60px,14vh,210px);}
+.ch .ch-duet-say h3{font-size:clamp(2.6rem,7vw,6.2rem);line-height:.9;}
+.ch .ch-duet-say h3 em{display:block;margin-left:1.1em;}
+.ch .ch-duet-say p{
+  margin-top:clamp(20px,3vw,38px);max-width:40ch;
+  font-size:13.5px;line-height:1.82;color:var(--muted);
+}
+.ch .ch-duet-small{grid-column:9 / 12;grid-row:2;margin:clamp(40px,7vh,110px) 0 0;}
+.ch .ch-duet-small img{aspect-ratio:2 / 1;object-position:44% 40%;}
+.ch .ch-duet-wide{
+  grid-column:2 / 13;grid-row:3;margin:clamp(60px,11vh,170px) 0 0;
+  margin-right:calc(var(--gut) * -1);        /* bleeds off the right edge */
+}
+.ch .ch-duet-wide img{aspect-ratio:21 / 8;object-position:50% 40%;}
+
+/* ====================== SPREAD 05 — THE INDEX =================== */
+.ch .ch-index{
+  position:relative;background:var(--void);color:var(--paper);
+  padding:clamp(80px,14vh,190px) var(--gut) clamp(78px,12vh,170px);
+  display:grid;grid-template-columns:repeat(12,1fr);
+  column-gap:clamp(14px,2vw,32px);row-gap:clamp(42px,7vh,96px);
+  overflow:clip;
+}
+.ch .ch-index-head{grid-column:1 / 8;}
+.ch .ch-index-head h2{
+  margin-top:clamp(16px,2vw,28px);
+  font-size:clamp(3.2rem,11.5vw,11rem);line-height:.8;margin-left:-.06em;
+}
+.ch .ch-index-head h2 .ital{display:block;font-style:italic;margin-left:.52em;}
+.ch .ch-list{
+  grid-column:8 / 13;align-self:end;margin:0;padding:0;list-style:none;
+  border-top:1px solid var(--rule-light);
+}
+.ch .ch-list li{
+  display:grid;grid-template-columns:34px 1fr;column-gap:12px;
+  padding:clamp(16px,2.4vw,26px) 0;border-bottom:1px solid var(--rule-light);
+}
+.ch .ch-list .n{
+  grid-row:1 / 3;font-family:var(--serif);font-size:13px;letter-spacing:.14em;color:var(--muted-light);
+}
+.ch .ch-list .t{font-family:var(--serif);font-size:clamp(1.5rem,2.6vw,2.3rem);line-height:1;}
+.ch .ch-list .d{
+  margin-top:10px;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+  line-height:1.8;color:var(--muted-light);
+}
+.ch .ch-strip{
+  grid-column:1 / 13;margin:0;
+  margin-left:calc(var(--gut) * -1);margin-right:calc(var(--gut) * -1);   /* full bleed */
+}
+.ch .ch-strip img{aspect-ratio:32 / 9;object-position:50% 58%;transform:scale(1.12);}
+.ch .ch-strip figcaption{color:var(--muted-light);padding-left:var(--gut);}
+.ch .ch-index-foot{
+  grid-column:4 / 13;display:grid;grid-template-columns:clamp(120px,15vw,240px) 1fr;
+  column-gap:clamp(20px,3vw,44px);align-items:start;
+}
+.ch .ch-index-thumb{margin:0;}
+.ch .ch-index-thumb img{aspect-ratio:4 / 3;}
+.ch .ch-index-foot p{
+  font-size:13.5px;line-height:1.82;color:var(--muted-light);max-width:52ch;
+}
+
+/* ===================== SPREAD 06 — THE SCIENCE ================== */
+.ch .ch-science{
+  position:relative;padding:clamp(80px,14vh,190px) var(--gut) clamp(78px,12vh,170px);
+  display:grid;grid-template-columns:repeat(12,1fr);
+  grid-template-rows:auto auto;
+  column-gap:clamp(14px,2vw,32px);row-gap:clamp(46px,8vh,120px);
+  overflow:clip;
+}
+.ch .ch-science-plate{
+  grid-column:1 / 7;grid-row:1;margin:0;z-index:1;
+  margin-left:calc(var(--gut) * -1);        /* bleeds off the left edge */
+  overflow:clip;
+}
+.ch .ch-science-plate{position:relative;}
+.ch .ch-science-plate img{aspect-ratio:4 / 4.4;object-position:46% 28%;transform:scale(1.5);transform-origin:46% 24%;}
+.ch .ch-science-plate figcaption{
+  position:absolute;left:0;bottom:0;padding:12px 14px 12px var(--gut);
+  color:rgba(247,246,243,.84);background:linear-gradient(0deg,rgba(0,0,0,.4),transparent);
+}
+.ch .ch-science-type{
+  grid-column:6 / 13;grid-row:1;align-self:end;position:relative;z-index:2;
+  font-size:clamp(2.3rem,6.4vw,5.9rem);line-height:.9;
+  margin-right:-6vw;                        /* bleeds off the right edge */
+  padding-bottom:clamp(10px,3vh,44px);
+}
+.ch .ch-science-type span{display:block;}
+.ch .ch-science-type .ital{margin-left:.6em;}
+.ch .ch-science-type .ind{margin-left:1.5em;}
+.ch .ch-steps{
+  grid-column:8 / 13;grid-row:2;align-self:start;
+  margin:0;padding:0;list-style:none;
+  border-top:1px solid var(--rule);
+}
+.ch .ch-steps li{
+  display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--rule);
+  font-size:11.5px;line-height:1.7;color:var(--muted);
+}
+.ch .ch-steps li span{
+  font-family:var(--serif);font-style:italic;min-width:22px;color:var(--ink);
+}
+.ch .ch-science-inset{
+  grid-column:2 / 7;grid-row:2;margin:0;align-self:start;
+}
+.ch .ch-science-inset img{aspect-ratio:12 / 5;object-position:50% 26%;}
+
+/* ======================= CLOSING MOMENT ========================= */
+.ch .ch-close{
+  position:relative;background:var(--void);color:var(--paper);
+  min-height:min(100svh,940px);overflow:clip;
+  display:flex;align-items:flex-end;
+}
+.ch .ch-close-img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  object-position:50% 42%;transform:scale(1.18);
+}
+.ch .ch-close-scrim{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.36) 0%,rgba(0,0,0,.2) 40%,rgba(0,0,0,.86) 100%);
+}
+.ch .ch-close-inner{
+  position:relative;z-index:2;width:100%;
+  padding:0 var(--gut) clamp(26px,4vw,52px);
+}
+.ch .ch-close-line{
+  font-family:var(--serif);font-size:clamp(3rem,12.4vw,11.5rem);
+  line-height:.82;letter-spacing:-.035em;margin-left:-.05em;
+}
+.ch .ch-close-line span{display:block;}
+.ch .ch-close-line .ital{margin-left:.3em;}
+.ch .ch-colophon{
+  display:flex;flex-wrap:wrap;gap:clamp(16px,3vw,38px);
+  margin-top:clamp(28px,4vw,54px);padding-top:clamp(16px,2vw,24px);
+  border-top:1px solid var(--rule-light);
+}
+.ch .ch-imprint{
+  margin-top:clamp(18px,2.4vw,30px);max-width:72ch;
+  font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;line-height:2;
+  color:var(--muted-light);
+}
+
+/* ============================ TABLET ============================ */
+@media (max-width:980px){
+  .ch .ch-cover-type{grid-column:1 / 10;}
+  .ch .ch-cover-plate{grid-column:9 / 13;}
+  .ch .ch-pull{grid-column:1 / 10;}
+  .ch .ch-column{grid-column:1 / 9;align-self:start;}
+  .ch .ch-folio-facts > div{grid-column:span 6;}
+  .ch .ch-duet-tall{grid-column:1 / 6;}
+  .ch .ch-gutter-type{grid-column:6 / 7;}
+  .ch .ch-duet-say{grid-column:7 / 13;padding-top:clamp(40px,8vh,110px);}
+  .ch .ch-duet-small{grid-column:8 / 13;}
+  .ch .ch-index-head{grid-column:1 / 10;}
+  .ch .ch-list{grid-column:1 / 10;align-self:start;}
+  .ch .ch-index-foot{grid-column:1 / 13;}
+  .ch .ch-science-plate{grid-column:1 / 8;}
+  .ch .ch-science-type{grid-column:5 / 13;}
+  .ch .ch-steps{grid-column:6 / 13;}
+  .ch .ch-science-inset{grid-column:1 / 7;}
+}
+
+/* ============================ PHONE ============================= */
+@media (max-width:640px){
+  .ch{--gut:16px;}
+  .ch .ch-masthead{font-size:9px;letter-spacing:.26em;gap:6px;}
+  .ch .ch-mh-c{flex-basis:100%;}
+  .ch .ch-cover-body{display:block;padding-top:26px;}
+  .ch .ch-wordmark{font-size:23.5vw;margin-left:-.05em;}
+  .ch .ch-wordmark .l2{margin-left:.2em;}
+  .ch .ch-cover-plate{
+    margin:26px calc(var(--gut) * -1) 0 22%;
+  }
+  .ch .ch-cover-plate img{aspect-ratio:3 / 4.4;transform:scale(1.55);}
+  .ch .ch-cover-plate figcaption{padding-left:0;}
+  .ch .ch-cover-foot{gap:16px;flex-wrap:wrap;margin-top:26px;}
+
+  .ch .ch-bleed{min-height:86svh;}
+  .ch .ch-bleed-type{font-size:15vw;margin-right:-14vw;}
+  .ch .ch-bleed-attrib{
+    position:static;text-align:left;max-width:26ch;
+    padding:22px var(--gut) 0;line-height:1.9;
+  }
+  .ch .ch-bleed{flex-direction:column;justify-content:center;align-items:flex-start;}
+  .ch .ch-bleed-caption{font-size:8.5px;letter-spacing:.18em;max-width:30ch;}
+
+  .ch .ch-text-spread,.ch .ch-index,.ch .ch-science{display:block;}
+  .ch .ch-pull{font-size:11.4vw;}
+  .ch .ch-pull .ind{margin-left:.5em;}
+  .ch .ch-pull .ind2{margin-left:1em;}
+  .ch .ch-column{margin-top:40px;}
+  .ch .ch-folio-facts{display:grid;grid-template-columns:1fr 1fr;margin-top:56px;}
+  .ch .ch-folio-facts > div{grid-column:span 1;margin-top:0;}
+  .ch .ch-folio-facts .f2,.ch .ch-folio-facts .f4{margin-top:22px;}
+  .ch .ch-folio-facts .f3{grid-column:1 / -1;margin-top:26px;}
+  .ch .ch-folio-facts dt{font-size:13vw;}
+  .ch .ch-folio-facts .f3 dt{font-size:11vw;}
+  .ch .ch-folio-facts dd{max-width:26ch;}
+
+  .ch .ch-duet{display:block;}
+  .ch .ch-duet-tall{margin-right:26%;}
+  .ch .ch-duet-tall img{aspect-ratio:2 / 3;}
+  .ch .ch-gutter-type{display:none;}
+  .ch .ch-duet-say{padding-top:44px;}
+  .ch .ch-duet-say h3{font-size:14vw;}
+  .ch .ch-duet-small{margin:48px 0 0 34%;margin-right:calc(var(--gut) * -1);}
+  .ch .ch-duet-wide{margin:52px calc(var(--gut) * -1) 0 0;}
+  .ch .ch-duet-wide img{aspect-ratio:2 / 1;object-position:50% 36%;}
+  .ch .ch-duet-small img{aspect-ratio:16 / 9;}
+
+  .ch .ch-index-head h2{font-size:17vw;}
+  .ch .ch-list{margin-top:44px;}
+  .ch .ch-strip{margin:52px calc(var(--gut) * -1) 0;}
+  .ch .ch-strip img{aspect-ratio:16 / 9;}
+  .ch .ch-index-foot{display:block;margin-top:48px;}
+  .ch .ch-index-thumb{width:56%;margin-bottom:24px;}
+
+  .ch .ch-science-plate{margin:0 18% 0 calc(var(--gut) * -1);}
+  .ch .ch-science-plate img{aspect-ratio:3 / 4;}
+  .ch .ch-science-type{font-size:12.4vw;margin:40px -10vw 0 0;}
+  .ch .ch-science-type .ital{margin-left:.35em;}
+  .ch .ch-science-type .ind{margin-left:.8em;}
+  .ch .ch-steps{margin-top:44px;}
+  .ch .ch-science-inset{margin:52px calc(var(--gut) * -1) 0 24%;}
+
+  .ch .ch-close{min-height:82svh;}
+  .ch .ch-close-line{font-size:17vw;}
+  .ch .ch-imprint{font-size:8.5px;letter-spacing:.14em;line-height:1.9;}
+}
+
+</style>
+
+
+<div class="ch">
+
+
+      
+      <header class="ch-cover">
+        <div class="ch-masthead">
+          <span class="ch-mh-a">Galapagos Shark Diving</span>
+          <span class="ch-mh-b">The Blue Issue</span>
+          <span class="ch-mh-c">Darwin &amp; Wolf · Season Jun–Nov</span>
+        </div>
+
+        <div class="ch-cover-body">
+          <div class="ch-cover-type ch-rise">
+            <p class="ch-overline">Dive with a Purpose</p>
+            <h1 class="ch-wordmark">
+              <span class="l1">GALÁ</span>
+              <span class="l2">PAGOS</span>
+            </h1>
+            <p class="ch-cover-sub">
+              Three full days at the seamounts, sixteen guests, and a shark scientist in the water
+              with you.
+            </p>
+          </div>
+
+          <figure class="ch-cover-plate ch-rise">
+            <img
+              src="https://image.jimcdn.com/app/cms/image/transf/dimension=2000x10000:format=jpg/path/s2fc4241e2a9d6156/image/i5e2397c9023d0e60/version/1647808808/image.jpg"
+              alt="An adult whale shark passes a diver in the open water at Darwin"
+              fetchpriority="high"
+              decoding="async" />
+            <figcaption>Plate I — Darwin Island · photo Jenny Waack</figcaption>
+          </figure>
+        </div>
+
+        <div class="ch-cover-foot">
+          <a class="ch-quiet" href="/departures">
+            Departures
+          </a>
+          <a class="ch-quiet" href="/citizen-science">
+            The science
+          </a>
+          <span class="ch-folio">01</span>
+        </div>
+      </header>
+
+      
+      <section class="ch-spread-dark ch-bleed" aria-label="Whale shark, from above">
+        <img class="ch-bleed-img" src="https://image.jimcdn.com/app/cms/image/transf/dimension=2000x10000:format=jpg/path/s2fc4241e2a9d6156/image/i141933e9400769ce/version/1710533095/image.jpg" alt="" aria-hidden="true" />
+        <div class="ch-bleed-scrim" />
+        <blockquote class="ch-bleed-type ch-rise">
+          <span>My first</span>
+          <span class="ital">whale shark</span>
+          <span>was 1990,</span>
+          <span class="ind">at Darwin.</span>
+        </blockquote>
+        <p class="ch-bleed-attrib ch-rise">
+          Jonathan R. Green — founder and director, Galápagos Whale Shark Project
+        </p>
+        <p class="ch-bleed-caption">
+          Plate II — An adult female whale shark, photographed from above · © Jonathan R. Green
+        </p>
+        <span class="ch-folio ch-folio-dark">02</span>
+      </section>
+
+      
+      <section class="ch-text-spread" aria-labelledby="ch-h-record">
+        <h2 class="ch-pull ch-rise" id="ch-h-record">
+          <span>Every whale shark</span>
+          <span class="ind">carries a unique</span>
+          <span class="ital ind2">pattern of spots</span>
+          <span>behind her gills.</span>
+        </h2>
+
+        <div class="ch-column ch-rise">
+          <p class="ch-drop">
+            Photographed from the right angle, that pattern can identify one individual again — years
+            later, an ocean away. On Citizen Science departures a Galápagos Whale Shark Project
+            scientist guides the process in the water. Suitable images are reviewed before they can
+            become an accepted contribution, and contributed identifications go to Sharkbook.ai, the
+            international whale shark photo-identification database.
+          </p>
+          <p>
+            Galapagos Shark Diving has supported the Galápagos Whale Shark Project since 2019 —
+            funding for satellite tags and tracking time, contributions to Sharkbook.ai, field
+            logistics and data analysis. Photo identification can involve guests. Satellite tagging
+            and in-water behavioural research are scientist-led. Those roles stay separate.
+          </p>
+        </div>
+
+        <dl class="ch-folio-facts ch-rise">
+          <div class="f1">
+            <dt>3</dt>
+            <dd>full days at Darwin and Wolf on the published eight-day itinerary</dd>
+          </div>
+          <div class="f2">
+            <dt>16</dt>
+            <dd>guests aboard, on both published vessels</dd>
+          </div>
+          <div class="f3">
+            <dt>
+              Jun<em>–</em>Nov
+            </dt>
+            <dd>the whale shark season at Darwin Island</dd>
+          </div>
+          <div class="f4">
+            <dt>2019</dt>
+            <dd>partnership with the Galápagos Whale Shark Project begins</dd>
+          </div>
+        </dl>
+        <span class="ch-folio">03</span>
+      </section>
+
+      
+      <section class="ch-duet" aria-label="Wolf Island">
+        <figure class="ch-duet-tall ch-rise">
+          <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=2000x10000:format=jpg/path/s2fc4241e2a9d6156/image/if41136aab749250b/version/1748460257/image.jpg" alt="A scalloped hammerhead shark close over a rocky reef" />
+          <figcaption>Plate III — Scalloped hammerhead · photo Jenny Waack</figcaption>
+        </figure>
+
+        <p class="ch-gutter-type" aria-hidden="true">
+          Wolf Island — shark theatre
+        </p>
+
+        <div class="ch-duet-say ch-rise">
+          <h3>
+            Shark <em>theatre.</em>
+          </h3>
+          <p>
+            Wolf carries extraordinary shark biomass and currents to match it. Darwin’s Arch —
+            the Pillars of Evolution since the arch fell in 2021 — is the other half of the story.
+            The eight-day expedition dives Darwin’s Arch six times and Wolf five. The fifteen-day
+            goes back for thirteen to eighteen at Darwin, nine at Wolf, and one night dive.
+          </p>
+        </div>
+
+        <figure class="ch-duet-small ch-rise">
+          <img
+            src="https://image.jimcdn.com/app/cms/image/transf/dimension=2000x10000:format=jpg/path/s2fc4241e2a9d6156/image/i3197cbfcd074c4bf/version/1710432252/image.jpg"
+            alt="Darwin Island and the Pillars of Evolution from the air, in open ocean" />
+          <figcaption>Plate IV — The Pillars of Evolution, Darwin Island</figcaption>
+        </figure>
+
+        <figure class="ch-duet-wide ch-rise">
+          <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=2000x10000:format=jpg/path/s2fc4241e2a9d6156/image/i574b9a9377d67e12/version/1678140481/image.jpg" alt="A school of scalloped hammerhead sharks in open water" />
+          <figcaption>Plate V — Hammerhead school · © Jonathan R. Green</figcaption>
+        </figure>
+        <span class="ch-folio">04</span>
+      </section>
+
+      
+      <section class="ch-index" aria-labelledby="ch-h-vessels">
+        <div class="ch-index-head">
+          <p class="ch-overline light">The vessels</p>
+          <h2 id="ch-h-vessels" class="ch-rise">
+            Sixteen
+            <span class="ital">aboard.</span>
+          </h2>
+        </div>
+
+        <ol class="ch-list ch-rise">
+          <li>
+            <span class="n">I</span>
+            <span class="t">Aqua</span>
+            <span class="d">Citizen Science Expeditions · nine guest cabins · 16 guests</span>
+          </li>
+          <li>
+            <span class="n">II</span>
+            <span class="t">Galaxy Diver II</span>
+            <span class="d">Luxury Science Expeditions · 16 guests · Nitrox included</span>
+          </li>
+        </ol>
+
+        <figure class="ch-strip ch-rise">
+          <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1600x10000:format=jpg/path/s2fc4241e2a9d6156/image/ic9504a1d4a42b5f9/version/1743185985/image.jpg" alt="The dive deck of the Aqua, tanks ranged along the benches" />
+          <figcaption>Plate VI — Dive deck, Aqua</figcaption>
+        </figure>
+
+        <div class="ch-index-foot ch-rise">
+          <figure class="ch-index-thumb">
+            <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1600x10000:format=jpg/path/s2fc4241e2a9d6156/image/if9b548a01f97ac7f/version/1736371407/image.jpg" alt="The Aqua at anchor in the Galápagos Islands" />
+          </figure>
+          <p>
+            Eight days and fifteen days. Two to four dives a day, all meals, transfers within the
+            Galápagos, tanks and weights, bilingual dive masters — and a shark researcher aboard. The
+            fifteen-day adds Roca Blanca, Pizón, Beagle Rocks, Marchena and Roca Redonda, and roughly
+            fourteen hours of open water between Isabela and Wolf.
+          </p>
+        </div>
+        <span class="ch-folio ch-folio-dark">05</span>
+      </section>
+
+      
+      <section class="ch-science" aria-labelledby="ch-h-photo">
+        <figure class="ch-science-plate ch-rise">
+          <img
+            src="https://image.jimcdn.com/app/cms/image/transf/dimension=2000x10000:format=jpg/path/s2fc4241e2a9d6156/image/i89c2a683f6ee654f/version/1647800365/image.jpg"
+            alt="A diver photographs an adult whale shark for identification" />
+          <figcaption>Plate VII — Photo identification at Darwin · © Jonathan R. Green</figcaption>
+        </figure>
+
+        <h2 class="ch-science-type ch-rise" id="ch-h-photo">
+          <span>The photograph</span>
+          <span class="ital">may tell</span>
+          <span>scientists</span>
+          <span class="ind">who she is.</span>
+        </h2>
+
+        <ol class="ch-steps ch-rise">
+          <li>
+            <span>i</span>Observe what makes an identification photograph useful.
+          </li>
+          <li>
+            <span>ii</span>Record the spot pattern without disturbing the animal.
+          </li>
+          <li>
+            <span>iii</span>Suitable images may be submitted for review.
+          </li>
+          <li>
+            <span>iv</span>Only accepted contributions enter the research record.
+          </li>
+        </ol>
+
+        <figure class="ch-science-inset ch-rise">
+          <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=2000x10000:format=jpg/path/s2fc4241e2a9d6156/image/i9719a737e8f02d46/version/1666982355/image.jpg" alt="A marine iguana feeding on algae underwater" />
+          <figcaption>Plate VIII — Marine iguana feeding, seen on the dive</figcaption>
+        </figure>
+        <span class="ch-folio">06</span>
+      </section>
+
+      
+      <footer class="ch-close">
+        <img class="ch-close-img" src="https://image.jimcdn.com/app/cms/image/transf/dimension=2000x10000:format=jpg/path/s2fc4241e2a9d6156/image/i4adae7305340ef6a/version/1684337328/image.jpg" alt="" aria-hidden="true" />
+        <div class="ch-close-scrim" />
+        <div class="ch-close-inner">
+          <p class="ch-close-line ch-rise">
+            <span>Dive with</span>
+            <span class="ital">a purpose.</span>
+          </p>
+          <div class="ch-colophon">
+            <a class="ch-quiet light" href="/departures">
+              Departures
+            </a>
+            <a class="ch-quiet light" href="/expeditions">
+              Expeditions
+            </a>
+            <a class="ch-quiet light" href="/contact">
+              Write to us
+            </a>
+          </div>
+          <p class="ch-imprint">
+            Galapagos Shark Diving · Darwin and Wolf · photography Jenny Waack, Sofía Green, Jonathan
+            R. Green and © Galapagos Shark Diving · design concept H
+          </p>
+        </div>
+      </footer>
+    
+</div>
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var nodes = Array.prototype.slice.call(document.querySelectorAll('.ch-rise'));
+  if (reduce || !('IntersectionObserver' in window)) {
+    nodes.forEach(function(n){ n.classList.add('is-in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+  nodes.forEach(function(n){ io.observe(n); });
+})();
+</script>
+<a id="back-to-concepts-index" href="index.html" style="position:fixed;top:10px;right:10px;z-index:999999;background:#000;color:#fff;font:12px/1 system-ui,sans-serif;padding:7px 11px;text-decoration:none;border-radius:3px;opacity:0.55;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.55">&larr; All concepts</a>
