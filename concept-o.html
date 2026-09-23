@@ -1,148 +1,492 @@
 <!--
   CONCEPT PROTOTYPE — "SILENCE" (concept O), standalone static mirror.
-  Galapagos Shark Diving. Modern hospitality minimalism taken to its extreme.
+  Galapagos Shark Diving. Modern hospitality minimalism: nothing inessential,
+  and everything that remains made carefully.
+  Rebuilt 2026-09-23 to match src/routes/concept-o.tsx. The stylesheet and every
+  data table below are lifted verbatim from that route, so the two cannot drift.
   No build step, no framework, no imports. Open this file directly.
-  Every fact and image URL is real (verified-content.md, image-inventory.md,
-  read 2026-09-22). No donation percentage or dollar figure appears anywhere.
+  Every fact and image URL is real (verified-content.md, image-inventory.md).
+  No donation percentage or dollar figure appears anywhere.
 -->
 
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Galapagos Shark Diving</title>
-<meta name="description" content="Liveaboard expeditions to Darwin and Wolf, in the far north of the Galápagos." />
+<meta name="description" content="Eight days in the far north of the Galápagos — Darwin and Wolf — with a Galápagos Whale Shark Project scientist aboard." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@200;300;400&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@200;300;400;500&display=swap" />
 <style>
+html,body{margin:0;padding:0;background:#F2F0EC}
+
 .co-root{
   /* Near-monochrome. Bone, two stones, one deep ink. No accent hue exists. */
   --co-bone:#F2F0EC;
-  --co-bone-2:#E8E5E0;
-  --co-stone:#8B877F;
-  --co-ink:#15181B;
+  --co-bone-2:#EAE7E1;
+  --co-ink:#14171A;
+  --co-ink-soft:#3D4145;   /* long-form reading, ~9:1 on bone */
+  --co-mute:#625F58;       /* labels and captions, 5.6:1 on bone — passes AA */
+  --co-hair:rgba(20,23,26,.11);
+  --co-hair-2:rgba(20,23,26,.055);
 
-  --co-gut:clamp(22px,7vw,128px);
-  --co-rule:1px solid rgba(21,24,27,.10);
+  --co-gut:clamp(22px,7vw,120px);
+  --co-max:1560px;
+  --co-v:clamp(54px,8vh,104px);       /* standard vertical step; two of these
+                                         meet at every section boundary */
+  --co-v-lg:clamp(96px,15vh,188px);   /* the breath after the opening */
 
   background:var(--co-bone);
   color:var(--co-ink);
   font-family:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   font-weight:300;
   -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
   min-height:100vh;
   overflow-x:hidden;
 }
-html,body{margin:0;padding:0;background:#F2F0EC}
 .co-root *{box-sizing:border-box;margin:0;padding:0}
-.co-root ul{list-style:none}
-.co-root img{display:block;width:100%;height:100%;object-fit:cover}
+.co-root ul,.co-root ol{list-style:none}
+.co-root img{display:block;width:100%;height:100%;object-fit:cover;background:var(--co-bone-2)}
 .co-root a{color:inherit;text-decoration:none}
+/* the holding tone belongs to the image, never behind the caption */
+.co-root figure{background:none}
 
-/* ---- four type sizes, nothing else ---- */
-.co-label{font-size:12.5px;letter-spacing:.14em;color:var(--co-stone);font-weight:400}
-.co-say{
-  font-size:clamp(21px,2.05vw,30px);
-  line-height:1.5;font-weight:200;letter-spacing:-.005em;max-width:19em;
+/* ============================================================
+   SIX TYPE ROLES. Each has one job. Hierarchy comes from the
+   interval between them — size, weight, tracking, and the space
+   they are given — not from decoration or colour.
+   ============================================================ */
+
+/* eyebrow — 10.5px, wide tracking, the only uppercase on the page */
+.co-eyebrow{
+  font-size:10.5px;line-height:1;
+  letter-spacing:.215em;text-transform:uppercase;
+  font-weight:500;color:var(--co-mute);
 }
-.co-mark{font-size:13px;letter-spacing:.2em;font-weight:400}
+/* caption — the quietest voice, for what a photograph is and who made it */
+.co-cap{
+  font-size:11.5px;line-height:1.55;letter-spacing:.015em;
+  font-weight:300;color:var(--co-mute);
+}
+.co-cap-credit{color:var(--co-mute);opacity:.72}
+/* body — real prose, optically sized, measured at ~66 characters */
+.co-body{
+  font-size:clamp(15.5px,1.06vw,17px);
+  line-height:1.78;font-weight:300;
+  letter-spacing:.002em;color:var(--co-ink-soft);
+  max-width:33em;
+}
+.co-body + .co-body{margin-top:1.55em}
+/* lede — the bridge between display and prose */
+.co-lede{
+  font-size:clamp(17.5px,1.42vw,21px);
+  line-height:1.58;font-weight:300;letter-spacing:-.004em;
+  color:var(--co-ink);max-width:26em;
+}
+/* display — set once per movement, never twice */
+.co-display{
+  font-size:clamp(26px,3vw,44px);
+  line-height:1.14;font-weight:200;letter-spacing:-.024em;
+  max-width:17em;
+}
+/* num — tabular, for the things that are measurements */
+.co-num{
+  font-size:12.5px;letter-spacing:.055em;font-weight:400;
+  font-variant-numeric:tabular-nums;color:var(--co-mute);
+}
+.co-mark{font-size:12.5px;letter-spacing:.2em;font-weight:400}
+
+/* ---- the restrained reveal ---- */
+.co-rise{opacity:1}
+@media (prefers-reduced-motion:no-preference){
+  .co-rise{opacity:0;transform:translate3d(0,12px,0);
+    transition:opacity 900ms cubic-bezier(.22,.61,.36,1),transform 900ms cubic-bezier(.22,.61,.36,1)}
+  .co-rise.co-in{opacity:1;transform:none}
+}
 
 /* ---- chrome: nearly invisible ---- */
 .co-chrome{
   position:fixed;top:0;left:0;right:0;z-index:20;
   display:flex;align-items:center;justify-content:space-between;
   padding:26px var(--co-gut);
-  pointer-events:none;
-  color:var(--co-ink);
+  pointer-events:none;color:var(--co-ink);
+  border-bottom:1px solid transparent;
+  transition:background-color 400ms ease,border-color 400ms ease;
+}
+.co-chrome.co-veil{
+  background-color:rgba(242,240,236,.9);
+  -webkit-backdrop-filter:saturate(1.08) blur(14px);
+  backdrop-filter:saturate(1.08) blur(14px);
+  border-bottom-color:var(--co-hair-2);
 }
 .co-chrome > *{pointer-events:auto;transition:color 280ms ease}
 .co-chrome .co-on-dark{
-  color:rgba(255,255,255,.92);
+  color:rgba(255,255,255,.94);
   text-shadow:0 0 2px rgba(0,0,0,.4),0 1px 22px rgba(0,0,0,.6);
 }
 .co-menu-btn{
-  background:none;border:0;cursor:pointer;color:inherit;
-  font:inherit;font-size:12.5px;letter-spacing:.14em;font-weight:400;padding:4px 0;
+  background:none;border:0;cursor:pointer;color:inherit;font:inherit;
+  font-size:10.5px;letter-spacing:.215em;text-transform:uppercase;font-weight:500;
+  padding:4px 0;
 }
 .co-menu{
   position:fixed;inset:0;z-index:19;background:var(--co-bone);
   display:flex;align-items:center;padding:0 var(--co-gut);
 }
-.co-menu[hidden]{display:none}
-.co-menu ul{display:grid;gap:18px}
-.co-menu a{font-size:clamp(21px,2.05vw,30px);font-weight:200;letter-spacing:-.005em}
-.co-menu a:hover{color:var(--co-stone)}
+.co-menu ul{display:grid;gap:14px}
+.co-menu a{
+  font-size:clamp(24px,2.6vw,38px);line-height:1.2;
+  font-weight:200;letter-spacing:-.022em;
+  transition:color 300ms ease;
+}
+.co-menu a:hover{color:var(--co-mute)}
 
-/* ---- 1 · opening ---- */
-.co-open{position:relative;height:100svh;min-height:560px;background:var(--co-ink)}
-.co-open-img{object-position:50% 44%;opacity:0;animation:co-settle 2400ms cubic-bezier(.22,.61,.36,1) 120ms forwards}
-@keyframes co-settle{to{opacity:1}}
-.co-open-line{
-  position:absolute;left:var(--co-gut);bottom:clamp(40px,8vh,88px);
-  color:#fff;font-size:13px;letter-spacing:.2em;font-weight:400;
-  text-shadow:0 1px 24px rgba(0,0,0,.5);
+/* ---- shared section frame: one container, one rhythm ---- */
+.co-sec{
+  max-width:var(--co-max);margin:0 auto;
+  padding:var(--co-v-lg) var(--co-gut);
+}
+.co-plate{position:relative}
+.co-plate figcaption,.co-trip-fig figcaption,.co-pair-fig figcaption,
+.co-science-fig figcaption,.co-lede-fig figcaption{
+  padding-top:11px;
 }
 
-/* ---- 2 & 5 · silence panels ---- */
-.co-still{min-height:88vh;display:flex;align-items:center;padding:clamp(96px,16vh,220px) var(--co-gut)}
-.co-still-short{min-height:66vh}
+/* ============================================================
+   1 · OPENING
+   ============================================================ */
+.co-open{position:relative;height:100svh;min-height:600px;background:var(--co-ink)}
+.co-open-img{
+  object-position:50% 44%;
+  opacity:0;animation:co-settle 2400ms cubic-bezier(.22,.61,.36,1) 120ms forwards;
+}
+@keyframes co-settle{to{opacity:1}}
+.co-open-set{
+  position:absolute;left:var(--co-gut);right:var(--co-gut);
+  bottom:clamp(44px,8vh,92px);
+  color:#fff;
+  text-shadow:0 1px 26px rgba(0,0,0,.45);
+}
+.co-open-brow{
+  color:rgba(255,255,255,.78);
+  opacity:0;animation:co-fade 1100ms ease 900ms forwards;
+}
+.co-open-title{
+  margin-top:18px;color:#fff;letter-spacing:-.028em;
+  opacity:0;animation:co-fade 1200ms ease 1080ms forwards;
+}
+.co-open-rule{
+  display:block;width:56px;height:1px;
+  background:rgba(255,255,255,.42);
+  margin:clamp(22px,3.4vh,34px) 0 clamp(16px,2.4vh,22px);
+  transform:scaleX(0);transform-origin:left;
+  animation:co-draw 900ms cubic-bezier(.22,.61,.36,1) 1420ms forwards;
+}
+.co-open-meta{
+  font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:400;
+  color:rgba(255,255,255,.8);
+  opacity:0;animation:co-fade 1100ms ease 1560ms forwards;
+}
+@keyframes co-fade{to{opacity:1}}
+@keyframes co-draw{to{transform:scaleX(1)}}
 
-/* the column that makes the emptiness read as intentional */
-.co-col{display:grid;grid-template-columns:8.5em 1fr;gap:0 clamp(24px,5vw,88px);align-items:baseline}
-.co-col .co-label{padding-top:.5em}
+/* ============================================================
+   2 · THE STATEMENT — asymmetric, staggered baselines
+   ============================================================ */
+.co-lede-sec{padding-top:var(--co-v-lg)}
+.co-lede-grid{
+  display:grid;
+  grid-template-columns:minmax(0,7fr) minmax(0,5fr);
+  column-gap:clamp(32px,5.5vw,104px);
+  row-gap:clamp(44px,6.5vh,88px);
+  align-items:start;
+}
+.co-lede-say{margin-top:26px}
+.co-lede-body{padding-top:clamp(0px,3.2vw,52px)}
+.co-lede-fig{
+  grid-column:1 / -1;
+  height:clamp(300px,56vh,560px);
+}
+.co-lede-fig img{object-position:50% 46%}
+/* held off the column's right edge, so the display above it has a shoulder */
+.co-lede-inset{margin-top:clamp(40px,6vh,72px);width:min(100%,560px)}
+.co-lede-inset img{height:clamp(250px,42vh,400px);object-position:50% 46%}
 
-/* ---- 3 & 4 · matted plates ---- */
-.co-plate{padding:clamp(56px,10vh,140px) var(--co-gut) clamp(96px,16vh,200px)}
-.co-plate figure{height:clamp(340px,74vh,760px);margin-bottom:clamp(40px,7vh,92px);background:var(--co-bone-2)}
-.co-plate-alt figure{height:clamp(300px,58vh,600px);width:min(100%,62ch);margin-left:auto}
+/* ============================================================
+   3 · THE PLACE — a wide plate, a split, an offset plate
+   ============================================================ */
+.co-plate-wide{height:clamp(240px,46vh,480px);margin-bottom:clamp(44px,6.5vh,88px)}
+.co-plate-wide img{object-position:50% 50%}
+/* held off the left edge by a tenth — an asymmetry, not a hole */
+.co-plate-offset{
+  height:clamp(320px,66vh,700px);
+  width:89%;margin-left:auto;
+  margin-top:clamp(48px,7vh,96px);
+}
+/* the only original in the library too small to bear full width — so it is
+   given half, and reads as a held aside rather than a soft banner */
+.co-plate-team{
+  height:clamp(230px,34vh,400px);
+  width:min(100%,52%);
+  margin-top:clamp(48px,7vh,96px);
+}
 
-/* ---- 6 · closing ---- */
-.co-close{height:92svh;min-height:480px;background:var(--co-ink)}
-.co-invite{display:flex;justify-content:center;padding:clamp(120px,22vh,280px) var(--co-gut)}
+/* the split: prose against a hairline-ruled specification column */
+.co-split{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,clamp(230px,24vw,330px));
+  column-gap:clamp(32px,5vw,88px);
+  row-gap:clamp(40px,6vh,72px);
+  align-items:start;
+}
+.co-place .co-body{max-width:40em}
+.co-split .co-eyebrow{display:block;margin-bottom:22px}
+.co-split .co-lede{margin-bottom:1.5em}
+
+.co-spec{border-top:1px solid var(--co-hair)}
+.co-spec-row{
+  display:flex;align-items:baseline;justify-content:space-between;gap:20px;
+  padding:15px 0;border-bottom:1px solid var(--co-hair-2);
+}
+.co-spec-row .co-eyebrow{margin-bottom:0;flex:0 0 auto}
+.co-spec-v{
+  font-size:13px;line-height:1.5;font-weight:300;letter-spacing:.005em;
+  color:var(--co-ink-soft);text-align:right;
+}
+
+/* ============================================================
+   4 · THE WEEK — the itinerary as typography, not as a table
+   ============================================================ */
+.co-week-head{margin-bottom:clamp(44px,6.5vh,84px)}
+.co-week-head .co-eyebrow{display:block;margin-bottom:22px}
+
+.co-days{
+  max-width:920px;
+  border-top:1px solid var(--co-hair);
+}
+.co-day{
+  display:grid;
+  grid-template-columns:4.2em minmax(0,1fr) 2.2em;
+  align-items:baseline;gap:clamp(18px,3vw,44px);
+  padding:clamp(15px,1.9vh,22px) 0;
+  border-bottom:1px solid var(--co-hair-2);
+}
+.co-day:last-child{border-bottom:1px solid var(--co-hair)}
+.co-day-n{padding-top:.25em}
+.co-day-place{
+  font-size:clamp(15.5px,1.2vw,18px);line-height:1.4;
+  font-weight:300;letter-spacing:-.004em;color:var(--co-ink);
+}
+.co-day-dives{text-align:right}
+.co-day:last-child .co-day-place{color:var(--co-mute)}
+
+/* three small photographs, sized by what each one is worth */
+.co-trip{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:clamp(14px,2.2vw,34px);
+  margin-top:clamp(52px,8vh,104px);
+}
+.co-trip-fig{display:flex;flex-direction:column}
+.co-trip-fig img{height:clamp(200px,33vh,330px)}
+
+/* ============================================================
+   5 · ABOARD — two vessels, mirrored
+   ============================================================ */
+.co-aboard-head{margin-bottom:clamp(48px,7vh,96px)}
+.co-aboard-head .co-eyebrow{display:block;margin-bottom:22px}
+
+.co-vessel{
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);
+  column-gap:clamp(32px,5.5vw,96px);
+  row-gap:clamp(28px,4vh,44px);
+  align-items:center;
+  padding-bottom:clamp(52px,8vh,104px);
+}
+.co-vessel-fig{height:clamp(240px,48vh,520px)}
+.co-vessel-flip .co-vessel-fig{order:2}
+.co-vessel-flip .co-vessel-body{order:1}
+.co-vessel-name{
+  font-size:clamp(21px,1.9vw,27px);line-height:1.2;
+  font-weight:200;letter-spacing:-.018em;
+  margin-bottom:1.05em;
+}
+.co-vessel-body .co-body{margin-bottom:2em}
+
+/* bottoms level, captions level — two photographs, one baseline */
+.co-pair{
+  display:grid;grid-template-columns:minmax(0,4fr) minmax(0,6fr);
+  gap:clamp(14px,2.4vw,36px);align-items:start;
+}
+.co-pair-fig img{height:clamp(260px,48vh,460px)}
+
+/* ============================================================
+   6 · THE SCIENCE
+   ============================================================ */
+@media (min-width:901px){
+  .co-science .co-split{
+    grid-template-columns:minmax(0,1fr) minmax(0,clamp(300px,33vw,450px));
+  }
+  .co-science .co-body{max-width:38em}
+}
+.co-science-fig{align-self:start}
+/* cropped left of centre: the frame's own watermark sits bottom-right */
+.co-science-fig img{height:clamp(230px,44vh,440px);object-position:36% 44%}
+
+.co-people{margin-top:clamp(56px,9vh,112px)}
+.co-people-head{
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  padding-bottom:22px;
+}
+.co-portraits{display:flex;gap:10px}
+.co-portraits img{
+  width:clamp(44px,4vw,58px);height:clamp(44px,4vw,58px);
+  object-fit:cover;object-position:50% 28%;
+  filter:grayscale(1) contrast(1.02);
+  background:var(--co-bone-2);
+}
+.co-roster{border-top:1px solid var(--co-hair)}
+.co-roster-row{
+  display:grid;
+  grid-template-columns:minmax(0,16em) minmax(0,1fr);
+  column-gap:clamp(28px,5vw,88px);row-gap:10px;
+  padding:clamp(20px,2.6vh,30px) 0;
+  border-bottom:1px solid var(--co-hair-2);
+}
+.co-roster-name{
+  font-size:clamp(15px,1.1vw,17px);line-height:1.4;
+  font-weight:400;letter-spacing:-.002em;color:var(--co-ink);
+}
+.co-roster-note{max-width:38em}
+
+/* ============================================================
+   7 · THE STANDARD — the narrowest measure on the page
+   ============================================================ */
+.co-standard-inner{max-width:640px;margin:0 auto}
+.co-standard-inner .co-eyebrow{display:block;text-align:center;margin-bottom:26px}
+.co-standard-lede{
+  max-width:none;text-align:center;
+  margin-bottom:clamp(40px,6vh,72px);
+}
+.co-req{border-top:1px solid var(--co-hair)}
+.co-req-row{
+  font-size:clamp(14.5px,1vw,16px);line-height:1.6;
+  font-weight:300;letter-spacing:.004em;color:var(--co-ink-soft);
+  padding:16px 0;border-bottom:1px solid var(--co-hair-2);
+  text-align:center;
+}
+.co-req-row:last-child{color:var(--co-mute)}
+
+/* ============================================================
+   8 & 9 · CLOSING
+   ============================================================ */
+.co-close{height:88svh;min-height:460px;background:var(--co-ink)}
+.co-close-img{object-position:50% 46%}
+.co-invite{
+  display:flex;flex-direction:column;align-items:center;
+  padding:clamp(88px,15vh,190px) var(--co-gut);
+}
+.co-invite-brow{margin-bottom:clamp(26px,4vh,44px)}
 .co-begin{
-  font-size:clamp(21px,2.05vw,30px);font-weight:200;letter-spacing:.02em;
-  padding-bottom:10px;border-bottom:1px solid rgba(21,24,27,.28);
+  font-size:clamp(24px,2.5vw,36px);line-height:1.1;
+  font-weight:200;letter-spacing:.005em;
+  padding-bottom:12px;
+  border-bottom:1px solid rgba(20,23,26,.3);
   transition:border-color 400ms ease,color 400ms ease;
 }
 .co-begin:hover{border-color:var(--co-ink)}
+.co-invite-note{margin-top:clamp(30px,4.5vh,52px)}
+.co-mailto{border-bottom:1px solid var(--co-hair);transition:border-color 300ms ease}
+.co-mailto:hover{border-color:var(--co-mute)}
 
 /* ---- footer: the information architecture lives elsewhere ---- */
 .co-foot{
-  border-top:var(--co-rule);margin:0 var(--co-gut);
-  padding:34px 0 clamp(40px,7vh,80px);
+  border-top:1px solid var(--co-hair);
+  max-width:var(--co-max);margin:0 auto;
+  padding:34px var(--co-gut) clamp(40px,7vh,80px);
   display:flex;align-items:baseline;justify-content:space-between;gap:32px;
 }
-.co-mark-foot{color:var(--co-stone)}
+.co-mark-foot{color:var(--co-mute)}
 .co-foot ul{display:flex;gap:clamp(18px,3vw,44px);flex-wrap:wrap}
-.co-foot a{font-size:12.5px;letter-spacing:.14em;color:var(--co-stone)}
+.co-foot a{
+  font-size:10.5px;letter-spacing:.215em;text-transform:uppercase;
+  font-weight:500;color:var(--co-mute);transition:color 300ms ease;
+}
 .co-foot a:hover{color:var(--co-ink)}
 
-/* ---- 375px ---- */
+/* ============================================================
+   NARROW — 375px is the design target, not an afterthought
+   ============================================================ */
+@media (max-width:900px){
+  .co-lede-grid{grid-template-columns:1fr}
+  .co-lede-body{padding-top:0}
+  .co-lede-fig{grid-column:1;width:100%}
+  .co-split{grid-template-columns:1fr}
+  .co-vessel{grid-template-columns:1fr}
+  .co-vessel-flip .co-vessel-fig{order:0}
+  .co-vessel-flip .co-vessel-body{order:0}
+  .co-roster-row{grid-template-columns:1fr}
+}
 @media (max-width:640px){
+  .co-root{--co-v:clamp(64px,9vh,104px);--co-v-lg:clamp(84px,13vh,148px)}
   .co-chrome{padding:20px var(--co-gut)}
-  .co-mark{font-size:11.5px;letter-spacing:.16em}
-  .co-col{grid-template-columns:1fr;gap:20px 0}
-  .co-col .co-label{padding-top:0}
-  .co-say{max-width:none}
-  .co-still{min-height:78vh}
-  .co-still-short{min-height:56vh}
-  .co-open-img{object-position:64% 50%}
-  .co-open-line{font-size:12px}
-  .co-plate figure{height:64svh}
-  .co-plate-alt figure{height:52svh;width:100%}
+  .co-mark{font-size:11px;letter-spacing:.17em}
+  .co-display{font-size:clamp(25px,7.6vw,34px);letter-spacing:-.022em;max-width:none}
+  .co-lede{max-width:none}
+  .co-body{max-width:none}
+
+  .co-open{min-height:540px}
+  .co-open-img{object-position:62% 50%}
+  .co-open-title{margin-top:14px}
+  .co-open-meta{font-size:10px;letter-spacing:.16em}
+
+  .co-lede-say{margin-top:20px}
+  .co-lede-fig{height:60svh}
+  .co-plate-wide{height:40svh}
+  .co-plate-offset{height:62svh;width:100%;margin-top:clamp(40px,7vh,72px)}
+  .co-plate-team{height:38svh;width:100%}
+  .co-lede-inset{width:100%;margin-top:clamp(28px,4vh,44px)}
+  .co-lede-inset img{height:42svh}
+
+  /* the day list keeps its three columns — it is the one place a grid earns it */
+  .co-day{grid-template-columns:3.1em minmax(0,1fr) 1.6em;gap:14px}
+  .co-day-place{font-size:15px}
+
+  .co-trip{grid-template-columns:1fr;gap:26px}
+  .co-trip-fig img{height:44svh}
+
+  .co-vessel-fig{height:44svh}
+  .co-pair{grid-template-columns:1fr;gap:26px}
+  .co-pair-fig img{height:46svh}
+
+  .co-science-fig img{height:46svh}
+  .co-people-head{align-items:flex-end}
+
+  .co-standard-inner .co-eyebrow,.co-standard-lede,.co-req-row{text-align:left}
+
+  .co-close{height:72svh}
   .co-foot{flex-direction:column;align-items:flex-start;gap:24px}
 }
 
+/* The concept is one quiet invitation end to end. The global assistant widget
+   is suppressed while this prototype route is mounted — and only while it is —
+   so the direction can be judged on its own terms. Nothing shared is edited. */
+.gsd-jw{display:none !important}
+
 @media (prefers-reduced-motion:reduce){
-  .co-open-img{opacity:1;animation:none}
-  .co-begin,.co-chrome > *{transition:none}
+  .co-open-img,.co-open-brow,.co-open-title,.co-open-meta{opacity:1;animation:none}
+  .co-open-rule{transform:none;animation:none}
+  .co-begin,.co-chrome > *,.co-menu a,.co-foot a,.co-mailto{transition:none}
 }
+/* static-only: the route unmounts the menu, this file merely hides it */
+.co-menu[hidden]{display:none}
 </style>
 
 
 <div class="co-root">
 
-  <header class="co-chrome">
+  <header class="co-chrome" id="coChrome">
     <a class="co-mark co-on-dark" id="coMark" href="#">Galapagos Shark Diving</a>
     <button type="button" class="co-menu-btn co-on-dark" id="coBtn" aria-expanded="false">Menu</button>
   </header>
@@ -158,62 +502,188 @@ html,body{margin:0;padding:0;background:#F2F0EC}
   </nav>
 
   <main>
-    <!-- 1 — Opening -->
+    <!-- 1 — Opening. The only place the page raises its voice. -->
     <section class="co-open co-dark">
-      <img class="co-open-img"
-           src="https://image.jimcdn.com/app/cms/image/transf/dimension=2400x10000:format=jpg/path/s2fc4241e2a9d6156/image/i0732d0710069ab07/version/1727121098/a-diver-swims-closely-alongside-a-massive-whale-shark-surrounded-by-a-school-of-fish-in-the-serene-depths-of-the-ocean.jpg"
-           alt="A diver swims alongside an adult whale shark, surrounded by a school of fish" />
-      <p class="co-open-line">Darwin and Wolf</p>
-    </section>
-
-    <!-- 2 — The statement -->
-    <section class="co-still">
-      <div class="co-col">
-        <p class="co-label">The expedition</p>
-        <p class="co-say">Eight days in the far north of the Galápagos, with a shark scientist aboard.</p>
+      <img class="co-open-img" src="https://image.jimcdn.com/app/cms/image/transf/dimension=2400x10000:format=jpg/path/s2fc4241e2a9d6156/image/i0732d0710069ab07/version/1727121098/a-diver-swims-closely-alongside-a-massive-whale-shark-surrounded-by-a-school-of-fish-in-the-serene-depths-of-the-ocean.jpg" alt="A diver swims alongside an adult whale shark, surrounded by a school of fish" />
+      <div class="co-open-set">
+        <p class="co-eyebrow co-open-brow">Liveaboard expeditions</p>
+        <h1 class="co-display co-open-title">Darwin and Wolf</h1>
+        <span class="co-open-rule" aria-hidden="true"></span>
+        <p class="co-open-meta">Eight days<span aria-hidden="true"> · </span>Sixteen dives<span aria-hidden="true"> · </span>A scientist aboard</p>
       </div>
     </section>
 
-    <!-- 3 — Season -->
-    <section class="co-plate">
-      <figure class="co-dark">
-        <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=2000x10000:format=jpg/path/s2fc4241e2a9d6156/image/i0591fc7922ba217f/version/1730299290/galapagos-shark-diving-huge-hammerhead-shark-school-in-the-galapagos-islands.jpg"
-             alt="A large school of scalloped hammerhead sharks in Galápagos water" loading="lazy" />
+    <!-- 2 — The statement, with enough prose to actually be understood. -->
+    <section class="co-sec co-lede-sec">
+      <div class="co-lede-grid">
+        <div class="co-rise">
+          <p class="co-eyebrow">The expedition</p>
+          <p class="co-display co-lede-say">Eight days in the far north of the Galápagos, with a shark scientist aboard.</p>
+          <figure class="co-lede-inset">
+            <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=800x10000:format=jpg/path/s2fc4241e2a9d6156/image/i56070ed687c43cfb/version/1647808729/diver-next-to-a-huge-adult-whale-shark-in-darwin-s-arch-in-the-galapagos-islands-with-galapagos-shark-diving-photo-jenny-waack.jpg" alt="A diver beside an adult whale shark at Darwin, the shark many times the diver's length" loading="lazy" />
+            <figcaption class="co-cap">Darwin<span aria-hidden="true"> — </span><span class="co-cap-credit">Jenny Waack</span></figcaption>
+          </figure>
+        </div>
+        <div class="co-rise co-lede-body">
+          <p class="co-body">Darwin and Wolf lie in the far north of the archipelago. Thirty-four species of shark have been recorded in Galápagos waters, and between June and November the adult whale sharks arrive here — almost entirely mature females, nine to fourteen metres long, an aggregation documented nowhere else in the world.</p>
+          <p class="co-body">Sixteen dives across the eight days, two to four a day, in water of sixteen to twenty-four degrees and currents of one to five knots. A Galápagos Whale Shark Project scientist has sailed on every one of these departures since 2019.</p>
+        </div>
+        <figure class="co-rise co-lede-fig"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1600x10000:format=jpg/path/s2fc4241e2a9d6156/image/i23075d0d73aa746d/version/1786480209/galapagos-shark-diving-whale-shark-swimming-along-some-divers-in-darwin-arch.jpg" alt="A whale shark moving past a line of divers at Darwin" loading="lazy" /></figure>
+      </div>
+    </section>
+
+    <!-- 3 — The place. Two islands, stated plainly, with the conditions. -->
+    <section class="co-sec co-place">
+      <figure class="co-rise co-plate co-plate-wide co-dark"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1800x10000:format=jpg/path/s2fc4241e2a9d6156/image/i3197cbfcd074c4bf/version/1710432252/aerial-view-of-darwin-s-arch-a-natural-rock-formation-in-the-galapagos-islands-with-the-vast-ocean-surrounding-it-the-azure-waters-contrast-with-the-rugged-brown-and-beige-tones-of-the-rocky-arch.jpg" alt="Aerial view of the rock formation at Darwin Island, open ocean on every side" loading="lazy" /></figure>
+
+      <div class="co-split co-rise">
+        <div>
+          <p class="co-eyebrow">The two islands</p>
+          <p class="co-lede">Darwin's arch fell partly into the sea in 2021. What stands is now called the Pillars of Evolution.</p>
+          <p class="co-body">Four dives at Darwin, then Wolf to the south — high shark biomass and strong water, where the hammerhead schools hang in the current in numbers that make it difficult to look at anything else. Both are uninhabited, both are reached only by liveaboard, and neither appears on an ordinary Galápagos cruise.</p>
+        </div>
+        <dl class="co-spec">
+          <div class="co-spec-row"><dt class="co-eyebrow">Water</dt><dd class="co-num">16–24 °C</dd></div>
+          <div class="co-spec-row"><dt class="co-eyebrow">Visibility</dt><dd class="co-num">10–30 m</dd></div>
+          <div class="co-spec-row"><dt class="co-eyebrow">Current</dt><dd class="co-num">1–5 knots</dd></div>
+          <div class="co-spec-row"><dt class="co-eyebrow">Maximum depth</dt><dd class="co-num">30 m</dd></div>
+        </dl>
+      </div>
+
+      <figure class="co-rise co-plate co-plate-offset co-dark">
+        <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1600x10000:format=jpg/path/s2fc4241e2a9d6156/image/i2e26eaccd15faa23/version/1736371424/hundreds-of-hammerhead-sharks-swim-at-wolf-islands-dive-site-galapagos.jpg" alt="Hundreds of scalloped hammerhead sharks schooling at Wolf Island" loading="lazy" />
+        <figcaption class="co-cap">Wolf</figcaption>
       </figure>
-      <div class="co-col">
-        <p class="co-label">Season</p>
-        <p class="co-say">June to November, the whale sharks come.</p>
+    </section>
+
+    <!-- 4 — The week. The most substantive thing a serious diver wants. -->
+    <section class="co-sec co-week">
+      <div class="co-week-head co-rise">
+        <p class="co-eyebrow">The week</p>
+        <p class="co-lede">Tuesday to Tuesday, out of Baltra. Sixteen dives, four of them at Darwin.</p>
+      </div>
+
+      <ol class="co-days co-rise">
+        <li class="co-day"><span class="co-day-n co-eyebrow">Tue</span><span class="co-day-place">Baltra, Santa Cruz</span><span class="co-day-dives co-num">1</span></li>
+        <li class="co-day"><span class="co-day-n co-eyebrow">Wed</span><span class="co-day-place">Cape Marshall · City of Mantas</span><span class="co-day-dives co-num">3</span></li>
+        <li class="co-day"><span class="co-day-n co-eyebrow">Thu</span><span class="co-day-place">Darwin</span><span class="co-day-dives co-num">4</span></li>
+        <li class="co-day"><span class="co-day-n co-eyebrow">Fri</span><span class="co-day-place">Darwin · Wolf</span><span class="co-day-dives co-num">4</span></li>
+        <li class="co-day"><span class="co-day-n co-eyebrow">Sat</span><span class="co-day-place">Wolf</span><span class="co-day-dives co-num">3</span></li>
+        <li class="co-day"><span class="co-day-n co-eyebrow">Sun</span><span class="co-day-place">Punta Vicente Roca · Cabo Douglas</span><span class="co-day-dives co-num">2</span></li>
+        <li class="co-day"><span class="co-day-n co-eyebrow">Mon</span><span class="co-day-place">Cousin's Rock · Santa Cruz highlands</span><span class="co-day-dives co-num">2</span></li>
+        <li class="co-day"><span class="co-day-n co-eyebrow">Tue</span><span class="co-day-place">Baltra</span><span class="co-day-dives co-num">—</span></li>
+      </ol>
+
+      <div class="co-trip co-rise">
+        <figure class="co-trip-fig"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1200x10000:format=jpg/path/s2fc4241e2a9d6156/image/idbda94df8f0cb938/version/1786480132/galapagos-shark-diving-giant-manta-swimming-over-the-head-of-the-divers-in-cape-marshall-in-the-galapagos-islands.jpg" alt="A giant manta ray passing over the heads of divers at Cape Marshall" loading="lazy" /><figcaption class="co-cap">Giant manta, Cape Marshall</figcaption></figure>
+        <figure class="co-trip-fig"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1900x10000:format=jpg/path/s2fc4241e2a9d6156/image/if594bb0663333b3f/version/1666982506/mola-alexandrini-or-ocean-sunfish-or-common-mola-mola-mola-swimming-in-the-galapagos-4-scuba-divers-swim-in-the-background.jpg" alt="An ocean sunfish in open water with four divers behind it" loading="lazy" /><figcaption class="co-cap">Mola mola</figcaption></figure>
+        <figure class="co-trip-fig"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=900x10000:format=jpg/path/s2fc4241e2a9d6156/image/i717adcbe719d13d7/version/1786433308/galapagos-shark-diving-sea-lion-playing-very-curious-about-a-diver.jpg" alt="A sea lion turning in close to a diver" loading="lazy" /><figcaption class="co-cap">Sea lion</figcaption></figure>
       </div>
     </section>
 
-    <!-- 4 — Vessels -->
-    <section class="co-plate co-plate-alt">
-      <figure class="co-dark">
-        <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=2000x10000:format=jpg/path/s2fc4241e2a9d6156/image/i8bafb73a91e9d28a/version/1736371409/galaxy-diver-ii-luxury-yacht-galapagos-islands.jpg"
-             alt="The liveaboard Galaxy Diver II at anchor in the Galápagos Islands" loading="lazy" />
+    <!-- 5 — Aboard. Two real vessels, named, with real specifications. -->
+    <section class="co-sec co-aboard">
+      <div class="co-aboard-head co-rise">
+        <p class="co-eyebrow">Aboard</p>
+        <p class="co-lede">Two vessels, sixteen guests on each. Which one you sail depends on the expedition.</p>
+      </div>
+
+      <article class="co-vessel co-rise">
+        <figure class="co-vessel-fig co-dark"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1600x10000:format=jpg/path/s2fc4241e2a9d6156/image/if9b548a01f97ac7f/version/1736371407/aqua-yacht-in-the-galapagos-islands.jpg" alt="The liveaboard Aqua at anchor in the Galápagos Islands" loading="lazy" /></figure>
+        <div class="co-vessel-body">
+          <h2 class="co-vessel-name">Aqua</h2>
+          <p class="co-body">The citizen science vessel. Nine cabins, every one with its own bathroom, and a dive platform rebuilt in 2017 around two compressors and a camera table.</p>
+          <dl class="co-spec">
+        <div class="co-spec-row"><dt class="co-eyebrow">Built</dt><dd class="co-spec-v">1998, renovated 2019</dd></div>
+        <div class="co-spec-row"><dt class="co-eyebrow">Cabins</dt><dd class="co-spec-v">Nine, each with private bathroom</dd></div>
+        <div class="co-spec-row"><dt class="co-eyebrow">Guests</dt><dd class="co-spec-v">Sixteen</dd></div>
+        <div class="co-spec-row"><dt class="co-eyebrow">Dive platform</dt><dd class="co-spec-v">Rebuilt 2017 · Nitrox-capable · thirty-four tanks</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="co-vessel co-vessel-flip co-rise">
+        <figure class="co-vessel-fig co-dark"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=2000x10000:format=jpg/path/s2fc4241e2a9d6156/image/i8bafb73a91e9d28a/version/1736371409/galaxy-diver-ii-luxury-yacht-galapagos-islands.jpg" alt="The liveaboard Galaxy Diver II under way in the Galápagos Islands" loading="lazy" /></figure>
+        <div class="co-vessel-body">
+          <h2 class="co-vessel-name">Galaxy Diver II</h2>
+          <p class="co-body">The luxury science vessel. Thirty-five metres, a hundred and seventeen square metres of shaded sundeck, and nitrox included rather than charged for.</p>
+          <dl class="co-spec">
+        <div class="co-spec-row"><dt class="co-eyebrow">Length</dt><dd class="co-spec-v">35 metres</dd></div>
+        <div class="co-spec-row"><dt class="co-eyebrow">Guests</dt><dd class="co-spec-v">Sixteen</dd></div>
+        <div class="co-spec-row"><dt class="co-eyebrow">Engines</dt><dd class="co-spec-v">Two 600 hp Caterpillar</dd></div>
+        <div class="co-spec-row"><dt class="co-eyebrow">Aboard</dt><dd class="co-spec-v">Nitrox included · jacuzzi on the sundeck</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <div class="co-pair co-rise">
+        <figure class="co-pair-fig"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1400x10000:format=jpg/path/s2fc4241e2a9d6156/image/ia3706443faac55f0/version/1740269660/upper-deck-cabin-on-board-the-aqua-galapagos-shark-diving.jpg" alt="An upper-deck cabin aboard the Aqua" loading="lazy" /><figcaption class="co-cap">Upper-deck cabin, Aqua</figcaption></figure>
+        <figure class="co-pair-fig"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1400x10000:format=jpg/path/s2fc4241e2a9d6156/image/ic9504a1d4a42b5f9/version/1743185985/dive-deck-of-the-aqua-with-several-scuba-tanks-organized-on-benches-in-the-galapagos-on-the-aqua.jpg" alt="The dive deck of the Aqua, tanks ranked along the benches" loading="lazy" /><figcaption class="co-cap">Dive deck, Aqua</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- 6 — The science. Credibility, spare, with real names attached. -->
+    <section class="co-sec co-science">
+      <figure class="co-rise co-plate co-plate-wide co-dark">
+        <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1900x10000:format=jpg/path/s2fc4241e2a9d6156/image/i38b61344e92489c1/version/1771099961/research-diver-tagging-a-adult-female-whale-shark-in-the-galapagos-islands.jpg" alt="A research diver placing a satellite tag on an adult female whale shark" loading="lazy" />
+        <figcaption class="co-cap">Satellite tagging, Darwin</figcaption>
       </figure>
-      <div class="co-col">
-        <p class="co-label">Aboard</p>
-        <p class="co-say">Two vessels. Aqua, and Galaxy Diver II.</p>
+
+      <div class="co-split co-rise">
+        <div>
+          <p class="co-eyebrow">Research</p>
+          <p class="co-lede">In partnership with the Galápagos Whale Shark Project, since 2019.</p>
+          <p class="co-body">The whale shark is listed Endangered on the IUCN Red List. The project works by photo-identification — every animal carries a unique pattern of spots behind the gills — by satellite tagging, and by in-water behavioural observation. Guests contribute the photographs and the standardised counts. The identifications go to Sharkbook.ai and the data to the Galápagos National Park Directorate.</p>
+          <p class="co-body">One project scientist sails on every departure. Not as a guest lecturer — as the person doing the work.</p>
+        </div>
+        <figure class="co-science-fig">
+          <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1400x10000:format=jpg/path/s2fc4241e2a9d6156/image/i89c2a683f6ee654f/version/1647800365/diver-taking-photo-identification-from-a-adult-whale-shark-in-the-galapagos-islands-galapagos-shark-diving-photo-jonathan-r-green.jpg" alt="A diver taking a photo-identification frame of an adult whale shark's gill region" loading="lazy" />
+          <figcaption class="co-cap">Photo-identification<span aria-hidden="true"> — </span><span class="co-cap-credit">Jonathan R. Green</span></figcaption>
+        </figure>
+      </div>
+
+      <div class="co-people co-rise">
+        <div class="co-people-head">
+          <p class="co-eyebrow">Who sails with you</p>
+          <div class="co-portraits"><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=900x10000:format=jpg/path/s2fc4241e2a9d6156/image/i9e1cf49655c8730e/version/1588473589/galapagos-shark-diving-jonathan-r-green.jpg" alt="Jonathan R. Green, director of the Galápagos Whale Shark Project" loading="lazy" /><img src="https://image.jimcdn.com/app/cms/image/transf/dimension=900x10000:format=jpg/path/s2fc4241e2a9d6156/image/i806c82e6817de1c1/version/1751156290/galapagos-shark-diving-jenny-waack.jpg" alt="Jenny Green, founder of Galapagos Shark Diving" loading="lazy" /></div>
+        </div>
+        <dl class="co-roster">
+          <div class="co-roster-row"><dt class="co-roster-name">Jonathan R. Green, FRGS</dt><dd class="co-body co-roster-note">Founder and director of the Galápagos Whale Shark Project. Nearly thirty years working in these waters, several thousand dives in the region. Fellow of the Royal Geographical Society.</dd></div>
+          <div class="co-roster-row"><dt class="co-roster-name">Dr Simon J. Pierce</dt><dd class="co-body co-roster-note">Founder of the Marine Megafauna Foundation. Led the 2016 IUCN Red List assessment that listed the whale shark as Endangered, and the 2017 uplisting under the Convention on Migratory Species.</dd></div>
+          <div class="co-roster-row"><dt class="co-roster-name">Sofía M. Green Iturralde</dt><dd class="co-body co-roster-note">Researcher and data analyst, Galápagos Whale Shark Project. Working in the Galápagos since 2017.</dd></div>
+          <div class="co-roster-row"><dt class="co-roster-name">Jenny Green</dt><dd class="co-body co-roster-note">Founder of Galapagos Shark Diving. Field researcher and board member of the Galápagos Whale Shark Project.</dd></div>
+        </dl>
+      </div>
+
+      <figure class="co-rise co-plate co-plate-team co-dark">
+        <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=1800x10000:format=jpg/path/s2fc4241e2a9d6156/image/i723c938e93502a05/version/1710516584/the-galapagos-whale-shark-project-team-in-front-of-darwin-s-arch.jpg" alt="The Galápagos Whale Shark Project team photographed in front of Darwin" loading="lazy" />
+        <figcaption class="co-cap">The Galápagos Whale Shark Project team, at Darwin</figcaption>
+      </figure>
+    </section>
+
+    <!-- 7 — The standard. A serious operation says what it asks for. -->
+    <section class="co-sec co-standard">
+      <div class="co-standard-inner co-rise">
+        <p class="co-eyebrow">What is asked of you</p>
+        <p class="co-lede co-standard-lede">Darwin and Wolf are not a first liveaboard. The requirements are not negotiable, and they are published rather than discussed on arrival.</p>
+        <ul class="co-req">
+          <li class="co-req-row">Advanced Open Water, or Open Water with a Deep Diver specialty</li>
+          <li class="co-req-row">More than fifty logged dives</li>
+          <li class="co-req-row">One dive within the previous six months</li>
+          <li class="co-req-row">A dive computer, and dive-accident insurance</li>
+          <li class="co-req-row">No decompression diving. No solo diving.</li>
+        </ul>
       </div>
     </section>
 
-    <!-- 5 — Research -->
-    <section class="co-still co-still-short">
-      <div class="co-col">
-        <p class="co-label">Research</p>
-        <p class="co-say">In partnership with the Galápagos Whale Shark Project.</p>
-      </div>
-    </section>
+    <!-- 8 — Closing photograph. -->
+    <section class="co-close co-dark"><img class="co-close-img" src="https://image.jimcdn.com/app/cms/image/transf/dimension=2400x10000:format=jpg/path/s2fc4241e2a9d6156/image/i94b5a8f9795e8d58/version/1771099762/adult-female-whale-shark-swimming-above-a-group-of-divers-in-the-galapagos-islands.jpg" alt="An adult female whale shark swimming above a group of divers" loading="lazy" /></section>
 
-    <!-- 6 — Closing invitation -->
-    <section class="co-close co-dark">
-      <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=2400x10000:format=jpg/path/s2fc4241e2a9d6156/image/i94b5a8f9795e8d58/version/1771099762/adult-female-whale-shark-swimming-above-a-group-of-divers-in-the-galapagos-islands.jpg"
-           alt="An adult female whale shark swimming above a group of divers" loading="lazy" />
-    </section>
-
+    <!-- 9 — The invitation, grounded. -->
     <section class="co-invite">
+      <p class="co-eyebrow co-invite-brow">June to November</p>
       <a class="co-begin" href="/contact">Begin</a>
+      <p class="co-cap co-invite-note">Or write to <a class="co-mailto" href="mailto:info@galapagossharkdiving.com">info@galapagossharkdiving.com</a></p>
     </section>
   </main>
 
@@ -230,6 +700,7 @@ html,body{margin:0;padding:0;background:#F2F0EC}
 
 <script>
 (function () {
+  var chrome = document.getElementById("coChrome");
   var mark = document.getElementById("coMark");
   var btn = document.getElementById("coBtn");
   var menu = document.getElementById("coMenu");
@@ -238,6 +709,8 @@ html,body{margin:0;padding:0;background:#F2F0EC}
 
   // The mark and the menu control each sit on whatever is behind them —
   // photography or bone — and are written in the ink that stays legible there.
+  // Once the opening photograph is behind us the chrome needs a ground to sit
+  // on, or it collides with the prose. A bone veil, only over bone.
   function read() {
     var y = 40;
     var rects = [].map.call(document.querySelectorAll(".co-dark"), function (el) {
@@ -249,9 +722,15 @@ html,body{margin:0;padding:0;background:#F2F0EC}
       });
     }
     var g = parseFloat(getComputedStyle(root).getPropertyValue("--co-gut")) ||
-      Math.min(128, Math.max(22, window.innerWidth * 0.07));
-    mark.classList.toggle("co-on-dark", !open && over(g + 8));
-    btn.classList.toggle("co-on-dark", !open && over(window.innerWidth - g - 8));
+      Math.min(120, Math.max(22, window.innerWidth * 0.07));
+    var m = over(g + 8);
+    var n = over(window.innerWidth - g - 8);
+    mark.classList.toggle("co-on-dark", !open && m);
+    btn.classList.toggle("co-on-dark", !open && n);
+    chrome.classList.toggle(
+      "co-veil",
+      !open && window.scrollY > window.innerHeight * 0.88 && !m && !n
+    );
   }
 
   function setMenu(v) {
@@ -270,6 +749,20 @@ html,body{margin:0;padding:0;background:#F2F0EC}
   window.addEventListener("resize", read);
   window.addEventListener("load", read);
   read();
+
+  // A single restrained reveal: twelve pixels and a fade, once, never repeated.
+  var els = [].slice.call(document.querySelectorAll(".co-rise"));
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      !("IntersectionObserver" in window)) {
+    els.forEach(function (el) { el.classList.add("co-in"); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("co-in"); io.unobserve(en.target); }
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.06 });
+    els.forEach(function (el) { io.observe(el); });
+  }
 })();
 </script>
 <a id="back-to-concepts-index" href="index.html" style="position:fixed;top:10px;right:10px;z-index:999999;background:#000;color:#fff;font:12px/1 system-ui,sans-serif;padding:7px 11px;text-decoration:none;border-radius:3px;opacity:0.55;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.55">&larr; All concepts</a>
