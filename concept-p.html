@@ -1,0 +1,951 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Galapagos Shark Diving — Darwin &amp; Wolf Liveaboard Expeditions</title>
+<meta name="description" content="Small-group liveaboard expeditions to Darwin and Wolf in the far north of the Galápagos, with a Galápagos Whale Shark Project scientist aboard every departure." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" />
+<!--
+  CONCEPT PROTOTYPE — "SPECIALIST" (concept P), standalone static mirror.
+  Galapagos Shark Diving. Deliberate exception to the other concepts: this one
+  follows galapatours.com's real commercial travel-booking visual language
+  closely, at the client's direct request (warm burnt-orange accent on white,
+  friendly sans typography, hero search widget, trust-badge row, rounded soft-
+  shadowed cards). Every fact and image URL is real. No donation percentage or
+  dollar figure appears anywhere.
+-->
+<style>
+.cp-root{
+  --cp-orange:#C45500;
+  --cp-orange-d:#A24700;
+  --cp-orange-l:#FF994C;
+  --cp-tint:#FFF2E7;
+  --cp-tint-2:#FFE9D8;
+  --cp-ink:#22303C;
+  --cp-ink-2:#40515F;
+  --cp-mute:#6B7A88;
+  --cp-line:#E3E8EC;
+  --cp-bg:#FFFFFF;
+  --cp-bg-2:#F6F8FA;
+  --cp-green:#2E7D5B;
+  --cp-r:8px;
+  --cp-sh:0 1px 2px rgba(34,48,60,.06), 0 6px 20px rgba(34,48,60,.08);
+  --cp-sh-h:0 2px 6px rgba(34,48,60,.08), 0 14px 34px rgba(34,48,60,.14);
+
+  background:var(--cp-bg);
+  color:var(--cp-ink-2);
+  font-family:"Source Sans 3",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.cp-root *{box-sizing:border-box}
+.cp-root h1,.cp-root h2,.cp-root h3,.cp-root h4{
+  font-family:Montserrat,"Source Sans 3",system-ui,sans-serif;
+  color:var(--cp-ink);
+  margin:0;
+  line-height:1.2;
+  letter-spacing:-.01em;
+}
+.cp-root p{margin:0}
+.cp-root img{display:block;max-width:100%}
+.cp-root a{color:inherit;text-decoration:none}
+.cp-wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* ---------- navigation ---------- */
+.cp-nav{
+  position:sticky;top:0;z-index:60;background:#fff;
+  border-bottom:1px solid var(--cp-line);
+  box-shadow:0 1px 3px rgba(34,48,60,.05);
+}
+.cp-nav-in{display:flex;align-items:center;gap:20px;height:66px;max-width:1180px;margin:0 auto;padding:0 20px}
+.cp-logo{display:flex;align-items:center;gap:9px;flex:0 0 auto}
+.cp-logo-mark{
+  width:30px;height:30px;border-radius:50%;flex:0 0 auto;
+  background:linear-gradient(135deg,var(--cp-orange-l),var(--cp-orange));
+  display:grid;place-items:center;color:#fff;font-size:15px;
+}
+.cp-logo-txt{font-family:Montserrat,sans-serif;font-weight:800;font-size:15px;color:var(--cp-ink);line-height:1.1}
+.cp-logo-txt span{color:var(--cp-orange)}
+.cp-logo-sub{display:block;font-family:"Source Sans 3",sans-serif;font-weight:600;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--cp-mute)}
+.cp-nav-links{display:flex;align-items:center;gap:26px;margin:0 auto}
+.cp-nav-links a{font-size:15px;font-weight:600;color:var(--cp-ink);padding:6px 0;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.cp-nav-links a:hover{color:var(--cp-orange);border-bottom-color:var(--cp-orange)}
+.cp-nav-right{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.cp-pill{
+  display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 11px;
+  border:1px solid var(--cp-line);border-radius:5px;background:#fff;
+  font-size:13.5px;font-weight:600;color:var(--cp-ink-2);
+}
+.cp-pill-cta{border-color:var(--cp-orange);color:var(--cp-orange);background:var(--cp-tint)}
+.cp-pill-cta:hover{background:var(--cp-orange);color:#fff}
+.cp-burger{display:none;width:38px;height:36px;border:1px solid var(--cp-line);border-radius:5px;background:#fff;color:var(--cp-ink);font-size:17px;cursor:pointer}
+
+/* ---------- hero ---------- */
+.cp-hero{position:relative;min-height:520px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.cp-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cp-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,32,45,.46),rgba(14,32,45,.30) 45%,rgba(14,32,45,.55))}
+.cp-hero-in{position:relative;z-index:2;width:100%;max-width:1180px;padding:76px 20px 64px}
+.cp-hero h1{color:#fff;font-size:clamp(28px,4.4vw,46px);font-weight:800;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.cp-hero-sub{color:#fff;font-size:clamp(15px,1.9vw,20px);font-weight:600;margin-top:10px;text-shadow:0 2px 12px rgba(0,0,0,.4)}
+
+/* search widget */
+.cp-search{
+  display:flex;align-items:stretch;gap:0;background:#fff;border-radius:6px;
+  box-shadow:0 10px 34px rgba(0,0,0,.28);margin:26px auto 0;max-width:840px;overflow:hidden;text-align:left;
+}
+.cp-field{flex:1 1 0;min-width:0;padding:9px 14px;border-right:1px solid var(--cp-line);display:flex;flex-direction:column;justify-content:center}
+.cp-field label{font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--cp-mute);margin-bottom:2px}
+.cp-field select{
+  width:100%;border:0;outline:0;background:transparent;font:600 15px/1.35 "Source Sans 3",sans-serif;
+  color:var(--cp-ink);padding:0;cursor:pointer;appearance:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%236B7A88' stroke-width='1.8' stroke-linecap='round'/></svg>");
+  background-repeat:no-repeat;background-position:right center;padding-right:18px;
+}
+.cp-step{display:flex;align-items:center;gap:10px}
+.cp-step button{
+  width:26px;height:26px;flex:0 0 auto;border:1px solid var(--cp-line);background:#fff;border-radius:50%;
+  color:var(--cp-ink);font-size:15px;line-height:1;cursor:pointer;display:grid;place-items:center;
+}
+.cp-step button:hover{border-color:var(--cp-orange);color:var(--cp-orange)}
+.cp-step span{font-weight:600;font-size:15px;color:var(--cp-ink);min-width:78px;text-align:center}
+.cp-search-btn{
+  flex:0 0 auto;border:0;background:var(--cp-orange);color:#fff;padding:0 30px;cursor:pointer;
+  font:700 15.5px/1 Montserrat,sans-serif;display:flex;align-items:center;gap:8px;transition:background .15s;
+}
+.cp-search-btn:hover{background:var(--cp-orange-d)}
+.cp-hero-note{margin-top:14px;font-size:13.5px;font-weight:600;color:rgba(255,255,255,.92);text-shadow:0 1px 8px rgba(0,0,0,.5)}
+
+/* ---------- trust bar ---------- */
+.cp-trust{background:#fff;border-bottom:1px solid var(--cp-line)}
+.cp-trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;padding:26px 0}
+.cp-trust-item{display:flex;gap:12px;align-items:flex-start}
+.cp-badge{
+  width:42px;height:42px;flex:0 0 auto;border-radius:50%;background:var(--cp-tint);
+  display:grid;place-items:center;color:var(--cp-orange);font-size:19px;
+}
+.cp-trust-item strong{display:block;font-family:Montserrat,sans-serif;font-size:13.5px;color:var(--cp-ink);line-height:1.3}
+.cp-trust-item small{display:block;font-size:12.5px;color:var(--cp-mute);line-height:1.45;margin-top:3px}
+.cp-stars{color:#F5A623;letter-spacing:1px}
+
+/* ---------- sections ---------- */
+.cp-sec{padding:62px 0}
+.cp-sec-alt{background:var(--cp-bg-2)}
+.cp-head{text-align:center;max-width:720px;margin:0 auto 34px}
+.cp-eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--cp-orange);margin-bottom:9px}
+.cp-head h2{font-size:clamp(23px,3vw,31px);font-weight:700}
+.cp-head p{margin-top:11px;font-size:16.5px;color:var(--cp-mute)}
+
+/* promises */
+.cp-promises{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.cp-promise{text-align:center}
+.cp-promise-ic{
+  width:64px;height:64px;margin:0 auto 14px;border-radius:50%;
+  background:var(--cp-tint);display:grid;place-items:center;color:var(--cp-orange);font-size:27px;
+}
+.cp-promise h3{font-size:16.5px;font-weight:700;margin-bottom:7px}
+.cp-promise p{font-size:14.5px;color:var(--cp-mute)}
+
+/* ---------- filters + departure cards ---------- */
+.cp-filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:28px}
+.cp-chip{
+  border:1px solid var(--cp-line);background:#fff;border-radius:40px;padding:7px 16px;cursor:pointer;
+  font:600 14px/1 "Source Sans 3",sans-serif;color:var(--cp-ink-2);transition:all .15s;
+}
+.cp-chip:hover{border-color:var(--cp-orange);color:var(--cp-orange)}
+.cp-chip.cp-on{background:var(--cp-orange);border-color:var(--cp-orange);color:#fff}
+.cp-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.cp-card{
+  background:#fff;border:1px solid var(--cp-line);border-radius:var(--cp-r);overflow:hidden;
+  box-shadow:var(--cp-sh);display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s;
+}
+.cp-card:hover{box-shadow:var(--cp-sh-h);transform:translateY(-3px)}
+.cp-card-img{position:relative;aspect-ratio:4/3;background:var(--cp-bg-2)}
+.cp-card-img img{width:100%;height:100%;object-fit:cover}
+.cp-tag{
+  position:absolute;top:10px;border-radius:4px;padding:4px 9px;font:700 11.5px/1.2 "Source Sans 3",sans-serif;
+  background:rgba(255,255,255,.95);color:var(--cp-ink);box-shadow:0 1px 4px rgba(0,0,0,.18);
+}
+.cp-tag-l{left:10px}
+.cp-tag-r{right:10px}
+.cp-tag-hot{background:var(--cp-orange);color:#fff}
+.cp-card-body{padding:15px 16px 17px;display:flex;flex-direction:column;flex:1}
+.cp-card-date{font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--cp-orange)}
+.cp-card h3{font-size:16.5px;font-weight:700;margin:5px 0 6px}
+.cp-card-ship{font-size:14px;color:var(--cp-mute);display:flex;align-items:center;gap:6px}
+.cp-avail{display:inline-block;margin-top:10px;font:700 12px/1 "Source Sans 3",sans-serif;padding:5px 9px;border-radius:4px}
+.cp-avail-ok{background:#E8F4EE;color:var(--cp-green)}
+.cp-avail-low{background:var(--cp-tint-2);color:var(--cp-orange-d)}
+.cp-avail-out{background:#F0F2F4;color:var(--cp-mute)}
+.cp-card-foot{margin-top:auto;padding-top:14px;display:flex;align-items:flex-end;justify-content:space-between;gap:10px}
+.cp-price small{display:block;font-size:11.5px;color:var(--cp-mute);font-weight:600}
+.cp-price strong{font-family:Montserrat,sans-serif;font-size:20px;font-weight:800;color:var(--cp-ink);line-height:1.1}
+.cp-price em{display:block;font-style:normal;font-size:11.5px;color:var(--cp-mute);white-space:nowrap}
+.cp-btn{
+  display:inline-flex;align-items:center;justify-content:center;border:0;cursor:pointer;
+  background:var(--cp-orange);color:#fff;border-radius:5px;padding:9px 15px;
+  font:700 14px/1 Montserrat,sans-serif;transition:background .15s;white-space:nowrap;
+}
+.cp-btn:hover{background:var(--cp-orange-d)}
+.cp-btn-ghost{background:#fff;color:var(--cp-orange);border:1px solid var(--cp-orange)}
+.cp-btn-ghost:hover{background:var(--cp-tint);color:var(--cp-orange-d)}
+.cp-btn-mute{background:#fff;color:var(--cp-mute);border:1px solid var(--cp-line)}
+.cp-btn-mute:hover{background:var(--cp-bg-2);color:var(--cp-ink)}
+.cp-btn-lg{padding:13px 28px;font-size:15.5px;border-radius:6px}
+/* `.cp-root a{color:inherit}` outranks the button classes on specificity, so an
+   anchor styled as a button would render ink-on-orange. Re-assert it here. */
+.cp-root a.cp-btn{color:#fff}
+.cp-root a.cp-btn-ghost{color:var(--cp-orange)}
+.cp-root a.cp-btn-ghost:hover{color:var(--cp-orange-d)}
+.cp-root a.cp-btn-mute{color:var(--cp-mute)}
+.cp-root a.cp-pill-cta{color:var(--cp-orange)}
+.cp-root a.cp-pill-cta:hover{color:#fff}
+.cp-center{text-align:center;margin-top:30px}
+.cp-empty{grid-column:1/-1;text-align:center;padding:40px 0;color:var(--cp-mute);font-weight:600}
+
+/* ---------- vessels ---------- */
+.cp-vessels{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.cp-vessel{background:#fff;border:1px solid var(--cp-line);border-radius:var(--cp-r);overflow:hidden;box-shadow:var(--cp-sh)}
+.cp-vessel-img{aspect-ratio:16/9;background:var(--cp-bg-2)}
+.cp-vessel-img img{width:100%;height:100%;object-fit:cover}
+.cp-vessel-body{padding:20px 22px 24px}
+.cp-vessel h3{font-size:21px;font-weight:700}
+.cp-vessel-role{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cp-orange);margin-top:4px}
+.cp-vessel p{font-size:15px;color:var(--cp-ink-2);margin-top:11px}
+.cp-specs{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--cp-line);border:1px solid var(--cp-line);border-radius:6px;overflow:hidden;margin-top:16px}
+.cp-spec{background:#fff;padding:10px 13px}
+.cp-spec small{display:block;font-size:11.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--cp-mute)}
+.cp-spec strong{font-size:14.5px;color:var(--cp-ink);font-weight:700}
+
+/* ---------- wildlife ---------- */
+.cp-species{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.cp-sp{background:#fff;border:1px solid var(--cp-line);border-radius:var(--cp-r);overflow:hidden;box-shadow:var(--cp-sh);transition:box-shadow .2s,transform .2s}
+.cp-sp:hover{box-shadow:var(--cp-sh-h);transform:translateY(-3px)}
+.cp-sp-img{aspect-ratio:3/2;background:var(--cp-bg-2)}
+.cp-sp-img img{width:100%;height:100%;object-fit:cover}
+.cp-sp-body{padding:14px 15px 16px}
+.cp-sp h3{font-size:16px;font-weight:700}
+.cp-sp-when{font-size:12.5px;font-weight:700;color:var(--cp-orange);margin-top:3px}
+.cp-sp p{font-size:13.8px;color:var(--cp-mute);margin-top:7px}
+
+/* ---------- sites strip ---------- */
+.cp-sites{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+.cp-site{background:#fff;border:1px solid var(--cp-line);border-left:3px solid var(--cp-orange);border-radius:6px;padding:15px 17px}
+.cp-site h4{font-size:15.5px;font-weight:700}
+.cp-site p{font-size:13.8px;color:var(--cp-mute);margin-top:5px}
+
+/* ---------- science split ---------- */
+.cp-split{display:grid;grid-template-columns:1.05fr 1fr;gap:44px;align-items:center}
+.cp-split-img{border-radius:var(--cp-r);overflow:hidden;box-shadow:var(--cp-sh);aspect-ratio:4/3}
+.cp-split-img img{width:100%;height:100%;object-fit:cover}
+.cp-split h2{font-size:clamp(23px,3vw,31px);font-weight:700}
+.cp-split > div > p{margin-top:13px;font-size:16px;color:var(--cp-ink-2)}
+.cp-ticks{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px}
+.cp-ticks li{display:flex;gap:10px;font-size:15px;color:var(--cp-ink-2)}
+.cp-ticks li::before{content:"✓";color:var(--cp-orange);font-weight:800;flex:0 0 auto}
+
+/* ---------- ratings ---------- */
+.cp-ratings{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:840px;margin:0 auto}
+.cp-rating{background:#fff;border:1px solid var(--cp-line);border-radius:var(--cp-r);padding:22px;text-align:center;box-shadow:var(--cp-sh)}
+.cp-rating .cp-num{font-family:Montserrat,sans-serif;font-size:31px;font-weight:800;color:var(--cp-ink);line-height:1}
+.cp-rating .cp-stars{display:block;margin:7px 0 5px;font-size:15px}
+.cp-rating small{font-size:13.5px;color:var(--cp-mute)}
+.cp-rating strong{display:block;font-family:Montserrat,sans-serif;font-size:14px;color:var(--cp-ink);margin-top:2px}
+
+/* ---------- newsletter + footer ---------- */
+.cp-news{background:var(--cp-bg-2);border-top:1px solid var(--cp-line);padding:34px 0}
+.cp-news-in{display:flex;align-items:center;justify-content:space-between;gap:26px;flex-wrap:wrap}
+.cp-news h3{font-size:19px;font-weight:700}
+.cp-news p{font-size:14.5px;color:var(--cp-mute);margin-top:4px}
+.cp-news-form{display:flex;gap:8px;flex:1 1 340px;max-width:460px}
+.cp-news-form input{
+  flex:1;border:1px solid var(--cp-line);border-radius:5px;padding:11px 13px;font:400 15px "Source Sans 3",sans-serif;
+  color:var(--cp-ink);background:#fff;min-width:0;
+}
+.cp-news-form input:focus{outline:2px solid var(--cp-orange-l);outline-offset:1px;border-color:var(--cp-orange)}
+.cp-foot{background:#fff;border-top:1px solid var(--cp-line);padding:46px 0 26px}
+.cp-foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:34px}
+.cp-foot h4{font-size:13px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--cp-ink);margin-bottom:12px}
+.cp-foot ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.cp-foot a,.cp-foot li{font-size:14.5px;color:var(--cp-mute)}
+.cp-foot a:hover{color:var(--cp-orange)}
+.cp-foot-blurb{font-size:14.5px;color:var(--cp-mute);margin-top:12px;max-width:290px}
+.cp-social{display:flex;gap:8px;margin-top:14px}
+.cp-social a{
+  width:34px;height:34px;border-radius:50%;border:1px solid var(--cp-line);display:grid;place-items:center;
+  font-size:12px;font-weight:700;color:var(--cp-mute);
+}
+.cp-social a:hover{border-color:var(--cp-orange);color:var(--cp-orange);background:var(--cp-tint)}
+.cp-foot-bot{
+  border-top:1px solid var(--cp-line);margin-top:34px;padding-top:18px;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--cp-mute);
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:1000px){
+  .cp-nav-links{display:none}
+  .cp-burger{display:block}
+  .cp-trust-grid{grid-template-columns:1fr 1fr;gap:20px}
+  .cp-promises{grid-template-columns:1fr 1fr;gap:26px}
+  .cp-cards{grid-template-columns:1fr 1fr}
+  .cp-species{grid-template-columns:1fr 1fr}
+  .cp-vessels{grid-template-columns:1fr}
+  .cp-sites{grid-template-columns:1fr 1fr}
+  .cp-split{grid-template-columns:1fr;gap:28px}
+  .cp-foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:720px){
+  .cp-root{font-size:15.5px}
+  .cp-nav-right .cp-pill-txt{display:none}
+  .cp-hero{min-height:auto}
+  .cp-hero-in{padding:52px 20px 44px}
+  .cp-search{flex-direction:column;max-width:none}
+  .cp-field{border-right:0;border-bottom:1px solid var(--cp-line);padding:10px 14px}
+  .cp-search-btn{padding:14px;justify-content:center;width:100%}
+  .cp-step span{min-width:0;flex:1;text-align:left}
+  .cp-sec{padding:44px 0}
+  .cp-ratings{grid-template-columns:1fr}
+  .cp-card-foot{flex-direction:column;align-items:stretch}
+  .cp-card-foot .cp-btn{width:100%}
+}
+@media (max-width:520px){
+  .cp-trust-grid{grid-template-columns:1fr}
+  .cp-promises{grid-template-columns:1fr}
+  .cp-cards{grid-template-columns:1fr}
+  .cp-species{grid-template-columns:1fr}
+  .cp-sites{grid-template-columns:1fr}
+  .cp-foot-grid{grid-template-columns:1fr}
+  .cp-news-in{flex-direction:column;align-items:stretch}
+  /* flex-basis becomes a HEIGHT once the bar stacks — pin it back to auto. */
+  .cp-news-form{flex:0 0 auto;max-width:none}
+}
+@media (prefers-reduced-motion:reduce){
+  .cp-root *{transition:none!important;animation:none!important}
+  .cp-card:hover,.cp-sp:hover{transform:none}
+}
+</style>
+</head>
+<body style="margin:0">
+<div class="cp-root">
+
+  <!-- ================= NAV ================= -->
+  <nav class="cp-nav">
+    <div class="cp-nav-in">
+      <a class="cp-logo" href="#top">
+        <span class="cp-logo-mark" aria-hidden="true">◑</span>
+        <span class="cp-logo-txt">Galapagos <span>Shark</span> Diving
+          <span class="cp-logo-sub">Dive with a Purpose</span>
+        </span>
+      </a>
+      <div class="cp-nav-links">
+        <a href="#departures">Expeditions</a>
+        <a href="#vessels">Vessels</a>
+        <a href="#departures">Dates &amp; Prices</a>
+        <a href="#science">Research</a>
+        <a href="#wildlife">Wildlife</a>
+      </div>
+      <div class="cp-nav-right">
+        <span class="cp-pill">$ USD</span>
+        <span class="cp-pill">EN</span>
+        <a class="cp-pill cp-pill-cta" href="https://wa.me/593999667219">✆ <span class="cp-pill-txt">+593 999 66 7219</span></a>
+        <button class="cp-burger" type="button" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HERO ================= -->
+  <header class="cp-hero" id="top">
+    <img class="cp-hero-img" alt="A diver swims alongside an adult whale shark surrounded by a school of fish in the Galápagos" src="https://image.jimcdn.com/app/cms/image/transf/dimension=2400x10000:format=jpg/path/s2fc4241e2a9d6156/image/i0732d0710069ab07/version/1727121098/a-diver-swims-closely-alongside-a-massive-whale-shark-surrounded-by-a-school-of-fish-in-the-serene-depths-of-the-ocean.jpg" />
+    <div class="cp-hero-in">
+      <h1>Your Darwin &amp; Wolf Diving Specialist</h1>
+      <p class="cp-hero-sub">Small-group liveaboard expeditions to the far north of the Galápagos — with a Whale Shark Project scientist aboard every departure.</p>
+
+      <form class="cp-search" id="cp-search" onsubmit="return false">
+        <div class="cp-field">
+          <label for="cp-when">When</label>
+          <select id="cp-when">
+            <option value="all">Any 2027 date</option>
+            <option value="jul">July 2027</option>
+            <option value="aug">August 2027</option>
+            <option value="sep">September 2027</option>
+          </select>
+        </div>
+        <div class="cp-field">
+          <label for="cp-trip">Expedition</label>
+          <select id="cp-trip">
+            <option value="all">All expeditions</option>
+            <option value="cs">Citizen Science · 8 days</option>
+            <option value="lux">Luxury Citizen Science · 8 days</option>
+            <option value="15">Special 15-Day</option>
+          </select>
+        </div>
+        <div class="cp-field">
+          <label>Divers</label>
+          <div class="cp-step">
+            <button type="button" id="cp-minus" aria-label="Fewer divers">−</button>
+            <span id="cp-guests">2 divers</span>
+            <button type="button" id="cp-plus" aria-label="More divers">+</button>
+          </div>
+        </div>
+        <button class="cp-search-btn" type="button" id="cp-go">⌕ Search</button>
+      </form>
+      <p class="cp-hero-note">7 scheduled sailings · 16 guests maximum · Darwin &amp; Wolf every itinerary</p>
+    </div>
+  </header>
+
+  <!-- ================= TRUST BAR ================= -->
+  <section class="cp-trust">
+    <div class="cp-wrap">
+      <div class="cp-trust-grid">
+        <div class="cp-trust-item">
+          <span class="cp-badge" aria-hidden="true">★</span>
+          <div>
+            <strong>Scuba Diving Centre of the Year</strong>
+            <small>South America Prestige Awards, 2024/25 Winner — Ecuador</small>
+          </div>
+        </div>
+        <div class="cp-trust-item">
+          <span class="cp-badge" aria-hidden="true">①</span>
+          <div>
+            <strong>#1 Best Overall Liveaboard</strong>
+            <small>Scuba Diving Magazine 2023 Readers Choice, Pacific &amp; Indian Ocean</small>
+          </div>
+        </div>
+        <div class="cp-trust-item">
+          <span class="cp-badge" aria-hidden="true">✓</span>
+          <div>
+            <strong>Whale Shark Project partner</strong>
+            <small>A GWSP scientist on every Citizen Science departure since 2019</small>
+          </div>
+        </div>
+        <div class="cp-trust-item">
+          <span class="cp-badge" aria-hidden="true">♥</span>
+          <div>
+            <strong><span class="cp-stars">★★★★★</span> 5.0 on TripAdvisor</strong>
+            <small>109 TripAdvisor reviews · 103 Google reviews · Travelers' Choice 2023</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROMISES ================= -->
+  <section class="cp-sec">
+    <div class="cp-wrap">
+      <div class="cp-head">
+        <p class="cp-eyebrow">Our promises</p>
+        <h2>Why divers book directly with us</h2>
+        <p>We run one thing, in one place: shark diving in the far north of the Galápagos. Every expedition is built around it.</p>
+      </div>
+      <div class="cp-promises">
+        <div class="cp-promise">
+          <div class="cp-promise-ic" aria-hidden="true">⚲</div>
+          <h3>Darwin &amp; Wolf specialists</h3>
+          <p>Every itinerary spends its core days at Darwin and Wolf — the seamounts the whale sharks and hammerhead schools actually use.</p>
+        </div>
+        <div class="cp-promise">
+          <div class="cp-promise-ic" aria-hidden="true">⚗</div>
+          <h3>A scientist aboard</h3>
+          <p>One Galápagos Whale Shark Project researcher sails on every Citizen Science departure, and has done since 2019.</p>
+        </div>
+        <div class="cp-promise">
+          <div class="cp-promise-ic" aria-hidden="true">☗</div>
+          <h3>Sixteen guests, never more</h3>
+          <p>Both vessels are capped at 16 guests, with bilingual divemasters and daily onboard presentations.</p>
+        </div>
+        <div class="cp-promise">
+          <div class="cp-promise-ic" aria-hidden="true">◉</div>
+          <h3>Diving that gives back</h3>
+          <p>Your dives feed photo-ID, SharkCount and satellite-tagging work, and a portion of every booking supports the research directly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DEPARTURES ================= -->
+  <section class="cp-sec cp-sec-alt" id="departures">
+    <div class="cp-wrap">
+      <div class="cp-head">
+        <p class="cp-eyebrow">Dates &amp; prices</p>
+        <h2>2027 departures</h2>
+        <p>Seven scheduled sailings. Prices are per person, double occupancy, for the full expedition.</p>
+      </div>
+
+      <div class="cp-filters" id="cp-filters">
+        <button class="cp-chip cp-on" type="button" data-f="all">All departures</button>
+        <button class="cp-chip" type="button" data-f="8">8 days</button>
+        <button class="cp-chip" type="button" data-f="15">15 days</button>
+        <button class="cp-chip" type="button" data-f="aqua">Aqua</button>
+        <button class="cp-chip" type="button" data-f="galaxy">Galaxy Diver II</button>
+        <button class="cp-chip" type="button" data-f="open">Available now</button>
+      </div>
+
+      <div class="cp-cards" id="cp-cards">
+
+        <article class="cp-card" data-tags="8 galaxy open jul lux">
+          <div class="cp-card-img">
+            <img alt="Galaxy Diver II, a luxury liveaboard yacht in the Galápagos Islands" loading="lazy" src="https://image.jimcdn.com/app/cms/image/transf/dimension=892x10000:format=jpg/path/s2fc4241e2a9d6156/image/i8bafb73a91e9d28a/version/1736371409/galaxy-diver-ii-luxury-yacht-galapagos-islands.jpg" />
+            <span class="cp-tag cp-tag-l">8 days</span>
+            <span class="cp-tag cp-tag-r cp-tag-hot">Nitrox included</span>
+          </div>
+          <div class="cp-card-body">
+            <p class="cp-card-date">21–28 July 2027</p>
+            <h3>Luxury Citizen Science Expedition</h3>
+            <p class="cp-card-ship">⚓ Galaxy Diver II · 16 guests</p>
+            <span class="cp-avail cp-avail-ok">9 spaces remaining</span>
+            <div class="cp-card-foot">
+              <div class="cp-price"><small>From</small><strong>$8,200</strong><em>USD per person</em></div>
+              <button class="cp-btn" type="button">Select cabin</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="cp-card" data-tags="8 aqua jul cs">
+          <div class="cp-card-img">
+            <img alt="The liveaboard vessel Aqua at anchor in the Galápagos Islands" loading="lazy" src="https://image.jimcdn.com/app/cms/image/transf/none/path/s2fc4241e2a9d6156/image/if9b548a01f97ac7f/version/1736371407/aqua-yacht-in-the-galapagos-islands.jpg" />
+            <span class="cp-tag cp-tag-l">8 days</span>
+            <span class="cp-tag cp-tag-r">Sofía M. Green</span>
+          </div>
+          <div class="cp-card-body">
+            <p class="cp-card-date">27 July – 3 August 2027</p>
+            <h3>Citizen Science Expedition</h3>
+            <p class="cp-card-ship">⚓ Aqua · 16 guests</p>
+            <span class="cp-avail cp-avail-out">Waitlist only</span>
+            <div class="cp-card-foot">
+              <div class="cp-price"><small>From</small><strong>$6,690</strong><em>USD per person</em></div>
+              <button class="cp-btn cp-btn-mute" type="button">Join waitlist</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="cp-card" data-tags="15 aqua open aug">
+          <div class="cp-card-img">
+            <img alt="A huge school of hammerhead sharks close to the surface in the Galápagos" loading="lazy" src="https://image.jimcdn.com/app/cms/image/transf/dimension=1900x10000:format=jpg/path/s2fc4241e2a9d6156/image/id5a56a4416a7b1bf/version/1739236602/huge-hammerhead-shark-school-close-to-the-surface-galapagos-shark-diving.jpg" />
+            <span class="cp-tag cp-tag-l">15 days</span>
+            <span class="cp-tag cp-tag-r cp-tag-hot">3 left</span>
+          </div>
+          <div class="cp-card-body">
+            <p class="cp-card-date">3–17 August 2027</p>
+            <h3>Special 15-Day Citizen Science</h3>
+            <p class="cp-card-ship">⚓ Aqua · with Jonathan R. Green</p>
+            <span class="cp-avail cp-avail-low">3 spaces remaining</span>
+            <div class="cp-card-foot">
+              <div class="cp-price"><small>From</small><strong>$13,490</strong><em>USD per person</em></div>
+              <button class="cp-btn" type="button">Select cabin</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="cp-card" data-tags="15 aqua open aug">
+          <div class="cp-card-img">
+            <img alt="A big school of hammerhead sharks at Darwin's Arch" loading="lazy" src="https://image.jimcdn.com/app/cms/image/transf/dimension=990x1024:format=jpg/path/s2fc4241e2a9d6156/image/i5c056b7d94152dad/version/1786480028/galapagos-shark-diving-big-school-of-hammerhead-sharks-at-darwin-arch.jpg" />
+            <span class="cp-tag cp-tag-l">15 days</span>
+            <span class="cp-tag cp-tag-r">Night dive</span>
+          </div>
+          <div class="cp-card-body">
+            <p class="cp-card-date">17–31 August 2027</p>
+            <h3>Special 15-Day Citizen Science</h3>
+            <p class="cp-card-ship">⚓ Aqua · with Jonathan R. Green</p>
+            <span class="cp-avail cp-avail-ok">6 spaces remaining</span>
+            <div class="cp-card-foot">
+              <div class="cp-price"><small>From</small><strong>$13,490</strong><em>USD per person</em></div>
+              <button class="cp-btn" type="button">Select cabin</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="cp-card" data-tags="8 aqua aug cs">
+          <div class="cp-card-img">
+            <img alt="Scuba divers kitting up for a Galápagos dive on board the Aqua" loading="lazy" src="https://image.jimcdn.com/app/cms/image/transf/dimension=1100x10000:format=jpg/path/s2fc4241e2a9d6156/image/i346f0c055414b0a9/version/1743185911/scuba-divers-kitting-up-for-a-galapagos-dive-with-wetsuit-scuba-tanks-and-other-dive-gear-on-the-aqua.jpg" />
+            <span class="cp-tag cp-tag-l">8 days</span>
+            <span class="cp-tag cp-tag-r">Jonathan R. Green</span>
+          </div>
+          <div class="cp-card-body">
+            <p class="cp-card-date">31 August – 7 September 2027</p>
+            <h3>Citizen Science Expedition</h3>
+            <p class="cp-card-ship">⚓ Aqua · 16 guests</p>
+            <span class="cp-avail cp-avail-out">Waitlist only</span>
+            <div class="cp-card-foot">
+              <div class="cp-price"><small>From</small><strong>$6,690</strong><em>USD per person</em></div>
+              <button class="cp-btn cp-btn-mute" type="button">Join waitlist</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="cp-card" data-tags="8 galaxy sep lux">
+          <div class="cp-card-img">
+            <img alt="An adult female whale shark swimming above a group of divers in the Galápagos" loading="lazy" src="https://image.jimcdn.com/app/cms/image/transf/dimension=1400x10000:format=jpg/path/s2fc4241e2a9d6156/image/i94b5a8f9795e8d58/version/1771099762/adult-female-whale-shark-swimming-above-a-group-of-divers-in-the-galapagos-islands.jpg" />
+            <span class="cp-tag cp-tag-l">8 days</span>
+            <span class="cp-tag cp-tag-r">Gourmet full board</span>
+          </div>
+          <div class="cp-card-body">
+            <p class="cp-card-date">8–15 September 2027</p>
+            <h3>Luxury Citizen Science Expedition</h3>
+            <p class="cp-card-ship">⚓ Galaxy Diver II · 16 guests</p>
+            <span class="cp-avail cp-avail-out">Waitlist only</span>
+            <div class="cp-card-foot">
+              <div class="cp-price"><small>From</small><strong>$8,200</strong><em>USD per person</em></div>
+              <button class="cp-btn cp-btn-mute" type="button">Join waitlist</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="cp-card" data-tags="8 galaxy open sep lux">
+          <div class="cp-card-img">
+            <img alt="A diver photographing a whale shark for photo identification" loading="lazy" src="https://image.jimcdn.com/app/cms/image/transf/dimension=1200x10000:format=jpg/path/s2fc4241e2a9d6156/image/i3c7de9084888c9b9/version/1770760303/galapagos-shark-diving-diver-taking-photo-of-whale-shark.jpg" />
+            <span class="cp-tag cp-tag-l">8 days</span>
+            <span class="cp-tag cp-tag-r cp-tag-hot">6 left</span>
+          </div>
+          <div class="cp-card-body">
+            <p class="cp-card-date">15–22 September 2027</p>
+            <h3>Luxury Citizen Science Expedition</h3>
+            <p class="cp-card-ship">⚓ Galaxy Diver II · Nitrox included</p>
+            <span class="cp-avail cp-avail-ok">6 spaces remaining</span>
+            <div class="cp-card-foot">
+              <div class="cp-price"><small>From</small><strong>$8,200</strong><em>USD per person</em></div>
+              <button class="cp-btn" type="button">Select cabin</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="cp-center" style="font-size:14px;color:var(--cp-mute)">
+        Not included in the fares above: international flights, the Galápagos National Park entrance fee ($200), the Transit Control Card ($20), personal gear rental, alcohol, and dive/travel insurance.
+      </p>
+      <div class="cp-center">
+        <a class="cp-btn cp-btn-lg" href="#top">Check availability</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= VESSELS ================= -->
+  <section class="cp-sec" id="vessels">
+    <div class="cp-wrap">
+      <div class="cp-head">
+        <p class="cp-eyebrow">The fleet</p>
+        <h2>Two liveaboards, sixteen guests each</h2>
+        <p>Both run the same northern circuit. They differ in comfort, inclusions and price.</p>
+      </div>
+      <div class="cp-vessels">
+
+        <article class="cp-vessel">
+          <div class="cp-vessel-img">
+            <img alt="The liveaboard Aqua in the Galápagos Islands" loading="lazy" src="https://image.jimcdn.com/app/cms/image/transf/dimension=1600x10000:format=jpg/path/s2fc4241e2a9d6156/image/if9b548a01f97ac7f/version/1736371407/image.jpg" />
+          </div>
+          <div class="cp-vessel-body">
+            <h3>Aqua</h3>
+            <p class="cp-vessel-role">Citizen Science Expeditions · 8 and 15 days</p>
+            <p>Built 1998, renovated 2019. Nine cabins, each with private bathroom and air conditioning. The dive platform was remodelled and expanded in 2017: two compressors with Nitrox capability, room for 34 aluminium 12L tanks, a camera table, separate freshwater tanks for wetsuits and electronics, and two hot-and-cold showers.</p>
+            <div class="cp-specs">
+              <div class="cp-spec"><small>Guests</small><strong>16 maximum</strong></div>
+              <div class="cp-spec"><small>Cabins</small><strong>9, all en-suite</strong></div>
+              <div class="cp-spec"><small>Engines</small><strong>2 × 250HP Caterpillar</strong></div>
+              <div class="cp-spec"><small>Tenders</small><strong>2 Caribe, 50HP Yamaha</strong></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="cp-vessel">
+          <div class="cp-vessel-img">
+            <img alt="Galaxy Diver II, a luxury liveaboard yacht in the Galápagos Islands" loading="lazy" src="https://image.jimcdn.com/app/cms/image/transf/dimension=2000x10000:format=jpg/path/s2fc4241e2a9d6156/image/i8bafb73a91e9d28a/version/1736371409/galaxy-diver-ii-luxury-yacht-galapagos-islands.jpg" />
+          </div>
+          <div class="cp-vessel-body">
+            <h3>Galaxy Diver II</h3>
+            <p class="cp-vessel-role">Luxury Citizen Science Expeditions · 8 days</p>
+            <p>Joined the programme for Citizen Science expeditions in August 2025. Cabins have private bathrooms with hot and cold showers, hair dryers and eco-friendly toiletries. A jacuzzi sits on the 117&nbsp;m² shaded sundeck; the dive deck takes 34 aluminium tanks in 10, 12 and 15L, with four freshwater showers, a camera table and a separate rinse tank. Nitrox is included on this expedition.</p>
+            <div class="cp-specs">
+              <div class="cp-spec"><small>Guests</small><strong>16 maximum</strong></div>
+              <div class="cp-spec"><small>Length</small><strong>35 m / 114.82 ft</strong></div>
+              <div class="cp-spec"><small>Engines</small><strong>2 × 600HP Caterpillar</strong></div>
+              <div class="cp-spec"><small>Cruise speed</small><strong>11 knots</strong></div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= WILDLIFE ================= -->
+  <section class="cp-sec cp-sec-alt" id="wildlife">
+    <div class="cp-wrap">
+      <div class="cp-head">
+        <p class="cp-eyebrow">What you came for</p>
+        <h2>The animals of the northern islands</h2>
+        <p>Over thirty shark species have been identified in Galápagos waters. These are the encounters the northern circuit is built around.</p>
+      </div>
+      <div class="cp-species">
+
+        <article class="cp-sp">
+          <div class="cp-sp-img"><img alt="A whale shark photographed from above, showing its spotted pattern" loading="lazy" src="https://image.jimcdn.com/app/cms/image/transf/dimension=920x10000:format=jpg/path/s2fc4241e2a9d6156/image/ied9910ab19595c47/version/1744390256/a-photo-taken-from-above-of-a-whale-shark-with-it-s-beautiful-spotted-pattern.jpg" /></div>
+          <div class="cp-sp-body">
+            <h3>Whale shark</h3>
+            <p class="cp-sp-when">June – November</p>
+            <p>IUCN Red List Endangered. Nearly 99% of the whale sharks visiting Darwin are adult females. Each one is identified by the spot pattern behind its gills.</p>
+          </div>
+        </article>
+
+        <article class="cp-sp">
+          <div class="cp-sp-img"><img alt="Dozens of scalloped hammerhead sharks in the deep blue water off the Galápagos" loading="lazy" src="https://image.jimcdn.com/app/cms/image/transf/dimension=920x10000:format=jpg/path/s2fc4241e2a9d6156/image/i356fae4d47c1b8d3/version/1748460451/dozens-of-scalloped-hammerhead-sharks-swimming-in-the-deep-blue-waters-off-the-galapagos-islands.jpg" /></div>
+          <div class="cp-sp-body">
+            <h3>Scalloped hammerhead</h3>
+            <p class="cp-sp-when">Year-round, schooling by day</p>
+            <p>The schools that make Wolf and Darwin famous. Telemetry has recorded the species diving to 1,000 m at night around Malpelo and Cocos.</p>
+          </div>
+        </article>
+
+        <article class="cp-sp">
+          <div class="cp-sp-img"><img alt="A giant manta swimming over the heads of divers at Cape Marshall" loading="lazy" src="https://image.jimcdn.com/app/cms/image/transf/dimension=960x1024:format=jpg/path/s2fc4241e2a9d6156/image/idbda94df8f0cb938/version/1786480132/galapagos-shark-diving-giant-manta-swimming-over-the-head-of-the-divers-in-cape-marshall-in-the-galapagos-islands.jpg" /></div>
+          <div class="cp-sp-body">
+            <h3>Oceanic manta ray</h3>
+            <p class="cp-sp-when">Cape Marshall &amp; City of Mantas</p>
+            <p>Encountered at cleaning stations, usually shallow. The species has been recorded on dives beyond 1,200 m.</p>
+          </div>
+        </article>
+
+        <article class="cp-sp">
+          <div class="cp-sp-img"><img alt="An ocean sunfish, Mola alexandrini, swimming in the Galápagos with divers behind" loading="lazy" src="https://image.jimcdn.com/app/cms/image/transf/dimension=1900x10000:format=jpg/path/s2fc4241e2a9d6156/image/if594bb0663333b3f/version/1666982506/mola-alexandrini-or-ocean-sunfish-or-common-mola-mola-mola-swimming-in-the-galapagos-4-scuba-divers-swim-in-the-background.jpg" /></div>
+          <div class="cp-sp-body">
+            <h3>Mola mola</h3>
+            <p class="cp-sp-when">Punta Vicente Roca, cold water</p>
+            <p>The sunfish cleaning station on Isabela's western side. A Galápagos tracking study recorded one individual at 1,112 m.</p>
+          </div>
+        </article>
+
+        <article class="cp-sp">
+          <div class="cp-sp-img"><img alt="A Galápagos shark" loading="lazy" src="https://image.jimcdn.com/app/cms/image/transf/dimension=900x10000:format=jpg/path/s2fc4241e2a9d6156/image/id26c48107a722551/version/1601907430/galapagos-shark-diving-galapagos-shark.jpg" /></div>
+          <div class="cp-sp-body">
+            <h3>Galápagos shark</h3>
+            <p class="cp-sp-when">Year-round</p>
+            <p>The archipelago's namesake requiem shark, common on the exposed northern walls alongside silkies and blacktips.</p>
+          </div>
+        </article>
+
+        <article class="cp-sp">
+          <div class="cp-sp-img"><img alt="A spotted eagle ray swimming near the ocean floor with sun rays above" loading="lazy" src="https://image.jimcdn.com/app/cms/image/transf/dimension=920x10000:format=jpg/path/s2fc4241e2a9d6156/image/id72741dcc3bf3bae/version/1704833352/close-up-of-a-spotted-eagle-ray-with-distinctive-markings-swimming-near-the-ocean-floor-with-sun-rays-filtering-through-the-water-above-illustrating-the-beauty-of-aquatic-life.jpg" /></div>
+          <div class="cp-sp-body">
+            <h3>Spotted eagle ray</h3>
+            <p class="cp-sp-when">Year-round</p>
+            <p>Photo-identified from its ventral spot pattern, one of the species guests are asked to photograph and submit.</p>
+          </div>
+        </article>
+
+        <article class="cp-sp">
+          <div class="cp-sp-img"><img alt="A sea lion playing, very curious about a diver" loading="lazy" src="https://image.jimcdn.com/app/cms/image/transf/dimension=900x10000:format=jpg/path/s2fc4241e2a9d6156/image/i717adcbe719d13d7/version/1786433308/galapagos-shark-diving-sea-lion-playing-very-curious-about-a-diver.jpg" /></div>
+          <div class="cp-sp-body">
+            <h3>Galápagos sea lion</h3>
+            <p class="cp-sp-when">Cousin's Rock &amp; throughout</p>
+            <p>Curious, fast and entirely uninterested in your dive plan. Reliable at Cousin's Rock on the way home.</p>
+          </div>
+        </article>
+
+        <article class="cp-sp">
+          <div class="cp-sp-img"><img alt="Aerial view of Darwin's Arch, a natural rock formation in the Galápagos Islands" loading="lazy" src="https://image.jimcdn.com/app/cms/image/transf/dimension=1100x10000:format=jpg/path/s2fc4241e2a9d6156/image/i3197cbfcd074c4bf/version/1710432252/aerial-view-of-darwin-s-arch-a-natural-rock-formation-in-the-galapagos-islands-with-the-vast-ocean-surrounding-it-the-azure-waters-contrast-with-the-rugged-brown-and-beige-tones-of-the-rocky-arch.jpg" /></div>
+          <div class="cp-sp-body">
+            <h3>Marine iguana</h3>
+            <p class="cp-sp-when">Cabo Douglas, Fernandina</p>
+            <p>The only lizard in the world that feeds underwater — grazing algae off the rock while you hold station beside it.</p>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="cp-head" style="margin-top:52px;margin-bottom:22px">
+        <h2 style="font-size:22px">The dive sites on every itinerary</h2>
+      </div>
+      <div class="cp-sites">
+        <div class="cp-site"><h4>Darwin — the Pillars of Evolution</h4><p>Four dives on day three, two more on day four. Whale sharks and hammerhead schools in season; the arch itself partially collapsed in 2021.</p></div>
+        <div class="cp-site"><h4>Wolf Island</h4><p>Two dives on day four and three on day five. Very high shark biomass and strong currents.</p></div>
+        <div class="cp-site"><h4>Cape Marshall &amp; City of Mantas</h4><p>Day two, three dives. Manta rays on Isabela's eastern side.</p></div>
+        <div class="cp-site"><h4>Punta Vicente Roca</h4><p>Day six. A cold-water mola mola cleaning station; also penguins, seahorses and the endemic bullhead shark.</p></div>
+        <div class="cp-site"><h4>Cabo Douglas, Fernandina</h4><p>Day six. Marine iguanas feeding underwater.</p></div>
+        <div class="cp-site"><h4>Cousin's Rock</h4><p>Day seven, two dives, followed by a Santa Cruz highlands land excursion.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SCIENCE ================= -->
+  <section class="cp-sec" id="science">
+    <div class="cp-wrap">
+      <div class="cp-split">
+        <div class="cp-split-img">
+          <img alt="A research diver tagging an adult female whale shark in the Galápagos Islands" loading="lazy" src="https://image.jimcdn.com/app/cms/image/transf/dimension=1200x10000:format=jpg/path/s2fc4241e2a9d6156/image/i38b61344e92489c1/version/1771099961/research-diver-tagging-a-adult-female-whale-shark-in-the-galapagos-islands.jpg" />
+        </div>
+        <div>
+          <p class="cp-eyebrow">Citizen science</p>
+          <h2>Dive with a Purpose</h2>
+          <p>Since 2019 a Galápagos Whale Shark Project scientist has sailed on every Citizen Science departure. Guests aren't spectators to that work — the photographs and counts you take go into it.</p>
+          <ul class="cp-ticks">
+            <li>Photo-identification: whale sharks by the spot pattern behind the gills, turtles by facial pattern, mantas and rays by ventral spots. Submissions feed Sharkbook.ai, the international photo-ID database.</li>
+            <li>SharkCount: standardised observation counts recorded across 20 dive sites in the archipelago.</li>
+            <li>Satellite tagging and in-water behavioural research, led by the project team aboard.</li>
+            <li>Dive Against Debris: underwater debris data collected with Project AWARE.</li>
+            <li>Daily onboard presentations, and data shared with the Galápagos National Park Directorate.</li>
+          </ul>
+          <div style="margin-top:22px">
+            <a class="cp-btn cp-btn-lg" href="#departures">See 2027 departures</a>
+            <a class="cp-btn cp-btn-lg cp-btn-ghost" style="margin-left:8px" href="https://www.galapagoswhaleshark.org">About the project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RATINGS ================= -->
+  <section class="cp-sec cp-sec-alt">
+    <div class="cp-wrap">
+      <div class="cp-head">
+        <p class="cp-eyebrow">Reviews</p>
+        <h2>What divers rate us</h2>
+        <p>Aggregate ratings from the three platforms we're reviewed on, as published on our own reviews page.</p>
+      </div>
+      <div class="cp-ratings">
+        <div class="cp-rating">
+          <p class="cp-num">5.0</p>
+          <span class="cp-stars">★★★★★</span>
+          <strong>TripAdvisor</strong>
+          <small>109 reviews · Travelers' Choice 2023</small>
+        </div>
+        <div class="cp-rating">
+          <p class="cp-num">5.0</p>
+          <span class="cp-stars">★★★★★</span>
+          <strong>Google</strong>
+          <small>103 reviews</small>
+        </div>
+        <div class="cp-rating">
+          <p class="cp-num">4.9</p>
+          <span class="cp-stars">★★★★★</span>
+          <strong>Facebook</strong>
+          <small>43 reviews</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= NEWSLETTER ================= -->
+  <section class="cp-news">
+    <div class="cp-wrap">
+      <div class="cp-news-in">
+        <div>
+          <h3>Departure dates, straight to your inbox</h3>
+          <p>New 2027 and 2028 sailings, and research updates from the team.</p>
+        </div>
+        <form class="cp-news-form" onsubmit="return false">
+          <label for="cp-email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Email address</label>
+          <input id="cp-email" type="email" placeholder="Enter your email address" />
+          <button class="cp-btn" type="button">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="cp-foot">
+    <div class="cp-wrap">
+      <div class="cp-foot-grid">
+        <div>
+          <a class="cp-logo" href="#top">
+            <span class="cp-logo-mark" aria-hidden="true">◑</span>
+            <span class="cp-logo-txt">Galapagos <span>Shark</span> Diving
+              <span class="cp-logo-sub">Dive with a Purpose</span>
+            </span>
+          </a>
+          <p class="cp-foot-blurb">Liveaboard expeditions to Darwin and Wolf, in the far north of the Galápagos, with a Whale Shark Project scientist aboard.</p>
+          <div class="cp-social">
+            <a href="https://instagram.com/galapagossharkdiving" aria-label="Instagram">IG</a>
+            <a href="https://facebook.com/galapagossharkdiving" aria-label="Facebook">FB</a>
+            <a href="https://www.youtube.com/channel/UCDjv63rB6lrfoDtbCPCJjUw" aria-label="YouTube">YT</a>
+            <a href="https://tiktok.com/@galapagossharkdiving" aria-label="TikTok">TT</a>
+          </div>
+        </div>
+        <div>
+          <h4>Expeditions</h4>
+          <ul>
+            <li><a href="#departures">Citizen Science · 8 days</a></li>
+            <li><a href="#departures">Luxury Citizen Science · 8 days</a></li>
+            <li><a href="#departures">Special 15-Day</a></li>
+            <li><a href="#departures">Dates &amp; prices</a></li>
+            <li><a href="#vessels">Liveaboard advisory</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>The diving</h4>
+          <ul>
+            <li><a href="#wildlife">Darwin &amp; Wolf</a></li>
+            <li><a href="#wildlife">Wildlife &amp; seasons</a></li>
+            <li><a href="#vessels">Aqua</a></li>
+            <li><a href="#vessels">Galaxy Diver II</a></li>
+            <li><a href="#science">Citizen science</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>Galapagos Shark Diving®</li>
+            <li>128 Adolf Hanny y Av Seymour, El Edén<br />Puerto Ayora, Santa Cruz, Galápagos, Ecuador</li>
+            <li><a href="mailto:info@galapagossharkdiving.com">info@galapagossharkdiving.com</a></li>
+            <li><a href="https://wa.me/593999667219">WhatsApp +593 999 66 7219</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="cp-foot-bot">
+        <span>Certification: Advanced Diver (PADI) or equivalent, 50+ logged dives, one dive within the last 6 months, dive computer and dive-accident insurance required.</span>
+        <span>English · Español · Deutsch</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  var guests = 2;
+  var out = document.getElementById("cp-guests");
+  function render() { out.textContent = guests + (guests === 1 ? " diver" : " divers"); }
+  document.getElementById("cp-minus").addEventListener("click", function () { if (guests > 1) { guests--; render(); } });
+  document.getElementById("cp-plus").addEventListener("click", function () { if (guests < 16) { guests++; render(); } });
+
+  var cards = [].slice.call(document.querySelectorAll("#cp-cards .cp-card"));
+  var chips = [].slice.call(document.querySelectorAll("#cp-filters .cp-chip"));
+  var empty = document.createElement("p");
+  empty.className = "cp-empty";
+  empty.textContent = "No departures match that combination. Try another date or expedition.";
+  document.getElementById("cp-cards").appendChild(empty);
+
+  function apply(f) {
+    var shown = 0;
+    cards.forEach(function (c) {
+      var ok = f === "all" || (" " + c.getAttribute("data-tags") + " ").indexOf(" " + f + " ") > -1;
+      c.style.display = ok ? "" : "none";
+      if (ok) shown++;
+    });
+    empty.style.display = shown ? "none" : "";
+  }
+  apply("all");
+
+  chips.forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      chips.forEach(function (c) { c.classList.remove("cp-on"); });
+      chip.classList.add("cp-on");
+      apply(chip.getAttribute("data-f"));
+    });
+  });
+
+  document.getElementById("cp-go").addEventListener("click", function () {
+    var when = document.getElementById("cp-when").value;
+    var trip = document.getElementById("cp-trip").value;
+    var f = trip !== "all" ? trip : when;
+    chips.forEach(function (c) { c.classList.toggle("cp-on", c.getAttribute("data-f") === f || (f === "all" && c.getAttribute("data-f") === "all")); });
+    apply(f);
+    document.getElementById("departures").scrollIntoView({ behavior: "smooth" });
+  });
+})();
+</script>
+<a id="back-to-concepts-index" href="index.html" style="position:fixed;top:10px;right:10px;z-index:999999;background:#000;color:#fff;font:12px/1 system-ui,sans-serif;padding:7px 11px;text-decoration:none;border-radius:3px;opacity:0.55;">&larr; All concepts</a>
+</body>
+</html>
